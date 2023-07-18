@@ -1,0 +1,26 @@
+.error404 {
+    padding: 0%;
+    display: flex;
+    min-height: 80vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #1d0c20; 
+}
+
+.imagen404{
+    background-image: url(../../Image/Error404.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 500px;
+    height: 400px;
+ 
+}
+.texto404{
+ 
+}
+.boton-error{
+    background-color: #68b2f8 !important;
+    border-color: #506ee5 !important;
+    color: #aefeff !important;
+  }
+  
