@@ -1,2 +1,0 @@
-# RestoCodeFront
-FrontEnd de RestoCode
