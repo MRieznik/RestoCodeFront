@@ -4,7 +4,7 @@ import Bootstrap from "bootstrap/dist/css/bootstrap.min.css";
 const Error404 = () => {
   return (
     <>
-    <div className="error404 c">
+    <div className="error404">
       <div className="d-flex align-items-center justify-content-center  container-fluid ">
           <div className="imagen404  " ></div>
           <div className="text-center position-absolute mt-2">
