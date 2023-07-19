@@ -1,6 +1,5 @@
 import React from 'react'
-
-
+import {Navbar} from 'bootstrap'
 
 
 const NAVBAR = () => {
