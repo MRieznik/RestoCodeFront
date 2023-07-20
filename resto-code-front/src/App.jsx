@@ -1,5 +1,7 @@
-import NAVBAR from "./Components/Navbars/Navbar"
+import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css'
+import NavbarRestoCode from './Components/Navbars/Navbar'
+
 
 
 function App() {
@@ -7,7 +9,7 @@ function App() {
 
   return (
     <>
-    <NAVBAR/>
+    <NavbarRestoCode/>
       
     </>
   )
