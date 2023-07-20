@@ -25,9 +25,19 @@
    
 
 .boton-error{
-    background-color: #68b2f8 !important;
-    border-color: #506ee5 !important;
-    color: white!important;
-    font-weight: bold !important;
+  border: none;
+  background-color: #1d0c20 !important;
+  color: white !important;
+  padding: 6px 10px 6px 10px;
+  border: 2px solid #651f71 !important;
+  transition: 0.2s;
+  border-radius: 3px;
+  margin-top: 1rem;
   }
+  .boton-error:hover{
+    background-color: #7037cd !important;
+    border: none;
+    margin: 0;
+  }
+    
   
