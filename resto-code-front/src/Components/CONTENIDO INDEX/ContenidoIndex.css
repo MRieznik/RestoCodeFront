@@ -31,7 +31,6 @@
   align-items: center;
   justify-content: center;
   padding-top: 4px;
-  
 }
 .botonReservarIndex {
   border: none;
@@ -41,7 +40,9 @@
   border: 2px solid #651f71;
   transition: 0.2s;
   border-radius: 3px;
+  font-size: 1.5rem;
   margin-top: 1rem;
+  font-family: "Bebas Neue", sans-serif;
 }
 .botonReservarIndex:hover {
   background-color: #7037cd;
@@ -57,4 +58,26 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.664) !important;
+}
+.contenedorMenu {
+  height: 30rem;
+  /* border: 1px solid slateblue; */
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.5rem;
+}
+.tituloMenu {
+  /* border: 1px solid black; */
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tituloMenu h3 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3.5rem;
+  color: #181818;
+}
+.cartasdeMenu {
+  height: 80%;
 }
