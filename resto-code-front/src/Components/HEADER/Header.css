@@ -1,0 +1,14 @@
+.headerPrincipal {
+  background-color: #1d0c20e8;
+}
+
+.NavLink {
+  /* border: 1px solid rgb(64, 89, 201); */
+  color: white;
+}
+.contenedor-iniciarSesion-registrarse {
+  /* border: 1px solid saddlebrown; */
+  display: flex;
+  justify-content: space-between;
+  width: 12rem;
+}
