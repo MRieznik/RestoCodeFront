@@ -69,8 +69,4 @@ const UsersContext = ({children}) => {
   )
 }
 
-<<<<<<< HEAD
 export default UsersContext;
-=======
-export default UsersContext;
->>>>>>> d40bb00c9946f8dbb0c80a799c359294b0af7a1c
