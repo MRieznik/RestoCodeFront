@@ -4,8 +4,9 @@
 }
 .contenedorLogo {
   /* border: 1px solid red; */
-  width: 5.5rem;
-  height: 6rem;
+  width: 5rem;
+  height: 5.5rem;
+  border-radius: 90%;
 }
 .contenedorLogo img {
   height: 100%;
@@ -22,7 +23,7 @@
   font-family: "Bebas Neue", sans-serif;
 }
 .NavLink:hover {
-  color: #506ee5;
+  color: #68b2f8;
 }
 .contenedor-iniciarSesion-registrarse {
   /* border: 1px solid saddlebrown; */

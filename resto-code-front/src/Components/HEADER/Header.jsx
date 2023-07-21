@@ -1,5 +1,5 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
-import logo from "../../Image/HEADER-IMAGE/RestoCodeLogosinfondo.png";
+import logo from "../../Image/HEADER-IMAGE/restoCodeLogo.png";
 import "./Header.css";
 
 const Header = () => {
