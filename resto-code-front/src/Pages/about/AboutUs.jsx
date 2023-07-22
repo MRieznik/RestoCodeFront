@@ -1,5 +1,6 @@
 import React from 'react'
 import "./AboutUs.css";
+import { Container, Row, Col } from 'react-bootstrap';
 
 
 
@@ -10,32 +11,57 @@ const AboutUs = () => {
 
     return (
         <>
-            <main>
-                <div className="contendor-botonReserva-imagenes">
-                    <div className="contenedorBotonReservar">
-                        <div className="tituloRestoCode">
-                            <h1>Resto Code</h1>
-                            <div className="restoBar">
-                                <h2>Restobar</h2>
+
+            <Container>
+                <div className="contendor-imagenes">
+                    <div className="contenedorSeccion">
+                        <div className="Nombre">
+                            <h3>Marcos Rieznik</h3>
+                            <div className="descripcion">
+                                <h5>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni, sunt.</h5>
                             </div>
                         </div>
-                        <button className="botonReservarIndex">¡Reserva aqui!</button>
-                    </div>
-                    <div className="imagenDeFondoIndex">
-                        <div className="sombraImagenDeFondoIndex"></div>
-                    </div>
-                </div>
-                <div className="contenedorMenu">
-                    <div className="tituloMenu">
-                        <h3>Tragos y Comidas</h3>
-                    </div>
-                    <div className="cartasdeMenu">
 
                     </div>
+                    <div className="aboutImagen">
+                        <div className="sombra"></div>
+                    </div>
                 </div>
-            </main>
 
-            <h1>about us</h1>
+
+
+                <div className="contendor-imagenes">
+                    <div className="aboutImagen">
+                        <div className="sombra"></div>
+                    </div>
+                    <div className="contenedorSeccion">
+                        <div className="Nombre">
+                            <h3>Marcos Rieznik</h3>
+                            <div className="descripcion">
+                                <h5>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni, sunt.</h5>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div className="contendor-imagenes">
+                    <div className="contenedorSeccion">
+                        <div className="Nombre">
+                            <h3>Marcos Rieznik</h3>
+                            <div className="descripcion">
+                                <h5>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni, sunt.</h5>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div className="aboutImagen">
+                        <div className="sombra"></div>
+                    </div>
+                </div>
+            </Container>
 
         </>
     )

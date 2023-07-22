@@ -1,6 +1,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-*{
+
+* {
     margin: 0%;
     padding: 0%;
-       
+
+    .contendor-imagenes {
+        
+        height: 25rem;
+        display: flex;
+    }
+
+    .contenedorSeccion {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #506ee5;
+    }
+
+    .aboutImagen {
+        width: 50%;
+        background-image: url(https://trello.com/1/cards/64bab8c576ce6dd57e79c1bd/attachments/64bab920a15cd3d73ebfb130/previews/64bab922a15cd3d73ebfbf2e/download/mark.png);
+        
+    }
+
+    /*.sombra {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.664) !important;
+    }*/
+
+
+
 }
