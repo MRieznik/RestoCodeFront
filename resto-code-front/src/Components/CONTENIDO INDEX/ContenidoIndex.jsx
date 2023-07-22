@@ -1,9 +1,28 @@
 import "./ContenidoIndex.css";
-// import Header from '../HEADER/Header'
+import logotransparente from "C:/Users/Usuario/Desktop/RestoCodeFront/resto-code-front/src/Image/INDEX-IMAGE/logoTransparante.png"
+
 const ContenidoIndex = () => {
   return (
     <main>
-      {/* <Header /> */}
+        <div className="contenedorPresentacion">
+          <div className="contenedorConSombra">
+                <header className="headerEnIndex">
+                  <div className="nombreDeCerveceria">
+                      <h1 className="tituloRestoCodeIndex">Resto code</h1>
+                      <img src={logotransparente} alt="" className="logoTransparente" />
+                  </div>
+                  <div className="fraseYnav">
+                  </div>
+                </header>
+          </div>
+        </div>
+    </main>
+  );
+};
+
+export default ContenidoIndex;
+
+  {/* <Header /> */}
       {/* <div className="contendor-botonReserva-imagenes">
         <div className="contenedorBotonReservar">
           <div className="tituloRestoCode">
@@ -17,9 +36,3 @@ const ContenidoIndex = () => {
         <div className="imagenDeFondoIndex">
         </div>
       </div> */}
-    </main>
-  );
-};
-
-export default ContenidoIndex;
-

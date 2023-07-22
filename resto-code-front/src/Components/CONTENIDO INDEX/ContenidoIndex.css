@@ -55,4 +55,44 @@
 .imagenDeFondoIndex video {
   height: 100%;
 } */
-
+.contenedorPresentacion {
+  background-image: url(../../Image/INDEX-IMAGE/fondoIndex7.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+.contenedorConSombra {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.671);
+}
+.headerEnIndex {
+  border: 1px solid blue;
+  height: 13rem;
+  display: flex;
+  flex-direction: column;
+}
+.nombreDeCerveceria {
+  border: 1px solid red;
+  height: 50%;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tituloRestoCodeIndex {
+  color: white;
+  font-size: 5rem;
+  margin-left: 3rem;
+  font-family: "Bebas Neue", sans-serif;
+}
+.logoTransparente {
+  height: 5.5rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+.fraseYnav {
+  /* border: 1px solid red; */
+  height: 50%;
+}
