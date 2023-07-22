@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  
+  .pageReserva{
+    background-color: #1D0C20;
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cardReserva{
+    background-color:#651F71;
+    justify-content: center;
+  }
+  
+  .botonReserva{
+    background-color:#506EE5 ;
+  }
