@@ -1,6 +1,6 @@
 import React from 'react'
 import "./AboutUs.css";
-import { Container, Row, Col } from 'react-bootstrap';
+//import { Container, Row, Col } from 'react-bootstrap';
 
 
 
@@ -12,56 +12,17 @@ const AboutUs = () => {
     return (
         <>
 
-            <Container>
-                <div className="contendor-imagenes">
-                    <div className="contenedorSeccion">
-                        <div className="Nombre">
-                            <h3>Marcos Rieznik</h3>
-                            <div className="descripcion">
-                                <h5>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni, sunt.</h5>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div className="aboutImagen">
-                        <div className="sombra"></div>
-                    </div>
+            <div className="row">
+                <div className="col-12 col-lg-6 pe-0 contendor-imagenes">
+                    <img src="https://trello.com/1/cards/64bab8c576ce6dd57e79c1bd/attachments/64bb45bc1866f1f47486f249/previews/64bb45bd1866f1f47486f4e9/download/sergioD.png" class="w-50"></img>
                 </div>
-
-
-
-                <div className="contendor-imagenes">
-                    <div className="aboutImagen">
-                        <div className="sombra"></div>
-                    </div>
-                    <div className="contenedorSeccion">
-                        <div className="Nombre">
-                            <h3>Marcos Rieznik</h3>
-                            <div className="descripcion">
-                                <h5>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni, sunt.</h5>
-                            </div>
-                        </div>
-
-                    </div>
-
+                <div className="col-12 col-lg-6 contenedorSeccion">
+                    <h3>sergio dominguez</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, consectetur.</p>
                 </div>
+            </div>
 
 
-                <div className="contendor-imagenes">
-                    <div className="contenedorSeccion">
-                        <div className="Nombre">
-                            <h3>Marcos Rieznik</h3>
-                            <div className="descripcion">
-                                <h5>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni, sunt.</h5>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div className="aboutImagen">
-                        <div className="sombra"></div>
-                    </div>
-                </div>
-            </Container>
 
         </>
     )
