@@ -15,6 +15,8 @@ const Galeria = () => {
                 <img className='foto7' src="" alt="" />
                 <img className='foto8' src="" alt="" />
                 <img className='foto9' src="" alt="" />
+                <img className='foto10' src="" alt="" />
+                <img className='foto11' src="" alt="" />
                 
 
 
