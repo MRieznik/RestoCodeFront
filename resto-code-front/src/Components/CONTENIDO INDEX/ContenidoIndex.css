@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-.contendor-botonReserva-imagenes {
-  /* border: 1px solid red; */
+/* .contendor-botonReserva-imagenes {
+  border: 1px solid red;
   height: 25rem;
   display: flex;
 }
@@ -25,8 +25,8 @@
   margin: 0;
 }
 .restoBar h2 {
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
+  border-top: 2px solid #68b2f8;
+  border-bottom: 2px solid #68b2f8;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,33 +51,8 @@
 }
 .imagenDeFondoIndex {
   width: 50%;
-  background-image: url(../../Image/INDEX-IMAGE/Pizza-y-cerveza.png);
-  background-repeat: no-repeat;
 }
-.sombraImagenDeFondoIndex {
-  width: 100%;
+.imagenDeFondoIndex video {
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.664) !important;
-}
-.contenedorMenu {
-  height: 30rem;
-  /* border: 1px solid slateblue; */
-  display: flex;
-  flex-direction: column;
-  padding-top: 0.5rem;
-}
-.tituloMenu {
-  /* border: 1px solid black; */
-  height: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.tituloMenu h3 {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 3.5rem;
-  color: #181818;
-}
-.cartasdeMenu {
-  height: 80%;
-}
+} */
+

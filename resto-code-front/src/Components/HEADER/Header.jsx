@@ -14,7 +14,7 @@ const Header = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto nav">
               <Nav.Link href="#link" className="NavLink">
-                Reservas
+                Reservar
               </Nav.Link>
               <Nav.Link href="#link" className="NavLink">
                 Galeria
