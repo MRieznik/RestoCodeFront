@@ -1,8 +1,8 @@
 import "./ContenidoIndex.css";
 import cervezayhamburguesa from "C:/Users/Usuario/Desktop/RestoCodeFront/resto-code-front/src/Image/INDEX-IMAGE/video4.mp4";
-import cartacerveza from "C:/Users/Usuario/Desktop/RestoCodeFront/resto-code-front/src/Image/INDEX-IMAGE/cartaDeCervezas.png";
-import qrwp from "C:/Users/Usuario/Desktop/RestoCodeFront/resto-code-front/src/Image/INDEX-IMAGE/whatsappQR.png"
-// import qrig from "C:/Users/Usuario/Desktop/RestoCodeFront/resto-code-front/src/Image/INDEX-IMAGE/restocodeok_qr.png"
+import cartabebidas from "C:/Users/Usuario/Desktop/RestoCodeFront/resto-code-front/src/Image/INDEX-IMAGE/cartaDeBebidas.png";
+import cartacomida from "C:/Users/Usuario/Desktop/RestoCodeFront/resto-code-front/src/Image/INDEX-IMAGE/cartasDeComidas.png";
+import qrwp from "C:/Users/Usuario/Desktop/RestoCodeFront/resto-code-front/src/Image/INDEX-IMAGE/whatsappQR.png";
 
 const ContenidoIndex = () => {
   return (
@@ -28,6 +28,20 @@ const ContenidoIndex = () => {
           </h2>
           <h4 className="mensajeConciencia">Beber con moderacion</h4>
         </div>
+        <div className="imagenDeAmbosMenus">
+          <div className="menuUno">
+            <img src={cartabebidas} alt="" />
+          </div>
+          <div className="menuDos">
+            <img src={cartacomida} alt="" />
+          </div>
+        </div>
+        <div className="contendorFrases">
+          <h2 className="tituloDePresentacionMenu">
+            No te comas el verso
+          </h2>
+          <h4 className="mensajeConciencia">Beber con moderacion</h4>
+        </div>
         <div className="contendorCerveza">
           <video
             src={cervezayhamburguesa}
@@ -38,15 +52,7 @@ const ContenidoIndex = () => {
           ></video>
           <div className="cajaConFrase">
             <h2>¿Te tentaste, verdad?</h2>
-            <h3>¡Mira nuestras cartas aqui abajo!</h3>
-          </div>
-        </div>
-        <div className="imagenDeAmbosMenus">
-          <div className="menuUno">
-            <img src={cartacerveza} alt="" />
-          </div>
-          <div className="menuDos">
-            <img src={cartacerveza} alt="" />
+            <h3>¡Veni a conocernos!</h3>
           </div>
         </div>
         <div className="contendorContacto">
@@ -61,12 +67,12 @@ const ContenidoIndex = () => {
                 className="mapaContacto"
               ></iframe>
               <div className="contenedorRedesContacto">
-                  <div className="cajaQrWp">
+                <div className="cajaQrWp">
                   <img src={qrwp} alt="" />
-                  </div>
-                  <div className="cajaQrIg">
+                </div>
+                <div className="cajaQrIg">
                   {/* <img src={qrig} alt="" /> */}
-                  </div>
+                </div>
               </div>
             </div>
           </div>
