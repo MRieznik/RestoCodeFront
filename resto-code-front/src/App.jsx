@@ -1,15 +1,16 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import Rutas from "../src/Components/RUTAS/Rutas"
 import Header from "./Components/HEADER/Header";
+import Rutas from "../src/Components/RUTAS/Rutas";
+import Footer from "./Components/FOOTER/Footer";
 
 function App() {
-
   return (
     <>
-    <Header />
-     <Rutas />
+      <Header />
+      <Rutas />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

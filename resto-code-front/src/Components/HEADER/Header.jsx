@@ -22,6 +22,9 @@ const Header = () => {
               <Nav.Link href="#link" className="NavLink">
                 Nosotros
               </Nav.Link>
+              <Nav.Link href="#link" className="NavLink">
+                Contacto
+              </Nav.Link>
             </Nav>
             <div className="contenedor-iniciarSesion-registrarse">
               <Nav.Link href="#link" className="NavLink">

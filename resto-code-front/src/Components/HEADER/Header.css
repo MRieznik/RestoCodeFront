@@ -2,6 +2,8 @@
 .headerPrincipal {
   background-color: #1d0c20;
   border-bottom: 2px solid #651f71;
+  position: sticky;
+  top: 0;
 }
 .contenedorLogo {
   /* border: 1px solid red; */

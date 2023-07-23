@@ -1,0 +1,27 @@
+.contenedorFooterPrincipal {
+  height: 6rem;
+  background-color: #1d0c20;
+  border-top: 3px solid #651f71;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.contenedorLogoFooter {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 90%;
+}
+.contenedorLogoFooter img {
+    width: 100%;
+    height: 100%;
+}
+.contenedorRedes {
+  border: 1px solid white;
+  width: 25rem;
+  height: 100%;
+}
+.contenedorDerechos {
+  border: 1px solid white;
+  width: 20rem;
+  height: 100%;
+}
