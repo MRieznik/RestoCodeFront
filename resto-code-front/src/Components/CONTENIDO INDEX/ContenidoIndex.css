@@ -105,7 +105,7 @@
   color: #7037cd;
 }
 .imagenDeAmbosMenus {
-  height:40rem;
+  height: 40rem;
   display: flex;
   background-color: whitesmoke;
   /* border: 1px solid seagreen; */
@@ -130,7 +130,6 @@
   display: flex;
   justify-content: center;
   padding: 0.5rem;
-
   /* border: 1px solid rgb(105, 46, 139); */
 }
 .menuDos img {
@@ -140,16 +139,59 @@
   padding: 1.5rem;
 }
 .contendorContacto {
-  height: 20rem;
   background-color: #181818;
   display: flex;
   flex-direction: column;
   text-align: center;
   font-family: "Bebas Neue", sans-serif;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
 }
 .contendorContacto h2 {
   color: white;
 }
 .contendorContacto h3 {
   color: #7037cd;
+}
+.contendorDeMapaRedesSociales {
+  height: 25rem;
+}
+.cajaMapa {
+  height: 100%;
+  display: flex;
+  /* border: 1px solid saddlebrown; */
+  border-radius: 6px !important;
+}
+.mapaContacto {
+  width: 50%;
+  padding: 1rem;
+  border: 1px solid saddlebrown;
+}
+.contenedorRedesContacto {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid seagreen;
+}
+.cajaQrWp {
+  width: 10rem;
+  height: 10rem;
+  margin-bottom: 10px;
+  /* border: #68b2f8 1px solid; */
+}
+.cajaQrWp img {
+  width: 100%;
+  height: 100%;
+}
+.cajaQrIg {
+  width: 12.5rem;
+  height: 12.5rem;
+  margin-bottom: 10px;
+  /* border: #68b2f8 1px solid; */
+  background-image: url(../../Image/INDEX-IMAGE/restocodeokqr.png);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
