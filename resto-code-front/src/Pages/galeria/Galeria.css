@@ -1,4 +1,47 @@
-.grid-galeria {
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+* {
+    margin: 0;
+    padding: 0;
     background-color: #1d0620;
-    margin: 1rem;
+    align-items: center;
+    text-decoration-color: white;
+    
+}
+
+img {
+    max-width: 100%;
+    object-fit: cover;
+    margin-bottom: 0.8em;
+    display: block;
+    outline: 1px solid #68b2f8;
+    border-radius: 6px;
+
+
+}
+
+.img1 :hover {
+   transition:all 500ms ease-in-out;
+}
+
+.grid-galeria {
+    align-items: center;
+    columns: 5 320px;
+    column-gap: 0.8em;
+}
+
+.tituloGaleria{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.logoA{
+width: 220px ;
+height:220px ;
+}
+
+.logoB{
+    width: 220px ;
+    height:220px ;
 }
