@@ -14,8 +14,17 @@
   .cardReserva{
     background-color:#651F71;
     justify-content: center;
+    text-align: center;
   }
   
   .botonReserva{
     background-color:#506EE5 ;
+    border-color: #506EE5;
+    width: 100%;
+  }
+
+  .botonReserva:hover{
+    background-color: #1D0C20;
+    border-color: #1D0C20;
+    transition: 1s;
   }
