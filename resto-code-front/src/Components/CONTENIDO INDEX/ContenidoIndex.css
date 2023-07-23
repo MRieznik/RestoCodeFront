@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-/* .contendor-botonReserva-imagenes {
-  border: 1px solid red;
+.contendor-botonReserva-imagenes {
   height: 25rem;
   display: flex;
 }
@@ -51,48 +50,106 @@
 }
 .imagenDeFondoIndex {
   width: 50%;
-}
-.imagenDeFondoIndex video {
-  height: 100%;
-} */
-.contenedorPresentacion {
   background-image: url(../../Image/INDEX-IMAGE/fondoIndex7.jpg);
-  background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
-  width: 100%;
+  background-repeat: no-repeat;
 }
-.contenedorConSombra {
+.sombraImagenInicioIndex {
+  background-color: rgba(0, 0, 0, 0.411);
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.671);
 }
-.headerEnIndex {
-  border: 1px solid blue;
-  height: 13rem;
+.contenedorDeMenu {
+  /* border: 1px solid forestgreen; */
+}
+.contendorFrases {
+  /* border: 1px solid rgb(211, 214, 16); */
   display: flex;
   flex-direction: column;
-}
-.nombreDeCerveceria {
-  border: 1px solid red;
-  height: 50%;
-  padding-top: 1rem;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
+  height: 9.5rem;
+  background-color: whitesmoke;
 }
-.tituloRestoCodeIndex {
-  color: white;
-  font-size: 5rem;
-  margin-left: 3rem;
+.tituloDePresentacionMenu {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 3rem;
+  color: #181818;
+}
+.mensajeConciencia {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.8rem;
+  color: #651f71;
+}
+.contendorCerveza {
+  background-color: #181818;
+  display: flex;
+}
+.cartaMenuDeCervezas {
+  width: 50%;
+}
+.cajaConFrase {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center !important;
+  justify-content: center;
   font-family: "Bebas Neue", sans-serif;
 }
-.logoTransparente {
-  height: 5.5rem;
-  margin-bottom: 1rem;
-  margin-right: 1rem;
+.cajaConFrase h2 {
+  font-size: 3.5rem;
+  color: white;
 }
-.fraseYnav {
-  /* border: 1px solid red; */
-  height: 50%;
+.cajaConFrase h3 {
+  font-size: 2.5rem;
+  color: #7037cd;
+}
+.imagenDeAmbosMenus {
+  height:40rem;
+  display: flex;
+  background-color: whitesmoke;
+  /* border: 1px solid seagreen; */
+}
+.menuUno {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+  /* border: 1px solid rgb(105, 46, 139); */
+}
+.menuUno img {
+  height: 100%;
+}
+.menuUno img:hover {
+  padding: 1.5rem;
+}
+.menuDos {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+
+  /* border: 1px solid rgb(105, 46, 139); */
+}
+.menuDos img {
+  height: 100%;
+}
+.menuDos img:hover {
+  padding: 1.5rem;
+}
+.contendorContacto {
+  height: 20rem;
+  background-color: #181818;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: "Bebas Neue", sans-serif;
+}
+.contendorContacto h2 {
+  color: white;
+}
+.contendorContacto h3 {
+  color: #7037cd;
 }
