@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
 * {
     margin: 0;
     padding: 0;
     background-color: #1d0620;
     align-items: center;
     text-decoration-color: white;
-    
+
 }
 
 img {
@@ -20,7 +21,7 @@ img {
 }
 
 .img1 :hover {
-   transition:all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
 }
 
 .grid-galeria {
@@ -29,19 +30,23 @@ img {
     column-gap: 0.8em;
 }
 
-.tituloGaleria{
+.tituloGaleria {
     display: flex;
     align-items: center;
     justify-content: center;
 
 }
 
-.logoA{
-width: 220px ;
-height:220px ;
+.logoA {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 2%;
+    margin-top: 2%;
 }
 
-.logoB{
-    width: 220px ;
-    height:220px ;
+.logoB {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 2%;
+    margin-top: 2%;
 }
