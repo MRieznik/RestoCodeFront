@@ -1,18 +1,34 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
+import axios from 'axios';
 import "./styleRegistro.css";
 
 const Registro = () => {
-  const [nombreUsuario, setNombreUsuario] = useState("");
+  /* const [nombreUsuario, setNombreUsuario] = useState("");
   const [contraseniaUsuario, setContraseniaUsuario] = useState("");
   const [correoUsuario, setCorreoUsuario] = useState("");
   const [provinciaUsuario, setProvinciaUsuario] = useState("");
   const [ciudadLocalidadUsuario, setCiudadLocalidadUsuario] = useState("");
   const [Direccion, setDireccion] = useState("");
-  const [Telefono, setTelefono] = useState("");
+  const [Telefono, setTelefono] = useState(""); */
+
+ /*  const handleChange = (e) => {
+    setDataUser({ ...DataUser, [e.target.nombreUsuario]: e.target.value})
+  }
+
+  const [DataUser, setDataUser] = useState({
+    nombreUsuario:"",
+    contraseniaUsuario:"",
+    correoUsuario:"",
+    provinciaUsuario:"",
+    ciudadLocalidadUsuario:"",
+    direccionUsuario:"",
+    telefonoUsuario:""
+  }) */
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(DataUser)
   };
 
   return (
@@ -67,10 +83,12 @@ const Registro = () => {
                                   title="Este campo solo permite letras y espacios en blanco"
                                   required
                                   maxLength="50"
-                                  value={nombreUsuario}
-                                  onChange={(e) =>
+                                  name="nombreUsuario"
+                                  /* value={DataUser.nombreUsuario}
+                                  onChange={handleChange} */
+                                  /* onChange={(e) =>
                                     setNombreUsuario(e.target.value)
-                                  }
+                                  } */
                                 />
                               </div>
                             </div>
@@ -95,10 +113,12 @@ const Registro = () => {
                                 required
                                 minLength="8"
                                 maxLength="12"
-                                value={contraseniaUsuario}
-                                onChange={(e) =>
+                                name="contraseniaUsuario"
+                                /* value={DataUser.contraseniaUsuario}
+                                onChange={handleChange} */
+                                /* onChange={(e) =>
                                   setContraseniaUsuario(e.target.value)
-                                }
+                                } */
                               />
                             </div>
                           </div>
@@ -120,8 +140,10 @@ const Registro = () => {
                               placeholder="Ej: RestoCode@gmail.com"
                               title="Ingrese un correo para poder crear la cuenta"
                               autoComplete="on"
-                              value={correoUsuario}
-                              onChange={(e) => setCorreoUsuario(e.target.value)}
+                              name="correoUsuario"
+                              /* value={DataUser.correoUsuario}
+                              onChange={handleChange} */
+                              /* onChange={(e) => setCorreoUsuario(e.target.value)} */
                               required
                               maxLength="76"
                             />
@@ -145,10 +167,12 @@ const Registro = () => {
                                   pattern="^[A-Za-z0-9]{1,50}$"
                                   title="Ingrese la provincia donde reside"
                                   maxLength="50"
-                                  value={provinciaUsuario}
-                                  onChange={(e) =>
+                                  name="provinciaUsuario"
+                                  /* value={DataUser.provinciaUsuario}
+                                  onChange={handleChange} */
+                                  /* onChange={(e) =>
                                     setProvinciaUsuario(e.target.value)
-                                  }
+                                  } */
                                 />
                               </div>
                             </div>
@@ -169,10 +193,12 @@ const Registro = () => {
                                   pattern="^[A-Za-z0-9]{1,50}$"
                                   title="Ingrese la Ciudad/Localidad donde reside"
                                   maxLength="50"
-                                  value={ciudadLocalidadUsuario}
-                                  onChange={(e) =>
+                                  name="ciudadLocalidadUsuario"
+                                  /* value={DataUser.ciudadLocalidadUsuario}
+                                  onChange={handleChange} */
+                                  /* onChange={(e) =>
                                     setCiudadLocalidadUsuario(e.target.value)
-                                  }
+                                  } */
                                 />
                               </div>
                             </div>
@@ -193,8 +219,10 @@ const Registro = () => {
                                   pattern="^[A-Za-z0-9]{1,150}$"
                                   title="Dirección de donde reside"
                                   maxLength="150"
-                                  value={Direccion}
-                                  onChange={(e) => setDireccion(e.target.value)}
+                                  name="direccionUsuario"
+                                  /* value={DataUser.direccionUsuario}
+                                  onChange={handleChange} */
+                                 /*  onChange={(e) => setDireccion(e.target.value)} */
                                 />
                               </div>
                             </div>
@@ -215,8 +243,10 @@ const Registro = () => {
                                   pattern="[0-9]{7,15}"
                                   title="Ingrese un número de teléfono válido (entre 7 y 15 dígitos)"
                                   maxLength="15"
-                                  value={Telefono}
-                                  onChange={(e) => setTelefono(e.target.value)}
+                                  name="telefonoUsuario"
+                                  /* value={DataUser.telefonoUsuario}
+                                  onChange={handleChange} */
+                                  /* onChange={(e) => setTelefono(e.target.value)} */
                                 />
                               </div>
                             </div>
