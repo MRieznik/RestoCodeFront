@@ -1,8 +1,7 @@
 import { Col, Container, Row, Button } from "react-bootstrap";
-import "./ModalInicarSesion.css"
+import "./ModalInicarSesion.css";
 
 const ModalInicarSesion = () => {
-
   return (
     <>
       <Container>
@@ -18,6 +17,11 @@ const ModalInicarSesion = () => {
                   className="form-control inputIniciarSesion"
                   //   value={email}
                   //   onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Ingresa tu correo"
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$"
+                  title="Use el formato ejemplo@ejemplo.com"
+                  required
+                  id="email"
                   name="email"
                   aria-describedby="producto"
                 />
@@ -34,6 +38,8 @@ const ModalInicarSesion = () => {
                   className="form-control inputIniciarSesion"
                   //   value={contraseña}
                   //   onChange={(e) => setContraseña(e.target.value)}
+                  pattern="[A-Za-z0-9]+"
+                  placeholder="Ingresa tu contraseña"
                   name="contraseña"
                 />
               </div>
