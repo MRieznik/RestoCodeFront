@@ -1,7 +1,9 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import {Button} from "react-bootstrap";
 import "./styleRegistro.css"
 
 const Registro = () => {
+
   const [nombreUsuario, setNombreUsuario] = useState("");
   const [contraseniaUsuario, setContraseniaUsuario] = useState("");
   const [correoUsuario, setCorreoUsuario] = useState("");
@@ -22,6 +24,9 @@ const Registro = () => {
             <div className="card card-registration my-0 border-0">
               <div className="row g-0">
                 <div className="col">
+                  <div>
+                    <p className="mt-3 mx-3"> Volver </p>
+                  </div>
                   {/* <a href="../index.html" title="Ir al incio">
                     <img
                       src="../img/LogoRestoCode.png"
@@ -31,7 +36,7 @@ const Registro = () => {
                   </a> */}
                   <div className="card-body pt-0 px-md-5 mx-md-5 m-md-3 text-black">
                     <form onSubmit={handleSubmit} id="formRegistroUsuarios">
-                      <div className="mb-4 pt-1 text-center">
+                      <div className="mb-4 pb-2 text-center">
                         <h1 className="fw-bold m-0 controladorTmanioTextoReg">
                           Únete a RestoCode
                         </h1>
@@ -223,20 +228,21 @@ const Registro = () => {
                         </div>
                       </div>
 
-                      <div className="d-flex justify-content-end pt-3">
+                      <div className="d-flex mt-5 justify-content-end pt-3">
                         <input
                           type="submit"
                           id="submitRegistrar"
-                          className="tamanioImpustRegistro form-control form-control-lg fw-bold btn btn-dark btn-lg"
+                          className="tamanioImpustRegistro form-control form-control-lg fw-bold btn btn-dark btn-lg botonSubmitRegistro"
                           value="Registrarse"
                         />
                       </div>
                     </form>
                     <div id="contenMensajeError" className="d-none"></div>
                   </div>
-                  <div className="pt-0">
+                  <div className="pt-1">
                     <p className="text-center fs-6 text-secondary">
-                      Al unirte, aceptas los Términos y Política de privacidad
+                      Al unirte, aceptas los <u>Términos</u> y <u>Política de privacidad</u>
+                     
                     </p>
                   </div>
                 </div>
