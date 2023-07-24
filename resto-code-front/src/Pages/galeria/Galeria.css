@@ -9,7 +9,8 @@
 
 }
 
-img {
+
+.foto1, .foto2, .foto3, .foto4, .foto5, .foto6, .foto7, .foto8, .foto9, .foto10{
     max-width: 100%;
     object-fit: cover;
     margin-bottom: 0.8em;
@@ -20,13 +21,14 @@ img {
 
 }
 
-.img1 :hover {
+.foto:hover {
     transition: all 500ms ease-in-out;
+    cursor: pointer;
 }
 
 .grid-galeria {
     align-items: center;
-    columns: 5 320px;
+    columns: 3;
     column-gap: 0.8em;
 }
 
