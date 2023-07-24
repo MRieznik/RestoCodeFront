@@ -29,8 +29,10 @@ const TablaReservas = () => {
     });
   };
 
+
   return (
     <>
+<<<<<<< HEAD
       {reservas.length > 0 ? (
         <Table responsive className="tablaReservas">
           <thead>
@@ -40,6 +42,40 @@ const TablaReservas = () => {
               <th>Hora</th>
               <th>Comensales</th>
               <th>Acciones</th>
+=======
+    {reservas.length > 0 ? (
+      <Table responsive className="table-dark table-hover text-center">
+        <thead>
+          <tr>
+            <th>Nombre Completo</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Comensales</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {reservas.map((reserva) => (
+            <tr key={reserva.id}>
+              <td>{reserva.nombre} {reserva.apellido}</td>
+              <td>{reserva.fecha}</td>
+              <td>{reserva.hora}</td>
+              <td>{reserva.comensales}</td>
+              <td>
+                <button
+                  className="btn btn-success m-1"
+                  onClick={() => handleEdit(reserva)}
+                >
+                  Editar
+                </button>
+                <button
+                  className="btn btn-danger m-1"
+                  onClick={() => handleDelete(reserva.id)}
+                >
+                  Cancelar
+                </button>
+              </td>
+>>>>>>> 7ff7a30d85ac643b0f9d72f4bc6090bdfbc731ed
             </tr>
           </thead>
           <tbody>

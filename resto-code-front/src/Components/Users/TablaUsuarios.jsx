@@ -35,7 +35,7 @@ const TablaUsuarios = () => {
         <h1>No hay usuarios registrados</h1>
       ) : (
         <>
-          <Table responsive>
+          <Table responsive className="table-dark table-hover text-center">
             <thead>
               <tr>
                 <th>Nombre</th>
