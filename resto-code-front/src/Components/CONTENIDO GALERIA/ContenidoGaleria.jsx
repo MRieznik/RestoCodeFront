@@ -1,5 +1,5 @@
 import React from 'react'
-import './Galeria.css'
+import './ContedidoGaleria.css'
 import { Container } from 'react-bootstrap'
 
 const Galeria = () => {
