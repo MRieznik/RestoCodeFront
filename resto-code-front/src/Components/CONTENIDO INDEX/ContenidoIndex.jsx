@@ -68,7 +68,7 @@ const ContenidoIndex = () => {
         </div>
         <div className="contendorContacto">
           <h2>¿Necesitas comunicarte con nosotros?</h2>
-          <h3>¡No dudas en ponerte en contacto!</h3>
+          <h3>¡No dudes en ponerte en contacto!</h3>
           <div className="contendorDeMapaRedesSociales">
             <div className="cajaMapa">
               <iframe

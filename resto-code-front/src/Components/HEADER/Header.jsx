@@ -1,9 +1,17 @@
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar, Modal } from "react-bootstrap";
+import { useState } from "react";
 import logo from "../../Image/HEADER-IMAGE/restoCodeLogo.png";
+import ModalInicarSesion from "../MODAL INICAR-SESION/ModalInicarSesion";
 import "./Header.css";
 
 const Header = () => {
-  
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const iniciarSesion = () => {
+    handleShow();
+  };
   return (
     <>
       <Navbar expand="lg" className="headerPrincipal">
@@ -28,7 +36,11 @@ const Header = () => {
               </Nav.Link>
             </Nav>
             <div className="contenedor-iniciarSesion-registrarse">
-              <Nav.Link href="#link" className="NavLink">
+              <Nav.Link
+                href="#link"
+                className="NavLink"
+                onClick={iniciarSesion}
+              >
                 Iniciar sesion
               </Nav.Link>
               <Nav.Link href="#link" className="NavLink">
@@ -38,6 +50,18 @@ const Header = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      <Modal
+        show={show}
+        onHide={handleClose}
+        className="ventanaModalInicarSesion"
+      >
+        <Modal.Header closeButton className="headerModal">
+          <Modal.Title>Ingresa tu usuario</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="headerModal bodyModal">
+          <ModalInicarSesion handleClose={handleClose} />
+        </Modal.Body>
+      </Modal>
     </>
   );
 };
