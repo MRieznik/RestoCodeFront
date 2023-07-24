@@ -31,10 +31,11 @@ const TablaReservas = () => {
     });
   };
 
+
   return (
     <>
     {reservas.length > 0 ? (
-      <Table responsive className="tablaDeReserva">
+      <Table responsive className="table-dark table-hover text-center">
         <thead>
           <tr>
             <th>Nombre Completo</th>
