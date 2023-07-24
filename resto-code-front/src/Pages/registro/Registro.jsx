@@ -27,13 +27,7 @@ const Registro = () => {
                   <div>
                     <p className="mt-3 mx-3"> Volver </p>
                   </div>
-                  {/* <a href="../index.html" title="Ir al incio">
-                    <img
-                      src="../img/LogoRestoCode.png"
-                      className="LogoRegistroLuxor nazaret mt-3 mx-4 mb-0 pt-0"
-                      alt=""
-                    />
-                  </a> */}
+                  
                   <div className="card-body pt-0 px-md-5 mx-md-5 m-md-3 text-black">
                     <form onSubmit={handleSubmit} id="formRegistroUsuarios">
                       <div className="mb-4 pb-2 text-center">
@@ -94,7 +88,7 @@ const Registro = () => {
                             className="form-control form-control-lg validadoss NoValidados"
                             placeholder="Contraseña"
                             pattern="[A-Za-z0-9!?-]{8,12}"
-                            title="Debe estar conformada como mínimo por 8 caracteres y como máximo por 12 caracteres"
+                            title="Ingrese una contraseña válida (entre 8 y 12 caracteres)"
                             required
                             minLength="8"
                             maxLength="12"
@@ -121,6 +115,7 @@ const Registro = () => {
                           id="correoUsuario"
                           className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados"
                           placeholder="Ej: RestoCode@gmail.com"
+                          title="Ingrese un correo para poder crear la cuenta"
                           autoComplete="on"
                           value={correoUsuario}
                           onChange={(e) => setCorreoUsuario(e.target.value)}
@@ -191,9 +186,9 @@ const Registro = () => {
                               type="text"
                               id="direccion"
                               className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados"
-                              placeholder="Ej: Famaillá"
-                              pattern="^[A-Za-z0-9]{1,50}$"
-                              title="Ingrese la Ciudad/Localidad donde reside"
+                              placeholder="Ej: San Martín 630"
+                              pattern="^[A-Za-z0-9]{1,150}$"
+                              title="Dirección de donde reside"
                               maxLength="150"
                               value={Direccion}
                               onChange={(e) => 
@@ -209,16 +204,16 @@ const Registro = () => {
                               className="form-label fw-bold"
                               htmlFor="telefono"
                             >
-                              Telefono
+                              Teléfono  
                             </label>
                             <input
                               type="text"
                               id="telefono"
                               className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados"
-                              placeholder="Ej: Famaillá"
-                              pattern="^[A-Za-z0-9]{1,50}$"
-                              title="Ingrese la Ciudad/Localidad donde reside"
-                              maxLength="50"
+                              placeholder="Ej: 3816610091"
+                              pattern="[0-9]{7,15}"
+                              title="Ingrese un número de teléfono válido (entre 7 y 15 dígitos)"
+                              maxLength="15"
                               value={Telefono}
                               onChange={(e) => 
                                 setTelefono(e.target.value)

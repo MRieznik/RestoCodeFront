@@ -16,19 +16,17 @@
     background-color: #651F71;
 }
 
-.LogoRegistroLuxor{
-    width: 9em;
-    height: 2.6em;
-}
+
 
 *{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .imgFondo-1{
-    background-image: url(https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80);
+    /* background-image: url(https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80); */
+    background-image: url(../../Image/Registro/photo-1533777857889-4be7c70b33f7s.jpg);
     background-size: cover;
     justify-content: space-between;
-    
+    background-position: top right;
 }
 
 .validadoss:valid{
@@ -36,6 +34,8 @@
     border: 0.05em  solid #1D0C20;
     outline: #1D0C20;
 }
+
+
 
 .NoValidados{
     border: 0.05em solid #651F71;
