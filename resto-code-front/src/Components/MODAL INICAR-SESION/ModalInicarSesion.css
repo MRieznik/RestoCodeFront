@@ -1,0 +1,10 @@
+.botonIniciarSesion {
+  background-color: #1d0c20;
+  border: 1px solid #651f71;
+  font-size: 18px;
+  color: white;
+}
+.botonIniciarSesion:hover {
+  background-color: #7037cd;
+  border: 1px solid #7037cd;
+}

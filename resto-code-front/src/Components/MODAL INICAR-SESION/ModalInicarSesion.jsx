@@ -1,4 +1,5 @@
 import { Col, Container, Row, Button } from "react-bootstrap";
+import "./ModalInicarSesion.css"
 
 const ModalInicarSesion = () => {
 

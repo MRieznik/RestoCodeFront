@@ -58,7 +58,7 @@ const Header = () => {
         <Modal.Header closeButton className="headerModal">
           <Modal.Title>Ingresa tu usuario</Modal.Title>
         </Modal.Header>
-        <Modal.Body className="headerModal bodyModal">
+        <Modal.Body className="bodyModal">
           <ModalInicarSesion handleClose={handleClose} />
         </Modal.Body>
       </Modal>
