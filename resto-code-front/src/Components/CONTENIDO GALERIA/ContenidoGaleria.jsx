@@ -1,30 +1,37 @@
-import React from 'react'
-import './ContedidoGaleria.css'
-import { Container } from 'react-bootstrap'
-
+import "../CONTENIDO GALERIA/ContenidoGaleria.css"
+import videoextreme from "../../Image/GALERIA-IMAGE/videoPrueba.mp4"
+import videocerveza from "../../Image/GALERIA-IMAGE/videocerveza.mp4"
 const Galeria = () => {
+
+
+
     return (
         <>
-            <Container >
-                <div className='tituloGaleria'> 
-                    <img className='logoA' src="../src/Image/imagenesGaleria/RestoCodeSFondo.png" alt="" />
-                    <h1>GALERIA RESTO CODE</h1>
-                    <img className='logoB' src="../src/Image/imagenesGaleria/RestoCodeSFondo.png" alt="" />
-                </div>
-                <div className='grid-galeria'>
-                    <img className='foto1' src='../src/Image/imagenesGaleria/cervezas1.png' alt="" />
-                    <img className='foto2' src="../src/Image/imagenesGaleria/barra-1.png" alt="" />
-                    <img className='foto3' src="../src/Image/imagenesGaleria/CERVECERIA2.png" alt="" />
-                    <img className='foto4' src="../src/Image/imagenesGaleria/ham-papas.png" alt="" />
-                    <img className='foto5' src="../src/Image/imagenesGaleria/local-cer.png" alt="" />
-                    <img className='foto6' src="../src/Image/imagenesGaleria/mila2.png" alt="" />
-                    <img className='foto7' src="../src/Image/imagenesGaleria/local-cer3.png" alt="" />
-                    <img className='foto8' src="../src/Image/imagenesGaleria/mila-plato1.png" alt="" />
-                    <img className='foto9' src="../src/Image/imagenesGaleria/local-cer2.png" alt="" />
-                    <img className='foto10' src="../src/Image/imagenesGaleria/ham-papas2.png" alt="" />
-                </div>
-            </Container>
+            <main className="contenedorPrincipalDeGaleria">
+                <div className="presentacionHamburguesaXtreme">
+                    <div className="contenedorXtreme">
+                        <div className="nombreHamburguesaXtreme">
+                            <h2>X Treme</h2>
+                            <h4>¡La Mejor Hamburguesa!</h4>
+                        </div>
+                        <video className="videoXtreme" src={videoextreme}
+                            autoPlay
+                            loop
+                            muted>
+                        </video>
+                    </div>
+                    <div className="imagenPersonaCerveza">
+                        <div className="sombraPersonaCerveza">
 
+                        </div>
+                    </div>
+                    <video className="videoCerveza" src={videocerveza}
+                        autoPlay
+                        loop
+                        muted>
+                    </video>
+                </div>
+            </main>
 
         </>
     )

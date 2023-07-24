@@ -1,5 +1,5 @@
 //import './App.css'
-import Galeria from "./Pages/galeria/Galeria"
+import Galeria from "../src/Pages/Galeria"
 
 function App() {
   

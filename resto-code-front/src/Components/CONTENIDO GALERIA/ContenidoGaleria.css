@@ -1,54 +1,68 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
-* {
-    margin: 0;
-    padding: 0;
-    background-color: #1d0620;
-    align-items: center;
-    text-decoration-color: white;
+.contenedorPrincipalDeGaleria {
+
+    border: 1px solid red;
+    height: 100vh;
 
 }
 
-
-.foto1, .foto2, .foto3, .foto4, .foto5, .foto6, .foto7, .foto8, .foto9, .foto10{
-    max-width: 100%;
-    object-fit: cover;
-    margin-bottom: 0.8em;
-    display: block;
-    outline: 1px solid #68b2f8;
-    border-radius: 6px;
-
-
-}
-
-.foto:hover {
-    transition: all 500ms ease-in-out;
-    cursor: pointer;
-}
-
-.grid-galeria {
-    align-items: center;
-    columns: 3;
-    column-gap: 0.8em;
-}
-
-.tituloGaleria {
+.presentacionHamburguesaXtreme {
+    height: 35rem;
     display: flex;
+    background-color: #181818;
+}
+
+
+.contenedorXtreme {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedorXtreme .videoXtreme {
+    width: 100%;
+}
+
+.nombreHamburguesaXtreme {
+
+    font-family: "Bebas Neue", sans-serif;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    height: 25%;
+    padding-top: 0.5rem;
+}
+
+.nombreHamburguesaXtreme h2 {
+    color: white;
+    font-size: 3rem;
+    margin: 0;
 
 }
 
-.logoA {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 2%;
-    margin-top: 2%;
+.nombreHamburguesaXtreme h4 {
+    color: #7037cd;
+    margin: 0;
+    font-size: 2.5rem;
 }
 
-.logoB {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 2%;
-    margin-top: 2%;
+.imagenPersonaCerveza {
+    width: 45%;
+    height: 100%;
+    background-image: url("../../Image/GALERIA-IMAGE/personasCervesa.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sombraPersonaCerveza {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.411);
+    transition: 0.2s;
+}
+
+.sombraPersonaCerveza:hover {
+    background-color: rgba(0, 0, 0, 0);
 }
