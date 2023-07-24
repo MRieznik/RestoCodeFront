@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./styleRegistro.css"
 
 const Registro = () => {
@@ -6,8 +6,10 @@ const Registro = () => {
   const [contraseniaUsuario, setContraseniaUsuario] = useState("");
   const [correoUsuario, setCorreoUsuario] = useState("");
   const [provinciaUsuario, setProvinciaUsuario] = useState("");
+  const [ciudadLocalidadUsuario, setCiudadLocalidadUsuario] = useState("");
+  const [Direccion, setDireccion] = useState("");
+  const [Telefono, setTelefono] = useState("");
  
-
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -37,7 +39,7 @@ const Registro = () => {
                           ¿Ya tienes una cuenta?{" "}
                           <a
                             className="fw-bold link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
-                            href="login.html"
+                            href=""
                           >
                             {" "}
                             Inicia Sesión
@@ -60,7 +62,7 @@ const Registro = () => {
                               type="text"
                               id="nombreUsuario"
                               className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados"
-                              placeholder="Ej: User Luxor Sneakers"
+                              placeholder="Ej: User RestoCode"
                               pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
                               title="Este campo solo permite letras y espacios en blanco"
                               required
@@ -113,7 +115,7 @@ const Registro = () => {
                           type="email"
                           id="correoUsuario"
                           className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados"
-                          placeholder="Ej: UserLuxor@gmail.com"
+                          placeholder="Ej: RestoCode@gmail.com"
                           autoComplete="on"
                           value={correoUsuario}
                           onChange={(e) => setCorreoUsuario(e.target.value)}
@@ -128,7 +130,7 @@ const Registro = () => {
                           <div className="form-outline ">
                             <label
                               className="form-label fw-bold"
-                              for="provinciaUsuario"
+                              htmlFor="provinciaUsuario"
                             >
                               Provincia{" "}
                             </label>
@@ -139,7 +141,7 @@ const Registro = () => {
                               placeholder="Ej: Tucumán"
                               pattern="^[A-Za-z0-9]{1,50}$"
                               title="Ingrese la provincia donde reside"
-                              maxlength="50"
+                              maxLength="50"
                               value={provinciaUsuario}
                               onChange={(e) => 
                                 setProvinciaUsuario(e.target.value)
@@ -152,7 +154,7 @@ const Registro = () => {
                           <div className="form-outline">
                             <label
                               className="form-label fw-bold"
-                              for="ciudadLocalidadUsuario"
+                              htmlFor="ciudadLocalidadUsuario"
                             >
                               Ciudad/Localidad
                             </label>
@@ -163,7 +165,59 @@ const Registro = () => {
                               placeholder="Ej: Famaillá"
                               pattern="^[A-Za-z0-9]{1,50}$"
                               title="Ingrese la Ciudad/Localidad donde reside"
-                              maxlength="50"
+                              maxLength="50"
+                              value={ciudadLocalidadUsuario}
+                              onChange={(e) => 
+                                setCiudadLocalidadUsuario(e.target.value)
+                              }
+                            />
+                          </div>
+                        </div>
+
+                        <div className="col-md-6 mb-2">
+                          <div className="form-outline">
+                            <label
+                              className="form-label fw-bold"
+                              htmlFor="direccion"
+                            >
+                              Dirección
+                            </label>
+                            <input
+                              type="text"
+                              id="direccion"
+                              className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados"
+                              placeholder="Ej: Famaillá"
+                              pattern="^[A-Za-z0-9]{1,50}$"
+                              title="Ingrese la Ciudad/Localidad donde reside"
+                              maxLength="150"
+                              value={Direccion}
+                              onChange={(e) => 
+                                setDireccion(e.target.value)
+                              }
+                            />
+                          </div>
+                        </div>
+
+                        <div className="col-md-6 mb-2">
+                          <div className="form-outline">
+                            <label
+                              className="form-label fw-bold"
+                              htmlFor="telefono"
+                            >
+                              Telefono
+                            </label>
+                            <input
+                              type="text"
+                              id="telefono"
+                              className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados"
+                              placeholder="Ej: Famaillá"
+                              pattern="^[A-Za-z0-9]{1,50}$"
+                              title="Ingrese la Ciudad/Localidad donde reside"
+                              maxLength="50"
+                              value={Telefono}
+                              onChange={(e) => 
+                                setTelefono(e.target.value)
+                              }
                             />
                           </div>
                         </div>
