@@ -1,0 +1,80 @@
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+    }
+    .card-registration .select-arrow {
+    top: 13px;
+    }
+
+.LogoRegistroLuxor{
+    width: 9em;
+    height: 2.6em;
+  
+}
+
+*{
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.imgFondo-1{
+    background-image: url(https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80);
+    background-size: cover;
+    justify-content: space-between;
+    
+}
+
+.validadoss:valid{
+    /* border-bottom: 0.1em solid greenyellow; */
+    border: 0.05em  solid #000000;
+    outline: black;
+}
+
+.NoValidados{
+    border: 0.05em solid red;
+}
+
+/* .tamanioImpustRegistro{
+    font-size: 1rem;
+} */
+
+/* .quietoRegistro{
+    position: relative;
+    top: 10;
+    right: 0;
+    height: 100%;
+} */
+
+
+.mensaje-error-Registro-Correo{
+    display: none;
+    margin-top: 5px;
+    font-size: 1em;
+    padding: 0.3em;
+}
+
+.controladorTmanioTextoReg{
+    font-size: 3.2em;
+}
+
+@media all and (min-width:300px){
+    .tamanioImpustRegistro{
+        font-size: 1rem;
+    }
+    .card-body{
+        margin-top: 2em;
+        padding-top: 1em;
+    }
+}
+
+@media all and (min-width:760px){
+    .tamanioImpustRegistro{
+        font-size: 1.25rem;
+    }
+
+    .card-body{
+        margin: 0!important;
+        padding-bottom: 0.4em!important;
+    }
+}
+

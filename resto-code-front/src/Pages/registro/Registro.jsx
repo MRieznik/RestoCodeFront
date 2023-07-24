@@ -1,10 +1,16 @@
 import React, { useState } from "react";
+import "./styleRegistro.css"
 
 const Registro = () => {
   const [nombreUsuario, setNombreUsuario] = useState("");
   const [contraseniaUsuario, setContraseniaUsuario] = useState("");
   const [correoUsuario, setCorreoUsuario] = useState("");
-  
+  const [provinciaUsuario, setProvinciaUsuario] = useState("");
+ 
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <main>
@@ -22,7 +28,6 @@ const Registro = () => {
                     />
                   </a> */}
                   <div className="card-body pt-0 px-md-5 mx-md-5 m-md-3 text-black">
-
                     <form onSubmit={handleSubmit} id="formRegistroUsuarios">
                       <div className="mb-4 pt-1 text-center">
                         <h1 className="fw-bold m-0 controladorTmanioTextoReg">
@@ -97,7 +102,13 @@ const Registro = () => {
                       {/* Rest of the form inputs... */}
 
                       <div className="form-outline mb-2">
-                        <label className="form-label fw-bold" htmlFor="correoUsuario">Correo</label><span className="text-danger">*</span>
+                        <label
+                          className="form-label fw-bold"
+                          htmlFor="correoUsuario"
+                        >
+                          Correo
+                        </label>
+                        <span className="text-danger">*</span>
                         <input
                           type="email"
                           id="correoUsuario"
@@ -105,9 +116,7 @@ const Registro = () => {
                           placeholder="Ej: UserLuxor@gmail.com"
                           autoComplete="on"
                           value={correoUsuario}
-                          onChange={(e) => 
-                            setCorreoUsuario(e.target.value)  
-                          }
+                          onChange={(e) => setCorreoUsuario(e.target.value)}
                           required
                           maxLength="76"
                         />
@@ -115,31 +124,50 @@ const Registro = () => {
                       </div>
 
                       <div className="row">
-                               
-                                <div className="col-md-6 mb-2">
-                                    <div className="form-outline ">
-                                    <label className="form-label fw-bold" for="provinciaUsuario">Provincia </label> 
-                                    <input type="text" id="provinciaUsuario" className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados" placeholder="Ej: Tucumán" pattern="^[A-Za-z0-9]{1,50}$"
-                                    title="Ingrese la provincia donde reside"
-                                    
-                                    maxlength="50" />
-                                    </div>
-                                </div>
-                                
-                                <div className="col-md-6 mb-2">
-                                    <div className="form-outline">
-                                        <label className="form-label fw-bold" for="ciudadLocalidadUsuario">Ciudad/Localidad</label>
-                                        <input type="text" id="ciudadLocalidadUsuario" className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados" placeholder="Ej: Famaillá" pattern="^[A-Za-z0-9]{1,50}$"
-                                        title="Ingrese la Ciudad/Localidad donde reside"
-                                        
-                                        maxlength="50" />
-                                    </div>
-                                </div>
-                                </div>
+                        <div className="col-md-6 mb-2">
+                          <div className="form-outline ">
+                            <label
+                              className="form-label fw-bold"
+                              for="provinciaUsuario"
+                            >
+                              Provincia{" "}
+                            </label>
+                            <input
+                              type="text"
+                              id="provinciaUsuario"
+                              className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados"
+                              placeholder="Ej: Tucumán"
+                              pattern="^[A-Za-z0-9]{1,50}$"
+                              title="Ingrese la provincia donde reside"
+                              maxlength="50"
+                              value={provinciaUsuario}
+                              onChange={(e) => 
+                                setProvinciaUsuario(e.target.value)
+                              }
+                            />
+                          </div>
+                        </div>
 
-                        
-
-
+                        <div className="col-md-6 mb-2">
+                          <div className="form-outline">
+                            <label
+                              className="form-label fw-bold"
+                              for="ciudadLocalidadUsuario"
+                            >
+                              Ciudad/Localidad
+                            </label>
+                            <input
+                              type="text"
+                              id="ciudadLocalidadUsuario"
+                              className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados"
+                              placeholder="Ej: Famaillá"
+                              pattern="^[A-Za-z0-9]{1,50}$"
+                              title="Ingrese la Ciudad/Localidad donde reside"
+                              maxlength="50"
+                            />
+                          </div>
+                        </div>
+                      </div>
 
                       <div className="d-flex justify-content-end pt-3">
                         <input
