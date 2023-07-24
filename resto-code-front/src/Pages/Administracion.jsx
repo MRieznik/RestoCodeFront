@@ -4,8 +4,8 @@ import TablaReservas from "../components/reservas/TablaReservas";
 
 const Administracion = () => {
   return (
-    <>
-      <h1 className="text-center">Administracion</h1>
+    <div className="container admin">
+      <h1 className="text-center py-3">Administracion</h1>
       <Container>
         <Row>
           <Col>
@@ -25,7 +25,7 @@ const Administracion = () => {
           </Col>
         </Row>
       </Container>
-    </>
+    </div>
   );
 };
 

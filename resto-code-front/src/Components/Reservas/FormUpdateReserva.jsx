@@ -1,29 +1,30 @@
 import { useState, useContext } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import { UsuariosContext } from "../../Context/UsersContext";
+import { ReservasContext } from "../../Context/ReservasContext";
 import Swal from "sweetalert2";
 
 // eslint-disable-next-line react/prop-types
-const FormUpdateUsuarios = ({ editUser, handleClose }) => {
-  const [user, setUser] = useState(editUser);
+const FormUpdateReserva = ({ editReserva, handleClose }) => {
+  const [reserva, setReserva] = useState(editReserva);
 
-  const { updateUsers } = useContext(UsuariosContext);
+  const { updateReserva } = useContext(ReservasContext);
 
   const handleChange = (e) => {
-    setUser({ ...user, [e.target.name]: e.target.value });
+    setReserva({ ...reserva, [e.target.name]: e.target.value });
   };
 
   const handleEdit = (e) => {
     e.preventDefault();
-    updateUsers(user);
+    updateReserva(reserva);
     Swal.fire({
       icon: "success",
-      title: "Usuario Editado",
+      title: "Reserva Editada",
       showConfirmButton: false,
       timer: 1500,
     });
     handleClose();
   };
+
 
   return (
     <>
@@ -39,7 +40,7 @@ const FormUpdateUsuarios = ({ editUser, handleClose }) => {
                 <input
                   type="text"
                   className="form-control"
-                  value={user.nombre}
+                  value={reserva.nombre}
                   onChange={handleChange}
                   name="nombre"
                   aria-describedby="nombre"
@@ -52,42 +53,56 @@ const FormUpdateUsuarios = ({ editUser, handleClose }) => {
                 <input
                   type="text"
                   className="form-control"
-                  value={user.apellido}
+                  value={reserva.apellido}
                   onChange={handleChange}
                   name="apellido"
                   aria-describedby="apellido"
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="edad" className="form-label">
-                  Edad
+                <label htmlFor="fecha" className="form-label">
+                  Fecha
                 </label>
                 <input
-                  type="number"
+                  type="date"
                   className="form-control"
-                  value={user.edad}
+                  value={reserva.fecha}
                   onChange={handleChange}
-                  name="edad"
-                  aria-describedby="edad"
+                  name="fecha"
+                  aria-describedby="fecha"
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="email" className="form-label">
-                  Email
+                <label htmlFor="hora" className="form-label">
+                  Hora
                 </label>
                 <input
-                  type="email"
+                  type="time"
                   className="form-control"
-                  value={user.email}
+                  value={reserva.hora}
                   onChange={handleChange}
-                  name="email"
-                  aria-describedby="email"
+                  name="hora"
+                  aria-describedby="hora"
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="comensales" className="form-label">
+                  Comensales
+                </label>
+                <input
+                  type="number"
+                  min = "1"
+                  className="form-control"
+                  value={reserva.comesales}
+                  onChange={handleChange}
+                  name="comensales"
+                  aria-describedby="comensales"
                 />
               </div>
 
               <Button type="submit" variant="outline-success">
                 {" "}
-                Editar Usuario{" "}
+                Editar Reserva{" "}
               </Button>
             </form>
           </Col>
@@ -97,4 +112,4 @@ const FormUpdateUsuarios = ({ editUser, handleClose }) => {
   );
 };
 
-export default FormUpdateUsuarios;
+export default FormUpdateReserva;

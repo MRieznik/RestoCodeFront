@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "nombre": "Leonardo",
+      "apellido": "Ponzio",
+      "edad": "37",
+      "email": "l@gmail.com",
+      "password": "123",
+      "id": 2
+    },
+    {
+      "nombre": "Juanfer",
+      "apellido": "Quintero",
+      "edad": "31",
+      "email": "jf@gmail.com",
+      "password": "123",
+      "id": 3
+    },
+    {
+      "nombre": "Mariana ",
+      "apellido": "Cervantes",
+      "edad": "38",
+      "email": "m@gmail.com",
+      "password": "123",
+      "id": 4
+    }
+  ],
+  "reservas": [
+    {
+      "nombre": "Juanfer",
+      "apellido": "Quintero",
+      "fecha": "2023-07-28",
+      "hora": "17:18",
+      "comensales": "8",
+      "id": 5
+    },
+    {
+      "nombre": "Mariana",
+      "apellido": "Cervantes",
+      "fecha": "2023-08-14",
+      "hora": "13:45",
+      "comensales": "2",
+      "id": 6
+    }
+  ]
+}
