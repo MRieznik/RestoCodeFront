@@ -1,4 +1,5 @@
 // import Bootstrap from "bootstrap/dist/css/bootstrap.min.css?inline"
+import React from "react";
 import {
   Form,
   Card,
@@ -6,6 +7,7 @@ import {
   Row,
   Col,
   Button,
+  CardImg,
 } from "react-bootstrap/";
 import "./reservas.css";
 
@@ -59,9 +61,15 @@ const Reservas = () => {
         <Row>
           <Col>
             <Card className="cardReserva">
-              <Card.Img variant="top" src="resto-code-front\src\Pages\Reservas\restocodeimg.jpeg" />
+                <Col>
+                  <img
+                    className="imgReserva"
+                    src="../src/Image/restocodeimg.jpeg"
+                    alt=""
+                  />
+                </Col>
               <Card.Body>
-                <Card.Title>
+                <Card.Title className="tituloCardReservas">
                   <h1>RESERVAS</h1>
                 </Card.Title>
                 <Form>
@@ -69,20 +77,20 @@ const Reservas = () => {
                     className="mb-3"
                     controlId="exampleForm.ControlInput1"
                   >
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="name@example.com" />
+                    <Form.Label className="labelReservas">Nombre de usuario</Form.Label>
+                    <Form.Control className="inputReservas" type="text" placeholder="Ingrese su nombre de usuario" />
                   </Form.Group>
-                  <Form.Label>Cantidad de comensales</Form.Label>
-                  <Form.Select aria-label="Default select example">
-                    <option>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                  <Form.Label className="labelReservas">Cantidad de comensales</Form.Label>
+                  <Form.Select className="inputReservas" aria-label="Default select example">
+                    <option>...</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
                   </Form.Select>
                   <p></p>
-                  <Form.Label>Comentarios</Form.Label>
-                    <Form.Control as="textarea" aria-label="With textarea" />
-                    <p></p>
+                  <Form.Label className="labelReservas">Comentarios</Form.Label>
+                  <Form.Control className="inputReservas" as="textarea" aria-label="With textarea" />
+                  <p></p>
                   <Button className="botonReserva">Confirmar</Button>
                 </Form>
               </Card.Body>

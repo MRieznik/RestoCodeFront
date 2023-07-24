@@ -10,11 +10,40 @@
     justify-content: center;
     align-items: center;
   }
+
+  .imgReserva{
+    border-radius: 2%;
+  }
   
   .cardReserva{
     background-color:#651F71;
     justify-content: center;
     text-align: center;
+  }
+
+  .tituloCardReservas{
+    color: #506EE5;
+  }
+  
+  .labelReservas{
+    color:#506EE5;
+  }
+  
+  .inputReservas{
+    background-color: #1D0C20;
+    color: #506EE5;
+    border-style: none;
+  }
+
+  .inputReservas:focus{
+    transition: 2s;
+    background-color:#1D0C20;
+    box-shadow: #1D0C20;
+  }
+
+  .inputReservas::placeholder{
+    color: #506EE5;
+    box-shadow: none;
   }
   
   .botonReserva{
