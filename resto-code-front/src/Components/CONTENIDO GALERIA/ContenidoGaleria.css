@@ -111,7 +111,7 @@
     font-size: 3rem;
 }
 
-/*estilos ultimo bloque*/
+/*estilos bloque 3*/
 
 .presentacionCervezas{
     height: 35rem;
@@ -154,4 +154,46 @@
     margin: 0;
     font-size: 2.5rem;
 
+}
+
+/* bloque 3 2da parte */
+
+.presentacionCervezas2{
+
+}
+.contenedorBloqueCervezas2{
+    
+}
+.contenedorFraseCerveza2{
+    height: 40rem;
+    width: 23rem;
+    background-color: #181818;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+.contenedorFraseCerveza2 h2{
+    font-family: "Bebas Neue", sans-serif;
+    color: white;
+    /* margin: 0; */
+    margin-left: 1rem;
+    font-size: 3rem;
+}
+.contenedorFraseCerveza2 h4{
+    font-family: "Bebas Neue", sans-serif;
+    color: #7037cd;
+    margin-left: 1rem;
+    /* margin: 0; */
+    font-size: 2.5rem;
+
+}
+.contenedorImagenVariado2{
+    height: 40rem;
+    width: 23rem;
+    transition: 2s;
+    object-fit: cover;
+    background-image: url(../../Image/GALERIA-IMAGE/CERVECERIA2.png);
 }
