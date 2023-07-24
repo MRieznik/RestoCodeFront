@@ -5,6 +5,11 @@
   text-align: center;
 }
 
+.admin{
+  background-color: #651F71;
+  color: white;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
