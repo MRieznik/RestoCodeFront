@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
-.contenedorPrincipalDeGaleria {
+/* .contenedorPrincipalDeGaleria {
 
     border: 1px solid red;
     height: 100vh;
 
-}
+} */
 
 .presentacionHamburguesaXtreme {
     height: 35rem;
@@ -26,7 +26,6 @@
 }
 
 .nombreHamburguesaXtreme {
-
     font-family: "Bebas Neue", sans-serif;
     display: flex;
     flex-direction: column;
@@ -59,10 +58,56 @@
 .sombraPersonaCerveza {
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.411);
+    background-color: rgba(0, 0, 0, 0.500);
     transition: 0.2s;
 }
 
 .sombraPersonaCerveza:hover {
     background-color: rgba(0, 0, 0, 0);
 }
+
+.presentacionGuarnicion{
+    display: flex;
+    align-items: center;
+}
+.contenedorImagenArosDeCebolla{
+    height: 40rem;
+    width: 23rem;
+    transition: 2s;
+    background-image: url(../../Image/GALERIA-IMAGE/arosCebolla.jpg);
+}
+.contenedorImagenBastonesDeMuzarella{
+    height: 40rem;
+    width: 23rem;
+    transition: 2s;
+    background-image: url(../../Image/GALERIA-IMAGE/bastonesMuzarella.jpg);
+}
+.contenedorImagenVariado{
+    height: 40rem;
+    width: 23rem;
+    transition: 2s;
+    background-image: url(../../Image/GALERIA-IMAGE/guarnicion.jpg);
+}
+
+.contenedorFraseGuarniciones{
+    height: 40rem;
+    width: 50rem;
+    background-color: #181818;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contenedorFraseGuarniciones h2{
+    font-family: "Bebas Neue", sans-serif;
+    color: white;
+    margin: 0;
+    font-size: 4.5rem;
+}
+.contenedorFraseGuarniciones h4{
+    font-family: "Bebas Neue", sans-serif;
+    color: #7037cd;
+    margin: 0;
+    font-size: 3rem;
+}
+

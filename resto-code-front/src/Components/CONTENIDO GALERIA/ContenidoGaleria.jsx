@@ -1,6 +1,7 @@
 import "../CONTENIDO GALERIA/ContenidoGaleria.css"
 import videoextreme from "../../Image/GALERIA-IMAGE/videoPrueba.mp4"
 import videocerveza from "../../Image/GALERIA-IMAGE/videocerveza.mp4"
+
 const Galeria = () => {
 
 
@@ -22,7 +23,6 @@ const Galeria = () => {
                     </div>
                     <div className="imagenPersonaCerveza">
                         <div className="sombraPersonaCerveza">
-
                         </div>
                     </div>
                     <video className="videoCerveza" src={videocerveza}
@@ -30,6 +30,25 @@ const Galeria = () => {
                         loop
                         muted>
                     </video>
+                </div>
+
+                <div className="presentacionGuarnicion">
+                    <div className="contenedorImagenArosDeCebolla">
+                        <div className="sombraPersonaCerveza">
+                        </div>
+                    </div>
+                    <div className="contenedorImagenBastonesDeMuzarella">
+                    </div>
+                    <div className="contenedorImagenVariado">
+                        <div className="sombraPersonaCerveza">
+                        </div>
+                    </div>
+
+                    <div className="contenedorFraseGuarniciones">
+                        <h2>Difentes Guarniciones</h2>
+                        <h4>Para acompañar tus comidas</h4>
+                    </div> 
+
                 </div>
             </main>
 
