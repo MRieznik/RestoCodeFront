@@ -1,6 +1,8 @@
 import "../CONTENIDO GALERIA/ContenidoGaleria.css"
 import videoextreme from "../../Image/GALERIA-IMAGE/videoPrueba.mp4"
 import videocerveza from "../../Image/GALERIA-IMAGE/videocerveza.mp4"
+import videobloquecervezas from "../../Image/GALERIA-IMAGE/videoBloqueCervezas.mp4"
+
 
 const Galeria = () => {
 
@@ -47,7 +49,25 @@ const Galeria = () => {
                     <div className="contenedorFraseGuarniciones">
                         <h2>Difentes Guarniciones</h2>
                         <h4>Para acompañar tus comidas</h4>
-                    </div> 
+                    </div>
+
+                </div>
+                 
+                 {/* bloque 3 */}
+
+                <div className="presentacionCervezas">
+                    <div className="contenedorBloqueCervezas">
+                        <div className="contenedorFraseCerveza">
+                            <h2>VEN A PROBAR NUESTRAS CERVEZAS Y COCTELES</h2>
+                            <h4>¡Solo lo mejor para vos!</h4>
+                        </div>
+                        <video className="videoBloqueCervezas" src={videobloquecervezas}
+                            autoPlay
+                            loop
+                            muted>
+                        </video>
+                    </div>
+                  
 
                 </div>
             </main>
