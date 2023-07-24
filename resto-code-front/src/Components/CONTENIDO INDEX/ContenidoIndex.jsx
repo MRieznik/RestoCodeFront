@@ -63,7 +63,7 @@ const ContenidoIndex = () => {
           ></video>
           <div className="cajaConFrase">
             <h2>¿Te tentaste, verdad?</h2>
-            <h3>¡Veni a conocernos!</h3>
+            <h3>¡Vení a conocernos!</h3>
           </div>
         </div>
         <div className="contendorContacto">

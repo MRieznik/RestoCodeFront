@@ -41,7 +41,7 @@ const Header = () => {
                 className="NavLink"
                 onClick={iniciarSesion}
               >
-                Iniciar sesion
+                Iniciar sesión
               </Nav.Link>
               <Nav.Link href="#link" className="NavLink">
                 Registrarse
