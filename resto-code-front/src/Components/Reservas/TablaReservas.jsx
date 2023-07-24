@@ -3,7 +3,7 @@ import { ReservasContext } from "../../Context/ReservasContext";
 import Swal from "sweetalert2";
 import { Table, Modal } from "react-bootstrap";
 import FormUpdateReserva from "./FormUpdateReserva";
-
+import "./TablaReservas.css"
 
 
 const TablaReservas = () => {
@@ -34,7 +34,7 @@ const TablaReservas = () => {
   return (
     <>
     {reservas.length > 0 ? (
-      <Table responsive>
+      <Table responsive className="tablaDeReserva">
         <thead>
           <tr>
             <th>Nombre Completo</th>
