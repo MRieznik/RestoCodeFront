@@ -1,7 +1,8 @@
-/* .contenedorPrincipalAbout {
-  border: 1px solid red;
-} */
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap%22");
+.contenedorPrincipalAbout {
+    display: flex;
+    flex-direction: column
+}
 .contendorPortadaAbout {
   height: 70vh;
   background-image: url(../../Image/ABOUT-IMAGE/bannerAbout.jpg);
@@ -25,7 +26,7 @@
 .sombraPortadaAbout h3 {
   color: white;
   font-family: "Bebas Neue", sans-serif;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 .sombraPortadaAbout h5 {
   color: white;
