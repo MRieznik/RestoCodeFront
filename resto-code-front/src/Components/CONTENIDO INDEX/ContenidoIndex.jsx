@@ -20,6 +20,19 @@ const ContenidoIndex = () => {
         <div className="imagenDeFondoIndex">
           <div className="sombraImagenInicioIndex"></div>
         </div>
+        <div className="imagenDeFondoEnResponsive">
+          <div className="sombraImagenInicioIndex">
+            <div className="tituloRestoCoderResponsive">
+              <h1>Resto Code</h1>
+              <div className="restoBarResponsive">
+                <h2>Cerveceria</h2>
+              </div>
+            </div>
+            <button className="botonReservarIndexResponsive">
+              ¡Reserva aqui!
+            </button>
+          </div>
+        </div>
       </div>
       <div className="contenedorDeMenu">
         <div className="contendorFrases">
@@ -37,9 +50,7 @@ const ContenidoIndex = () => {
           </div>
         </div>
         <div className="contendorFrases">
-          <h2 className="tituloDePresentacionMenu">
-            No te comas el verso
-          </h2>
+          <h2 className="tituloDePresentacionMenu">No te comas el verso</h2>
           <h4 className="mensajeConciencia">Beber con moderacion</h4>
         </div>
         <div className="contendorCerveza">
@@ -62,7 +73,6 @@ const ContenidoIndex = () => {
             <div className="cajaMapa">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.1023709808383!2d-65.20977672374651!3d-26.83669609003341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225d3ad7f30f1d%3A0xf8606cd659b8e3e4!2sRollingCode%20School!5e0!3m2!1sen!2sar!4v1690063836533!5m2!1sen!2sar"
-                height="100%"
                 title="Mapa de ubicación"
                 className="mapaContacto"
               ></iframe>

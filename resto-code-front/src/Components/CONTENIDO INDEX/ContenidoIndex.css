@@ -59,7 +59,13 @@
   width: 100%;
   height: 100%;
 }
-
+.imagenDeFondoEnResponsive {
+  width: 100%;
+  background-image: url(../../Image/INDEX-IMAGE/fondoIndex7.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: none;
+}
 .contendorFrases {
   /* border: 1px solid rgb(211, 214, 16); */
   display: flex;
@@ -115,7 +121,7 @@
   display: flex;
   justify-content: center;
   padding: 0.5rem;
-  background-color: rgba(0, 0, 0, 0.411)
+  background-color: rgba(0, 0, 0, 0.411);
   /* border: 1px solid rgb(105, 46, 139); */
 }
 .menuUno img {
@@ -130,7 +136,7 @@
   display: flex;
   justify-content: center;
   padding: 0.5rem;
-  background-color: rgba(0, 0, 0, 0.411)
+  background-color: rgba(0, 0, 0, 0.411);
   /* border: 1px solid rgb(105, 46, 139); */
 }
 .menuDos img {
@@ -165,6 +171,7 @@
 }
 .mapaContacto {
   width: 50%;
+  height: 100%;
   padding: 2rem;
   /* border: 1px solid saddlebrown; */
 }
@@ -195,4 +202,103 @@
   background-image: url(../../Image/INDEX-IMAGE/restocodeokqr.png);
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+/*------------------ RESPONSIVE ------------------*/
+/* Iphone 12 Pro Max */
+@media (min-width: 360px) and (max-width: 914px) {
+  .contenedorBotonReservar {
+    display: none;
+  }
+  .imagenDeFondoIndex {
+    display: none;
+  }
+  .imagenDeFondoEnResponsive {
+    display: block;
+  }
+  .sombraImagenInicioIndex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .tituloRestoCoderResponsive {
+    font-family: "Bebas Neue", sans-serif;
+    color: white;
+  }
+  .tituloRestoCoderResponsive h1 {
+    font-size: 3.5rem;
+  }
+  .restoBarResponsive h2 {
+    border-top: 2px solid #68b2f8;
+    border-bottom: 2px solid #68b2f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 4px;
+    font-size: 2.5rem;
+  }
+  .botonReservarIndexResponsive {
+    border: none;
+    background-color: #1d0c20;
+    color: white;
+    padding: 6px 10px 6px 10px;
+    border: 2px solid #651f71;
+    transition: 0.2s;
+    border-radius: 3px;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    font-family: "Bebas Neue", sans-serif;
+  }
+  .contendorFrases {
+    height: 8rem;
+  }
+  .tituloDePresentacionMenu {
+    font-size: 2rem;
+  }
+  .imagenDeAmbosMenus {
+    height: 50rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .menuUno {
+    width: 100%;
+    height: 50%;
+  }
+  .menuDos {
+    width: 100%;
+    height: 50%;
+  }
+  .contendorCerveza {
+    flex-direction: column;
+  }
+  .cartaMenuDeCervezas {
+    width: 100%;
+    height: 50%;
+  }
+  .cajaConFrase {
+    width: 100%;
+    height: 50%;
+  }
+  .cajaConFrase h2 {
+    font-size: 2.5rem;
+  }
+  .cajaConFrase h3 {
+    font-size: 2rem;
+  }
+  .cajaMapa{
+    flex-direction: column;
+  }
+  .mapaContacto {
+    width: 100%;
+    height: 50%;
+    padding: 2rem;
+  }
+  .contenedorRedesContacto {
+    flex-direction: row;
+    height: 50%;
+    width: 100%;
+    padding-left: 1.5rem;
+  }
+ 
 }
