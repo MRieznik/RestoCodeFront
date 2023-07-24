@@ -1,24 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-//import './App.css'
-import Rutas from "./Components/RUTAS/Rutas";
-
-
+import About from "./Pages/About"
 
 function App() {
-
-
   return (
     <>
-   
-
-
-
-    <Rutas /> 
-    
-      
-
-
-
+    <About />
     </>
   );
 }
