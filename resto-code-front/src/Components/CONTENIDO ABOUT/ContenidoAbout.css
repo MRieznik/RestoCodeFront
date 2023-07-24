@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap%22");
 .contenedorPrincipalAbout {
-    display: flex;
-    flex-direction: column
+  display: flex;
+  flex-direction: column;
 }
 .contendorPortadaAbout {
   height: 70vh;
@@ -34,5 +34,42 @@
   font-size: 1.5rem;
 }
 .sombraPortadaAbout h5 strong {
-    letter-spacing: 1px;
+  letter-spacing: 1px;
+}
+.bloqueUnoDeABout {
+  width: 100%;
+  height: 25rem;
+  display: flex;
+}
+.cajaInfoMasImagenAbout {
+  width: 33.3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: #181818;
+  font-family: "Bebas Neue", sans-serif;
+  padding: 1rem;
+}
+.cajaInfoMasImagenAbout h3 {
+    font-size: 3rem;
+}
+.cajaInfoMasImagenAbout p strong {
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+}
+.cajaInfoMasImagenAbout p {
+    font-size: 1.2rem;
+   text-align: center;
+}
+.cajaFotosIntegrantes {
+  width: 33.3%;
+}
+.cajaFotosIntegrantes img {
+    width: 100%;
+    height: 100%;
+}
+.cajaInformacionIntegrantes {
+  background-color: rgb(255, 153, 0);
+  width: 33.5%;
 }
