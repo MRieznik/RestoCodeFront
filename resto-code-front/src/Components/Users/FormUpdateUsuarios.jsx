@@ -82,6 +82,7 @@ const FormUpdateUsuarios = ({ editUser, handleClose }) => {
                   onChange={handleChange}
                   name="email"
                   aria-describedby="email"
+                  disabled
                 />
               </div>
 

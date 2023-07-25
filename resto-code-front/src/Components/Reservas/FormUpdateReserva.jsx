@@ -44,6 +44,7 @@ const FormUpdateReserva = ({ editReserva, handleClose }) => {
                   onChange={handleChange}
                   name="nombre"
                   aria-describedby="nombre"
+                  disabled
                 />
               </div>
               <div className="mb-3">
@@ -57,6 +58,7 @@ const FormUpdateReserva = ({ editReserva, handleClose }) => {
                   onChange={handleChange}
                   name="apellido"
                   aria-describedby="apellido"
+                  disabled
                 />
               </div>
               <div className="mb-3">

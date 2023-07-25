@@ -6,7 +6,7 @@ import "./Administrador.css";
 const Administracion = () => {
   return (
     <div className="containerAdmin">
-      <h1 className="tituloAdministrador">Administracion</h1>
+      <h1 className="tituloAdministrador py-3">Administracion</h1>
       <Container>
         <Row>
           <Col>
@@ -14,6 +14,7 @@ const Administracion = () => {
             <TablaReservas />
           </Col>
         </Row>
+        <br></br>
         <Row>
           <Col>
             <h3 className="tituloTablaReservas">Tabla de Usuarios</h3>

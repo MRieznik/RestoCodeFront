@@ -3,7 +3,8 @@ import { ReservasContext } from "../../Context/ReservasContext";
 import Swal from "sweetalert2";
 import { Table, Modal } from "react-bootstrap";
 import FormUpdateReserva from "./FormUpdateReserva";
-import "./TablaReservas.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import "./TablaReservas.css";
 
 
 const TablaReservas = () => {
@@ -54,16 +55,16 @@ const TablaReservas = () => {
               <td>{reserva.comensales}</td>
               <td>
                 <button
-                  className="btn btn-success m-1"
+                  className="botonEdit m-1"
                   onClick={() => handleEdit(reserva)}
                 >
-                  Editar
+                 <FontAwesomeIcon icon="fa-solid fa-pen-to-square" fade size="lg" style={{color: "#ffffff",}} title="Editar Reserva" />
                 </button>
                 <button
-                  className="btn btn-danger m-1"
+                  className="botonCancel m-1"
                   onClick={() => handleDelete(reserva.id)}
                 >
-                  Cancelar
+                <FontAwesomeIcon icon="fa-solid fa-xmark" fade size="xl" style={{color: "#ffffff",}} title="Cancelar Reserva"/>
                 </button>
               </td>
             </tr>
