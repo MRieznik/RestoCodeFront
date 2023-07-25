@@ -32,8 +32,27 @@ const ContenidoAbout = () => {
             Sabores Inolvidables.
             </p>
           </div>
-          <div className="cajaFotosIntegrantes "></div>
-          <div className="cajaInformacionIntegrantes"></div>
+          {/* <div className="cajaFotosIntegrantes "></div>
+          <div className="cajaInformacionIntegrantes"></div> */}
+          <div className="cajaInfoMasImagenAbout">
+            <h3>Artesanía Cervecera</h3>
+            <p>
+              <strong> Pasión Infinita en Cada Gota</strong>
+            </p>
+            <p>
+              Pasión y Creatividad se Materializan en Sabores Inolvidables y Experiencias que Deleitan el Paladar.
+            </p>
+          </div>
+          <div className="cajaInfoMasImagenAbout">
+            <h3>El Arte de la Cerveza</h3>
+            <p>
+              <strong>Delicías en Cada Sorbo</strong>
+            </p>
+            <p>
+            Deleita tu paladar con la excelencia de nuestra cerveza artesanal.<br/>
+             Con orgullo decimos, la mejor cerveza artesanal es nuestra.
+            </p>
+          </div>
         </div>
         <div className="bloqueUnoDeABout">
           <section class="contenedor_cards">
