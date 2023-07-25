@@ -2,15 +2,8 @@
 import React from "react";
 import {
   Form,
-  Card,
-  Container,
-  Row,
-  Col,
   Button,
-  CardImg,
-  CardGroup,
 } from "react-bootstrap/";
-// import imagereserva from "../../Image/RESERVA-IMAGE/imgReserva.jpeg"
 import "./reservas.css";
 
 const Reservas = () => {
@@ -22,50 +15,62 @@ const Reservas = () => {
           <h2>No esperes en la fila</h2>
           <h4>¡Reserva y entrá directo a la diversión!</h4>
         </div>
-      <Form className="formularioReserva">
+      <Form className="formularioReserva" id="formReserva">
                 <Form.Group
                   className="mb-3"
                   controlId="exampleForm.ControlInput1"
                 >
-                  <Form.Label className="labelReservas">
+                  <Form.Label for="fechaDeReserva" className="labelReservas">
                     Fecha de reserva
                   </Form.Label>
                   <Form.Control
                     className="inputReservas"
+                    id="inputFechaReserva"
+                    name="fechaDeReserva"
                     type="date"
                     placeholder="Ingrese su nombre de usuario"
+                    required
                   />
                 </Form.Group>
                 <Form.Group
                   className="mb-3"
                   controlId="exampleForm.ControlInput1"
                 >
-                  <Form.Label className="labelReservas">
+                  <Form.Label className="labelReservas" for="horaDeReserva">
                     Hora de reserva
                   </Form.Label>
                   <Form.Control
                     className="inputReservas"
+                    id="inputHoraReserva"
+                    name="horaDeReserva"
                     type="time"
                     placeholder="Ingrese su nombre de usuario"
+                    required
                   />
                 </Form.Group>
                 <Form.Group
                   className="mb-3"
                   controlId="exampleForm.ControlInput1"
                 >
-                  <Form.Label className="labelReservas">
+                  <Form.Label className="labelReservas" for="numInvitados">
                     Cantidad de invitados
                   </Form.Label>
                   <Form.Control
                     className="inputReservas"
+                    id="inputInvitados"
+                    name="numInvitados"
                     type="number"
                     placeholder="Ingrese numero de invitados"
+                    required
                   />
                 </Form.Group>
-                <Form.Label className="labelReservas">¿Qué debemos saber sobre tu evento?</Form.Label>
+                <Form.Label className="labelReservas" for="comentariosReservas">¿Qué debemos saber sobre tu evento?</Form.Label>
                 <Form.Control
                   className="infoEvento"
+                  id="inputComentarios"
+                  name="comentariosReservas"
                   type="text"
+                  required
                   // aria-label="With textarea"
                 />
                 <Button className="botonReserva">Confirmar</Button>
@@ -73,7 +78,6 @@ const Reservas = () => {
 
       </div>
       <div className="contenedorImgReserva">
-        {/* <img src={imagereserva} className="imageReserva"></img> */}
       </div>
     </main>
 

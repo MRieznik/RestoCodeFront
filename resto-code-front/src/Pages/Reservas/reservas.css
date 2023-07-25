@@ -127,9 +127,20 @@
 }
 
 .infoEvento{
-  border: none;
-  height: 15rem !important; 
+  height: 15rem ; 
   margin-bottom: 1.5rem;
+}
+
+.infoEvento:focus{
+  transition: 0.5s;
+  box-shadow: 0 0 5px #7037cd;
+  border-color: #7037cd;
+}
+
+.inputReservas:focus{
+  transition: 0.5s;
+  box-shadow: 0 0 5px #7037cd;
+  border-color: #7037cd;
 }
 
 .contenedorImgReserva{
