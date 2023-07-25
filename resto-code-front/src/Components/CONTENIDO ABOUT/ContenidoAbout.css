@@ -38,7 +38,7 @@
 }
 .bloqueUnoDeABout {
   width: 100%;
-  height: 28rem;
+  height: 22rem;
   display: flex;
 }
 .cajaInfoMasImagenAbout {
@@ -52,31 +52,29 @@
   padding: 1rem;
 }
 .cajaInfoMasImagenAbout h3 {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 .cajaInfoMasImagenAbout p strong {
-    font-size: 1.3rem;
-    letter-spacing: 0.5px;
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
 }
 .cajaInfoMasImagenAbout p {
-    font-size: 1.2rem;
-   text-align: center;
+  font-size: 1.2rem;
+  text-align: center;
 }
 .cajaFotosIntegrantes {
   width: 33.3%;
 }
 .cajaFotosIntegrantes img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 .cajaInformacionIntegrantes {
   background-color: rgb(255, 153, 0);
   width: 33.5%;
 }
 
-
-
-.contenedor_cards{
+.contenedor_cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -86,43 +84,35 @@
   background-color: #181818;
 }
 
-.contenedor_item{
+.contenedor_item {
   font-family: "Bebas Neue", sans-serif;
   color: white;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  width: 30rem;
-  margin: 2rem;
-  /* border: solid 2px black; */
-  border-radius: 2rem;
-  padding: 0.5rem;
-  overflow: hidden;
-  transition: transform .2s; 
-
+  width: 20rem;
+  margin: 1.5rem;
+  /* border: solid 2px white; */
 }
 
-.contenedor_item:hover{
+.contenedor_item:hover {
   transform: scale(1.1);
-
 }
 
-.card_image{
+.card_image {
   display: flex;
   width: 13rem;
   height: 13rem;
-  border-radius: 100%;   
+  border-radius: 100%;
   margin: 0 auto;
-
 }
 
-.card_texto{
+.card_texto {
   text-align: center;
   margin: 0.5rem;
   font-size: 1rem;
 }
 
-.iconos_redes{
+.iconos_redes {
   color: #7037cd !important;
   display: flex;
   flex-wrap: wrap;
@@ -133,16 +123,109 @@
   justify-content: space-evenly;
 }
 
-.iconos_redes a img{
+.iconos_redes a img {
   color: #7037cd !important;
   width: 1.5rem;
   height: 1.5rem;
   margin: 0.5rem;
   text-decoration: none;
-  transition: transform .2s; 
+  transition: transform 0.2s;
 }
 
-.iconos_redes a img:hover{
+.iconos_redes a img:hover {
   transform: scale(1.1);
 }
 
+/*--------------------- RESPONSIVE --------------------- */
+@media (min-width: 360px) and (max-width: 914px) {
+  .contendorPortadaAbout {
+    background-image: url("../../Image/ABOUT-IMAGE//fondoResponsivePortada.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+  .sombraPortadaAbout {
+    background-color: rgba(0, 0, 0, 0.568);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-left: 0;
+  }
+  .sombraPortadaAbout h1 {
+    font-size: 5.5rem;
+    width: 100%;
+    /* border: solid 2px rgb(211, 22, 22); */
+  }
+  .sombraPortadaAbout h3 {
+    font-size: 2.5rem;
+    width: 100%;
+    /* border: solid 2px rgb(211, 22, 22); */
+  }
+  .sombraPortadaAbout h5 {
+    font-size: 1.8rem;
+    width: 100%;
+    /* border: solid 2px rgb(211, 22, 22); */
+  }
+  .sombraPortadaAbout h5 strong {
+    letter-spacing: 2px !important;
+  }
+  .bloqueUnoDeABout {
+    width: 100%;
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+    /* border: solid 2px rgb(211, 22, 22); */
+  }
+  .noneEnResponsive {
+    display: none;
+  }
+  .cajaInfoMasImagenAbout h3 {
+    font-size: 2.5rem;
+    width: 18rem;
+    text-align: center;
+    /* border: solid 2px rgb(211, 22, 22); */
+  }
+  .cajaInfoMasImagenAbout p strong {
+    font-size: 1rem;
+    /* border: solid 2px rgb(211, 22, 22); */
+  }
+  .cajaInfoMasImagenAbout p {
+    font-size: 1rem;
+    width: 18rem;
+    text-align: center;
+  }
+  .contenedor_item {
+    width: 10rem;
+  }
+  .contenedor_item {
+    margin: 0;
+  }
+  .card_image {
+    display: flex;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 100%;
+    margin: 0 auto;
+  }
+ .card_texto h3 {
+  font-size: 1rem;
+ }
+}
+@media (width: 768px) and (height: 1024px) {
+  .contenedor_cards {
+    height: 30rem;
+  }
+  .contenedor_item {
+    margin-right: 1rem !important;
+    margin-left: 3rem;
+    }
+}
+@media (width: 820px) and (height: 1180px) {
+  .contenedor_cards {
+    height: 30rem;
+  }
+  .contenedor_item {
+    margin-right: 1rem !important;
+    margin-left: 3rem;
+    }
+}
