@@ -72,11 +72,11 @@ const TablaUsuarios = () => {
               ))}
             </tbody>
           </Table>
-          <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
+          <Modal show={show} onHide={handleClose} className="contenedor-editar">
+            <Modal.Header closeButton className="headerEditar" >
               <Modal.Title>Editar Usuarios</Modal.Title>
             </Modal.Header>
-            <Modal.Body>
+            <Modal.Body className="bodyEditar" >
               <FormUpdateUsuarios editUser={editUser} handleClose={handleClose} />
             </Modal.Body>
           </Modal>

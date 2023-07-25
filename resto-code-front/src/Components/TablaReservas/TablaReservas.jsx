@@ -74,11 +74,11 @@ const TablaReservas = () => {
     ) : (
       <h1>No hay reservas registradas</h1>
     )}
-    <Modal show={show} onHide={handleClose}>
-      <Modal.Header closeButton>
-        <Modal.Title>Editar Reservas</Modal.Title>
+    <Modal show={show} onHide={handleClose} className="contenedor-editar">
+      <Modal.Header closeButton className="headerEditar">
+        <Modal.Title className="text-center">Editar Reservas</Modal.Title>
       </Modal.Header>
-      <Modal.Body>
+      <Modal.Body className="bodyEditar">
         <FormUpdateReserva editReserva={editReserva} handleClose={handleClose} />
       </Modal.Body>
     </Modal>

@@ -16,3 +16,9 @@
     color: white;
     text-align: center;
 }
+
+hr{
+  background-color: blueviolet;
+  height: 4px;
+  border: none;
+}

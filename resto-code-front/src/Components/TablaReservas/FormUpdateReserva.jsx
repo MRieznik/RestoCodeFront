@@ -1,7 +1,8 @@
 import { useState, useContext } from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { ReservasContext } from "../../Context/ReservasContext";
 import Swal from "sweetalert2";
+import "./TablaReservas.css";
 
 // eslint-disable-next-line react/prop-types
 const FormUpdateReserva = ({ editReserva, handleClose }) => {
@@ -17,19 +18,29 @@ const FormUpdateReserva = ({ editReserva, handleClose }) => {
     e.preventDefault();
     updateReserva(reserva);
     Swal.fire({
-      icon: "success",
-      title: "Reserva Editada",
-      showConfirmButton: false,
-      timer: 1500,
-    });
-    handleClose();
+        icon: 'warning',
+        title: 'Editar Reserva?',
+        showCancelButton: true,
+        confirmButtonText: 'Aceptar', 
+        cancelButtonText: 'Cancelar',
+        confirmButtonColor: '#651F71',
+        cancelButtonColor: '#C73333',
+        background: '#31302F',
+        color: 'white',
+        backdrop: `rgba(0,0,14,0.4)` 
+      }).then((result) => {        
+        if (result.isConfirmed) {
+          handleClose();
+        } else if (result.isDenied) {
+          return
+        }
+      })    
   };
 
 
   return (
     <>
-      <Container>
-      
+      <Container>      
         <Row>
           <Col>
             <form onSubmit={handleEdit}>
@@ -39,12 +50,13 @@ const FormUpdateReserva = ({ editReserva, handleClose }) => {
                 </label>
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control noEdit"
                   value={reserva.nombre}
                   onChange={handleChange}
                   name="nombre"
                   aria-describedby="nombre"
                   disabled
+                  readOnly
                 />
               </div>
               <div className="mb-3">
@@ -53,12 +65,13 @@ const FormUpdateReserva = ({ editReserva, handleClose }) => {
                 </label>
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control noEdit"
                   value={reserva.apellido}
                   onChange={handleChange}
                   name="apellido"
                   aria-describedby="apellido"
                   disabled
+                  readOnly
                 />
               </div>
               <div className="mb-3">
@@ -95,17 +108,17 @@ const FormUpdateReserva = ({ editReserva, handleClose }) => {
                   type="number"
                   min = "1"
                   className="form-control"
-                  value={reserva.comesales}
+                  value={reserva.comensales}
                   onChange={handleChange}
                   name="comensales"
                   aria-describedby="comensales"
                 />
               </div>
 
-              <Button type="submit" variant="outline-success">
+              <button type="submit" className="btn btn-outline botonEditarModal">
                 {" "}
                 Editar Reserva{" "}
-              </Button>
+              </button>
             </form>
           </Col>
         </Row>
