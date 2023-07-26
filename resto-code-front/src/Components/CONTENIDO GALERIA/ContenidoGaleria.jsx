@@ -81,4 +81,42 @@ const Galeria = () => {
   );
 };
 
+<<<<<<< HEAD
 export default Galeria;
+=======
+                {/* bloque 3 */}
+{/* 
+                <div className="presentacionCervezas">
+                    <div className="contenedorBloqueCervezas">
+                        <div className="contenedorFraseCerveza">
+                            <h2>Ven a Probar Nuestras Cervezas y Cocteles</h2>
+                            <h4>¡Solo lo mejor para vos!</h4>
+                        </div>
+                        <video className="videoBloqueCervezas" src={videobloquecervezas}
+                            autoPlay
+                            loop
+                            muted>
+                        </video>
+                    </div>
+                </div>
+
+
+                <div className="presentacionCervezas2">
+                    <div className="contenedorFraseCerveza2">
+                        <h2>Las Mejores Cervezas esta aqui</h2>
+                        <h4>Para con quien quieras compartirlas !</h4>
+                    </div>
+
+                <div className="contenedorImagenVariado2">
+                    <div className="sombraPersonaCerveza">
+                    </div>
+                </div>
+                </div> */}
+            </main>
+
+        </>
+    )
+}
+
+export default Galeria
+>>>>>>> 1e56dcac8cc35b71a54918d1fc3e3e21e90d0cb6
