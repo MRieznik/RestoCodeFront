@@ -29,17 +29,17 @@
     {
       "nombre": "Juanfer",
       "apellido": "Quintero",
-      "fecha": "2023-07-28",
-      "hora": "17:18",
-      "comensales": "8",
+      "fecha": "2023-07-30",
+      "hora": "21:30",
+      "comensales": "4",
       "id": 5
     },
     {
       "nombre": "Mariana",
       "apellido": "Cervantes",
-      "fecha": "2023-08-14",
-      "hora": "13:45",
-      "comensales": "2",
+      "fecha": "2023-08-24",
+      "hora": "13:15",
+      "comensales": "6",
       "id": 6
     }
   ]

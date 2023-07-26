@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { UsuariosContext } from "../../Context/UsersContext";
 import Swal from "sweetalert2";
 
@@ -17,12 +17,23 @@ const FormUpdateUsuarios = ({ editUser, handleClose }) => {
     e.preventDefault();
     updateUsers(user);
     Swal.fire({
-      icon: "success",
-      title: "Usuario Editado",
-      showConfirmButton: false,
-      timer: 1500,
-    });
-    handleClose();
+      icon: 'warning',
+      title: 'Editar Usuario?',
+      showCancelButton: true,
+      confirmButtonText: 'Aceptar', 
+      cancelButtonText: 'Cancelar',
+      confirmButtonColor: '#651F71',
+      cancelButtonColor: '#C73333',
+      background: '#31302F',
+      color: 'white',
+      backdrop: `rgba(0,0,14,0.4)` 
+    }).then((result) => {        
+      if (result.isConfirmed) {
+        handleClose();
+      } else if (result.isDenied) {
+        return
+      }
+    })    
   };
 
   return (
@@ -77,18 +88,20 @@ const FormUpdateUsuarios = ({ editUser, handleClose }) => {
                 </label>
                 <input
                   type="email"
-                  className="form-control"
+                  className="form-control noEdit"
                   value={user.email}
                   onChange={handleChange}
                   name="email"
                   aria-describedby="email"
+                  disabled
+                  readOnly
                 />
               </div>
 
-              <Button type="submit" variant="outline-success">
+              <button type="submit" className="btn btn-outline botonEditarModal">
                 {" "}
                 Editar Usuario{" "}
-              </Button>
+              </button>
             </form>
           </Col>
         </Row>

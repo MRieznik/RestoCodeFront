@@ -3,6 +3,8 @@ import { UsuariosContext } from "../../Context/UsersContext";
 import Swal from "sweetalert2";
 import { Table, Modal } from "react-bootstrap";
 import FormUpdateUsuarios from "./FormUpdateUsuarios";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import "./TablaUsuarios.css";
 
 const TablaUsuarios = () => {
   const { users, deleteUser } = useContext(UsuariosContext);
@@ -54,27 +56,27 @@ const TablaUsuarios = () => {
                   <td>{user.email}</td>
                   <td>
                     <button
-                      className="btn btn-warning m-1"
+                      className="botonEditar m-1"
                       onClick={() => handleEdit(user)}
                     >
-                      Editar
+                     <FontAwesomeIcon icon="fa-solid fa-pen-to-square" fade size="lg" style={{color: "#ffffff",}} title="Editar Usuario" />
                     </button>
                     <button
-                      className="btn btn-danger m-1"
+                      className="botonDelete m-1"
                       onClick={() => handleDelete(user.id)}
                     >
-                      Borrar
+                      <FontAwesomeIcon icon="fa-solid fa-trash" fade size="lg" style={{color: "#ffffff",}} title="Eliminar Usuario"/>
                     </button>
                   </td>
                 </tr>
               ))}
             </tbody>
           </Table>
-          <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
+          <Modal show={show} onHide={handleClose} className="contenedor-editar">
+            <Modal.Header closeButton className="headerEditar" >
               <Modal.Title>Editar Usuarios</Modal.Title>
             </Modal.Header>
-            <Modal.Body>
+            <Modal.Body className="bodyEditar" >
               <FormUpdateUsuarios editUser={editUser} handleClose={handleClose} />
             </Modal.Body>
           </Modal>

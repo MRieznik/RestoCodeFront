@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+/* Tabla */
+.botonEditar {
+    background-color: #651f71;
+}
+
+.botonDelete{
+    background-color: #c73333;
+}
+
+/* Modal */
+.contenedor-editar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 12.5rem;
+    font-family: "Bebas Neue", sans-serif;
+  }
+  .headerEditar {
+    color: #fff;
+    background-color: #181818;
+    font-family: "Bebas Neue", sans-serif;
+    border-radius: 2px 2px 0 0;
+    border-bottom: 2px solid #651f71;
+  }
+  .bodyEditar {
+    color: #fff;
+    background-color: #181818;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 18px;
+  }
+
+  .botonEditarModal { 
+    background-color: #1d0c20 !important;
+    border: 1px solid #651f71 !important;
+    font-size: 18px !important;
+    color: white !important;
+  }
+  .botonEditarModal:hover {
+    background-color: #7037cd !important;
+    border: 1px solid #7037cd !important;
+  }
+
+  .noEdit{
+    background-color: gray !important;
+  }
+  
+
+  /*------------------ RESPONSIVE ------------------------- */
+  @media (min-width: 360px) and (max-width: 914px) {
+    .contenedor-editar {
+      width: 100%;
+      justify-content: space-evenly;
+    }
+  }
+
