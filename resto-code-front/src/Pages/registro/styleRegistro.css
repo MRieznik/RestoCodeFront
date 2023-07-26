@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap%22");
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap%22 & family= Hammersmith+One & display=swap");
 
 .card-registration .select-input.form-control[readonly]:not([disabled]) {
     font-size: 1rem;
@@ -62,9 +63,10 @@
     border: 0.05em solid #651F71;
 }
 
-/* .tamanioImpustRegistro{
-    font-size: 1rem;
-} */
+.tamanioImpustRegistro{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
 
 /* .quietoRegistro{
     position: relative;
@@ -84,9 +86,10 @@
     margin-top: 5px;
     font-size: 1em;
     padding: 0.3em;
-    box-shadow: 0 0 5px #7037cd;
-    
+  /*   box-shadow: 0 0 5px #7037cd;     */
+  padding-left: 1em;
 }
+
 
 .controladorTmanioTextoReg{
     font-size: 3.5em;
@@ -111,7 +114,7 @@
 
 @media all and (min-width:760px){
     .tamanioImpustRegistro{
-        font-size: 1.20rem;
+        font-size: 1.10rem;
     }
 
     .card-body{

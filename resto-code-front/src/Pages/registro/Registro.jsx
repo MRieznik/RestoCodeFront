@@ -35,12 +35,14 @@ const Registro = () => {
   //Defino los actualizadores de estados para manejar las clases que se colocaran en cada caso
   const [ClaseNombre, setClaseNombre] = useState("mensaje-error-Registro-Correo text-danger d-none");
   const [ClaseApellido, setClaseApellido] = useState("mensaje-error-Registro-Correo text-danger d-none");
-  const [ClaseContrasenia, setClaseContrasenia] = useState("mensaje-error-Registro-Correo text-danger d-none");
   const [ClaseCorreo, setClaseCorreo] = useState("mensaje-error-Registro-Correo text-danger d-none");
   const [ClaseTelefono, setClaseTelefono] = useState("mensaje-error-Registro-Correo text-danger d-none");
-
+  
+  const [ClaseContrasenia, setClaseContrasenia] = useState("mensaje-error-Registro-Correo text-danger d-none");
   const [showPassword, setShowPassword] = useState(false);
   const toggleShowPassword = () => setShowPassword((prevState) => !prevState);
+
+
 
   //Funciones para la validacion de los datos:
   /***************************************** */
@@ -168,6 +170,7 @@ const Registro = () => {
                                   Nombre/s
                                 </label>
                                 <span className="text-danger">*</span>
+                                <span id="mensajeErrorPRegistro" className={ClaseNombre} >  Por favor ingrese un Nombre válido.</span>
                                 <input
                                   type="text"
                                   id="nombreUsuario"
@@ -185,7 +188,6 @@ const Registro = () => {
                                     setNombreUsuario(e.target.value)
                                   }  */
                                 />
-                                <span id="mensajeErrorPRegistro" className={ClaseNombre} >Por favor ingrese un Nombre válido.</span>
                               </div>
                                 
                             </div>
@@ -199,6 +201,7 @@ const Registro = () => {
                                   Apellido
                                 </label>
                                 <span className="text-danger">*</span>
+                                <span id="mensajeErrorPRegistro" className={ClaseApellido} >    Por favor ingrese un Apellido válido.</span>
                                 <input
                                   type="text"
                                   id="apellidoUsuario"
@@ -216,7 +219,6 @@ const Registro = () => {
                                     setApellidoUsuario(e.target.value)
                                   } */
                                 />
-                                <span id="mensajeErrorPRegistro" className={ClaseApellido} >Por favor ingrese un Apellido válido.</span>
                               </div>
                             </div>
                            
@@ -261,6 +263,8 @@ const Registro = () => {
                               <span className="text-secondary">
                                 (entre 8 y 12 caracteres)
                               </span>
+                              <span id="mensajeErrorPRegistro" className={ClaseContrasenia} >    Por faovr ingrese una Contraseña válido.</span>
+
 
 
                               <div className=" d-flex flex-row bg-color-black">
@@ -296,7 +300,6 @@ const Registro = () => {
                               </div>
                               </div>
                               
-                              <span id="mensajeErrorPRegistro" className={ClaseContrasenia} >Por faovr ingrese una Contraseña válido.</span>
                             </div>
                           </div>
 
@@ -310,6 +313,7 @@ const Registro = () => {
                               Correo
                             </label>
                             <span className="text-danger">*</span>
+                            <span id="mensajeErrorPRegistro" className={ClaseCorreo} >Por favor ingrese un correo válido.</span>
                             <input
                               type="email"
                               id="correoUsuario"
@@ -326,7 +330,6 @@ const Registro = () => {
                               maxLength="76"
                             />
                             {/* {!isValidEmail && <span id="mensajeErrorPRegistro" className="mensaje-error-Registro-Correo alert alert-danger">Ingrese un correo válido.</span>} */}
-                            <span id="mensajeErrorPRegistro" className={ClaseCorreo} >Por favor ingrese un correo válido.</span>
                           </div>
 
                           <div className="row">
@@ -364,6 +367,8 @@ const Registro = () => {
                                 >
                                   Teléfono
                                 </label>
+                                <span id="mensajeErrorPRegistro" className={ClaseTelefono} >    Por favor ingrese un teléfono válido.</span>
+
                                 <input
                                   type="text"
                                   id="telefono"
@@ -376,9 +381,9 @@ const Registro = () => {
                                   value={DataUser.telefonoUsuario}
                                   onChange={handleChange}
                                   onBlur={handleTelefonoBlur}
+                                  
                                   /* onChange={(e) => setTelefono(e.target.value)} */
                                 />
-                                <span id="mensajeErrorPRegistro" className={ClaseTelefono} >Por favor ingrese un teléfono válido.</span>
                               </div>
                             </div>
                           </div>
