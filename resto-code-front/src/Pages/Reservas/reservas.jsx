@@ -1,5 +1,5 @@
 // import Bootstrap from "bootstrap/dist/css/bootstrap.min.css?inline"
-import React from "react";
+import React, {useState} from "react";
 import {
   Form
 
@@ -7,6 +7,26 @@ import {
 import "./reservas.css";
 
 const Reservas = () => {
+  // const [formData, setFormData] = useState({
+  //   fecha: '',
+  //   hora: '',
+  //   invitados: '',
+  //   comentarios:''
+  // });
+
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData((prevFormData) => ({
+  //     ...prevFormData,
+  //     [name]: value,
+  //   }));
+  // };
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+
+  // };
+
   return (
     <>
     <main className="contenedorPrincipalReserva">
@@ -18,7 +38,7 @@ const Reservas = () => {
       <Form className="formularioReserva" id="formReserva">
                 <Form.Group
                   className="mb-3"
-                  controlId="exampleForm.ControlInput1"
+                  // controlId="exampleForm.ControlInput1"
                 >
                   <Form.Label htmlFor="inputFechaReserva" className="labelReservas">
                     Fecha de reserva
@@ -26,15 +46,17 @@ const Reservas = () => {
                   <Form.Control
                     className="inputReservas"
                     id="inputFechaReserva"
-                    name="fechaReserva"
+                    name="fecha"
                     type="date"
+                    // value={formData.fecha}
+                    // onChange={handleChange}
                     placeholder="Ingrese su nombre de usuario"
                     required
                   />
                 </Form.Group>
                 <Form.Group
                   className="mb-3"
-                  controlId="exampleForm.ControlInput1"
+                  // controlId="exampleForm.ControlInput1"
                 >
                   <Form.Label className="labelReservas" htmlFor="inputHoraReserva">
                     Hora de reserva
@@ -42,15 +64,17 @@ const Reservas = () => {
                   <Form.Control
                     className="inputReservas"
                     id="inputHoraReserva"
-                    name="horaReserva"
+                    name="hora"
                     type="time"
+                    // value={formData.hora}
+                    // onChange={handleChange}
                     placeholder="Ingrese su nombre de usuario"
                     required
                   />
                 </Form.Group>
                 <Form.Group
                   className="mb-3"
-                  controlId="exampleForm.ControlInput1"
+                  // controlId="exampleForm.ControlInput1"
                 >
                   <Form.Label className="labelReservas" htmlFor="inputInvitados">
                     Cantidad de invitados
@@ -58,8 +82,10 @@ const Reservas = () => {
                   <Form.Control
                     className="inputReservas"
                     id="inputInvitados"
-                    name="numInvitados"
+                    name="invitados"
                     type="number"
+                    // value={formData.invitados}
+                    // onChange={handleChange}
                     placeholder="Ingrese numero de invitados"
                     min="1"
                     max="30"
@@ -72,15 +98,17 @@ const Reservas = () => {
                 <textarea
                   className="infoEvento mb-3"
                   id="inputComentarios"
-                  name="comentariosReservas"
+                  name="comentarios"
                   type="text"
+                  // value={formData.comentarios}
+                  // onChange={handleChange}
                   minLength={5}
                   maxLength={50}
                   title="Ingrese al menos 5 caracteres"
                   required
                   // aria-label="With textarea"
                 />
-                <button className="botonReserva">Confirmar</button>
+                <button type="submit" className="botonReserva">Confirmar</button>
               </Form>
 
       </div>
