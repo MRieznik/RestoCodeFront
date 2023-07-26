@@ -128,7 +128,9 @@
 
 .infoEvento{
   height: 15rem ; 
-  margin-bottom: 1.5rem;
+  /* margin-bottom: 1.5rem; */
+  border-radius: 10px;
+  outline: none;
 }
 
 .infoEvento:focus{
@@ -146,10 +148,10 @@
 .contenedorImgReserva{
   width: 50%;
   height: 100vh;
-  background-image: url("../../Image/RESERVA-IMAGE/imgReserva.jpeg");
+  background-image: url("../../Image/RESERVA-IMAGE/barraImgRC.jpeg");
   background-repeat: no-repeat;
   background-size:cover;
-  background-position: -60px;
+  background-position: 0px -200px ;
   
 } 
 

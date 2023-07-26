@@ -20,13 +20,13 @@ const Reservas = () => {
                   className="mb-3"
                   controlId="exampleForm.ControlInput1"
                 >
-                  <Form.Label for="fechaDeReserva" className="labelReservas">
+                  <Form.Label htmlFor="inputFechaReserva" className="labelReservas">
                     Fecha de reserva
                   </Form.Label>
                   <Form.Control
                     className="inputReservas"
                     id="inputFechaReserva"
-                    name="fechaDeReserva"
+                    name="fechaReserva"
                     type="date"
                     placeholder="Ingrese su nombre de usuario"
                     required
@@ -36,13 +36,13 @@ const Reservas = () => {
                   className="mb-3"
                   controlId="exampleForm.ControlInput1"
                 >
-                  <Form.Label className="labelReservas" for="horaDeReserva">
+                  <Form.Label className="labelReservas" htmlFor="inputHoraReserva">
                     Hora de reserva
                   </Form.Label>
                   <Form.Control
                     className="inputReservas"
                     id="inputHoraReserva"
-                    name="horaDeReserva"
+                    name="horaReserva"
                     type="time"
                     placeholder="Ingrese su nombre de usuario"
                     required
@@ -52,7 +52,7 @@ const Reservas = () => {
                   className="mb-3"
                   controlId="exampleForm.ControlInput1"
                 >
-                  <Form.Label className="labelReservas" for="numInvitados">
+                  <Form.Label className="labelReservas" htmlFor="inputInvitados">
                     Cantidad de invitados
                   </Form.Label>
                   <Form.Control
@@ -61,15 +61,21 @@ const Reservas = () => {
                     name="numInvitados"
                     type="number"
                     placeholder="Ingrese numero de invitados"
+                    min="0"
+                    max="30"
+                    title="Cantidad maxima de personas: 30"
                     required
                   />
                 </Form.Group>
-                <Form.Label className="labelReservas" for="comentariosReservas">¿Qué debemos saber sobre tu evento?</Form.Label>
-                <Form.Control
-                  className="infoEvento"
+                <Form.Label className="labelReservas" htmlFor="inputComentarios">¿Qué debemos saber sobre tu evento?</Form.Label>
+                <textarea
+                  className="infoEvento mb-3"
                   id="inputComentarios"
                   name="comentariosReservas"
                   type="text"
+                  minLength={5}
+                  maxLength={50}
+                  title="Ingrese al menos 5 caracteres"
                   required
                   // aria-label="With textarea"
                 />
