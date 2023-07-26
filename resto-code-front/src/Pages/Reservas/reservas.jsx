@@ -1,10 +1,9 @@
 // import Bootstrap from "bootstrap/dist/css/bootstrap.min.css?inline"
-import React from "react";
 import {
   Form,
   Button,
 } from "react-bootstrap/";
-import "./reservas.css";
+import "./Reservas.css";
 
 const Reservas = () => {
   return (
