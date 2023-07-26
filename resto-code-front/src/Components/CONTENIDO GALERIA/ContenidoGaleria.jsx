@@ -1,6 +1,9 @@
 import "../CONTENIDO GALERIA/ContenidoGaleria.css";
 import videoextreme from "../../Image/GALERIA-IMAGE/videoPrueba.mp4";
 import videocerveza from "../../Image/GALERIA-IMAGE/videocerveza.mp4";
+import videopizza from "../../Image/GALERIA-IMAGE/videoPizzaGaleria.mp4";
+import videohamburguesasimple from "../../Image/GALERIA-IMAGE/videoHamburGaleria.mp4";
+// import imagenbarra from "../../Image/GALERIA-IMAGE/martiniGaleria.jpg"
 
 const Galeria = () => {
   return (
@@ -36,7 +39,9 @@ const Galeria = () => {
           <div className="contenedorImagenArosDeCebolla">
             <div className="sombraPersonaCerveza"></div>
           </div>
-          <div className="contenedorImagenBastonesDeMuzarella"></div>
+          <div className="contenedorImagenBastonesDeMuzarella">
+            <div className="sombraPersonaCerveza"></div>
+          </div>
           <div className="contenedorImagenVariado">
             <div className="sombraPersonaCerveza"></div>
           </div>
@@ -44,6 +49,29 @@ const Galeria = () => {
           <div className="contenedorFraseGuarniciones">
             <h2>Diferentes Guarniciones</h2>
             <h4>Para acompañar tus comidas</h4>
+          </div>
+        </div>
+
+        <div className="contenedorBloqueTres">
+          <video
+            className="videoPizza"
+            src={videopizza}
+            autoPlay
+            loop
+            muted
+          ></video>
+          <div className="contenedorImagenBarra">
+            <div className="sombraPersonaCerveza"></div>
+          </div>
+          <video
+            className="videoHamburguesaSimple"
+            src={videohamburguesasimple}
+            autoPlay
+            loop
+            muted
+          ></video>
+          <div className="contenedorTrago">
+            <div className="sombraPersonaCerveza"></div>
           </div>
         </div>
       </main>

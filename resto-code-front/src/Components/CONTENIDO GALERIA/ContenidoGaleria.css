@@ -1,199 +1,133 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-
+* {
+    margin: 0;
+}
 /* .contenedorPrincipalDeGaleria {
-
     border: 1px solid red;
-    height: 100vh;
-
 } */
 
 .presentacionHamburguesaXtreme {
-    height: 35rem;
-    display: flex;
-    background-color: #181818;
+  height: 27rem;
+  display: flex;
+  background-color: #181818;
 }
 
-
 .contenedorXtreme {
-    width: 40%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .contenedorXtreme .videoXtreme {
-    width: 100%;
+  margin-top: 0.7rem;
 }
 
 .nombreHamburguesaXtreme {
-    font-family: "Bebas Neue", sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 25%;
-    padding-top: 0.5rem;
+  font-family: "Bebas Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 25%;
+  padding-top: 0.5rem;
 }
 
 .nombreHamburguesaXtreme h2 {
-    color: white;
-    font-size: 3rem;
-    margin: 0;
-
+  color: white;
+  font-size: 3rem;
+  margin: 0;
 }
 
 .nombreHamburguesaXtreme h4 {
-    color: #7037cd;
-    margin: 0;
-    font-size: 2.5rem;
+  color: #7037cd;
+  margin: 0;
+  font-size: 2.5rem;
 }
 
 .imagenPersonaCerveza {
-    width: 45%;
-    height: 100%;
-    background-image: url("../../Image/GALERIA-IMAGE/personasCervesa.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+  width: 45%;
+  height: 100%;
+  background-image: url("../../Image/GALERIA-IMAGE/personasCervesa.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .sombraPersonaCerveza {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.500);
-    transition: 0.2s;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: 0.2s;
 }
 
 .sombraPersonaCerveza:hover {
-    background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
 }
 
-.presentacionGuarnicion{
+.presentacionGuarnicion {
+  display: flex;
+  align-items: center;
+}
+.contenedorImagenArosDeCebolla {
+  height: 30rem;
+  width: 23rem;
+  transition: 2s;
+  background-image: url(../../Image/GALERIA-IMAGE/arosCebolla.jpg);
+}
+.contenedorImagenBastonesDeMuzarella {
+  height: 30rem;
+  width: 23rem;
+  transition: 2s;
+  background-image: url(../../Image/GALERIA-IMAGE/bastonesMuzarella.jpg);
+}
+.contenedorImagenVariado {
+  height: 30rem;
+  width: 23rem;
+  transition: 2s;
+  background-image: url(../../Image/GALERIA-IMAGE/guarnicion.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contenedorFraseGuarniciones {
+  height: 30rem;
+  width: 50rem;
+  background-color: #181818;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contenedorFraseGuarniciones h2 {
+  font-family: "Bebas Neue", sans-serif;
+  color: white;
+  margin: 0;
+  font-size: 3rem;
+}
+.contenedorFraseGuarniciones h4 {
+  font-family: "Bebas Neue", sans-serif;
+  color: #7037cd;
+  margin: 0;
+  font-size: 2.3rem;
+}
+.contenedorBloqueTres {
     display: flex;
-    align-items: center;
 }
-.contenedorImagenArosDeCebolla{
-    height: 40rem;
-    width: 23rem;
-    transition: 2s;
-    background-image: url(../../Image/GALERIA-IMAGE/arosCebolla.jpg);
+.videoPizza {
+    width: 40rem;
 }
-.contenedorImagenBastonesDeMuzarella{
-    height: 40rem;
-    width: 23rem;
-    transition: 2s;
-    background-image: url(../../Image/GALERIA-IMAGE/bastonesMuzarella.jpg);
-}
-.contenedorImagenVariado{
-    height: 40rem;
-    width: 23rem;
-    transition: 2s;
-    background-image: url(../../Image/GALERIA-IMAGE/guarnicion.jpg);
+.contenedorImagenBarra {
+    width: 15rem;
+    background-image: url("../../Image/GALERIA-IMAGE/martiniGaleria.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
-.contenedorFraseGuarniciones{
-    height: 40rem;
-    width: 50rem;
-    background-color: #181818;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.videoHamburguesaSimple {
+    height: 22.5rem;
 }
-.contenedorFraseGuarniciones h2{
-    font-family: "Bebas Neue", sans-serif;
-    color: white;
-    margin: 0;
-    font-size: 4.5rem;
-}
-.contenedorFraseGuarniciones h4{
-    font-family: "Bebas Neue", sans-serif;
-    color: #7037cd;
-    margin: 0;
-    font-size: 3rem;
-}
-
-/*estilos bloque 3*/
-
-.presentacionCervezas{
-    height: 35rem;
-    display: flex;
-    background-color: #181818;
-
-    /* font-family: "Bebas Neue", sans-serif;
-    color: #7037cd;
-    margin: 0;
-    font-size: 3rem; */
-
-    
-}
-.contenedorBloqueCervezas{
-    width: 40%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.contenedorFraseCerveza{
-    height: 40rem;
-    width: 50rem;
-    background-color: #181818;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-}
-.contenedorFraseCerveza h2{
-    font-family: "Bebas Neue", sans-serif;
-    color: white;
-    margin: 0;
-    font-size: 3rem;
-}
-.contenedorFraseCerveza h4{
-    font-family: "Bebas Neue", sans-serif;
-    color: #7037cd;
-    margin: 0;
-    font-size: 2.5rem;
-
-}
-
-/* bloque 3 2da parte */
-
-.presentacionCervezas2{
-
-}
-.contenedorBloqueCervezas2{
-    
-}
-.contenedorFraseCerveza2{
-    height: 40rem;
-    width: 23rem;
-    background-color: #181818;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-    
-}
-.contenedorFraseCerveza2 h2{
-    font-family: "Bebas Neue", sans-serif;
-    color: white;
-    /* margin: 0; */
-    margin-left: 1rem;
-    font-size: 3rem;
-}
-.contenedorFraseCerveza2 h4{
-    font-family: "Bebas Neue", sans-serif;
-    color: #7037cd;
-    margin-left: 1rem;
-    /* margin: 0; */
-    font-size: 2.5rem;
-
-}
-.contenedorImagenVariado2{
-    height: 40rem;
-    width: 23rem;
-    transition: 2s;
-    object-fit: cover;
-    background-image: url(../../Image/GALERIA-IMAGE/CERVECERIA2.png);
+.contenedorTrago {
+    width: 12.5rem;
+    background-image: url("../../Image/GALERIA-IMAGE/tragoGaleria.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
