@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap%22");
+
 .card-registration .select-input.form-control[readonly]:not([disabled]) {
     font-size: 1rem;
     line-height: 2.15;
@@ -8,18 +10,37 @@
     top: 13px;
     }
 
+
+
+.contenedorGeneralRegistro{
+    background-color: #181818
+}
+
+.RegistroColorSub{
+    color:#7037cd ;
+}
+
 .botonSubmitRegistro{
-    background-color: #1D0C20;
+    width: 100%;
+    background-color: #1d0c20;
+    color: white;
+    padding: 6px 10px 6px 10px;
+    border: 2px solid #7037cd;
+    transition: 0.2s;
+    border-radius: 5px;
+    font-size: 1.5rem;
 }
 
 .botonSubmitRegistro:hover{
-    background-color: #651F71;
+    background-color: #7037cd;   
+    border: 2px solid #7037cd;
 }
 
 
 
 *{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-family: "Bebas Neue", sans-serif;
 }
 .imgFondo-1{
     /* background-image: url(https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80); */
@@ -51,7 +72,12 @@
     right: 0;
     height: 100%;
 } */
-
+ 
+.tamanioImpustRegistro:focus{
+    transition: 0.5s;
+    box-shadow: 0 0 5px #7037cd;
+    border-color: #7037cd;
+}
 
 .mensaje-error-Registro-Correo{
     display: none;
@@ -61,7 +87,7 @@
 }
 
 .controladorTmanioTextoReg{
-    font-size: 3.2em;
+    font-size: 3.5em;
 }
 
 .contenedorTituloFormuBotonRegistro{
@@ -73,7 +99,7 @@
 
 @media all and (min-width:300px){
     .tamanioImpustRegistro{
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     .card-body{
         margin-top: 2em;
@@ -83,7 +109,7 @@
 
 @media all and (min-width:760px){
     .tamanioImpustRegistro{
-        font-size: 1.25rem;
+        font-size: 1.20rem;
     }
 
     .card-body{

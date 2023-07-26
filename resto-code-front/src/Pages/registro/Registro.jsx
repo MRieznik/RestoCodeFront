@@ -33,35 +33,35 @@ const Registro = () => {
 
   return (
     <main>
-      <div className="container-fluid h-100">
+      <div className="container-fluid h-100 contenedorGeneralRegistro">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col m-0 p-0">
-            <div className="card card-registration my-0 border-0">
+            <div className="card card-registration my-0 border-0 contenedorGeneralRegistro">
               <div className="row g-0">
                 <div className="col">
-                  <div>
-                    <p className="mt-3 mx-3"> Volver </p>
-                  </div>
+                  {/* <div>
+                    <p className="mt-3 mx-3 text-light"> Volver </p>
+                  </div> */}
 
-                  <div className="card-body pt-0 px-md-5 mx-md-5 m-md-3 text-black">
+                  <div className="card-body pt-5 px-md-5 mx-md-5 m-md-3 text-black">
                     <form onSubmit={handleSubmit} id="formRegistroUsuarios">
                       <div className="contenedorTituloFormuBotonRegistro ">
                         <div className="mb-4 pb-2 text-center w-100 mb-auto">
-                          <h1 className="fw-bold m-0 controladorTmanioTextoReg">
+                          <h1 className=" m-0 controladorTmanioTextoReg text-light">
                             Únete a RestoCode
                           </h1>
-                          <p>
-                           Forma parte de la comunidad gastronómica de <strong>RestoCode</strong>
+                          <p className=" fs-4 RegistroColorSub">
+                           Forma parte de la comunidad gastronómica de RestoCode
                             
                           </p>
                         </div>
 
                         <div className="aling-self-center w-100">
                           <div className="row ">
-                            <div className="col-md-6 mb-2">
+                            <div className="col-md-6 mb-1 mt-2">
                               <div className="form-outline">
                                 <label
-                                  className="form-label fw-bold"
+                                  className="form-label fs-5 text-light mb-0"
                                   htmlFor="nombreUsuario"
                                 >
                                   {" "}
@@ -71,7 +71,7 @@ const Registro = () => {
                                 <input
                                   type="text"
                                   id="nombreUsuario"
-                                  className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados"
+                                  className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados mb-1"
                                   placeholder="Ej: Juan Resto"
                                   pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
                                   title="Este campo solo permite letras y espacios en blanco"
@@ -86,10 +86,10 @@ const Registro = () => {
                                 />
                               </div>
                             </div>
-                            <div className="col-md-6 mb-2">
+                            <div className="col-md-6 mb-1 mt-2">
                               <div className="form-outline">
                                 <label
-                                  className="form-label fw-bold"
+                                  className="form-label fs-5 text-light mb-0"
                                   htmlFor="nombreUsuario"
                                 >
                                   {" "}
@@ -99,7 +99,7 @@ const Registro = () => {
                                 <input
                                   type="text"
                                   id="nombreUsuario"
-                                  className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados"
+                                  className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados mb-1"
                                   placeholder="Ej: Code"
                                   pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
                                   title="Este campo solo permite letras y espacios en blanco"
@@ -145,9 +145,9 @@ const Registro = () => {
                                /*  />
                               </div>
                             </div> */} 
-                            <div className="form-outline col-md-12 mb-2">
+                            <div className="form-outline col-md-12 mb-1 mt-2">
                               <label
-                                className="form-label fw-bold"
+                                className="form-label fs-5 text-light mb-0"
                                 htmlFor="contraseniaUsuario"
                               >
                                 Contraseña
@@ -159,7 +159,7 @@ const Registro = () => {
                               <input
                                 type="password"
                                 id="contraseniaUsuario"
-                                className="form-control form-control-lg validadoss NoValidados"
+                                className="form-control form-control-lg validadoss NoValidados tamanioImpustRegistro mb-1"
                                 placeholder="Contraseña"
                                 pattern="[A-Za-z0-9!?-]{8,12}"
                                 title="Ingrese una contraseña válida (entre 8 y 12 caracteres)"
@@ -178,9 +178,9 @@ const Registro = () => {
 
                          
 
-                          <div className="form-outline mb-2">
+                          <div className="form-outline mb-1 mt-2">
                             <label
-                              className="form-label fw-bold"
+                              className="form-label fs-5 text-light mb-0"
                               htmlFor="correoUsuario"
                             >
                               Correo
@@ -189,7 +189,7 @@ const Registro = () => {
                             <input
                               type="email"
                               id="correoUsuario"
-                              className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados"
+                              className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados mb-1"
                               placeholder="Ej: RestoCode@gmail.com"
                               title="Ingrese un correo para poder crear la cuenta"
                               autoComplete="on"
@@ -206,7 +206,7 @@ const Registro = () => {
                           <div className="row">
                             
 
-                           {/*  <div className="col-md-12 mb-2">
+                           {/*  <div className="col-md-12mb-1 mt-2">
                               <div className="form-outline">
                                 <label
                                   className="form-label fw-bold"
@@ -230,10 +230,10 @@ const Registro = () => {
                               </div>
                             </div> */}
 
-                            <div className="col-md-12 mb-2">
+                            <div className="col-md-12 mb-1 mt-2">
                               <div className="form-outline">
                                 <label
-                                  className="form-label fw-bold"
+                                  className="form-label fs-5 text-light mb-0"
                                   htmlFor="telefono"
                                 >
                                   Teléfono
@@ -241,7 +241,7 @@ const Registro = () => {
                                 <input
                                   type="text"
                                   id="telefono"
-                                  className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados"
+                                  className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados mb-1"
                                   placeholder="Ej: 3816610091"
                                   pattern="[0-9]{7,15}"
                                   title="Ingrese un número de teléfono válido (entre 7 y 15 dígitos)"
@@ -260,7 +260,7 @@ const Registro = () => {
                             <input
                               type="submit"
                               id="submitRegistrar"
-                              className="tamanioImpustRegistro form-control form-control-lg fw-bold btn btn-dark btn-lg botonSubmitRegistro"
+                              className="   form-control form-control-lg btn-lg botonSubmitRegistro"
                               value="Registrarse"
                             />
                           </div>
