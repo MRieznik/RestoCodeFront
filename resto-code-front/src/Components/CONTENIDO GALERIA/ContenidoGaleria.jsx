@@ -54,7 +54,7 @@ const Galeria = () => {
                 </div>
 
                 {/* bloque 3 */}
-
+{/* 
                 <div className="presentacionCervezas">
                     <div className="contenedorBloqueCervezas">
                         <div className="contenedorFraseCerveza">
@@ -80,7 +80,7 @@ const Galeria = () => {
                     <div className="sombraPersonaCerveza">
                     </div>
                 </div>
-                </div>
+                </div> */}
             </main>
 
         </>
