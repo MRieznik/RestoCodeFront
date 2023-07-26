@@ -10,7 +10,7 @@ const Error404 = () => {
           <div className="text-center position-absolute mt-2">
             <h2 className="display-1 fw-bold text-white texto404 ">404</h2>
             <p className="fs-3 text-white fw-bold">
-              <span class="text-danger fw-bold">Opps!</span> Página no encontrada.
+              <span className="text-danger fw-bold">Opps!</span> Página no encontrada.
             </p>
             <p className="text-white">
               Lo siento, la página que estás buscando no se pudo encontrar.
