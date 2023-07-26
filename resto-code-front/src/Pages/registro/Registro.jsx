@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import "./styleRegistro.css";
+import "./Registro.css";
 
 const Registro = () => {
 
