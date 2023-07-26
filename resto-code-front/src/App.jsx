@@ -1,10 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import About from "./Pages/About"
+import Nosotros from "./Pages/NOSOTROS/Nosotros"
 
 function App() {
   return (
     <>
-    <About />
+    <Nosotros />
     </>
   );
 }

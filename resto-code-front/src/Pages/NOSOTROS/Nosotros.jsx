@@ -1,11 +1,12 @@
-import "./ContenidoAbout.css";
+import "./Nosotros.css";
 import fotomarcos from "../../Image/ABOUT-IMAGE/fotoMarcos.png";
 import fotolautaro from "../../Image/ABOUT-IMAGE/fotoLautaro.png";
 import fotoluisina from "../../Image/ABOUT-IMAGE/fotoLuisina.png";
 import fotomariana from "../../Image/ABOUT-IMAGE/fotoMariana.png";
 import fotonazaret from "../../Image/ABOUT-IMAGE/fotoNazaret.png";
 import fotosergio from "../../Image/ABOUT-IMAGE/fotoSergio.png";
-const ContenidoAbout = () => {
+
+const About = () => {
   return (
     <>
       <main className="contenedorPrincipalAbout">
@@ -288,4 +289,4 @@ const ContenidoAbout = () => {
   );
 };
 
-export default ContenidoAbout;
+export default About;
