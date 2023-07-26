@@ -51,20 +51,73 @@ const Registro = () => {
                             Únete a RestoCode
                           </h1>
                           <p>
-                            ¿Ya tienes una cuenta?{" "}
-                            <a
-                              className="fw-bold link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
-                              href=""
-                            >
-                              {" "}
-                              Inicia Sesión
-                            </a>
+                           Forma parte de la comunidad gastronómica de <strong>RestoCode</strong>
+                            
                           </p>
                         </div>
 
                         <div className="aling-self-center w-100">
                           <div className="row ">
                             <div className="col-md-6 mb-2">
+                              <div className="form-outline">
+                                <label
+                                  className="form-label fw-bold"
+                                  htmlFor="nombreUsuario"
+                                >
+                                  {" "}
+                                  Nombre/s
+                                </label>
+                                <span className="text-danger">*</span>
+                                <input
+                                  type="text"
+                                  id="nombreUsuario"
+                                  className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados"
+                                  placeholder="Ej: Juan Resto"
+                                  pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                                  title="Este campo solo permite letras y espacios en blanco"
+                                  required
+                                  maxLength="50"
+                                  name="nombreUsuario"
+                                  /* value={DataUser.nombreUsuario}
+                                  onChange={handleChange} */
+                                  /* onChange={(e) =>
+                                    setNombreUsuario(e.target.value)
+                                  } */
+                                />
+                              </div>
+                            </div>
+                            <div className="col-md-6 mb-2">
+                              <div className="form-outline">
+                                <label
+                                  className="form-label fw-bold"
+                                  htmlFor="nombreUsuario"
+                                >
+                                  {" "}
+                                  Apellido
+                                </label>
+                                <span className="text-danger">*</span>
+                                <input
+                                  type="text"
+                                  id="nombreUsuario"
+                                  className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados"
+                                  placeholder="Ej: Code"
+                                  pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                                  title="Este campo solo permite letras y espacios en blanco"
+                                  required
+                                  maxLength="50"
+                                  name="nombreUsuario"
+                                  /* value={DataUser.nombreUsuario}
+                                  onChange={handleChange} */
+                                  /* onChange={(e) =>
+                                    setNombreUsuario(e.target.value)
+                                  } */
+                                />
+                              </div>
+                            </div>
+                           
+                          </div>
+                          <div className="row ">
+                            {/* <div className="col-md-6 mb-2">
                               <div className="form-outline">
                                 <label
                                   className="form-label fw-bold"
@@ -89,10 +142,10 @@ const Registro = () => {
                                   /* onChange={(e) =>
                                     setNombreUsuario(e.target.value)
                                   } */
-                                />
+                               /*  />
                               </div>
-                            </div>
-                            <div className="form-outline col-md-6 mb-2">
+                            </div> */} 
+                            <div className="form-outline col-md-12 mb-2">
                               <label
                                 className="form-label fw-bold"
                                 htmlFor="contraseniaUsuario"
@@ -123,7 +176,7 @@ const Registro = () => {
                             </div>
                           </div>
 
-                          {/* Rest of the form inputs... */}
+                         
 
                           <div className="form-outline mb-2">
                             <label
@@ -151,59 +204,9 @@ const Registro = () => {
                           </div>
 
                           <div className="row">
-                            <div className="col-md-6 mb-2">
-                              <div className="form-outline ">
-                                <label
-                                  className="form-label fw-bold"
-                                  htmlFor="provinciaUsuario"
-                                >
-                                  Provincia{" "}
-                                </label>
-                                <input
-                                  type="text"
-                                  id="provinciaUsuario"
-                                  className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados"
-                                  placeholder="Ej: Tucumán"
-                                  pattern="^[A-Za-z0-9]{1,50}$"
-                                  title="Ingrese la provincia donde reside"
-                                  maxLength="50"
-                                  name="provinciaUsuario"
-                                  /* value={DataUser.provinciaUsuario}
-                                  onChange={handleChange} */
-                                  /* onChange={(e) =>
-                                    setProvinciaUsuario(e.target.value)
-                                  } */
-                                />
-                              </div>
-                            </div>
+                            
 
-                            <div className="col-md-6 mb-2">
-                              <div className="form-outline">
-                                <label
-                                  className="form-label fw-bold"
-                                  htmlFor="ciudadLocalidadUsuario"
-                                >
-                                  Ciudad/Localidad
-                                </label>
-                                <input
-                                  type="text"
-                                  id="ciudadLocalidadUsuario"
-                                  className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados"
-                                  placeholder="Ej: Famaillá"
-                                  pattern="^[A-Za-z0-9]{1,50}$"
-                                  title="Ingrese la Ciudad/Localidad donde reside"
-                                  maxLength="50"
-                                  name="ciudadLocalidadUsuario"
-                                  /* value={DataUser.ciudadLocalidadUsuario}
-                                  onChange={handleChange} */
-                                  /* onChange={(e) =>
-                                    setCiudadLocalidadUsuario(e.target.value)
-                                  } */
-                                />
-                              </div>
-                            </div>
-
-                            <div className="col-md-6 mb-2">
+                           {/*  <div className="col-md-12 mb-2">
                               <div className="form-outline">
                                 <label
                                   className="form-label fw-bold"
@@ -220,14 +223,14 @@ const Registro = () => {
                                   title="Dirección de donde reside"
                                   maxLength="150"
                                   name="direccionUsuario"
-                                  /* value={DataUser.direccionUsuario}
-                                  onChange={handleChange} */
-                                 /*  onChange={(e) => setDireccion(e.target.value)} */
+                                  value={DataUser.direccionUsuario}
+                                  onChange={handleChange} 
+                                  onChange={(e) => setDireccion(e.target.value)}
                                 />
                               </div>
-                            </div>
+                            </div> */}
 
-                            <div className="col-md-6 mb-2">
+                            <div className="col-md-12 mb-2">
                               <div className="form-outline">
                                 <label
                                   className="form-label fw-bold"
