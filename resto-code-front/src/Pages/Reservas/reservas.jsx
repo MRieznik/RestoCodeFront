@@ -1,8 +1,8 @@
 // import Bootstrap from "bootstrap/dist/css/bootstrap.min.css?inline"
 import React from "react";
 import {
-  Form,
-  Button,
+  Form
+
 } from "react-bootstrap/";
 import "./reservas.css";
 
@@ -61,9 +61,10 @@ const Reservas = () => {
                     name="numInvitados"
                     type="number"
                     placeholder="Ingrese numero de invitados"
-                    min="0"
+                    min="1"
                     max="30"
-                    title="Cantidad maxima de personas: 30"
+                    title="Cantidad maxima de personas: 30
+                    "
                     required
                   />
                 </Form.Group>
@@ -79,72 +80,13 @@ const Reservas = () => {
                   required
                   // aria-label="With textarea"
                 />
-                <Button className="botonReserva">Confirmar</Button>
+                <button className="botonReserva">Confirmar</button>
               </Form>
 
       </div>
       <div className="contenedorImgReserva">
       </div>
     </main>
-
-
-      {/* <Container fluid className="pageReserva">
-        <Row>
-        <Col lg={6}>
-          <Card className="cardReserva">
-            <Card.Body>
-              <Card.Title className="tituloCardReservas">
-                <h1>RESERVAS</h1>
-              </Card.Title>
-              <Form>
-                <Form.Group
-                  className="mb-3"
-                  controlId="exampleForm.ControlInput1"
-                >
-                  <Form.Label className="labelReservas">
-                    Nombre de usuario
-                  </Form.Label>
-                  <Form.Control
-                    className="inputReservas"
-                    type="text"
-                    placeholder="Ingrese su nombre de usuario"
-                  />
-                </Form.Group>
-                <Form.Label className="labelReservas">
-                  Cantidad de comensales
-                </Form.Label>
-                <Form.Select
-                  className="inputReservas"
-                  aria-label="Default select example"
-                >
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                </Form.Select>
-                <p></p>
-                <Form.Label className="labelReservas">Comentarios</Form.Label>
-                <Form.Control
-                  className="inputReservas"
-                  as="textarea"
-                  aria-label="With textarea"
-                />
-                <p></p>
-                <Button className="botonReserva">Confirmar</Button>
-              </Form>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col lg={6}>
-          <div className="contenedorImgReserva">
-          <img
-            className="imgReserva"
-            src="../src/Image/restocodeimg.jpeg"
-            alt=""
-          />
-          </div>
-        </Col>
-        </Row>
-      </Container> */}
     </>
   );
 };
