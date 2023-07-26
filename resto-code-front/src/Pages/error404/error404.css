@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 *{
     margin: 0;
     padding: 0;
@@ -9,20 +10,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #1d0c20; 
+    background-color: #181818; 
     
+}
+.texto404{
+  font-size: 30rem !important;
 }
 
 .imagen404{
-    background-image: url(../../Image/ERROR404/Error404.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 500px;
-    height: 400px;
-    position: sticky;
+  width: 25rem;
+  height: 25rem;
+  align-items: center;
 }
-
-   
 
 .boton-error{
   border: none;
