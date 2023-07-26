@@ -1,7 +1,89 @@
 import { Form } from "react-bootstrap/";
 import "./Reservas.css";
+import { useState } from "react";
+// import FormRange from "react-bootstrap/esm/FormRange";
 
 const Reservas = () => {
+  const [formReserva, setFormReserva] = useState({
+    fecha: "",
+    hora: "",
+    invitados: "",
+    comentarios: "",
+  });
+
+  const [errorFecha, setErrorFecha] = useState("");
+  const [errorHora, setErrorHora] = useState("");
+  const [errorInvitados, setErrorInvitados] = useState("");
+  const [errorComentarios, setErrorComentarios] = useState("");
+
+  const handleChange = (e) => {
+    setFormReserva({ ...formReserva, [e.target.name]: e.target.value });
+  };
+
+  const handleBlurFecha = (e) => {
+    if (e.target.name === "fecha") {
+      const fecha = new Date(e.target.value);
+      const fechaActual = new Date();
+      if (fecha < fechaActual) {
+        setErrorFecha("¡La fecha seleccionada está fuera del rango permitido!");
+      } else {
+        setErrorFecha("");
+      }
+    }
+  };
+
+  const handleBlurHora = (e) => {
+    if (e.target.name === "hora") {
+      const hora = e.target.value;
+      const horaMinima = new Date(`2000-01-01T10:00`); // Hora de inicio permitida (ejemplo)
+      const horaMaxima = new Date(`2000-01-01T23:00`); // Hora de fin permitida (ejemplo)
+
+      const valorHora = new Date(`2000-01-01T${hora}`);
+
+      if (valorHora < horaMinima || valorHora > horaMaxima) {
+        setErrorHora("¡La hora seleccionada está fuera del rango permitido!");
+      } else {
+        setErrorHora("");
+      }
+    }
+  };
+
+  const handleBlurInvitados = (e) => {
+    if (e.target.name === "invitados") {
+      const invitados = e.target.value;
+      const invitadosMin = 1;
+      const invitadosMax = 30;
+      if (invitados < invitadosMin || invitados > invitadosMax) {
+        setErrorInvitados("¡Debe asistir al menos una persona!");
+      } else {
+        setErrorInvitados("");
+      }
+    }
+  };
+
+  const handleBlurComentarios = (e) => {
+    if (e.target.name === "comentarios") {
+      const comentarios = e.target.value;
+
+      if (comentarios.length < 5 || comentarios.length > 50) {
+        setErrorComentarios("¡Danos mas detalles de tu reserva!");
+      } else {
+        setErrorComentarios("");
+      }
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormReserva({
+      fecha: "",
+      hora: "",
+      invitados: "",
+      comentarios: "",
+    });
+    formularioReserva.reset();
+  };
+
   return (
     <>
       <main className="contenedorPrincipalReserva">
@@ -10,7 +92,11 @@ const Reservas = () => {
             <h2>No esperes en la fila</h2>
             <h4>¡Reserva y entrá directo a la diversión!</h4>
           </div>
-          <Form className="formularioReserva" id="formReserva">
+          <Form
+            onSubmit={handleSubmit}
+            className="formularioReserva"
+            id="formularioReserva"
+          >
             <Form.Group className="mb-3">
               <Form.Label htmlFor="inputFechaReserva" className="labelReservas">
                 Fecha de reserva
@@ -20,11 +106,13 @@ const Reservas = () => {
                 id="inputFechaReserva"
                 name="fecha"
                 type="date"
-                // value={formData.fecha}
-                // onChange={handleChange}
-                placeholder="Ingrese su nombre de usuario"
+                value={formReserva.fecha}
+                onChange={handleChange}
+                onBlur={handleBlurFecha}
+                min={new Date().toISOString().split("T")[0]}
                 required
               />
+              {errorFecha && <div className="errorMensaje">{errorFecha}</div>}
             </Form.Group>
             <Form.Group
               className="mb-3"
@@ -38,11 +126,12 @@ const Reservas = () => {
                 id="inputHoraReserva"
                 name="hora"
                 type="time"
-                // value={formData.hora}
-                // onChange={handleChange}
-                placeholder="Ingrese su nombre de usuario"
+                value={formReserva.hora}
+                onChange={handleChange}
+                onBlur={handleBlurHora}
                 required
               />
+              {errorHora && <div className="errorMensaje">{errorHora}</div>}
             </Form.Group>
             <Form.Group
               className="mb-3"
@@ -56,8 +145,9 @@ const Reservas = () => {
                 id="inputInvitados"
                 name="invitados"
                 type="number"
-                // value={formData.invitados}
-                // onChange={handleChange}
+                value={formReserva.invitados}
+                onChange={handleChange}
+                onBlur={handleBlurInvitados}
                 placeholder="Ingrese numero de invitados"
                 min="1"
                 max="30"
@@ -65,6 +155,9 @@ const Reservas = () => {
                     "
                 required
               />
+              {errorInvitados && (
+                <div className="errorMensaje">{errorInvitados}</div>
+              )}
             </Form.Group>
             <Form.Label className="labelReservas" htmlFor="inputComentarios">
               ¿Qué debemos saber sobre tu evento?
@@ -74,14 +167,18 @@ const Reservas = () => {
               id="inputComentarios"
               name="comentarios"
               type="text"
-              // value={formData.comentarios}
-              // onChange={handleChange}
+              value={formReserva.comentarios}
+              onChange={handleChange}
+              onBlur={handleBlurComentarios}
               minLength={5}
               maxLength={50}
               title="Ingrese al menos 5 caracteres"
               required
               // aria-label="With textarea"
             />
+             {errorComentarios && (
+                <div className="errorMensaje">{errorComentarios}</div>
+              )}
             <button type="submit" className="botonReserva">
               Confirmar
             </button>
