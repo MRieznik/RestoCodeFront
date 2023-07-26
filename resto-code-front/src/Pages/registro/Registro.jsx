@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import "./styleRegistro.css";
 
 const Registro = () => {
@@ -37,6 +39,8 @@ const Registro = () => {
   const [ClaseCorreo, setClaseCorreo] = useState("mensaje-error-Registro-Correo text-danger d-none");
   const [ClaseTelefono, setClaseTelefono] = useState("mensaje-error-Registro-Correo text-danger d-none");
 
+  const [showPassword, setShowPassword] = useState(false);
+  const toggleShowPassword = () => setShowPassword((prevState) => !prevState);
 
   //Funciones para la validacion de los datos:
   /***************************************** */
@@ -97,9 +101,9 @@ const Registro = () => {
   };
 
   const handleContraseñaBlur = () => {
-    const contraseñaValida = contraseniaValida(DataUser.contraseniaUsuario);
-    console.log("contra válido:", contraseñaValida);
-    if (!contraseniaValida) {
+    const contraseñaValid = contraseniaValida(DataUser.contraseniaUsuario);
+    console.log("contra válido:", contraseñaValid);
+    if (!contraseñaValid) {
       setClaseContrasenia("mensaje-error-Registro-Correo text-danger")
     }  else {
       setClaseContrasenia("mensaje-error-Registro-Correo text-danger d-none")
@@ -257,10 +261,15 @@ const Registro = () => {
                               <span className="text-secondary">
                                 (entre 8 y 12 caracteres)
                               </span>
+
+
+                              <div className=" d-flex flex-row bg-color-black">
+
+                              
                               <input
-                                type="password"
+                                type={showPassword ? 'text' : 'password'}
                                 /* id="contraseniaUsuario" */
-                                className="form-control form-control-lg validadoss NoValidados tamanioImpustRegistro mb-1"
+                                className="form-control form-control-lg validadoss NoValidados tamanioImpustRegistro mb-1 w-20"
                                 placeholder="Contraseña"
                                 pattern="[A-Za-z0-9!?-]{8,12}"
                                 title="Ingrese una contraseña válida (entre 8 y 12 caracteres)"
@@ -274,7 +283,19 @@ const Registro = () => {
                                 /* onChange={(e) =>
                                   setContraseniaUsuario(e.target.value)
                                 } */
+                                
                               />
+                              <div className="">
+                              <button
+                                  type="button"
+                                  className="btn btn-outline-secondary tamanioImpustRegistro"
+                                  onClick={toggleShowPassword}
+                                >
+                                <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+                              </button>
+                              </div>
+                              </div>
+                              
                               <span id="mensajeErrorPRegistro" className={ClaseContrasenia} >Por faovr ingrese una Contraseña válido.</span>
                             </div>
                           </div>
