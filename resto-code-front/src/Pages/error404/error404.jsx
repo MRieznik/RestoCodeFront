@@ -22,6 +22,7 @@ const Error404 = () => {
             </div>
           </div>
         </div>
+        <div className="contenedorTextoError"><h2>¡Se produjo un error!</h2></div>
       </main>
     </>
   );
