@@ -1,7 +1,9 @@
 import { Form } from "react-bootstrap/";
 import "./Reservas.css";
 import { useState } from "react";
-// import FormRange from "react-bootstrap/esm/FormRange";
+import Swal from 'sweetalert2'
+
+
 
 const Reservas = () => {
   const [formReserva, setFormReserva] = useState({
@@ -21,13 +23,18 @@ const Reservas = () => {
   };
 
   const handleBlurFecha = (e) => {
-    if (e.target.name === "fecha") {
+    if (e.target.name === 'fecha') {
       const fecha = new Date(e.target.value);
       const fechaActual = new Date();
+  
+      // Quitamos las horas, minutos y segundos de las fechas antes de comparar
+      fecha.setHours(0, 0, 0, 0);
+      fechaActual.setHours(0, 0, 0, 0);
+  
       if (fecha < fechaActual) {
-        setErrorFecha("¡La fecha seleccionada está fuera del rango permitido!");
+        setErrorFecha('¡La fecha seleccionada está fuera del rango permitido!');
       } else {
-        setErrorFecha("");
+        setErrorFecha('');
       }
     }
   };
@@ -81,6 +88,14 @@ const Reservas = () => {
       invitados: "",
       comentarios: "",
     });
+    Swal.fire({
+      icon: 'success',
+      title: '¡Listo!',
+      text: 'Su reserva ha sido confirmada',
+      confirmButtonColor: '#1d0c20',
+
+    })
+
     formularioReserva.reset();
   };
 
@@ -163,7 +178,7 @@ const Reservas = () => {
               ¿Qué debemos saber sobre tu evento?
             </Form.Label>
             <textarea
-              className="infoEvento mb-3"
+              className="infoEvento"
               id="inputComentarios"
               name="comentarios"
               type="text"
@@ -175,9 +190,9 @@ const Reservas = () => {
               title="Ingrese al menos 5 caracteres"
               required
               // aria-label="With textarea"
-            />
-             {errorComentarios && (
-                <div className="errorMensaje">{errorComentarios}</div>
+              />
+              {errorComentarios && (
+               <div className="errorMensaje">{errorComentarios}</div>
               )}
             <button type="submit" className="botonReserva">
               Confirmar
