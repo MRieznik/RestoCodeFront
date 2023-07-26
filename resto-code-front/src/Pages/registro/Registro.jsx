@@ -30,7 +30,16 @@ const Registro = () => {
   };
 
 
+  //Defino los actualizadores de estados para manejar las clases que se colocaran en cada caso
+  const [ClaseNombre, setClaseNombre] = useState("mensaje-error-Registro-Correo text-danger d-none");
+  const [ClaseApellido, setClaseApellido] = useState("mensaje-error-Registro-Correo text-danger d-none");
+  const [ClaseContrasenia, setClaseContrasenia] = useState("mensaje-error-Registro-Correo text-danger d-none");
+  const [ClaseCorreo, setClaseCorreo] = useState("mensaje-error-Registro-Correo text-danger d-none");
+  const [ClaseTelefono, setClaseTelefono] = useState("mensaje-error-Registro-Correo text-danger d-none");
+
+
   //Funciones para la validacion de los datos:
+  /***************************************** */
 
   // Funcion que valida si la cadena tiene la logitud adecuada
   const longitudValida = (cadena, valorMin, valorMax) => {
@@ -60,6 +69,61 @@ const Registro = () => {
   const telefonoValido = (telefono) => {
     const expReg = /[0-9]{7,15}/;
     return expReg.test(telefono) && longitudValida(telefono, 7, 15);
+  };
+
+
+
+  //Desarrollo de las funciones OnBlur
+  /***********************************/ 
+  
+  const handleNombreBlur = () => {
+    const nombreValido = NombreApellidoValido(DataUser.nombreUsuario);
+    console.log("Nombre válido:", nombreValido);
+    if (!nombreValido) {
+      setClaseNombre("mensaje-error-Registro-Correo text-danger")
+    }  else {
+      setClaseNombre("mensaje-error-Registro-Correo text-danger d-none")
+    }
+  };
+
+  const handleApellidoBlur = () => {
+    const apelldoValido = NombreApellidoValido(DataUser.apellidoUsuario);
+    console.log("apellido válido:", apelldoValido);
+    if (!apelldoValido) {
+      setClaseApellido("mensaje-error-Registro-Correo text-danger")
+    }  else {
+      setClaseApellido("mensaje-error-Registro-Correo text-danger d-none")
+    }
+  };
+
+  const handleContraseñaBlur = () => {
+    const contraseñaValida = contraseniaValida(DataUser.contraseniaUsuario);
+    console.log("contra válido:", contraseñaValida);
+    if (!contraseniaValida) {
+      setClaseContrasenia("mensaje-error-Registro-Correo text-danger")
+    }  else {
+      setClaseContrasenia("mensaje-error-Registro-Correo text-danger d-none")
+    }
+  };
+
+  const handleCorreoBlur = () => {
+    const correoValid = correoValido(DataUser.correoUsuario);
+    console.log("correo válido:", correoValid);
+    if (!correoValid) {
+      setClaseCorreo("mensaje-error-Registro-Correo text-danger")
+    }  else {
+      setClaseCorreo("mensaje-error-Registro-Correo text-danger d-none")
+    }
+  };
+
+  const handleTelefonoBlur = () => {
+    const telefonoValid = telefonoValido(DataUser.telefonoUsuario);
+    console.log("telefono válido:", telefonoValid);
+    if (!telefonoValid) {
+      setClaseTelefono("mensaje-error-Registro-Correo text-danger")
+    }  else {
+      setClaseTelefono("mensaje-error-Registro-Correo text-danger d-none")
+    }
   };
 
 
@@ -112,11 +176,14 @@ const Registro = () => {
                                   name="nombreUsuario"
                                   value={DataUser.nombreUsuario}
                                   onChange={handleChange} 
+                                  onBlur={handleNombreBlur}
                                   /* onChange={(e) =>
                                     setNombreUsuario(e.target.value)
                                   }  */
                                 />
+                                <span id="mensajeErrorPRegistro" className={ClaseNombre} >Por favor ingrese un Nombre válido.</span>
                               </div>
+                                
                             </div>
                             <div className="col-md-6 mb-1 mt-2">
                               <div className="form-outline">
@@ -140,10 +207,12 @@ const Registro = () => {
                                   name="apellidoUsuario"
                                   value={DataUser.apellidoUsuario}
                                   onChange={handleChange}
+                                  onBlur={handleApellidoBlur}
                                   /* onChange={(e) =>
                                     setApellidoUsuario(e.target.value)
                                   } */
                                 />
+                                <span id="mensajeErrorPRegistro" className={ClaseApellido} >Por favor ingrese un Apellido válido.</span>
                               </div>
                             </div>
                            
@@ -201,10 +270,12 @@ const Registro = () => {
                                 name="contraseniaUsuario"
                                 value={DataUser.contraseniaUsuario}
                                 onChange={handleChange} 
+                                onBlur={handleContraseñaBlur}
                                 /* onChange={(e) =>
                                   setContraseniaUsuario(e.target.value)
                                 } */
                               />
+                              <span id="mensajeErrorPRegistro" className={ClaseContrasenia} >Por faovr ingrese una Contraseña válido.</span>
                             </div>
                           </div>
 
@@ -228,11 +299,13 @@ const Registro = () => {
                               name="correoUsuario"
                               value={DataUser.correoUsuario}
                               onChange={handleChange}
+                              onBlur={handleCorreoBlur}
                               /* onChange={(e) => setCorreoUsuario(e.target.value)} */
                               required
                               maxLength="76"
                             />
                             {/* {!isValidEmail && <span id="mensajeErrorPRegistro" className="mensaje-error-Registro-Correo alert alert-danger">Ingrese un correo válido.</span>} */}
+                            <span id="mensajeErrorPRegistro" className={ClaseCorreo} >Por favor ingrese un correo válido.</span>
                           </div>
 
                           <div className="row">
@@ -281,8 +354,10 @@ const Registro = () => {
                                   name="telefonoUsuario"
                                   value={DataUser.telefonoUsuario}
                                   onChange={handleChange}
+                                  onBlur={handleTelefonoBlur}
                                   /* onChange={(e) => setTelefono(e.target.value)} */
                                 />
+                                <span id="mensajeErrorPRegistro" className={ClaseTelefono} >Por favor ingrese un teléfono válido.</span>
                               </div>
                             </div>
                           </div>
@@ -317,5 +392,7 @@ const Registro = () => {
     </main>
   );
 };
+
+//senti que me miraba con amor, un amor que seguramente me invente yo...
 
 export default Registro;

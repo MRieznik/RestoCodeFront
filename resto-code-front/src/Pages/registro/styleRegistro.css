@@ -80,10 +80,12 @@
 }
 
 .mensaje-error-Registro-Correo{
-    display: none;
+    /* display: none; */
     margin-top: 5px;
     font-size: 1em;
     padding: 0.3em;
+    box-shadow: 0 0 5px #7037cd;
+    
 }
 
 .controladorTmanioTextoReg{
