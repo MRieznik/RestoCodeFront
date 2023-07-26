@@ -4,35 +4,67 @@ import axios from 'axios';
 import "./styleRegistro.css";
 
 const Registro = () => {
-  /* const [nombreUsuario, setNombreUsuario] = useState("");
-  const [contraseniaUsuario, setContraseniaUsuario] = useState("");
-  const [correoUsuario, setCorreoUsuario] = useState("");
-  const [provinciaUsuario, setProvinciaUsuario] = useState("");
-  const [ciudadLocalidadUsuario, setCiudadLocalidadUsuario] = useState("");
-  const [Direccion, setDireccion] = useState("");
-  const [Telefono, setTelefono] = useState(""); */
 
- /*  const handleChange = (e) => {
-    setDataUser({ ...DataUser, [e.target.nombreUsuario]: e.target.value})
+ const handleChange = (e) => {
+    setDataUser({ ...DataUser, [e.target.name]: e.target.value})
   }
 
   const [DataUser, setDataUser] = useState({
     nombreUsuario:"",
+    apellidoUsuario:"",
     contraseniaUsuario:"",
     correoUsuario:"",
-    provinciaUsuario:"",
-    ciudadLocalidadUsuario:"",
-    direccionUsuario:"",
     telefonoUsuario:""
-  }) */
+  }) 
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(DataUser)
+    setDataUser({
+      nombreUsuario:"",
+      apellidoUsuario:"",
+      contraseniaUsuario:"",
+      correoUsuario:"",
+      telefonoUsuario:""
+    })
   };
 
+
+  //Funciones para la validacion de los datos:
+
+  // Funcion que valida si la cadena tiene la logitud adecuada
+  const longitudValida = (cadena, valorMin, valorMax) => {
+    return cadena.length >= valorMin && cadena.length <= valorMax;
+  };
+
+
+  //Funcion que valida un correo electronico
+  const correoValido = (correo) => {
+    const expReg = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
+    return longitudValida(correo, 10, 100) && expReg.test(correo);
+  };
+
+  //Funcion que valida una contraseña
+  const contraseniaValida = (contrasenia) => {
+    const expReg = /^[A-Za-z0-9!?-]{8,12}$/;
+    return expReg.test(contrasenia) && longitudValida(contrasenia, 8, 12);
+  };
+
+  // Funcion que valida texto comun (para input Nombre y Apellido)
+  const NombreApellidoValido = (nomApe) => {
+    const expReg = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+    return expReg.test(nomApe) && longitudValida(nomApe, 3, 50);
+  };
+
+  //Funcion que valida un numero de telefono
+  const telefonoValido = (telefono) => {
+    const expReg = /[0-9]{7,15}/;
+    return expReg.test(telefono) && longitudValida(telefono, 7, 15);
+  };
+
+
   return (
-    <main>
+    <main className="contenedorGeneralRegistro h-100">
       <div className="container-fluid h-100 contenedorGeneralRegistro">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col m-0 p-0">
@@ -78,11 +110,11 @@ const Registro = () => {
                                   required
                                   maxLength="50"
                                   name="nombreUsuario"
-                                  /* value={DataUser.nombreUsuario}
-                                  onChange={handleChange} */
+                                  value={DataUser.nombreUsuario}
+                                  onChange={handleChange} 
                                   /* onChange={(e) =>
                                     setNombreUsuario(e.target.value)
-                                  } */
+                                  }  */
                                 />
                               </div>
                             </div>
@@ -90,7 +122,7 @@ const Registro = () => {
                               <div className="form-outline">
                                 <label
                                   className="form-label fs-5 text-light mb-0"
-                                  htmlFor="nombreUsuario"
+                                  htmlFor="apellidoUsuario"
                                 >
                                   {" "}
                                   Apellido
@@ -98,18 +130,18 @@ const Registro = () => {
                                 <span className="text-danger">*</span>
                                 <input
                                   type="text"
-                                  id="nombreUsuario"
+                                  id="apellidoUsuario"
                                   className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados mb-1"
                                   placeholder="Ej: Code"
                                   pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
                                   title="Este campo solo permite letras y espacios en blanco"
                                   required
                                   maxLength="50"
-                                  name="nombreUsuario"
-                                  /* value={DataUser.nombreUsuario}
-                                  onChange={handleChange} */
+                                  name="apellidoUsuario"
+                                  value={DataUser.apellidoUsuario}
+                                  onChange={handleChange}
                                   /* onChange={(e) =>
-                                    setNombreUsuario(e.target.value)
+                                    setApellidoUsuario(e.target.value)
                                   } */
                                 />
                               </div>
@@ -158,7 +190,7 @@ const Registro = () => {
                               </span>
                               <input
                                 type="password"
-                                id="contraseniaUsuario"
+                                /* id="contraseniaUsuario" */
                                 className="form-control form-control-lg validadoss NoValidados tamanioImpustRegistro mb-1"
                                 placeholder="Contraseña"
                                 pattern="[A-Za-z0-9!?-]{8,12}"
@@ -167,8 +199,8 @@ const Registro = () => {
                                 minLength="8"
                                 maxLength="12"
                                 name="contraseniaUsuario"
-                                /* value={DataUser.contraseniaUsuario}
-                                onChange={handleChange} */
+                                value={DataUser.contraseniaUsuario}
+                                onChange={handleChange} 
                                 /* onChange={(e) =>
                                   setContraseniaUsuario(e.target.value)
                                 } */
@@ -194,8 +226,8 @@ const Registro = () => {
                               title="Ingrese un correo para poder crear la cuenta"
                               autoComplete="on"
                               name="correoUsuario"
-                              /* value={DataUser.correoUsuario}
-                              onChange={handleChange} */
+                              value={DataUser.correoUsuario}
+                              onChange={handleChange}
                               /* onChange={(e) => setCorreoUsuario(e.target.value)} */
                               required
                               maxLength="76"
@@ -247,8 +279,8 @@ const Registro = () => {
                                   title="Ingrese un número de teléfono válido (entre 7 y 15 dígitos)"
                                   maxLength="15"
                                   name="telefonoUsuario"
-                                  /* value={DataUser.telefonoUsuario}
-                                  onChange={handleChange} */
+                                  value={DataUser.telefonoUsuario}
+                                  onChange={handleChange}
                                   /* onChange={(e) => setTelefono(e.target.value)} */
                                 />
                               </div>
