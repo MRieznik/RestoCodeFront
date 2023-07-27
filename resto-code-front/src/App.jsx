@@ -1,3 +1,5 @@
+//import './App.css'
+import Galeria from "../src/Pages/Galeria"
 //import { useState } from 'react'
 import ReservContext from "./Context/ReservasContext";
 import UsersContext from "./Context/UsersContext";
@@ -6,17 +8,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css'
 
 
+
 function App() {
 
+  
 
   return (
     <>
-    <UsersContext>
-     <ReservContext>
-      <Administracion />      
-      </ReservContext>
-    </UsersContext>
-   
+    <Galeria />
     </>
   );
 }
