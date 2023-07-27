@@ -50,10 +50,10 @@ const Home = () => {
           </div>
           <div className="imagenDeAmbosMenus">
             <div className="menuUno">
-              <img src={cartabebidas} alt="" />
+              <img src={cartabebidas} alt="Carta bebidas" />
             </div>
             <div className="menuDos">
-              <img src={cartacomida} alt="" />
+              <img src={cartacomida} alt="Carta comidas" />
             </div>
           </div>
           <div className="contendorFrases">
@@ -87,10 +87,10 @@ const Home = () => {
                 ></iframe>
                 <div className="contenedorRedesContacto">
                   <div className="cajaQrWp">
-                    <img src={qrwp} alt="" />
+                    <img src={qrwp} alt="Qr Whatsapp" />
                   </div>
                   <div className="cajaQrIg">
-                    {/* <img src={qrig} alt="" /> */}
+                    {/* <img src={qrig} alt="Qr Instagram" /> */}
                   </div>
                 </div>
               </div>
