@@ -9,7 +9,7 @@ function App() {
     <>
      <Reservas />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
