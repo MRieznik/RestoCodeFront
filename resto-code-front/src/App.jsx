@@ -1,13 +1,22 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+//import { useState } from 'react'
+import ReservContext from "./Context/ReservasContext";
+import UsersContext from "./Context/UsersContext";
+import Administracion from "./Pages/ADMINISTRADOR/Administracion";
+import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css'
-import Reservas from './Pages/RESERVAS/Reservas'
+
 
 function App() {
 
 
   return (
     <>
-     <Reservas />
+    <UsersContext>
+     <ReservContext>
+      <Administracion />      
+      </ReservContext>
+    </UsersContext>
+   
     </>
   );
 }
