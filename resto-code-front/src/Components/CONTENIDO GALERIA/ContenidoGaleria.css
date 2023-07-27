@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 * {
-    margin: 0;
+  margin: 0;
 }
 /* .contenedorPrincipalDeGaleria {
     border: 1px solid red;
@@ -110,24 +110,262 @@
   font-size: 2.3rem;
 }
 .contenedorBloqueTres {
-    display: flex;
+  display: flex;
 }
 .videoPizza {
-    width: 40rem;
+  width: 40rem;
 }
 .contenedorImagenBarra {
-    width: 15rem;
-    background-image: url("../../Image/GALERIA-IMAGE/martiniGaleria.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
+  width: 15rem;
+  background-image: url("../../Image/GALERIA-IMAGE/martiniGaleria.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .videoHamburguesaSimple {
-    height: 22.5rem;
+  height: 22.5rem;
 }
 .contenedorTrago {
-    width: 12.5rem;
-    background-image: url("../../Image/GALERIA-IMAGE/tragoGaleria.jpg");
+  width: 12.5rem;
+  background-image: url("../../Image/GALERIA-IMAGE/tragoGaleria.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media (min-width: 360px) and (max-width: 914px) {
+  .presentacionHamburguesaXtreme {
+    height: 70vh;
+    flex-direction: column;
+  }
+  .contenedorXtreme {
+    /* border: 1px solid white; */
+    height: 20rem;
+    width: 100%;
+  }
+  .nombreHamburguesaXtreme h2 {
+    font-size: 2.5rem;
+  }
+  .nombreHamburguesaXtreme h4 {
+    font-size: 2rem;
+  }
+  .videoXtreme {
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid white;  */
+  }
+  .imagenPersonaCerveza {
+    width: 100%;
+  }
+  .videoCerveza {
+    /* border: 1px solid white; */
+    /* height: 20rem; */
+    display: none;
+  }
+  .presentacionGuarnicion {
+    flex-direction: column;
+    height: 43rem;
+    /* border: 1px solid salmon; */
+  }
+  .contenedorFraseGuarniciones {
+    /* border: 1px solid salmon; */
+    width: 100%;
+    height: 13rem;
+  }
+  .contenedorFraseGuarniciones h2 {
+    font-size: 2.5rem;
+  }
+  .contenedorFraseGuarniciones h4 {
+    font-size: 2rem;
+  }
+  .contenedorImagenArosDeCebolla {
+    width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
+  }
+  .contenedorImagenBastonesDeMuzarella {
+    display: none;
+  }
+  .contenedorImagenVariado {
+    display: none;
+  }
+  .contenedorBloqueTres {
+    flex-direction: column;
+  }
+  .videoPizza {
+    width: 100%;
+  }
+  .contenedorImagenBarra {
+    display: none;
+  }
+  .videoHamburguesaSimple {
+    display: none;
+  }
+  .contenedorTrago {
+    display: none;
+  }
+}
+@media (width: 820px) and (height: 1180px) {
+  .presentacionHamburguesaXtreme {
+    /* border: 1px solid rgb(0, 134, 139); */
+    height: 50vh;
+  }
+  .contenedorXtreme {
+    /* border: 1px solid white;
+    height: 20rem;
+    width: 100%; */
+    display: none;
+  }
+  .videoXtreme {
+    display: none;
+  }
+  .imagenPersonaCerveza {
+    /* border: 1px solid seagreen; */
+    width: 100%;
+  }
+  .presentacionGuarnicion {
+    /* border: 1px solid white; */
+    flex-direction: row;
+    height: 30rem;
+  }
+  .contenedorImagenArosDeCebolla {
+    width: 33.3%;
+  }
+  .contenedorImagenBastonesDeMuzarella {
+    display: block;
+    width: 33.3%;
+  }
+  .contenedorImagenVariado {
+    display: block;
+    width: 33.3%;
+  }
+  .contenedorFraseGuarniciones {
+    display: none;
+  }
+}
+@media (width: 768px) and (height: 1024px) {
+  .presentacionHamburguesaXtreme {
+    /* border: 1px solid rgb(0, 134, 139); */
+    height: 50vh;
+  }
+  .contenedorXtreme {
+    /* border: 1px solid white;
+    height: 20rem;
+    width: 100%; */
+    display: none;
+  }
+  .videoXtreme {
+    display: none;
+  }
+  .imagenPersonaCerveza {
+    /* border: 1px solid seagreen; */
+    width: 100%;
+  }
+  .presentacionGuarnicion {
+    /* border: 1px solid white; */
+    flex-direction: row;
+    height: 30rem;
+  }
+  .contenedorImagenArosDeCebolla {
+    width: 33.5%;
+  }
+  .contenedorImagenBastonesDeMuzarella {
+    display: block;
+    width: 33.3%;
+  }
+  .contenedorImagenVariado {
+    display: block;
+    width: 33.3%;
+  }
+  .contenedorFraseGuarniciones {
+    display: none;
+  }
+}
+@media (width: 912px) and (height: 1368px) {
+  .presentacionHamburguesaXtreme {
+    /* border: 1px solid rgb(0, 134, 139); */
+    height: 50vh;
+  }
+  .contenedorXtreme {
+    /* border: 1px solid white;
+    height: 20rem;
+    width: 100%; */
+    display: none;
+  }
+  .videoXtreme {
+    display: none;
+  }
+  .imagenPersonaCerveza {
+    /* border: 1px solid seagreen; */
+    width: 100%;
+  }
+  .presentacionGuarnicion {
+    /* border: 1px solid white; */
+    flex-direction: row;
+    height: 30rem;
+  }
+  .contenedorImagenArosDeCebolla {
+    width: 33.5%;
+  }
+  .contenedorImagenBastonesDeMuzarella {
+    display: block;
+    width: 33.3%;
+  }
+  .contenedorImagenVariado {
+    display: block;
+    width: 33.3%;
+  }
+  .contenedorFraseGuarniciones {
+    display: none;
+  }
+}
+@media (width: 540px) and (height: 720px) {
+  .presentacionHamburguesaXtreme {
+    /* border: 1px solid rgb(0, 134, 139); */
+    height: 50vh;
+  }
+  .contenedorXtreme {
+    /* border: 1px solid white;
+    height: 20rem;
+    width: 100%; */
+    display: none;
+  }
+  .videoXtreme {
+    display: none;
+  }
+  .imagenPersonaCerveza {
+    /* border: 1px solid seagreen; */
+    width: 100%;
+  }
+  .presentacionGuarnicion {
+    /* border: 1px solid white; */
+    flex-direction: row;
+    height: 30rem;
+  }
+  .contenedorImagenArosDeCebolla {
+    width: 33.5%;
+  }
+  .contenedorImagenBastonesDeMuzarella {
+    display: block;
+    width: 33.3%;
+  }
+  .contenedorImagenVariado {
+    display: block;
+    width: 33.3%;
+  }
+  .contenedorFraseGuarniciones {
+    display: none;
+  }
+}
+@media (width: 1024px) and (height: 600px) {
+  .contenedorImagenBarra {
+    display: none;
+  }
+  .videoHamburguesaSimple {
+    display: none;
+  }
+  .contenedorTrago {
+    display: none;
+  }
+  .videoPizza {
+    width: 100%;
+  }
 }
