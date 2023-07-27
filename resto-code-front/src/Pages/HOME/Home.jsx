@@ -1,9 +1,8 @@
-// import ContenidoIndex from "../../Components/CONTENIDO INDEX/ContenidoIndex"
 import "./Home.css";
-import cervezayhamburguesa from "C:/Users/Usuario/Desktop/RestoCodeFront/resto-code-front/src/Image/INDEX-IMAGE/video4.mp4";
-import cartabebidas from "C:/Users/Usuario/Desktop/RestoCodeFront/resto-code-front/src/Image/INDEX-IMAGE/cartaDeBebidas.png";
-import cartacomida from "C:/Users/Usuario/Desktop/RestoCodeFront/resto-code-front/src/Image/INDEX-IMAGE/cartasDeComidas.png";
-import qrwp from "C:/Users/Usuario/Desktop/RestoCodeFront/resto-code-front/src/Image/INDEX-IMAGE/whatsappQR.png";
+import cervezayhamburguesa from "../../Image/INDEX-IMAGE/video4.mp4";
+import cartabebidas from "../../Image/INDEX-IMAGE/cartaDeBebidas.png";
+import cartacomida from "../../Image/INDEX-IMAGE/cartasDeComidas.png";
+import qrwp from "../../Image/INDEX-IMAGE/whatsappQR.png";
 
 const Home = () => {
   return (

@@ -1,7 +1,6 @@
 import "./Footer.css";
 // import Bootstrap from "bootstrap/dist/css/bootstrap.min.css";
-import logofooter from "C:/Users/Usuario/Desktop/RestoCodeFront/resto-code-front/src/Image/HEADER-IMAGE/restoCodeLogo.png";
-
+import logofooter from "../../Image/HEADER-IMAGE/RestoCodeLogo.png";
 const Footer = () => {
   return (
     <footer className="contenedorFooterPrincipal">
