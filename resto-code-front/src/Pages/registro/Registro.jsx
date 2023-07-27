@@ -472,13 +472,13 @@ const Registro = () => {
                           </div>
                         </div>
                         <div className="w-100 mt-auto">
-                          <div className="d-flex mt-5 justify-content-end pt-3">
-                            <input
+                          <div className="d-flex justify-content-end pt-3">
+                            <button
                               type="submit"
                               id="submitRegistrar"
                               className="   form-control form-control-lg btn-lg botonSubmitRegistro"
                               value="Registrarse"
-                            />
+                            >Registrarse</button>
                           </div>
                           <div className="pt-1">
                             <p className="text-center fs-6 text-secondary">

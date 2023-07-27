@@ -3,6 +3,7 @@ import cervezayhamburguesa from "../../Image/INDEX-IMAGE/video4.mp4";
 import cartabebidas from "../../Image/INDEX-IMAGE/cartaDeBebidas.png";
 import cartacomida from "../../Image/INDEX-IMAGE/cartasDeComidas.png";
 import qrwp from "../../Image/INDEX-IMAGE/whatsappQR.png";
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -29,9 +30,11 @@ const Home = () => {
                   <h2>Cerveceria</h2>
                 </div>
               </div>
+              <Link to="/reservas">
                 <button className="botonReservarIndexResponsive">
                   ¡Reserva aqui!
                 </button>
+                </Link>
             </div>
           </div>
         </div>
