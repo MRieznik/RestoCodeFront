@@ -16,7 +16,8 @@ const Registro = () => {
     apellidoUsuario:"",
     contraseniaUsuario:"",
     correoUsuario:"",
-    telefonoUsuario:""
+    telefonoUsuario:"",
+    rolUsuarioRegistro:""
   }) 
 
   const handleSubmit = (e) => {
@@ -27,7 +28,8 @@ const Registro = () => {
       apellidoUsuario:"",
       contraseniaUsuario:"",
       correoUsuario:"",
-      telefonoUsuario:""
+      telefonoUsuario:"",
+      rolUsuarioRegistro:""
     })
   };
 
@@ -125,12 +127,14 @@ const Registro = () => {
   const handleTelefonoBlur = () => {
     const telefonoValid = telefonoValido(DataUser.telefonoUsuario);
     console.log("telefono válido:", telefonoValid);
-    if (!telefonoValid) {
-      setClaseTelefono("mensaje-error-Registro-Correo text-danger")
-    }  else {
+    if (telefonoValid || DataUser.telefonoUsuario == "") {
       setClaseTelefono("mensaje-error-Registro-Correo text-danger d-none")
+    }  else {
+      setClaseTelefono("mensaje-error-Registro-Correo text-danger")
     }
   };
+
+
 
 
   return (
@@ -187,6 +191,30 @@ const Registro = () => {
                                   /* onChange={(e) =>
                                     setNombreUsuario(e.target.value)
                                   }  */
+                                />
+                              </div>
+
+
+                              <div className="d-none">
+                                <label
+                                  className="form-label fs-5 text-light mb-0"
+                                  htmlFor="nombreUsuario"
+                                >
+                                  {" "}
+                                  Rol
+                                </label>                                
+                                <span id="mensajeErrorPRegistro" className={ClaseNombre} >  Por favor ingrese un Nombre válido.</span>
+                                <input
+                                  type="text"
+                                  id="nombreUsuario"
+                                  className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados mb-1"
+                                  placeholder="Ej: Juan Resto"
+                                  pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                                  title="Este campo solo permite letras y espacios en blanco"
+                                  required
+                                  name="rolUsuarioRegistro"
+                                  value={DataUser.rolUsuarioRegistro = "usuario"}
+                                  onChange={handleChange} 
                                 />
                               </div>
                                 
@@ -385,6 +413,35 @@ const Registro = () => {
                                   /* onChange={(e) => setTelefono(e.target.value)} */
                                 />
                               </div>
+                            </div>
+
+                            <div>
+                            {/* <div>
+                                  <input
+                                    type="radio"
+                                    id="RadioUsuario"
+                                    name="rolUsuarioRegistro"
+                                    
+                                    onChange={handleChange}
+                                    value={DataUser.rolUsuarioRegistro}
+                                    checked={DataUser.rolUsuario === 'Usuario'}
+                                  />
+                                  <label htmlFor="RadioUsuario">Usuario</label>
+
+                                  <input
+                                    type="radio"
+                                    id="RadioAdmin"
+                                    name="rolUsuarioRegistro"
+                                    value={DataUser.rolUsuarioRegistro}
+                                    onChange={handleChange}
+                                    checked={DataUser.rolUsuario === 'Admin'}
+                                  />
+                                  <label htmlFor="RadioAdmin">Admin</label>
+                                </div> */}
+
+                              {/* 
+                              value={DataUser.nombreUsuario}
+                                  onChange={handleChange}  */}
                             </div>
                           </div>
                         </div>
