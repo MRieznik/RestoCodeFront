@@ -1,13 +1,6 @@
-//import './App.css'
-import Galeria from "../src/Pages/Galeria"
-//import { useState } from 'react'
-import ReservContext from "./Context/ReservasContext";
-import UsersContext from "./Context/UsersContext";
-import Administracion from "./Pages/ADMINISTRADOR/Administracion";
-import "bootstrap/dist/css/bootstrap.min.css";
-import './App.css'
-
-
+import { useState } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Registro from './Pages/registro/Registro
 
 function App() {
 
@@ -15,7 +8,7 @@ function App() {
 
   return (
     <>
-    <Galeria />
+      <Registro />
     </>
   );
 }
