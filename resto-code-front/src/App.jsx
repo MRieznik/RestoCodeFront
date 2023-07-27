@@ -1,5 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Galeria from './Pages/GALERIA/Galeria';
+import UsersContext from "../src/Context/UsersContext"
+import ReservasContext from "../src/Context/ReservasContext"
+import Header from "../src/Components/HEADER/Header"
+import Rutas from './Components/RUTAS/Rutas';
+import Footer from "../src/Components/FOOTER/Footer"
 
 function App() {
 
@@ -7,7 +11,13 @@ function App() {
 
   return (
     <>
-      <Galeria />
+      <UsersContext>
+        <ReservasContext>
+            <Header />
+            <Rutas />
+            <Footer />
+        </ReservasContext>
+      </UsersContext>
     </>
   );
 }

@@ -22,13 +22,13 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto nav">
-              <Nav.Link href="" className="NavLink">
+              <Nav.Link href="/reservas" className="NavLink">
                 Reservar
               </Nav.Link>
-              <Nav.Link href="" className="NavLink">
+              <Nav.Link href="/galeria" className="NavLink">
                 Galeria
               </Nav.Link>
-              <Nav.Link href="" className="NavLink">
+              <Nav.Link href="/nosotros" className="NavLink">
                 Nosotros
               </Nav.Link>
               <Nav.Link href="" className="NavLink">
@@ -43,7 +43,7 @@ const Header = () => {
               >
                 Iniciar sesión
               </Nav.Link>
-              <Nav.Link href="#link" className="NavLink">
+              <Nav.Link href="/registro" className="NavLink">
                 Registrarse
               </Nav.Link>
             </div>
