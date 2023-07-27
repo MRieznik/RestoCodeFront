@@ -31,9 +31,6 @@ const Header = () => {
               <Nav.Link href="/nosotros" className="NavLink">
                 Nosotros
               </Nav.Link>
-              <Nav.Link href="#Contacto" className="NavLink">
-                Contacto
-              </Nav.Link>
             </Nav>
             <div className="contenedor-iniciarSesion-registrarse">
               <Nav.Link
