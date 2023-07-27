@@ -1,4 +1,4 @@
-import "./error404.css";
+import "./Error404.css";
 import imagenHamburugesaMordida from "../../Image/ERROR404/hamburguesaMordida.png";
 import homero404 from "../../Image/ERROR404/homeroError404.png";
 import Bootstrap from "bootstrap/dist/css/bootstrap.min.css";
