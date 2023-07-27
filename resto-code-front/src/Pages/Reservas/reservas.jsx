@@ -17,6 +17,7 @@ const Reservas = () => {
   const [errorHora, setErrorHora] = useState("");
   const [errorInvitados, setErrorInvitados] = useState("");
   const [errorComentarios, setErrorComentarios] = useState("");
+  const [camposVacios, setCamposVacios] = useState("");
 
   const handleChange = (e) => {
     setFormReserva({ ...formReserva, [e.target.name]: e.target.value });
@@ -32,23 +33,25 @@ const Reservas = () => {
       fechaActual.setHours(0, 0, 0, 0);
   
       if (fecha < fechaActual) {
-        setErrorFecha('¡La fecha seleccionada está fuera del rango permitido!');
+        setErrorFecha('Elija una fecha válida');
       } else {
         setErrorFecha('');
       }
     }
   };
 
+
+
   const handleBlurHora = (e) => {
     if (e.target.name === "hora") {
       const hora = e.target.value;
-      const horaMinima = new Date(`2000-01-01T10:00`); // Hora de inicio permitida (ejemplo)
-      const horaMaxima = new Date(`2000-01-01T23:00`); // Hora de fin permitida (ejemplo)
+      const horaMinima = new Date(`2000-01-01T10:00`); 
+      const horaMaxima = new Date(`2000-01-01T23:00`); 
 
       const valorHora = new Date(`2000-01-01T${hora}`);
 
-      if (valorHora < horaMinima || valorHora > horaMaxima) {
-        setErrorHora("¡La hora seleccionada está fuera del rango permitido!");
+      if (valorHora <horaMinima || valorHora > horaMaxima) {
+        setErrorHora("Horarios de reservas validos: de 10 a 23");
       } else {
         setErrorHora("");
       }
@@ -131,7 +134,6 @@ const Reservas = () => {
             </Form.Group>
             <Form.Group
               className="mb-3"
-              // controlId="exampleForm.ControlInput1"
             >
               <Form.Label className="labelReservas" htmlFor="inputHoraReserva">
                 Hora de reserva
@@ -150,7 +152,6 @@ const Reservas = () => {
             </Form.Group>
             <Form.Group
               className="mb-3"
-              // controlId="exampleForm.ControlInput1"
             >
               <Form.Label className="labelReservas" htmlFor="inputInvitados">
                 Cantidad de invitados
@@ -189,7 +190,6 @@ const Reservas = () => {
               maxLength={50}
               title="Ingrese al menos 5 caracteres"
               required
-              // aria-label="With textarea"
               />
               {errorComentarios && (
                <div className="errorMensaje">{errorComentarios}</div>

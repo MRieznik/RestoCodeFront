@@ -24,7 +24,7 @@
   align-items: center;
   margin-top: 1.5rem;
   /* border: 1px blue solid; */
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .tituloFormReserva h2{
@@ -93,6 +93,7 @@
 
 .errorMensaje{
   font-size: small;
+  color: red;
 }
 
 .contenedorImgReserva{
@@ -137,6 +138,9 @@
 
     text-align: center;
   }
+.botonReserva{
+  margin-bottom: 0;
+}
 }
 
 @media (width: 820px) and (height: 1180px){
@@ -144,6 +148,7 @@
 /* .formularioReserva{
   border: 1px red solid;
 } */
+
 
 .labelReservas{
   font-size: 2rem;
@@ -166,3 +171,4 @@
   margin-top: 0.5rem;
 }
 }
+
