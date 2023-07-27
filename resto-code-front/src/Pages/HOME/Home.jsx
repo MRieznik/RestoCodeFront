@@ -30,9 +30,9 @@ const Home = () => {
                   <h2>Cerveceria</h2>
                 </div>
               </div>
-              <button className="botonReservarIndexResponsive">
-                ¡Reserva aqui!
-              </button>
+                <button className="botonReservarIndexResponsive">
+                  ¡Reserva aqui!
+                </button>
             </div>
           </div>
         </div>
@@ -70,7 +70,7 @@ const Home = () => {
               <h3>¡Vení a conocernos!</h3>
             </div>
           </div>
-          <div className="contendorContacto">
+          <div className="contendorContacto" id="Contacto">
             <h2>¿Necesitas comunicarte con nosotros?</h2>
             <h3>¡No dudes en ponerte en contacto!</h3>
             <div className="contendorDeMapaRedesSociales">
