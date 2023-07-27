@@ -62,7 +62,7 @@ const TablaUsuarios = () => {
               <tr>
                 <th>Nombre</th>
                 <th>Apellido</th>
-                <th>Edad</th>
+                <th>Telefono</th>
                 <th>Email</th>
                 <th>Acciones</th>
               </tr>
@@ -72,7 +72,7 @@ const TablaUsuarios = () => {
                 <tr key={user.id}>
                   <td data-label="Nombre">{user.nombre}</td>
                   <td data-label="Apellido">{user.apellido}</td>
-                  <td data-label="Edad">{user.edad}</td>
+                  <td data-label="Telefono">{user.telefono}</td>
                   <td data-label="Email">{user.email}</td>
                   <td data-label="Acciones">
                     <button

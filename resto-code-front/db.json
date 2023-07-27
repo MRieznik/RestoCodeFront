@@ -3,7 +3,7 @@
     {
       "nombre": "Leonardo",
       "apellido": "Ponzio",
-      "edad": "37",
+      "telefono": "381123777",
       "email": "l@gmail.com",
       "password": "123",
       "id": 2
@@ -11,7 +11,7 @@
     {
       "nombre": "Juanfer",
       "apellido": "Quintero",
-      "edad": "31",
+      "telefono": "381234567",
       "email": "jf@gmail.com",
       "password": "123",
       "id": 3
@@ -19,7 +19,7 @@
     {
       "nombre": "Mariana",
       "apellido": "Cervantes",
-      "edad": "38",
+      "telefono": "3815678908",
       "email": "m@gmail.com",
       "password": "123",
       "id": 4

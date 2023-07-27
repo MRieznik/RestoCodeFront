@@ -70,16 +70,16 @@ const FormUpdateUsuarios = ({ editUser, handleClose }) => {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="edad" className="form-label">
-                  Edad
+                <label htmlFor="telefono" className="form-label">
+                  Telefono
                 </label>
                 <input
-                  type="number"
+                  type="tel"
                   className="form-control"
-                  value={user.edad}
+                  value={user.telefono}
                   onChange={handleChange}
-                  name="edad"
-                  aria-describedby="edad"
+                  name="telefono"
+                  aria-describedby="telefono"
                 />
               </div>
               <div className="mb-3">
