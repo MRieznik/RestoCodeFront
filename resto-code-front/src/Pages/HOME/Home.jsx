@@ -3,9 +3,11 @@ import cervezayhamburguesa from "../../Image/INDEX-IMAGE/video4.mp4";
 import cartabebidas from "../../Image/INDEX-IMAGE/cartaDeBebidas.png";
 import cartacomida from "../../Image/INDEX-IMAGE/cartasDeComidas.png";
 import qrwp from "../../Image/INDEX-IMAGE/whatsappQR.png";
-import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <main>
@@ -17,7 +19,7 @@ const Home = () => {
                 <h2>Cerveceria</h2>
               </div>
             </div>
-            <button className="botonReservarIndex">¡Reserva aqui!</button>
+            <button  onClick={()=>{navigate("/reservas")}} className="botonReservarIndex">¡Reserva aqui!</button>
           </div>
           <div className="imagenDeFondoIndex">
             <div className="sombraImagenInicioIndex"></div>
@@ -30,11 +32,12 @@ const Home = () => {
                   <h2>Cerveceria</h2>
                 </div>
               </div>
-              <Link to="/reservas">
-                <button className="botonReservarIndexResponsive">
+          
+                <button  onClick={()=>{navigate("/reservas")
+                }} className="botonReservarIndexResponsive">
                   ¡Reserva aqui!
                 </button>
-                </Link>
+
             </div>
           </div>
         </div>

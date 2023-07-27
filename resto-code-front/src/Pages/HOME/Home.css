@@ -40,7 +40,7 @@
   transition: 0.2s;
   border-radius: 3px;
   font-size: 1.5rem;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   font-family: "Bebas Neue", sans-serif;
 }
 .botonReservarIndex:hover {
