@@ -3,7 +3,8 @@
   background-color: #181818;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: fit-content;
+
 }
 .containerAdmin h1 {
   font-family: "Bebas Neue", sans-serif;

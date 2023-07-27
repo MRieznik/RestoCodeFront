@@ -6,19 +6,19 @@ import "./Administrador.css";
 const Administracion = () => {
   return (
     <div className="containerAdmin">
-      <h1 className="tituloAdministrador py-3">Administracion</h1>      
+      <h1 className="tituloAdministrador pt-3">A d m i n i s t r a c i o n</h1>      
       <Container>
       <hr></hr>
         <Row>
           <Col>
-            <h3 className="tituloTablaReservas">Reservas</h3>
+            <h3 className="tituloTablaReservas">R e s e r v a s</h3>
             <TablaReservas />
           </Col>
         </Row>     
         <hr></hr>
         <Row>
           <Col>
-            <h3 className="tituloTablaReservas">Usuarios</h3>
+            <h3 className="tituloTablaReservas">U s u a r i o s</h3>
             <TablaUsuarios />
           </Col>
         </Row>

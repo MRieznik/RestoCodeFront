@@ -45,6 +45,10 @@
   .noEdit{
     background-color: gray !important;
   }
+  thead{
+    text-transform: uppercase;    
+  }
+  
   
 
   /*------------------ RESPONSIVE ------------------------- */
@@ -54,4 +58,35 @@
       justify-content: space-evenly;
     }
   }
+
+  @media screen and (max-width: 600px) {
+    .tabla {
+        border: 0px;
+    }
+    
+    .tabla thead {
+        display: none;
+    }
+    .tabla tr {
+        margin-bottom: 8px;        
+        display: block;
+    }
+    .tabla th, .tabla td {
+        font-size: 12px;
+    }
+    .tabla td {
+        display: block;
+        border-bottom: 0.1px solid #ddd;
+        text-align: center;
+    }
+    .tabla  td:last-child {
+        border-bottom: 0px;
+    }
+    .tabla td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        text-transform: uppercase;
+        float: left;
+    }
+}
 

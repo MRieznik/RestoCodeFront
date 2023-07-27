@@ -22,22 +22,42 @@ const TablaReservas = () => {
     handleShow();
   };
 
-  const handleDelete = (id) => {
-    deleteReserva(id);
+  const handleDelete = (id) => {    
     Swal.fire({
-      icon: "success",
-      title: "Reserva Cancelada",
-      showConfirmButton: false,
-      timer: 1500,
-    });
+      icon: 'warning',
+      title: 'Cancelar Reserva?',
+      showCancelButton: true,
+      confirmButtonText: 'Aceptar', 
+      cancelButtonText: 'Cancelar',
+      confirmButtonColor: '#651F71',
+      cancelButtonColor: '#C73333',
+      background: '#31302F',
+      color: 'white',
+      backdrop: `rgba(0,0,14,0.4)` 
+    }).then((result) => {        
+      if (result.isConfirmed) {
+        deleteReserva(id);
+        Swal.fire({
+          icon: "success",
+          title: "Reserva Cancelada",
+          showConfirmButton: false,
+          timer: 1500,
+          background: '#31302F',
+          color: 'white',
+          backdrop: `rgba(0,0,14,0.4)` 
+        });
+      } else if (result.isDenied) {
+        return
+      }
+    })    
   };
 
 
   return (
     <>
     {reservas.length > 0 ? (
-      <Table responsive className="table-dark table-hover text-center">
-        <thead>
+      <Table responsive className="table-dark table-hover text-center tabla">
+        <thead className="headTabla">
           <tr>
             <th>Nombre Completo</th>
             <th>Fecha</th>
@@ -49,11 +69,11 @@ const TablaReservas = () => {
         <tbody>
           {reservas.map((reserva) => (
             <tr key={reserva.id}>
-              <td>{reserva.nombre} {reserva.apellido}</td>
-              <td>{reserva.fecha}</td>
-              <td>{reserva.hora}</td>
-              <td>{reserva.comensales}</td>
-              <td>
+              <td data-label="Nombre">{reserva.nombre} {reserva.apellido}</td>
+              <td data-label="Fecha">{reserva.fecha}</td>
+              <td data-label="Hora">{reserva.hora}</td>
+              <td data-label="Comensales">{reserva.comensales}</td>   
+              <td data-label="Acciones">           
                 <button
                   className="botonEdit m-1"
                   onClick={() => handleEdit(reserva)}
