@@ -1,10 +1,8 @@
-import "../CONTENIDO GALERIA/ContenidoGaleria.css";
+import "./Galeria.css";
 import videoextreme from "../../Image/GALERIA-IMAGE/videoPrueba.mp4";
 import videocerveza from "../../Image/GALERIA-IMAGE/videocerveza.mp4";
 import videopizza from "../../Image/GALERIA-IMAGE/videoPizzaGaleria.mp4";
 import videohamburguesasimple from "../../Image/GALERIA-IMAGE/videoHamburGaleria.mp4";
-// import imagenbarra from "../../Image/GALERIA-IMAGE/martiniGaleria.jpg"
-
 const Galeria = () => {
   return (
     <>

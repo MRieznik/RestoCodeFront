@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Registro from './Pages/registro/Registro'
+import Galeria from './Pages/GALERIA/Galeria';
 
 function App() {
 
@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <Registro />
+      <Galeria />
     </>
   );
 }
