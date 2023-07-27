@@ -1,14 +1,17 @@
-import Error404 from './Pages/error404/error404'
-import './App.css'
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import Header from "./Components/HEADER/Header";
+import Rutas from "../src/Components/RUTAS/Rutas";
+import Footer from "./Components/FOOTER/Footer";
 
 function App() {
-  
-
   return (
     <>
-      <Error404 />
+      <Header />
+      <Rutas />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
