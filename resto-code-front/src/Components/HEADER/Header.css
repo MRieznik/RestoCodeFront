@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+.headerPrincipal {
+  background-color: #1d0c20;
+  border-bottom: 2px solid #651f71;
+  position: sticky;
+  top: 0;
+}
+.contenedorLogo {
+  /* border: 1px solid red; */
+  width: 5rem;
+  height: 5.5rem;
+  border-radius: 90%;
+}
+.contenedorLogo img {
+  height: 100%;
+  width: 100%;
+}
+
+.NavLink {
+  /* border: 1px solid rgb(64, 89, 201); */
+  color: white;
+  transition: 0.2s;
+  font-size: 1.2rem;
+  letter-spacing: 0.9px;
+  text-align: center;
+  font-family: "Bebas Neue", sans-serif;
+}
+.NavLink:hover {
+  color: #68b2f8;
+}
+.contenedor-iniciarSesion-registrarse {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 12.5rem;
+  font-family: "Bebas Neue", sans-serif;
+}
+.headerModal {
+  color: #fff;
+  background-color: #181818;
+  font-family: "Bebas Neue", sans-serif;
+  border-radius: 2px 2px 0 0;
+  border-bottom: 2px solid #651f71;
+}
+.bodyModal {
+  color: #fff;
+  background-color: #181818;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 18px;
+}
+/*------------------ RESPONSIVE ------------------------- */
+@media (min-width: 360px) and (max-width: 914px) {
+  .contenedor-iniciarSesion-registrarse {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+}
