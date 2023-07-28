@@ -12,21 +12,21 @@
 /* Modal */
 .contenedor-editar {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 12.5rem;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
     font-family: "Bebas Neue", sans-serif;
   }
   .headerEditar {
     color: #fff;
-    background-color: #181818;
+    background-color: #212529;
     font-family: "Bebas Neue", sans-serif;
     border-radius: 2px 2px 0 0;
     border-bottom: 2px solid #651f71;
   }
   .bodyEditar {
     color: #fff;
-    background-color: #181818;
+    background-color: #212529;
     font-family: "Bebas Neue", sans-serif;
     font-size: 18px;
   }

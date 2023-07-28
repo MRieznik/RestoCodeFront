@@ -4,7 +4,6 @@
   border-bottom: 2px solid #651f71;
   position: sticky;
   top: 0;
-  /* MOSTRAR A LAUTARO */
   z-index: 2; 
 }
 .contenedorLogo {
@@ -42,7 +41,7 @@
 }
 .headerModal {
   color: #fff;
-  background-color: #181818;
+  background-color: #212529;
   font-family: "Bebas Neue", sans-serif;
   border-radius: 2px 2px 0 0;
   border-bottom: 2px solid #651f71;
@@ -50,7 +49,7 @@
 .bodyModal {
   color: #fff;
   /* Color altenartivo:  #212529 */
-  background-color: #181818; 
+  background-color: #212529; 
   font-family: "Bebas Neue", sans-serif;
   font-size: 18px;
 }
