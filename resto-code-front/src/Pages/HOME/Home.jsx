@@ -11,7 +11,6 @@ import { useNavigate } from "react-router-dom";
 const Home = () => {
   const navigate = useNavigate();
   const usuarioLogueado = JSON.parse(localStorage.getItem("user"));
-  console.log(usuarioLogueado);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
