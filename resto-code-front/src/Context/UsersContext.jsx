@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react"
-import axios from "axios"
+import axios from "axios";
+import Swal from "sweetalert2";
 
 export const UsuariosContext = createContext()
 
@@ -18,10 +19,39 @@ const UsersContext = ({children}) => {
             console.log(error)
         }
     }
+
+  //post ----> crea un producto
+
+  const addUser = (user) => {
+    try {
+      const response = axios.post("http://localhost:8080/users", user);
+      setUsers([...users, response]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
  //logout----> desloguea el usuario actual
     const logOut = () => {
-        localStorage.removeItem("user")
-        window.location.href = "/"
+      Swal.fire({
+        icon: 'warning',
+        title: 'Cerrar Sesión?',
+        showCancelButton: true,
+        confirmButtonText: 'Aceptar', 
+        cancelButtonText: 'Cancelar',
+        confirmButtonColor: '#651F71',
+        cancelButtonColor: '#C73333',
+        background: '#31302F',
+        color: 'white',
+        backdrop: `rgba(0,0,14,0.4)` 
+      }).then((result) => {        
+        if (result.isConfirmed) {
+          localStorage.removeItem("user")
+          window.location.href = "/"          
+        } else if (result.isDenied) {
+          return
+        }
+      })         
     }
 
  //put ----> edita un usuario
@@ -61,8 +91,9 @@ const UsersContext = ({children}) => {
         value={{
             users, 
             setUsers, 
-            deleteUser,
+            addUser,           
             updateUsers,
+            deleteUser,
             logOut}}>
         {children}
     </UsuariosContext.Provider>

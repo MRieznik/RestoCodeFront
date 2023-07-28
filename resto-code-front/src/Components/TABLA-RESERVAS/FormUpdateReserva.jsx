@@ -6,6 +6,7 @@ import "./TablaReservas.css";
 
 // eslint-disable-next-line react/prop-types
 const FormUpdateReserva = ({ editReserva, handleClose }) => {
+  
   const [reserva, setReserva] = useState(editReserva);
 
   const { updateReserva } = useContext(ReservasContext);
@@ -108,7 +109,7 @@ const FormUpdateReserva = ({ editReserva, handleClose }) => {
                   type="number"
                   min = "1"
                   className="form-control"
-                  value={reserva.comensales}
+                  value={reserva.invitados}
                   onChange={handleChange}
                   name="comensales"
                   aria-describedby="comensales"

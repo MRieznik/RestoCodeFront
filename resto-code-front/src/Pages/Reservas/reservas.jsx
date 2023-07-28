@@ -1,23 +1,31 @@
 import { Form } from "react-bootstrap/";
 import "./Reservas.css";
-import { useState } from "react";
-import Swal from 'sweetalert2'
+import { useState , useContext} from "react";
+import { ReservasContext } from "../../context/ReservasContext";
+import Swal from 'sweetalert2';
 
 
 
 const Reservas = () => {
+  const { addReserva } = useContext(ReservasContext);
+
+  const user = JSON.parse(localStorage.getItem('user')) || []; 
+
   const [formReserva, setFormReserva] = useState({
+    nombre: user.nombre,
+    apellido: user.apellido,
     fecha: "",
     hora: "",
     invitados: "",
     comentarios: "",
   });
+ 
 
   const [errorFecha, setErrorFecha] = useState("");
   const [errorHora, setErrorHora] = useState("");
   const [errorInvitados, setErrorInvitados] = useState("");
   const [errorComentarios, setErrorComentarios] = useState("");
-  const [camposVacios, setCamposVacios] = useState("");
+ // const [camposVacios, setCamposVacios] = useState("");
 
   const handleChange = (e) => {
     setFormReserva({ ...formReserva, [e.target.name]: e.target.value });
@@ -85,6 +93,7 @@ const Reservas = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    addReserva(formReserva);
     setFormReserva({
       fecha: "",
       hora: "",
@@ -94,13 +103,23 @@ const Reservas = () => {
     Swal.fire({
       icon: 'success',
       title: '¡Listo!',
-      text: 'Su reserva ha sido confirmada',
-      confirmButtonColor: '#1d0c20',
-
-    })
-
-    formularioReserva.reset();
+      
+      
+    }) 
+    Swal.fire({
+      icon: 'succes',
+      title: '¡Listo!',
+      text: 'Su reserva ha sido confirmada, pasa a ver nuestra galeria!', //o menu podemos agregar!
+      showCancelButton: false,
+      confirmButtonText: 'Ok',       
+      confirmButtonColor: '#1d0c20',      
+    }).then((result) => {        
+      if (result.isConfirmed) {
+        window.location.href = "/galeria"  
+      } 
+    })         
   };
+
 
   return (
     <>

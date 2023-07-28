@@ -8,7 +8,7 @@ const ReservContext = ({ children }) => {
   //vamos a poner todo el crud de productos
   const [reservas, setReservas] = useState([]);
 
-  //get ----> trae todos los productos
+  //get ----> trae todas las reservas
   const getReservas = async () => {
     try {
       const response = await axios.get("http://localhost:8080/reservas");
@@ -19,6 +19,16 @@ const ReservContext = ({ children }) => {
     }
   };
 
+  //post ----> crea una reserva
+
+  const addReserva= (reserva) => {
+    try {
+      const response = axios.post("http://localhost:8080/reservas", reserva);
+      setReservas([...reservas, response]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   //put ----> edita una reserva
 
@@ -55,7 +65,8 @@ const ReservContext = ({ children }) => {
     <ReservasContext.Provider
       value={{
         reservas,
-        setReservas,   
+        setReservas,  
+        addReserva, 
         updateReserva,     
         deleteReserva,        
       }}

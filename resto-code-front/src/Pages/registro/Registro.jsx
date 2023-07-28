@@ -1,35 +1,47 @@
-import React, { useState } from "react";
-import { Button } from "react-bootstrap";
-import axios from "axios";
+import { useState , useContext} from "react";
+import { Modal } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { UsuariosContext } from "../../Context/UsersContext";
+import ModalInicarSesion from "../../Components/MODAL INICAR-SESION/ModalInicarSesion";
 import "./Registro.css";
 
+// eslint-disable-next-line react/prop-types
 const Registro = () => {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+   
+  const [DataUser, setDataUser] = useState({
+    nombre: "",
+    apellido: "",
+    contrasenia: "",
+    email: "",
+    telefono: "",
+    rolUsuario: "",
+  });
+
+  const {addUser} = useContext(UsuariosContext);
+
   const handleChange = (e) => {
     setDataUser({ ...DataUser, [e.target.name]: e.target.value });
   };
 
-  const [DataUser, setDataUser] = useState({
-    nombreUsuario: "",
-    apellidoUsuario: "",
-    contraseniaUsuario: "",
-    correoUsuario: "",
-    telefonoUsuario: "",
-    rolUsuarioRegistro: "",
-  });
 
   const handleSubmit = (e) => {
+    addUser(DataUser)
     e.preventDefault();
     console.log(DataUser);
     setDataUser({
-      nombreUsuario: "",
-      apellidoUsuario: "",
-      contraseniaUsuario: "",
-      correoUsuario: "",
-      telefonoUsuario: "",
-      rolUsuarioRegistro: "",
-    });
+      nombre: "",
+      apellido: "",
+      contrasenia: "",
+      email: "",
+      telefono: "",
+      rolUsuario: "",
+    });   
+    handleShow();
   };
 
   //Defino los actualizadores de estados para manejar las clases que se colocaran en cada caso
@@ -88,7 +100,7 @@ const Registro = () => {
   /***********************************/
 
   const handleNombreBlur = () => {
-    const nombreValido = NombreApellidoValido(DataUser.nombreUsuario);
+    const nombreValido = NombreApellidoValido(DataUser.nombre);
     console.log("Nombre válido:", nombreValido);
     if (!nombreValido) {
       setClaseNombre("mensaje-error-Registro-Correo text-danger");
@@ -98,7 +110,7 @@ const Registro = () => {
   };
 
   const handleApellidoBlur = () => {
-    const apelldoValido = NombreApellidoValido(DataUser.apellidoUsuario);
+    const apelldoValido = NombreApellidoValido(DataUser.apellido);
     console.log("apellido válido:", apelldoValido);
     if (!apelldoValido) {
       setClaseApellido("mensaje-error-Registro-Correo text-danger");
@@ -108,7 +120,7 @@ const Registro = () => {
   };
 
   const handleContraseñaBlur = () => {
-    const contraseñaValid = contraseniaValida(DataUser.contraseniaUsuario);
+    const contraseñaValid = contraseniaValida(DataUser.contrasenia);
     console.log("contra válido:", contraseñaValid);
     if (!contraseñaValid) {
       setClaseContrasenia("mensaje-error-Registro-Correo text-danger");
@@ -118,7 +130,7 @@ const Registro = () => {
   };
 
   const handleCorreoBlur = () => {
-    const correoValid = correoValido(DataUser.correoUsuario);
+    const correoValid = correoValido(DataUser.email);
     console.log("correo válido:", correoValid);
     if (!correoValid) {
       setClaseCorreo("mensaje-error-Registro-Correo text-danger");
@@ -128,7 +140,7 @@ const Registro = () => {
   };
 
   const handleTelefonoBlur = () => {
-    const telefonoValid = telefonoValido(DataUser.telefonoUsuario);
+    const telefonoValid = telefonoValido(DataUser.telefono);
     console.log("telefono válido:", telefonoValid);
     if (telefonoValid || DataUser.telefonoUsuario == "") {
       setClaseTelefono("mensaje-error-Registro-Correo text-danger d-none");
@@ -168,7 +180,7 @@ const Registro = () => {
                               <div className="form-outline">
                                 <label
                                   className="form-label fs-5 text-light mb-0"
-                                  htmlFor="nombreUsuario"
+                                  htmlFor="nombre"
                                 >
                                   {" "}
                                   Nombre/s
@@ -183,15 +195,15 @@ const Registro = () => {
                                 </span>
                                 <input
                                   type="text"
-                                  id="nombreUsuario"
+                                  id="nombre"
                                   className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados mb-1"
                                   placeholder="Ej: Juan Resto"
                                   pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
                                   title="Este campo solo permite letras y espacios en blanco"
                                   required
                                   maxLength="50"
-                                  name="nombreUsuario"
-                                  value={DataUser.nombreUsuario}
+                                  name="nombre"
+                                  value={DataUser.nombre}
                                   onChange={handleChange}
                                   onBlur={handleNombreBlur}
                                   /* onChange={(e) =>
@@ -203,7 +215,7 @@ const Registro = () => {
                               <div className="d-none">
                                 <label
                                   className="form-label fs-5 text-light mb-0"
-                                  htmlFor="nombreUsuario"
+                                  htmlFor="rolUsuario"
                                 >
                                   {" "}
                                   Rol
@@ -217,15 +229,15 @@ const Registro = () => {
                                 </span>
                                 <input
                                   type="text"
-                                  id="nombreUsuario"
+                                  id="rolUsuario"
                                   className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados mb-1"
                                   placeholder="Ej: Juan Resto"
                                   pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
                                   title="Este campo solo permite letras y espacios en blanco"
                                   required
-                                  name="rolUsuarioRegistro"
+                                  name="rolUsuario"
                                   value={
-                                    (DataUser.rolUsuarioRegistro = "usuario")
+                                    (DataUser.rolUsuario = "usuario")
                                   }
                                   onChange={handleChange}
                                 />
@@ -235,7 +247,7 @@ const Registro = () => {
                               <div className="form-outline">
                                 <label
                                   className="form-label fs-5 text-light mb-0"
-                                  htmlFor="apellidoUsuario"
+                                  htmlFor="apellido"
                                 >
                                   {" "}
                                   Apellido
@@ -250,15 +262,15 @@ const Registro = () => {
                                 </span>
                                 <input
                                   type="text"
-                                  id="apellidoUsuario"
+                                  id="apellido"
                                   className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados mb-1"
                                   placeholder="Ej: Code"
                                   pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
                                   title="Este campo solo permite letras y espacios en blanco"
                                   required
                                   maxLength="50"
-                                  name="apellidoUsuario"
-                                  value={DataUser.apellidoUsuario}
+                                  name="apellido"
+                                  value={DataUser.apellido}
                                   onChange={handleChange}
                                   onBlur={handleApellidoBlur}
                                   /* onChange={(e) =>
@@ -300,7 +312,7 @@ const Registro = () => {
                             <div className="form-outline col-md-12 mb-1 mt-2">
                               <label
                                 className="form-label fs-5 text-light mb-0"
-                                htmlFor="contraseniaUsuario"
+                                htmlFor="contrasenia"
                               >
                                 Contraseña
                               </label>
@@ -313,7 +325,7 @@ const Registro = () => {
                                 className={ClaseContrasenia}
                               >
                                 {" "}
-                                Por faovr ingrese una Contraseña válido.
+                                Por favor ingrese una Contraseña válido.
                               </span>
 
                               <div className=" d-flex flex-row bg-color-black">
@@ -327,8 +339,8 @@ const Registro = () => {
                                   required
                                   minLength="8"
                                   maxLength="12"
-                                  name="contraseniaUsuario"
-                                  value={DataUser.contraseniaUsuario}
+                                  name="contrasenia"
+                                  value={DataUser.contrasenia}
                                   onChange={handleChange}
                                   onBlur={handleContraseñaBlur}
                                   /* onChange={(e) =>
@@ -353,7 +365,7 @@ const Registro = () => {
                           <div className="form-outline mb-1 mt-2">
                             <label
                               className="form-label fs-5 text-light mb-0"
-                              htmlFor="correoUsuario"
+                              htmlFor="email"
                             >
                               Correo
                             </label>
@@ -366,13 +378,13 @@ const Registro = () => {
                             </span>
                             <input
                               type="email"
-                              id="correoUsuario"
+                              id="email"
                               className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados mb-1"
                               placeholder="Ej: RestoCode@gmail.com"
                               title="Ingrese un correo para poder crear la cuenta"
                               autoComplete="on"
-                              name="correoUsuario"
-                              value={DataUser.correoUsuario}
+                              name="email"
+                              value={DataUser.email}
                               onChange={handleChange}
                               onBlur={handleCorreoBlur}
                               /* onChange={(e) => setCorreoUsuario(e.target.value)} */
@@ -431,8 +443,8 @@ const Registro = () => {
                                   pattern="[0-9]{7,15}"
                                   title="Ingrese un número de teléfono válido (entre 7 y 15 dígitos)"
                                   maxLength="15"
-                                  name="telefonoUsuario"
-                                  value={DataUser.telefonoUsuario}
+                                  name="telefono"
+                                  value={DataUser.telefono}
                                   onChange={handleChange}
                                   onBlur={handleTelefonoBlur}
 
@@ -498,6 +510,18 @@ const Registro = () => {
           </div>
         </div>
       </div>
+      <Modal
+        show={show}
+        onHide={handleClose}
+        className="ventanaModalInicarSesion"
+      >
+        <Modal.Header closeButton className="headerModal">
+          <Modal.Title>Ingresa tu usuario</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="bodyModal">
+          <ModalInicarSesion handleClose={handleClose} />
+        </Modal.Body>
+      </Modal>
     </main>
   );
 };

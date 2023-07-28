@@ -72,7 +72,7 @@ const TablaReservas = () => {
               <td data-label="Nombre">{reserva.nombre} {reserva.apellido}</td>
               <td data-label="Fecha">{reserva.fecha}</td>
               <td data-label="Hora">{reserva.hora}</td>
-              <td data-label="Comensales">{reserva.comensales}</td>   
+              <td data-label="Comensales">{reserva.invitados}</td>   
               <td data-label="Acciones">           
                 <button
                   className="botonEdit m-1"
