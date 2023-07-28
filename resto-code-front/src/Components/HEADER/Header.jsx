@@ -44,7 +44,7 @@ const Header = () => {
                 </Nav>
                 <div className="contenedor-iniciarSesion-registrarse">
                   <Nav.Link
-                    href="#link"
+                    // href="#link"
                     className="NavLink"
                     onClick={iniciarSesion}
                   >
