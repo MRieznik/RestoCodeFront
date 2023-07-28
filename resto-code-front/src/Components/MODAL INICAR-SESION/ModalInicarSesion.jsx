@@ -27,7 +27,7 @@ const ModalInicarSesion = () => {
                 color: 'white',
                 backdrop: `rgba(0,0,14,0.4)`            
               })                 
-          }else if(userValido.email === "admin@gmail.com" && userValido.contrasenia === 'Admin123'){                 
+          }else if(userValido.rolUsuario === "admin" ){             
             localStorage.setItem('user', JSON.stringify(userValido))
             window.location.href = "/administracion"
           }
