@@ -29,7 +29,7 @@ const Header = () => {
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto nav">
                   <Nav.Link
-                    href="#link"
+                    // href="#link"
                     className="NavLink"
                     onClick={iniciarSesion}
                   >
