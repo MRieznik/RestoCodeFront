@@ -4,6 +4,8 @@
   border-bottom: 2px solid #651f71;
   position: sticky;
   top: 0;
+  /* MOSTRAR A LAUTARO */
+  z-index: 2; 
 }
 .contenedorLogo {
   /* border: 1px solid red; */
