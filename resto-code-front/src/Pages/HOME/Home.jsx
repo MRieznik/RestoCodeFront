@@ -3,17 +3,23 @@ import cervezayhamburguesa from "../../Image/INDEX-IMAGE/video4.mp4";
 import cartabebidas from "../../Image/INDEX-IMAGE/cartaDeBebidas.png";
 import cartacomida from "../../Image/INDEX-IMAGE/cartasDeComidas.png";
 import qrwp from "../../Image/INDEX-IMAGE/whatsappQR.png";
+import ModalInicarSesion from "../../Components/MODAL INICAR-SESION/ModalInicarSesion";
+import { Modal } from "react-bootstrap";
 import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
   const usuarioLogueado = JSON.parse(localStorage.getItem("user"));
   console.log(usuarioLogueado);
-  const  usuarioSinLoguear = () => {
-    if (usuarioLogueado === null) {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
-    }
+  const iniciarSesion = () => {
+    handleShow();
   };
-      
+
   return (
     <>
       <main>
@@ -25,8 +31,22 @@ const Home = () => {
                 <h2>Cerveceria</h2>
               </div>
             </div>
-            <button className="botonReservarIndex">¡Reserva aqui!</button>
-   
+            {usuarioLogueado === null ? (
+              <>
+                <button onClick={iniciarSesion} className="botonReservarIndex">
+                  ¡Reserva aqui!
+                </button>
+              </>
+            ) : (
+              <>
+                <button
+                  onClick={() => navigate("/reservas")}
+                  className="botonReservarIndex"
+                >
+                  ¡Reserva aqui!
+                </button>
+              </>
+            )}
           </div>
           <div className="imagenDeFondoIndex">
             <div className="sombraImagenInicioIndex"></div>
@@ -39,9 +59,25 @@ const Home = () => {
                   <h2>Cerveceria</h2>
                 </div>
               </div>
-              <button className="botonReservarIndexResponsive">
-                ¡Reserva aqui!
-              </button>
+              {usuarioLogueado === null ? (
+                <>
+                  <button
+                    onClick={iniciarSesion}
+                    className="botonReservarIndex"
+                  >
+                    ¡Reserva aqui!
+                  </button>
+                </>
+              ) : (
+                <>
+                  <button
+                    onClick={() => navigate("/reservas")}
+                    className="botonReservarIndex"
+                  >
+                    ¡Reserva aqui!
+                  </button>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -101,6 +137,19 @@ const Home = () => {
             </div>
           </div>
         </div>
+        {/* MODAL */}
+        <Modal
+          show={show}
+          onHide={handleClose}
+          className="ventanaModalInicarSesion"
+        >
+          <Modal.Header closeButton className="headerModal">
+            <Modal.Title>Ingresa tu usuario</Modal.Title>
+          </Modal.Header>
+          <Modal.Body className="bodyModal">
+            <ModalInicarSesion handleClose={handleClose} />
+          </Modal.Body>
+        </Modal>
       </main>
     </>
   );
