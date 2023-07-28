@@ -3,17 +3,17 @@ import cervezayhamburguesa from "../../Image/INDEX-IMAGE/video4.mp4";
 import cartabebidas from "../../Image/INDEX-IMAGE/cartaDeBebidas.png";
 import cartacomida from "../../Image/INDEX-IMAGE/cartasDeComidas.png";
 import qrwp from "../../Image/INDEX-IMAGE/whatsappQR.png";
-import ModalInicarSesion from "../../Components/MODAL INICAR-SESION/ModalInicarSesion";
-import { Modal } from "react-bootstrap";
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 const Home = () => {
-  const [showModal, setShowModal] = useState(false);
-  const handleReservaClick = () => {
-    console.log("Reserva");
-    setShowModal(true);
-  };
+  const usuarioLogueado = JSON.parse(localStorage.getItem("user"));
+  console.log(usuarioLogueado);
+  const  usuarioSinLoguear = () => {
+    if (usuarioLogueado === null) {
 
+    }
+  };
+      
   return (
     <>
       <main>
@@ -25,21 +25,8 @@ const Home = () => {
                 <h2>Cerveceria</h2>
               </div>
             </div>
-            <button onClick={handleReservaClick} className="botonReservarIndex">
-              ¡Reserva aqui!
-            </button>
-            <Modal
-              show={showModal}
-              onHide={() => setShowModal(false)}
-              className="ventanaModalInicarSesion"
-            >
-              <Modal.Header closeButton className="headerModal">
-                <Modal.Title>Ingresa tu usuario</Modal.Title>
-              </Modal.Header>
-              <Modal.Body className="bodyModal">
-                <ModalInicarSesion setShowModal={setShowModal} />
-              </Modal.Body>
-            </Modal>
+            <button className="botonReservarIndex">¡Reserva aqui!</button>
+   
           </div>
           <div className="imagenDeFondoIndex">
             <div className="sombraImagenInicioIndex"></div>
@@ -52,10 +39,7 @@ const Home = () => {
                   <h2>Cerveceria</h2>
                 </div>
               </div>
-              <button
-                onClick={handleReservaClick}
-                className="botonReservarIndexResponsive"
-              >
+              <button className="botonReservarIndexResponsive">
                 ¡Reserva aqui!
               </button>
             </div>
