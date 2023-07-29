@@ -1,6 +1,6 @@
 import { Container, Nav, Navbar, Modal } from "react-bootstrap";
 import { useState, useContext } from "react";
-import { UsuariosContext } from "../../Context/UsersContext";
+import { UsuariosContext } from "../../context/UsersContext";
 import logo from "../../Image/HEADER-IMAGE/restoCodeLogo.png";
 import ModalInicarSesion from "../MODAL INICAR-SESION/ModalInicarSesion";
 import "./Header.css";
@@ -28,7 +28,7 @@ const Header = () => {
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto nav">
-                <Nav.Link href="/" className="NavLink">
+                  <Nav.Link href="/" className="NavLink">
                     Inicio
                   </Nav.Link>
                   <Nav.Link
@@ -76,6 +76,15 @@ const Header = () => {
                   <Nav.Link href="/nosotros" className="NavLink">
                     Nosotros
                   </Nav.Link>
+                  {usuarioLogueado.rolUsuario === "admin" ? (
+                    <>
+                      <Nav.Link href="/administracion" className="NavLink">
+                        Administración
+                      </Nav.Link>
+                    </>
+                  ) : (
+                    <></>
+                  )}
                 </Nav>
                 <div className="contenedor-iniciarSesion-registrarse">
                   <Nav.Link href="#link" className="NavLink" onClick={logOut}>

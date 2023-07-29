@@ -2,7 +2,7 @@ import { useState , useContext} from "react";
 import { Modal } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import { UsuariosContext } from "../../Context/UsersContext";
+import { UsuariosContext } from "../../context/UsersContext";
 import ModalInicarSesion from "../../Components/MODAL INICAR-SESION/ModalInicarSesion";
 import "./Registro.css";
 
