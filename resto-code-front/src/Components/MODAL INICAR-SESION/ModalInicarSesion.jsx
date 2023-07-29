@@ -10,7 +10,7 @@ const ModalInicarSesion = () => {
   const [contrasenia, setContrasenia] = useState()
 
   const {users} = useContext(UsuariosContext);
-
+console.log(users)
   const handleSubmit = (e) => {
       e.preventDefault()
       try {

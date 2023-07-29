@@ -53,6 +53,69 @@
       "telefono": "3513777888",
       "rolUsuario": "admin",
       "id": 17
+    },
+    {
+      "nombre": "juan ",
+      "apellido": "medina",
+      "contrasenia": "medina123",
+      "email": "medina@gmail.com",
+      "telefono": "3815468046",
+      "rolUsuario": "usuario",
+      "id": 19
+    },
+    {
+      "nombre": "Sergio daniel",
+      "apellido": "Dominguez",
+      "contrasenia": "resto123",
+      "email": "sergiodominguez21sdd@gmail.com",
+      "telefono": "3815468044",
+      "rolUsuario": "usuario",
+      "id": 20
+    },
+    {
+      "nombre": "jorge",
+      "apellido": "juarez",
+      "contrasenia": "jorge123",
+      "email": "jorge@gmail.com",
+      "telefono": "3815468047",
+      "rolUsuario": "usuario",
+      "id": 21
+    },
+    {
+      "nombre": "jose",
+      "apellido": "alderete",
+      "contrasenia": "joseal123",
+      "email": "joseal@gmail.com",
+      "telefono": "3815468050",
+      "rolUsuario": "usuario",
+      "id": 22
+    },
+    {
+      "nombre": "Sergio",
+      "apellido": "medina",
+      "contrasenia": "sergio1234",
+      "email": "sergio@gmail.com",
+      "telefono": "3815468055",
+      "rolUsuario": "usuario",
+      "id": 23
+    },
+    {
+      "nombre": "raul",
+      "apellido": "Reynaga",
+      "contrasenia": "raul1234",
+      "email": "raul@gmail.com",
+      "telefono": "3815468060",
+      "rolUsuario": "usuario",
+      "id": 24
+    },
+    {
+      "nombre": "gabi",
+      "apellido": "fernandes",
+      "contrasenia": "gabi1234",
+      "email": "gabi@gmail.com",
+      "telefono": "3815468051",
+      "rolUsuario": "usuario",
+      "id": 25
     }
   ],
   "reservas": [
@@ -78,10 +141,31 @@
       "nombre": "Andres",
       "apellido": "Iniesta",
       "fecha": "2023-07-29",
-      "hora": "10:39",
+      "hora": "10:30",
       "invitados": "10",
       "comentarios": "Cumpleanos",
-      "id": 3
+      "id": 3,
+      "comensales": "9"
+    },
+    {
+      "nombre": "juan ",
+      "apellido": "medina",
+      "fecha": "2023-08-04",
+      "hora": "23:00",
+      "invitados": "2",
+      "comentarios": "evento de pareja",
+      "id": 5,
+      "comensales": "1"
+    },
+    {
+      "nombre": "Sergio daniel",
+      "apellido": "Dominguez",
+      "fecha": "2023-08-25",
+      "hora": "16:30",
+      "invitados": "8",
+      "comentarios": "evento laboral\n",
+      "id": 6,
+      "comensales": "7"
     }
   ]
 }

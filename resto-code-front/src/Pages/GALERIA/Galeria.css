@@ -369,3 +369,20 @@
     width: 100%;
   }
 }
+
+/* 1920x1080 */
+
+@media (width: 1920px) {
+  .contenedorImagenBarra {
+    display: none;
+  }
+  .videoHamburguesaSimple {
+    display: none;
+  }
+  .contenedorTrago {
+  width:30%;
+  }
+  .videoPizza {
+    width: 70%;
+  }
+}

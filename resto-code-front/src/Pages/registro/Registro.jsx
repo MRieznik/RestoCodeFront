@@ -30,8 +30,8 @@ const Registro = () => {
 
 
   const handleSubmit = (e) => {
-    addUser(DataUser)
     e.preventDefault();
+    addUser(DataUser)
     console.log(DataUser);
     setDataUser({
       nombre: "",

@@ -22,13 +22,14 @@ const UsersContext = ({children}) => {
 
   //post ----> crea un producto
 
-  const addUser = (user) => {
+  const addUser = async (user) => {
     try {
-      const response = axios.post("http://localhost:8080/users", user);
-      setUsers([...users, response]);
+      const response = await axios.post("http://localhost:8080/users", user);
+      setUsers([...users, response.data]);
     } catch (error) {
       console.log(error);
     }
+    
   };
 
  //logout----> desloguea el usuario actual
