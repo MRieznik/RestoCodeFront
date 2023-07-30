@@ -65,7 +65,7 @@
 
 }
 
-.tamanioImpustRegistro:focus{
+.tamanioImpustRegistro:focus, .botonSubmitRegistro:focus{
     transition: 0.5s;
     box-shadow: 0 0 5px #7037cd;
     border-color: #7037cd;
