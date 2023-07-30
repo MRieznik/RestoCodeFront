@@ -134,6 +134,15 @@
       "telefono": "3815468043",
       "rolUsuario": "usuario",
       "id": 29
+    },
+    {
+      "nombre": "Nestor Nazaret",
+      "apellido": "Campos",
+      "contrasenia": "aaaaaaaaaaaa",
+      "email": "nazaretcampos27@gmail.com",
+      "telefono": "3816610091",
+      "rolUsuario": "usuario",
+      "id": 35
     }
   ],
   "reservas": [

@@ -107,6 +107,18 @@
     min-height: min-content;
 } */
 
+.sweetalertRegistroTitle{
+    font-size: 3.5em;
+}
+
+/* .sweetalertRegistropopup{
+    font-size: 2em;
+} */
+
+#swal2-html-container{
+    font-size: 1.6em;
+}
+
 @media all and (min-width:300px){
     .tamanioImpustRegistro{
         font-size: 0.9rem;

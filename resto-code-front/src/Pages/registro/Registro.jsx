@@ -49,10 +49,15 @@ const Registro = () => {
     Swal.fire({
       icon: 'succes',
       title: '¡Listo!',
-      text: 'Usuario Registrado!', //o menu podemos agregar!
+      text: 'Usuario Registrado!', 
+      /* html: '<div style="font-size: 24px;">Usuario Registrado!</div>', */
       showCancelButton: false,
       confirmButtonText: 'Ok',       
-      confirmButtonColor: '#1d0c20',      
+      confirmButtonColor: '#1d0c20', 
+      customClass: {
+        title: 'sweetalertRegistroTitle', 
+        content: 'sweetalertRegistropopup', 
+      },    
     }).then((result) => {        
       if (result.isConfirmed) {
         handleShow(); 
