@@ -21,7 +21,7 @@ const ReservContext = ({ children }) => {
 
   //post ----> crea una reserva
 
-  const addReserva= (reserva) => {
+  const addReserva = (reserva) => {
     try {
       const response = axios.post("http://localhost:8080/reservas", reserva);
       setReservas([...reservas, response]);
@@ -34,10 +34,7 @@ const ReservContext = ({ children }) => {
 
   const updateReserva = async (reserva) => {
     try {
-      await axios.put(
-        `http://localhost:8080/reservas/${reserva.id}`,
-        reserva
-      );
+      await axios.put(`http://localhost:8080/reservas/${reserva.id}`, reserva);
       await getReservas();
     } catch (error) {
       console.log(error);
@@ -65,10 +62,10 @@ const ReservContext = ({ children }) => {
     <ReservasContext.Provider
       value={{
         reservas,
-        setReservas,  
-        addReserva, 
-        updateReserva,     
-        deleteReserva,        
+        setReservas,
+        addReserva,
+        updateReserva,
+        deleteReserva,
       }}
     >
       {children}

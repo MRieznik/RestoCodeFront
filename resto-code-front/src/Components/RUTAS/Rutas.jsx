@@ -32,10 +32,7 @@ const Rutas = () => {
           onClick={<ModalInicarSesion />}
           element={<Registro />}
         />
-         <Route
-          path="/administracion"          
-          element={<Administracion />}
-        />
+        <Route path="/administracion" element={<Administracion />} />
       </Routes>
     </>
   );

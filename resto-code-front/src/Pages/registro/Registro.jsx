@@ -1,11 +1,11 @@
-import { useState , useContext} from "react";
+import { useState, useContext } from "react";
 import { Modal } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import { UsuariosContext } from "../../Context/UsersContext";
+import { UsuariosContext } from "../../context/UsersContext";
 import ModalInicarSesion from "../../Components/MODAL INICAR-SESION/ModalInicarSesion";
 import "./Registro.css";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 // eslint-disable-next-line react/prop-types
 const Registro = () => {
@@ -13,7 +13,6 @@ const Registro = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-   
   const [DataUser, setDataUser] = useState({
     nombre: "",
     apellido: "",
@@ -23,18 +22,16 @@ const Registro = () => {
     rolUsuario: "",
   });
 
-  const {addUser, users} = useContext(UsuariosContext);
+  const { addUser, users } = useContext(UsuariosContext);
   /* console.log(users); */
   const handleChange = (e) => {
     setDataUser({ ...DataUser, [e.target.name]: e.target.value });
   };
 
-
   const handleSubmit = (e) => {
-    
     e.preventDefault();
 
-    if (verificarCorreoExistente(DataUser.email) ) {
+    if (verificarCorreoExistente(DataUser.email)) {
       console.log("entro a handlesubmit ");
       setClaseCorreo2("tracking-in-expand mensaje-error-Registro-Correo");
       setTimeout(() => {
@@ -43,7 +40,7 @@ const Registro = () => {
       return;
       /* console.log("siguio"); */
     }
-    addUser(DataUser)
+    addUser(DataUser);
     console.log(DataUser);
     setDataUser({
       nombre: "",
@@ -52,28 +49,27 @@ const Registro = () => {
       email: "",
       telefono: "",
       rolUsuario: "",
-    });   
+    });
     Swal.fire({
-      icon: 'success',
-      title: '¡Listo!',      
-    }) 
+      icon: "success",
+      title: "¡Listo!",
+    });
     Swal.fire({
-      icon: 'succes',
-      title: '¡Listo!',
-      text: 'Usuario Registrado!', 
+      icon: "succes",
+      title: "¡Listo!",
+      text: "Usuario Registrado!",
       showCancelButton: false,
-      confirmButtonText: 'Ok',       
-      confirmButtonColor: '#1d0c20', 
+      confirmButtonText: "Ok",
+      confirmButtonColor: "#1d0c20",
       customClass: {
-        title: 'sweetalertRegistroTitle', 
-        content: 'sweetalertRegistropopup', 
-      },    
-    }).then((result) => {        
+        title: "sweetalertRegistroTitle",
+        content: "sweetalertRegistropopup",
+      },
+    }).then((result) => {
       if (result.isConfirmed) {
-        handleShow(); 
-      } 
-    })  
-    
+        handleShow();
+      }
+    });
   };
 
   //Defino los actualizadores de estados para manejar las clases que se colocaran en cada caso
@@ -177,12 +173,12 @@ const Registro = () => {
     ".mensaje-error-Registro-Correo d-none"
   );
     */
-    if (verificarCorreoExistente(DataUser.email)  ) {
-      setClaseCorreo2("mensaje-error-Registro-Correo")
+    if (verificarCorreoExistente(DataUser.email)) {
+      setClaseCorreo2("mensaje-error-Registro-Correo");
     } else {
-      setClaseCorreo2("mensaje-error-Registro-Correo d-none")  //nesesario porque si no no cambia una vez que el problema se resuelva
+      setClaseCorreo2("mensaje-error-Registro-Correo d-none"); //nesesario porque si no no cambia una vez que el problema se resuelva
     }
-    if (!correoValid ) {
+    if (!correoValid) {
       setClaseCorreo("mensaje-error-Registro");
     } else {
       setClaseCorreo("mensaje-error-Registro d-none");
@@ -200,9 +196,12 @@ const Registro = () => {
   };
 
   return (
-    <main className="contenedorGeneralRegistro 0"> {/* h-10 */}
+    <main className="contenedorGeneralRegistro 0">
+      {" "}
+      {/* h-10 */}
       <div className="container-fluid  contenedorGeneralRegistro">
-        <div className="row d-flex justify-content-center align-items-center ">{/* h-100 */}
+        <div className="row d-flex justify-content-center align-items-center ">
+          {/* h-100 */}
           <div className="col m-0 p-0">
             <div className="card card-registration my-0 border-0 contenedorGeneralRegistro">
               <div className="row g-0">
@@ -279,9 +278,7 @@ const Registro = () => {
                                   title="Este campo solo permite letras y espacios en blanco"
                                   required
                                   name="rolUsuario"
-                                  value={
-                                    (DataUser.rolUsuario = "usuario")
-                                  }
+                                  value={(DataUser.rolUsuario = "usuario")}
                                   onChange={handleChange}
                                 />
                               </div>
@@ -320,7 +317,6 @@ const Registro = () => {
                               </div>
                             </div>
                           </div>
-                          
 
                           <div className="form-outline mb-1 mt-2">
                             <label
@@ -352,11 +348,11 @@ const Registro = () => {
                               name="email"
                               value={DataUser.email}
                               onChange={handleChange}
-                              onBlur={handleCorreoBlur}                              
+                              onBlur={handleCorreoBlur}
                               required
                               maxLength="76"
                             />
-                         </div>
+                          </div>
 
                           <div className="row">
                             <div className="col-md-12 mb-1 mt-2">
@@ -432,7 +428,7 @@ const Registro = () => {
                                   name="contrasenia"
                                   value={DataUser.contrasenia}
                                   onChange={handleChange}
-                                  onBlur={handleContraseñaBlur}                                 
+                                  onBlur={handleContraseñaBlur}
                                 />
                                 <div className="">
                                   <button
@@ -456,7 +452,9 @@ const Registro = () => {
                               id="submitRegistrar"
                               className="   form-control form-control-lg btn-lg botonSubmitRegistro"
                               value="Registrarse"
-                            >Registrarse</button>
+                            >
+                              Registrarse
+                            </button>
                           </div>
                           <div className="pt-1">
                             <p className="text-center fs-6 text-secondary">
@@ -491,7 +489,5 @@ const Registro = () => {
     </main>
   );
 };
-
-
 
 export default Registro;

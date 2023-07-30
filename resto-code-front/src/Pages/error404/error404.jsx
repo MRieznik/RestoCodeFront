@@ -20,13 +20,20 @@ const Error404 = () => {
               <p className="cuatro">4</p>
             </div>
             <div className="contenedorBoton">
-              <button onClick={()=>{
-                navigation("/")
-              }} className="boton-error">Volver al inicio</button>
+              <button
+                onClick={() => {
+                  navigation("/");
+                }}
+                className="boton-error"
+              >
+                Volver al inicio
+              </button>
             </div>
           </div>
         </div>
-        <div className="contenedorTextoError"><h2>¡Se produjo un error!</h2></div>
+        <div className="contenedorTextoError">
+          <h2>¡Se produjo un error!</h2>
+        </div>
       </main>
     </>
   );

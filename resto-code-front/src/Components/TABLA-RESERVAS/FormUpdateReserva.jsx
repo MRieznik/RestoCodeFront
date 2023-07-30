@@ -6,7 +6,6 @@ import "./TablaReservas.css";
 
 // eslint-disable-next-line react/prop-types
 const FormUpdateReserva = ({ editReserva, handleClose }) => {
-  
   const [reserva, setReserva] = useState(editReserva);
 
   const { updateReserva } = useContext(ReservasContext);
@@ -19,29 +18,28 @@ const FormUpdateReserva = ({ editReserva, handleClose }) => {
     e.preventDefault();
     updateReserva(reserva);
     Swal.fire({
-        icon: 'warning',
-        title: 'Editar Reserva?',
-        showCancelButton: true,
-        confirmButtonText: 'Aceptar', 
-        cancelButtonText: 'Cancelar',
-        confirmButtonColor: '#651F71',
-        cancelButtonColor: '#C73333',
-        background: '#31302F',
-        color: 'white',
-        backdrop: `rgba(0,0,14,0.4)` 
-      }).then((result) => {        
-        if (result.isConfirmed) {
-          handleClose();
-        } else if (result.isDenied) {
-          return
-        }
-      })    
+      icon: "warning",
+      title: "Editar Reserva?",
+      showCancelButton: true,
+      confirmButtonText: "Aceptar",
+      cancelButtonText: "Cancelar",
+      confirmButtonColor: "#651F71",
+      cancelButtonColor: "#C73333",
+      background: "#31302F",
+      color: "white",
+      backdrop: `rgba(0,0,14,0.4)`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        handleClose();
+      } else if (result.isDenied) {
+        return;
+      }
+    });
   };
-
 
   return (
     <>
-      <Container>      
+      <Container>
         <Row>
           <Col>
             <form onSubmit={handleEdit}>
@@ -107,7 +105,7 @@ const FormUpdateReserva = ({ editReserva, handleClose }) => {
                 </label>
                 <input
                   type="number"
-                  min = "1"
+                  min="1"
                   className="form-control"
                   value={reserva.invitados}
                   onChange={handleChange}
@@ -116,7 +114,10 @@ const FormUpdateReserva = ({ editReserva, handleClose }) => {
                 />
               </div>
 
-              <button type="submit" className="btn btn-outline botonEditarModal">
+              <button
+                type="submit"
+                className="btn btn-outline botonEditarModal"
+              >
                 {" "}
                 Editar Reserva{" "}
               </button>

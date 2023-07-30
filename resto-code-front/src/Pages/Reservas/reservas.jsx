@@ -1,15 +1,13 @@
 import { Form } from "react-bootstrap/";
 import "./Reservas.css";
-import { useState , useContext} from "react";
+import { useState, useContext } from "react";
 import { ReservasContext } from "../../Context/ReservasContext";
-import Swal from 'sweetalert2';
-
-
+import Swal from "sweetalert2";
 
 const Reservas = () => {
   const { addReserva } = useContext(ReservasContext);
 
-  const user = JSON.parse(localStorage.getItem('user')) || []; 
+  const user = JSON.parse(localStorage.getItem("user")) || [];
 
   const [formReserva, setFormReserva] = useState({
     nombre: user.nombre,
@@ -19,46 +17,43 @@ const Reservas = () => {
     invitados: "",
     comentarios: "",
   });
- 
 
   const [errorFecha, setErrorFecha] = useState("");
   const [errorHora, setErrorHora] = useState("");
   const [errorInvitados, setErrorInvitados] = useState("");
   const [errorComentarios, setErrorComentarios] = useState("");
- // const [camposVacios, setCamposVacios] = useState("");
+  // const [camposVacios, setCamposVacios] = useState("");
 
   const handleChange = (e) => {
     setFormReserva({ ...formReserva, [e.target.name]: e.target.value });
   };
 
   const handleBlurFecha = (e) => {
-    if (e.target.name === 'fecha') {
+    if (e.target.name === "fecha") {
       const fecha = new Date(e.target.value);
       const fechaActual = new Date();
-  
+
       // Quitamos las horas, minutos y segundos de las fechas antes de comparar
       fecha.setHours(0, 0, 0, 0);
       fechaActual.setHours(0, 0, 0, 0);
-  
+
       if (fecha < fechaActual) {
-        setErrorFecha('Elija una fecha válida');
+        setErrorFecha("Elija una fecha válida");
       } else {
-        setErrorFecha('');
+        setErrorFecha("");
       }
     }
   };
 
-
-
   const handleBlurHora = (e) => {
     if (e.target.name === "hora") {
       const hora = e.target.value;
-      const horaMinima = new Date(`2000-01-01T10:00`); 
-      const horaMaxima = new Date(`2000-01-01T23:00`); 
+      const horaMinima = new Date(`2000-01-01T10:00`);
+      const horaMaxima = new Date(`2000-01-01T23:00`);
 
       const valorHora = new Date(`2000-01-01T${hora}`);
 
-      if (valorHora <horaMinima || valorHora > horaMaxima) {
+      if (valorHora < horaMinima || valorHora > horaMaxima) {
         setErrorHora("Horarios de reservas validos: de 10 a 23");
       } else {
         setErrorHora("");
@@ -101,25 +96,22 @@ const Reservas = () => {
       comentarios: "",
     });
     Swal.fire({
-      icon: 'success',
-      title: '¡Listo!',
-      
-      
-    }) 
+      icon: "success",
+      title: "¡Listo!",
+    });
     Swal.fire({
-      icon: 'succes',
-      title: '¡Listo!',
-      text: 'Su reserva ha sido confirmada, pasa a ver nuestra galeria!', //o menu podemos agregar!
+      icon: "succes",
+      title: "¡Listo!",
+      text: "Su reserva ha sido confirmada, pasa a ver nuestra galeria!", //o menu podemos agregar!
       showCancelButton: false,
-      confirmButtonText: 'Ok',       
-      confirmButtonColor: '#1d0c20',      
-    }).then((result) => {        
+      confirmButtonText: "Ok",
+      confirmButtonColor: "#1d0c20",
+    }).then((result) => {
       if (result.isConfirmed) {
-        window.location.href = "/galeria"  
-      } 
-    })         
+        window.location.href = "/galeria";
+      }
+    });
   };
-
 
   return (
     <>
@@ -151,9 +143,7 @@ const Reservas = () => {
               />
               {errorFecha && <div className="errorMensaje">{errorFecha}</div>}
             </Form.Group>
-            <Form.Group
-              className="mb-3"
-            >
+            <Form.Group className="mb-3">
               <Form.Label className="labelReservas" htmlFor="inputHoraReserva">
                 Hora de reserva
               </Form.Label>
@@ -169,9 +159,7 @@ const Reservas = () => {
               />
               {errorHora && <div className="errorMensaje">{errorHora}</div>}
             </Form.Group>
-            <Form.Group
-              className="mb-3"
-            >
+            <Form.Group className="mb-3">
               <Form.Label className="labelReservas" htmlFor="inputInvitados">
                 Cantidad de invitados
               </Form.Label>
@@ -209,10 +197,10 @@ const Reservas = () => {
               maxLength={50}
               title="Ingrese al menos 5 caracteres"
               required
-              />
-              {errorComentarios && (
-               <div className="errorMensaje">{errorComentarios}</div>
-              )}
+            />
+            {errorComentarios && (
+              <div className="errorMensaje">{errorComentarios}</div>
+            )}
             <button type="submit" className="botonReserva">
               Confirmar
             </button>
