@@ -76,6 +76,7 @@
 .contenedorTextoError h2 {
   font-size: 6rem;
 }
+/*------------------ RESPONSIVE ------------------------- */
 @media (min-width: 360px) and (max-width: 914px) {
   .contenedor404 {
     height: 70%;

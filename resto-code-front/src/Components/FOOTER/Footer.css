@@ -51,6 +51,7 @@
 .derechosYpolitica:hover {
   color: #7037cd;
 }
+/*------------------ RESPONSIVE ------------------------- */
 @media (min-width: 360px) and (max-width: 914px) {
   .contenedorDerechos {
     width: 7rem;

@@ -114,7 +114,7 @@
 #swal2-html-container {
   font-size: 1.6em;
 }
-
+/*------------------ RESPONSIVE ------------------------- */
 @media all and (min-width: 300px) {
   .tamanioImpustRegistro {
     font-size: 0.9rem;

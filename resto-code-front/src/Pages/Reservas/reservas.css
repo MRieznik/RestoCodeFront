@@ -92,6 +92,7 @@
 .inputReservas {
   border: 2px rgba(128, 128, 128, 0.764) solid;
 }
+/*------------------ RESPONSIVE ------------------------- */
 @media (min-width: 360px) and (max-width: 914px) {
   .contenedorImgReserva {
     display: none;
