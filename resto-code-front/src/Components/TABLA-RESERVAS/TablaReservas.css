@@ -44,8 +44,14 @@
 .noEdit {
   background-color: gray !important;
 }
-.headTabla {
-  text-transform: uppercase;
+
+.headTabla{
+font-size: x-large;
+text-transform: lowercase;
+}
+
+.tabla{
+font-size: larger;
 }
 /*------------------ RESPONSIVE ------------------------- */
 @media (min-width: 360px) and (max-width: 914px) {
@@ -79,8 +85,7 @@
     border-bottom: 0px;
   }
   .tabla td::before {
-    content: attr(data-label);
-    font-weight: bold;
+    content: attr(data-label);    
     text-transform: uppercase;
     float: left;
   }

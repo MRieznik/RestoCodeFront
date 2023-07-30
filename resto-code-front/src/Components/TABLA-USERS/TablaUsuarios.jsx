@@ -61,7 +61,7 @@ const TablaUsuarios = () => {
             responsive
             className="table-dark table-hover text-center tabla"
           >
-            <thead>
+            <thead className="headTabla">
               <tr>
                 <th>Nombre</th>
                 <th>Apellido</th>

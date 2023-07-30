@@ -145,22 +145,13 @@
       "id": 35
     },
     {
-      "nombre": "asdasasdasd",
-      "apellido": "asasdasd",
-      "contrasenia": "ssssssssssss",
-      "email": "sss@gmail.com",
-      "telefono": "",
+      "nombre": "Cristina Noemi del Valle",
+      "apellido": "Villafañe",
+      "contrasenia": "cristina50",
+      "email": "cv@gmail.com",
+      "telefono": "3814555666",
       "rolUsuario": "usuario",
-      "id": 36
-    },
-    {
-      "nombre": "Fernando",
-      "apellido": "Alonso",
-      "contrasenia": "12345678",
-      "email": "alonso@gmail.com",
-      "telefono": "",
-      "rolUsuario": "usuario",
-      "id": 37
+      "id": 38
     }
   ],
   "reservas": [
@@ -169,7 +160,7 @@
       "apellido": "alonso",
       "fecha": "2023-08-15",
       "hora": "15:15",
-      "invitados": "10",
+      "invitados": "8",
       "comentarios": "cena cumple",
       "id": 9
     },
@@ -199,6 +190,15 @@
       "invitados": "5",
       "comentarios": "cumple",
       "id": 12
+    },
+    {
+      "nombre": "Mariana Noemi",
+      "apellido": "Cervantes",
+      "fecha": "2023-08-21",
+      "hora": "21:00",
+      "invitados": "4",
+      "comentarios": "Cumple!",
+      "id": 13
     }
   ]
 }
