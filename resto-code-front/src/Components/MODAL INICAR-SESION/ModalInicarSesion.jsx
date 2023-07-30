@@ -78,6 +78,8 @@ const ModalInicarSesion = () => {
                   className="form-control inputIniciarSesion"
                   //   value={contraseña}
                   //   onChange={(e) => setContraseña(e.target.value)}
+                  minLength={8}
+                  maxLength={12}
                   pattern="[A-Za-z0-9]+"
                   placeholder="Ingresa tu contraseña"
                   name="contraseña"
