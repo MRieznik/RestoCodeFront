@@ -23,8 +23,8 @@ const Registro = () => {
     rolUsuario: "",
   });
 
-  const {addUser} = useContext(UsuariosContext);
-
+  const {addUser, users} = useContext(UsuariosContext);
+  /* console.log(users); */
   const handleChange = (e) => {
     setDataUser({ ...DataUser, [e.target.name]: e.target.value });
   };
@@ -117,6 +117,11 @@ const Registro = () => {
     return expReg.test(telefono) && longitudValida(telefono, 7, 15);
   };
 
+  //Verificar la existencia de un correo
+  const verificarCorreoExistente = (correo) => {
+    return users.some((user) => user.email === correo);
+  };
+
   //Desarrollo de las funciones OnBlur
   /***********************************/
 
@@ -153,6 +158,10 @@ const Registro = () => {
   const handleCorreoBlur = () => {
     const correoValid = correoValido(DataUser.email);
     console.log("correo válido:", correoValid);
+    /* console.log(verificarCorreoExistente(correoValid)); */
+    if (verificarCorreoExistente(correoValid)) {
+      
+    }
     if (!correoValid) {
       setClaseCorreo("mensaje-error-Registro");
     } else {

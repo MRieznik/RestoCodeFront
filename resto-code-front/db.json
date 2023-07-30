@@ -143,6 +143,15 @@
       "telefono": "3816610091",
       "rolUsuario": "usuario",
       "id": 35
+    },
+    {
+      "nombre": "asdasasdasd",
+      "apellido": "asasdasd",
+      "contrasenia": "ssssssssssss",
+      "email": "sss@gmail.com",
+      "telefono": "",
+      "rolUsuario": "usuario",
+      "id": 36
     }
   ],
   "reservas": [
