@@ -27,7 +27,7 @@
   font-family: "Bebas Neue", sans-serif;
 }
 .nav-link:focus {
- color: white !;
+ color: white !important;
 }
 .NavLink:hover {
   color: #68b2f8;

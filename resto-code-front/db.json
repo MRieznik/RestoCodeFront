@@ -152,6 +152,15 @@
       "telefono": "",
       "rolUsuario": "usuario",
       "id": 36
+    },
+    {
+      "nombre": "Fernando",
+      "apellido": "Alonso",
+      "contrasenia": "12345678",
+      "email": "alonso@gmail.com",
+      "telefono": "",
+      "rolUsuario": "usuario",
+      "id": 37
     }
   ],
   "reservas": [
@@ -160,7 +169,7 @@
       "apellido": "alonso",
       "fecha": "2023-08-15",
       "hora": "15:15",
-      "invitados": "6",
+      "invitados": "10",
       "comentarios": "cena cumple",
       "id": 9
     },
