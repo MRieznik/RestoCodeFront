@@ -67,20 +67,20 @@ const Registro = () => {
 
   //Defino los actualizadores de estados para manejar las clases que se colocaran en cada caso
   const [ClaseNombre, setClaseNombre] = useState(
-    "mensaje-error-Registro-Correo text-danger d-none"
+    "mensaje-error-Registro  d-none" /* text-danger */
   );
   const [ClaseApellido, setClaseApellido] = useState(
-    "mensaje-error-Registro-Correo text-danger d-none"
+    "mensaje-error-Registro d-none"
   );
   const [ClaseCorreo, setClaseCorreo] = useState(
-    "mensaje-error-Registro-Correo text-danger d-none"
+    "mensaje-error-Registro d-none"
   );
   const [ClaseTelefono, setClaseTelefono] = useState(
-    "mensaje-error-Registro-Correo text-danger d-none"
+    "mensaje-error-Registro d-none"
   );
 
   const [ClaseContrasenia, setClaseContrasenia] = useState(
-    "mensaje-error-Registro-Correo text-danger d-none"
+    "mensaje-error-Registro d-none"
   );
   const [showPassword, setShowPassword] = useState(false);
   const toggleShowPassword = () => setShowPassword((prevState) => !prevState);
@@ -124,9 +124,9 @@ const Registro = () => {
     const nombreValido = NombreApellidoValido(DataUser.nombre);
     console.log("Nombre válido:", nombreValido);
     if (!nombreValido) {
-      setClaseNombre("mensaje-error-Registro-Correo text-danger");
+      setClaseNombre("mensaje-error-Registro");
     } else {
-      setClaseNombre("mensaje-error-Registro-Correo text-danger d-none");
+      setClaseNombre("mensaje-error-Registro d-none");
     }
   };
 
@@ -134,9 +134,9 @@ const Registro = () => {
     const apelldoValido = NombreApellidoValido(DataUser.apellido);
     console.log("apellido válido:", apelldoValido);
     if (!apelldoValido) {
-      setClaseApellido("mensaje-error-Registro-Correo text-danger");
+      setClaseApellido("mensaje-error-Registro");
     } else {
-      setClaseApellido("mensaje-error-Registro-Correo text-danger d-none");
+      setClaseApellido("mensaje-error-Registro d-none");
     }
   };
 
@@ -144,9 +144,9 @@ const Registro = () => {
     const contraseñaValid = contraseniaValida(DataUser.contrasenia);
     console.log("contra válido:", contraseñaValid);
     if (!contraseñaValid) {
-      setClaseContrasenia("mensaje-error-Registro-Correo text-danger");
+      setClaseContrasenia("mensaje-error-Registro");
     } else {
-      setClaseContrasenia("mensaje-error-Registro-Correo text-danger d-none");
+      setClaseContrasenia("mensaje-error-Registro d-none");
     }
   };
 
@@ -154,9 +154,9 @@ const Registro = () => {
     const correoValid = correoValido(DataUser.email);
     console.log("correo válido:", correoValid);
     if (!correoValid) {
-      setClaseCorreo("mensaje-error-Registro-Correo text-danger");
+      setClaseCorreo("mensaje-error-Registro");
     } else {
-      setClaseCorreo("mensaje-error-Registro-Correo text-danger d-none");
+      setClaseCorreo("mensaje-error-Registro d-none");
     }
   };
 
@@ -164,9 +164,9 @@ const Registro = () => {
     const telefonoValid = telefonoValido(DataUser.telefono);
     console.log("telefono válido:", telefonoValid);
     if (telefonoValid || DataUser.telefono == "") {
-      setClaseTelefono("mensaje-error-Registro-Correo text-danger d-none");
+      setClaseTelefono("mensaje-error-Registro d-none");
     } else {
-      setClaseTelefono("mensaje-error-Registro-Correo text-danger");
+      setClaseTelefono("mensaje-error-Registro");
     }
   };
 
