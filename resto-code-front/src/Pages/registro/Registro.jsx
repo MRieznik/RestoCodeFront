@@ -31,8 +31,19 @@ const Registro = () => {
 
 
   const handleSubmit = (e) => {
-    addUser(DataUser)
+    
     e.preventDefault();
+
+    if (verificarCorreoExistente(DataUser.email) ) {
+      console.log("entro a handlesubmit ");
+      setClaseCorreo2("tracking-in-expand mensaje-error-Registro-Correo");
+      setTimeout(() => {
+        setClaseCorreo2("mensaje-error-Registro-Correo");
+      }, 500);
+      return;
+      /* console.log("siguio"); */
+    }
+    addUser(DataUser)
     console.log(DataUser);
     setDataUser({
       nombre: "",
