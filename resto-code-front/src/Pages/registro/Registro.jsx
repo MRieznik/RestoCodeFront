@@ -270,56 +270,7 @@ const Registro = () => {
                               </div>
                             </div>
                           </div>
-                          <div className="row ">
-                            <div className="form-outline col-md-12 mb-1 mt-2">
-                              <label
-                                className="form-label fs-5 text-light mb-0"
-                                htmlFor="contrasenia"
-                              >
-                                Contraseña
-                              </label>
-                              <span className="text-danger">*</span>
-                              <span className="text-secondary">
-                                (entre 8 y 12 caracteres)
-                              </span>
-                              <span
-                                id="mensajeErrorPRegistro"
-                                className={ClaseContrasenia}
-                              >
-                                {" "}
-                                Por favor ingrese una Contraseña válido.
-                              </span>
-
-                              <div className=" d-flex flex-row bg-color-black">
-                                <input
-                                  type={showPassword ? "text" : "password"}
-                                  /* id="contraseniaUsuario" */
-                                  className="form-control form-control-lg validadoss NoValidados tamanioImpustRegistro  w-20"
-                                  placeholder="Contraseña"
-                                  pattern="[A-Za-z0-9!?-]{8,12}"
-                                  title="Ingrese una contraseña válida (entre 8 y 12 caracteres)"
-                                  required
-                                  minLength="8"
-                                  maxLength="12"
-                                  name="contrasenia"
-                                  value={DataUser.contrasenia}
-                                  onChange={handleChange}
-                                  onBlur={handleContraseñaBlur}                                 
-                                />
-                                <div className="">
-                                  <button
-                                    type="button"
-                                    className="btn btn-outline-secondary tamanioImpustRegistro"
-                                    onClick={toggleShowPassword}
-                                  >
-                                    <FontAwesomeIcon
-                                      icon={showPassword ? faEyeSlash : faEye}
-                                    />
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                          
 
                           <div className="form-outline mb-1 mt-2">
                             <label
@@ -388,6 +339,57 @@ const Registro = () => {
                               {/* 
                               value={DataUser.nombreUsuario}
                                   onChange={handleChange}  */}
+                            </div>
+                          </div>
+
+                          <div className="row ">
+                            <div className="form-outline col-md-12 mb-1 mt-2">
+                              <label
+                                className="form-label fs-5 text-light mb-0"
+                                htmlFor="contrasenia"
+                              >
+                                Contraseña
+                              </label>
+                              <span className="text-danger">*</span>
+                              <span className="text-secondary">
+                                (entre 8 y 12 caracteres)
+                              </span>
+                              <span
+                                id="mensajeErrorPRegistro"
+                                className={ClaseContrasenia}
+                              >
+                                {" "}
+                                Por favor ingrese una Contraseña válido.
+                              </span>
+
+                              <div className=" d-flex flex-row bg-color-black">
+                                <input
+                                  type={showPassword ? "text" : "password"}
+                                  /* id="contraseniaUsuario" */
+                                  className="form-control form-control-lg validadoss NoValidados tamanioImpustRegistro  w-20"
+                                  placeholder="Contraseña"
+                                  pattern="[A-Za-z0-9!?-]{8,12}"
+                                  title="Ingrese una contraseña válida (entre 8 y 12 caracteres)"
+                                  required
+                                  minLength="8"
+                                  maxLength="12"
+                                  name="contrasenia"
+                                  value={DataUser.contrasenia}
+                                  onChange={handleChange}
+                                  onBlur={handleContraseñaBlur}                                 
+                                />
+                                <div className="">
+                                  <button
+                                    type="button"
+                                    className="btn btn-outline-secondary tamanioImpustRegistro"
+                                    onClick={toggleShowPassword}
+                                  >
+                                    <FontAwesomeIcon
+                                      icon={showPassword ? faEyeSlash : faEye}
+                                    />
+                                  </button>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
