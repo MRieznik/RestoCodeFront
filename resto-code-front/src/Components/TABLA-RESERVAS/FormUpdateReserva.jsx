@@ -102,7 +102,7 @@ const FormUpdateReserva = ({ editReserva, handleClose }) => {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="comensales" className="form-label">
+                <label htmlFor="invitados" className="form-label">
                   Comensales
                 </label>
                 <input
@@ -111,8 +111,8 @@ const FormUpdateReserva = ({ editReserva, handleClose }) => {
                   className="form-control"
                   value={reserva.invitados}
                   onChange={handleChange}
-                  name="comensales"
-                  aria-describedby="comensales"
+                  name="invitados"
+                  aria-describedby="invitados"
                 />
               </div>
 

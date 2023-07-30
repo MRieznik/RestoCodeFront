@@ -64,15 +64,6 @@
       "id": 19
     },
     {
-      "nombre": "Sergio daniel",
-      "apellido": "Dominguez",
-      "contrasenia": "resto123",
-      "email": "sergiodominguez21sdd@gmail.com",
-      "telefono": "3815468044",
-      "rolUsuario": "usuario",
-      "id": 20
-    },
-    {
       "nombre": "jorge",
       "apellido": "juarez",
       "contrasenia": "jorge123",
@@ -100,15 +91,6 @@
       "id": 23
     },
     {
-      "nombre": "raul",
-      "apellido": "Reynaga",
-      "contrasenia": "raul1234",
-      "email": "raul@gmail.com",
-      "telefono": "3815468060",
-      "rolUsuario": "usuario",
-      "id": 24
-    },
-    {
       "nombre": "gabi",
       "apellido": "fernandes",
       "contrasenia": "gabi1234",
@@ -116,56 +98,80 @@
       "telefono": "3815468051",
       "rolUsuario": "usuario",
       "id": 25
-    }
-  ],
-  "reservas": [
-    {
-      "nombre": "Silvina",
-      "apellido": "Cantos",
-      "fecha": "2023-08-05",
-      "hora": "13:30",
-      "invitados": "5",
-      "comentarios": "Cumple!",
-      "id": 1
-    },
-    {
-      "nombre": "Andrés",
-      "apellido": "Cervantes",
-      "fecha": "2023-09-21",
-      "hora": "21:30",
-      "invitados": "8",
-      "comentarios": "Cena!",
-      "id": 2
-    },
-    {
-      "nombre": "Andres",
-      "apellido": "Iniesta",
-      "fecha": "2023-07-29",
-      "hora": "10:30",
-      "invitados": "10",
-      "comentarios": "Cumpleanos",
-      "id": 3,
-      "comensales": "9"
-    },
-    {
-      "nombre": "juan ",
-      "apellido": "medina",
-      "fecha": "2023-08-04",
-      "hora": "23:00",
-      "invitados": "2",
-      "comentarios": "evento de pareja",
-      "id": 5,
-      "comensales": "1"
     },
     {
       "nombre": "Sergio daniel",
       "apellido": "Dominguez",
-      "fecha": "2023-08-25",
-      "hora": "16:30",
-      "invitados": "8",
-      "comentarios": "evento laboral\n",
-      "id": 6,
-      "comensales": "7"
+      "contrasenia": "sergio123",
+      "email": "sergiodominguez21sdd@gmail.com",
+      "telefono": "3815468044",
+      "rolUsuario": "usuario",
+      "id": 26
+    },
+    {
+      "nombre": "jorge",
+      "apellido": "acosta",
+      "contrasenia": "acosta123",
+      "email": "acosta@gmail.com",
+      "telefono": "3815468048",
+      "rolUsuario": "usuario",
+      "id": 27
+    },
+    {
+      "nombre": "alberto",
+      "apellido": "alonso",
+      "contrasenia": "alberto123",
+      "email": "alberto@gmail.com",
+      "telefono": "3815468049",
+      "rolUsuario": "usuario",
+      "id": 28
+    },
+    {
+      "nombre": "maga",
+      "apellido": "medina",
+      "contrasenia": "maga1234",
+      "email": "maga@gmail.com",
+      "telefono": "3815468043",
+      "rolUsuario": "usuario",
+      "id": 29
+    }
+  ],
+  "reservas": [
+    {
+      "nombre": "alberto",
+      "apellido": "alonso",
+      "fecha": "2023-08-15",
+      "hora": "15:15",
+      "invitados": "6",
+      "comentarios": "cena cumple",
+      "id": 9
+    },
+    {
+      "nombre": "Sergio daniel",
+      "apellido": "Dominguez",
+      "fecha": "2023-08-23",
+      "hora": "22:58",
+      "invitados": "6",
+      "comentarios": "prueba 4",
+      "id": 10
+    },
+    {
+      "nombre": "juan ",
+      "apellido": "medina",
+      "fecha": "2023-08-03",
+      "hora": "22:59",
+      "invitados": "6",
+      "comentarios": "prueba5",
+      "id": 11
+    },
+    {
+      "nombre": "maga",
+      "apellido": "medina",
+      "fecha": "2023-08-09",
+      "hora": "21:59",
+      "invitados": "5",
+      "comentarios": "cumple",
+      "id": 12
     }
   ]
 }

@@ -1,7 +1,7 @@
 import { Form } from "react-bootstrap/";
 import "./Reservas.css";
 import { useState , useContext} from "react";
-import { ReservasContext } from "../../context/ReservasContext";
+import { ReservasContext } from "../../Context/ReservasContext";
 import Swal from 'sweetalert2';
 
 
