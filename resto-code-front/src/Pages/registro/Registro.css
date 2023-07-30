@@ -71,7 +71,7 @@
     border-color: #7037cd;
 }
 
-.mensaje-error-Registro{
+.mensaje-error-Registro, .mensaje-error-Registro-Correo{
     /* display: none; */
     margin-top: 5px;
     font-size: 1em;
@@ -80,6 +80,7 @@
     padding-left: 1em;
     color: red;
 }
+
 
 
 .controladorTmanioTextoReg{

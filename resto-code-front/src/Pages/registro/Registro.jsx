@@ -75,6 +75,9 @@ const Registro = () => {
   const [ClaseCorreo, setClaseCorreo] = useState(
     "mensaje-error-Registro d-none"
   );
+  const [ClaseCorreo2, setClaseCorreo2] = useState(
+    "mensaje-error-Registro-Correo d-none"
+  );
   const [ClaseTelefono, setClaseTelefono] = useState(
     "mensaje-error-Registro d-none"
   );
@@ -158,11 +161,17 @@ const Registro = () => {
   const handleCorreoBlur = () => {
     const correoValid = correoValido(DataUser.email);
     console.log("correo válido:", correoValid);
-    /* console.log(verificarCorreoExistente(correoValid)); */
-    if (verificarCorreoExistente(correoValid)) {
-      
+    /* console.log(verificarCorreoExistente(correoValid)); 
+     const [ClaseCorreo2, setClaseCorreo2] = useState(
+    ".mensaje-error-Registro-Correo d-none"
+  );
+    */
+    if (verificarCorreoExistente(DataUser.email)  ) {
+      setClaseCorreo2("mensaje-error-Registro-Correo")
+    } else {
+      setClaseCorreo2("mensaje-error-Registro-Correo d-none")  //nesesario porque si no no cambia una vez que el problema se resuelva
     }
-    if (!correoValid) {
+    if (!correoValid ) {
       setClaseCorreo("mensaje-error-Registro");
     } else {
       setClaseCorreo("mensaje-error-Registro d-none");
@@ -315,6 +324,12 @@ const Registro = () => {
                               className={ClaseCorreo}
                             >
                               Por favor ingrese un correo válido.
+                            </span>
+                            <span
+                              id="mensajeErrorPRegistro"
+                              className={ClaseCorreo2}
+                            >
+                              El correo ya se encuentra asociado a una cuenta
                             </span>
                             <input
                               type="email"
