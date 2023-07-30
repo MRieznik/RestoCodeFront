@@ -49,6 +49,7 @@
     background-size: cover;
     justify-content: space-between;
     background-position: top right;
+    min-height: auto;
 }
 
 .validadoss:valid{
@@ -99,8 +100,12 @@
     display: flex;
     flex-direction: column;
     align-items: end;
-    min-height: 93vh;
+    
 }
+
+/* #formRegistroUsuarios{
+    min-height: min-content;
+} */
 
 @media all and (min-width:300px){
     .tamanioImpustRegistro{
@@ -110,16 +115,88 @@
         margin-top: 2em;
         padding-top: 1em;
     }
+   /*  .contenedorTituloFormuBotonRegistro{
+        height:76.4vh;
+    } */
+
+    .contenedorTituloFormuBotonRegistro{
+        padding-bottom: 1vh;
+        
+    }
+
+    .controladorTamanioMediano{
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+    }
 }
 
-@media all and (min-width:760px){
+@media all and (min-width:768px){
     .tamanioImpustRegistro{
-        font-size: 1.10rem;
+        font-size: 1rem;
     }
 
     .card-body{
         margin: 0!important;
         padding-bottom: 0.4em!important;
     }
+
+
+    /* .controladorTamanioMediano{
+        padding-top: 3em;
+        padding-bottom: 3em;
+    } */
+
+    .contenedorTituloFormuBotonRegistro{
+        padding-top: 10vh;
+        padding-bottom: 10vh;
+        height: 80vh;
+    }
+
+    .controladorTamanioMediano{
+        padding-top: 2.03vh;
+        padding-bottom: 2.03vh;
+    }
 }
+
+@media all and (min-width:1200px){
+    
+    .contenedorTituloFormuBotonRegistro{
+        padding-top: 4vh;
+        padding-bottom: 5vh;
+        height: 85vh;
+    }
+    .controladorTamanioMediano{
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+}
+
+@media all and (min-width:1400px){
+
+    .contenedorTituloFormuBotonRegistro{
+        padding-top: 3vh;
+        padding-bottom: 7vh;
+    }
+    .controladorTamanioMediano{
+        padding-top: 0;
+        padding-bottom: 2vh;
+    }
+
+}
+
+@media all and (min-width:1600px){
+
+    .contenedorTituloFormuBotonRegistro{
+        padding-top: 7vh;
+        padding-bottom: 7vh;
+        height: 80.5vh;
+    }
+    .controladorTamanioMediano{
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+    }
+
+}
+
 
