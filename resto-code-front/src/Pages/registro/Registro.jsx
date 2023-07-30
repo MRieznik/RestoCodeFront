@@ -5,6 +5,7 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { UsuariosContext } from "../../Context/UsersContext";
 import ModalInicarSesion from "../../Components/MODAL INICAR-SESION/ModalInicarSesion";
 import "./Registro.css";
+import Swal from 'sweetalert2';
 
 // eslint-disable-next-line react/prop-types
 const Registro = () => {
@@ -41,7 +42,23 @@ const Registro = () => {
       telefono: "",
       rolUsuario: "",
     });   
-    handleShow();
+    Swal.fire({
+      icon: 'success',
+      title: '¡Listo!',      
+    }) 
+    Swal.fire({
+      icon: 'succes',
+      title: '¡Listo!',
+      text: 'Usuario Registrado!', //o menu podemos agregar!
+      showCancelButton: false,
+      confirmButtonText: 'Ok',       
+      confirmButtonColor: '#1d0c20',      
+    }).then((result) => {        
+      if (result.isConfirmed) {
+        handleShow(); 
+      } 
+    })  
+    
   };
 
   //Defino los actualizadores de estados para manejar las clases que se colocaran en cada caso
