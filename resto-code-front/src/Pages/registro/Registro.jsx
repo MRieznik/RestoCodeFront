@@ -157,10 +157,6 @@ const Registro = () => {
             <div className="card card-registration my-0 border-0 contenedorGeneralRegistro">
               <div className="row g-0">
                 <div className="col">
-                  {/* <div>
-                    <p className="mt-3 mx-3 text-light"> Volver </p>
-                  </div> */}
-
                   <div className="card-body  px-md-5 mx-md-5 m-md-3 text-black">
                     <form onSubmit={handleSubmit} id="formRegistroUsuarios">
                       <div className="contenedorTituloFormuBotonRegistro  ">
@@ -206,9 +202,6 @@ const Registro = () => {
                                   value={DataUser.nombre}
                                   onChange={handleChange}
                                   onBlur={handleNombreBlur}
-                                  /* onChange={(e) =>
-                                    setNombreUsuario(e.target.value)
-                                  }  */
                                 />
                               </div>
 
@@ -273,42 +266,11 @@ const Registro = () => {
                                   value={DataUser.apellido}
                                   onChange={handleChange}
                                   onBlur={handleApellidoBlur}
-                                  /* onChange={(e) =>
-                                    setApellidoUsuario(e.target.value)
-                                  } */
                                 />
                               </div>
                             </div>
                           </div>
                           <div className="row ">
-                            {/* <div className="col-md-6 mb-2">
-                              <div className="form-outline">
-                                <label
-                                  className="form-label fw-bold"
-                                  htmlFor="nombreUsuario"
-                                >
-                                  {" "}
-                                  Nombre de Usuario
-                                </label>
-                                <span className="text-danger">*</span>
-                                <input
-                                  type="text"
-                                  id="nombreUsuario"
-                                  className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados"
-                                  placeholder="Ej: User RestoCode"
-                                  pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
-                                  title="Este campo solo permite letras y espacios en blanco"
-                                  required
-                                  maxLength="50"
-                                  name="nombreUsuario"
-                                  /* value={DataUser.nombreUsuario}
-                                  onChange={handleChange} */
-                            /* onChange={(e) =>
-                                    setNombreUsuario(e.target.value)
-                                  } */
-                            /*  />
-                              </div>
-                            </div> */}
                             <div className="form-outline col-md-12 mb-1 mt-2">
                               <label
                                 className="form-label fs-5 text-light mb-0"
@@ -342,10 +304,7 @@ const Registro = () => {
                                   name="contrasenia"
                                   value={DataUser.contrasenia}
                                   onChange={handleChange}
-                                  onBlur={handleContraseñaBlur}
-                                  /* onChange={(e) =>
-                                  setContraseniaUsuario(e.target.value)
-                                } */
+                                  onBlur={handleContraseñaBlur}                                 
                                 />
                                 <div className="">
                                   <button
@@ -386,39 +345,13 @@ const Registro = () => {
                               name="email"
                               value={DataUser.email}
                               onChange={handleChange}
-                              onBlur={handleCorreoBlur}
-                              /* onChange={(e) => setCorreoUsuario(e.target.value)} */
+                              onBlur={handleCorreoBlur}                              
                               required
                               maxLength="76"
                             />
-                            {/* {!isValidEmail && <span id="mensajeErrorPRegistro" className="mensaje-error-Registro-Correo alert alert-danger">Ingrese un correo válido.</span>} */}
-                          </div>
+                         </div>
 
                           <div className="row">
-                            {/*  <div className="col-md-12mb-1 mt-2">
-                              <div className="form-outline">
-                                <label
-                                  className="form-label fw-bold"
-                                  htmlFor="direccion"
-                                >
-                                  Dirección
-                                </label>
-                                <input
-                                  type="text"
-                                  id="direccion"
-                                  className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados"
-                                  placeholder="Ej: San Martín 630"
-                                  pattern="^[A-Za-z0-9]{1,150}$"
-                                  title="Dirección de donde reside"
-                                  maxLength="150"
-                                  name="direccionUsuario"
-                                  value={DataUser.direccionUsuario}
-                                  onChange={handleChange} 
-                                  onChange={(e) => setDireccion(e.target.value)}
-                                />
-                              </div>
-                            </div> */}
-
                             <div className="col-md-12 mb-1 mt-2">
                               <div className="form-outline">
                                 <label
@@ -447,36 +380,11 @@ const Registro = () => {
                                   value={DataUser.telefono}
                                   onChange={handleChange}
                                   onBlur={handleTelefonoBlur}
-
-                                  /* onChange={(e) => setTelefono(e.target.value)} */
                                 />
                               </div>
                             </div>
 
                             <div>
-                              {/* <div>
-                                  <input
-                                    type="radio"
-                                    id="RadioUsuario"
-                                    name="rolUsuarioRegistro"
-                                    
-                                    onChange={handleChange}
-                                    value={DataUser.rolUsuarioRegistro}
-                                    checked={DataUser.rolUsuario === 'Usuario'}
-                                  />
-                                  <label htmlFor="RadioUsuario">Usuario</label>
-
-                                  <input
-                                    type="radio"
-                                    id="RadioAdmin"
-                                    name="rolUsuarioRegistro"
-                                    value={DataUser.rolUsuarioRegistro}
-                                    onChange={handleChange}
-                                    checked={DataUser.rolUsuario === 'Admin'}
-                                  />
-                                  <label htmlFor="RadioAdmin">Admin</label>
-                                </div> */}
-
                               {/* 
                               value={DataUser.nombreUsuario}
                                   onChange={handleChange}  */}
