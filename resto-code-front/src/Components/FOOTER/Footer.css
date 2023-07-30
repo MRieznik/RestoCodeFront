@@ -35,7 +35,6 @@
   color: #7037cd;
 }
 .contenedorDerechos {
-  /* border: 1px solid white; */
   width: 20rem;
   display: flex;
   justify-content: center;
@@ -53,7 +52,6 @@
   color: #7037cd;
 }
 @media (min-width: 360px) and (max-width: 914px) {
- 
   .contenedorDerechos {
     width: 7rem;
     height: 5rem;
@@ -64,7 +62,6 @@
   .contenedorLogoFooter {
     width: 4rem;
     height: 4rem;
-    /* border: 1px solid white; */
   }
   .contenedorRedes {
     width: 30%;

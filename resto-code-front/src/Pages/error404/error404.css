@@ -78,7 +78,6 @@
 }
 @media (min-width: 360px) and (max-width: 914px) {
   .contenedor404 {
-    /* border: green 1px solid; */
     height: 70%;
     display: flex;
     justify-content: space-between !important;
@@ -90,10 +89,8 @@
   }
   .letras404 {
     width: 100%;
-   
   }
   .contenedorLetras404 {
-    /* border: white 1px solid; */
     width: 100%;
     height: 60%;
     display: flex;
@@ -112,9 +109,8 @@
     width: 9rem;
     height: 9rem;
   }
-  .contenedorBoton{
+  .contenedorBoton {
     margin-top: 5rem;
-    /* border: yellow 1px solid; */
   }
   .boton-error {
     width: 90%;
@@ -128,9 +124,8 @@
     transition: 0.2s;
     border-radius: 3px;
   }
-  .contenedorTextoError{
+  .contenedorTextoError {
     height: 5rem;
-    /* border: red 1px solid; */
   }
   .contenedorTextoError h2 {
     font-size: 3rem;

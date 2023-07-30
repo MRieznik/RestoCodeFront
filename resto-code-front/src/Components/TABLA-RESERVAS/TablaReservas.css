@@ -2,89 +2,86 @@
 
 /* Tabla */
 .botonEdit {
-    background-color: #651f71;
+  background-color: #651f71;
 }
 
-.botonCancel{
-    background-color: #c73333;
+.botonCancel {
+  background-color: #c73333;
 }
-
 /* Modal */
 .contenedor-editar {
-    display: flex;
-    justify-content: center !important;
-    align-items: center !important;
-    width: 100% !important;
-    font-family: "Bebas Neue", sans-serif;
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  font-family: "Bebas Neue", sans-serif;
+}
+.headerEditar {
+  color: #fff;
+  background-color: #212529;
+  font-family: "Bebas Neue", sans-serif;
+  border-radius: 2px 2px 0 0;
+  border-bottom: 2px solid #651f71;
+}
+.bodyEditar {
+  color: #fff;
+  background-color: #212529;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 18px;
+}
+
+.botonEditarModal {
+  background-color: #1d0c20 !important;
+  border: 1px solid #651f71 !important;
+  font-size: 18px !important;
+  color: white !important;
+}
+.botonEditarModal:hover {
+  background-color: #7037cd !important;
+  border: 1px solid #7037cd !important;
+}
+
+.noEdit {
+  background-color: gray !important;
+}
+.headTabla {
+  text-transform: uppercase;
+}
+/*------------------ RESPONSIVE ------------------------- */
+@media (min-width: 360px) and (max-width: 914px) {
+  .contenedor-editar {
+    width: 100%;
+    justify-content: space-evenly;
   }
-  .headerEditar {
-    color: #fff;
-    background-color: #212529;
-    font-family: "Bebas Neue", sans-serif;
-    border-radius: 2px 2px 0 0;
-    border-bottom: 2px solid #651f71;
-  }
-  .bodyEditar {
-    color: #fff;
-    background-color: #212529;
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 18px;
+}
+@media screen and (max-width: 600px) {
+  .tabla {
+    border: 0px;
   }
 
-  .botonEditarModal { 
-    background-color: #1d0c20 !important;
-    border: 1px solid #651f71 !important;
-    font-size: 18px !important;
-    color: white !important;
+  .tabla thead {
+    display: none;
   }
-  .botonEditarModal:hover {
-    background-color: #7037cd !important;
-    border: 1px solid #7037cd !important;
+  .tabla tr {
+    margin-bottom: 8px;
+    display: block;
   }
-  
-  .noEdit{
-    background-color: gray !important;
+  .tabla th,
+  .tabla td {
+    font-size: 12px;
   }
-  .headTabla{
-    text-transform: uppercase;       
+  .tabla td {
+    display: block;
+    border-bottom: 0.1px solid #ddd;
+    text-align: right;
   }
-  
-
-  /*------------------ RESPONSIVE ------------------------- */
-  @media (min-width: 360px) and (max-width: 914px) {
-    .contenedor-editar {
-      width: 100%;
-      justify-content: space-evenly;
-    }
+  .tabla td:last-child {
+    border-bottom: 0px;
   }
-
-  @media screen and (max-width: 600px) {
-    .tabla {
-        border: 0px;
-    }
-    
-    .tabla thead {
-        display: none;
-    }
-    .tabla tr {
-        margin-bottom: 8px;        
-        display: block;
-    }
-    .tabla th, .tabla td {
-        font-size: 12px;
-    }
-    .tabla td {
-        display: block;
-        border-bottom: 0.1px solid #ddd;
-        text-align: right;
-    }
-    .tabla  td:last-child {
-        border-bottom: 0px;
-    }
-    .tabla td::before {
-        content: attr(data-label);
-        font-weight: bold;
-        text-transform: uppercase;
-        float: left;
-    }
+  .tabla td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    text-transform: uppercase;
+    float: left;
+  }
 }

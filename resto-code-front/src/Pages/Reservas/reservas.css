@@ -1,11 +1,8 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap%22");
-
 
 .contenedorPrincipalReserva {
   display: flex;
 }
-
 .contenedorFormularioReserva {
   height: 100vh;
   width: 50%;
@@ -13,32 +10,25 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
   font-family: "Bebas Neue", sans-serif;
 }
-
-.tituloFormReserva{
+.tituloFormReserva {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 1.5rem;
-  /* border: 1px blue solid; */
   margin-bottom: 2.5rem;
 }
-
-.tituloFormReserva h2{
+.tituloFormReserva h2 {
   color: white;
   font-size: 3rem;
 }
-
-.tituloFormReserva h4{
-  color:#7037cd ;
+.tituloFormReserva h4 {
+  color: #7037cd;
   font-size: 2rem;
 }
-
 .formularioReserva {
-  /* border: 1px red solid; */
   width: 90%;
   height: 70%;
   color: white;
@@ -46,7 +36,6 @@
   flex-direction: column;
   justify-content: center;
 }
-
 .botonReserva {
   width: 100%;
   background-color: #1d0c20;
@@ -59,126 +48,93 @@
   margin-top: 1rem;
   margin-bottom: 2rem;
 }
-
-.botonReserva:hover{
-  background-color: #7037cd;   
+.botonReserva:hover {
+  background-color: #7037cd;
   border: 2px solid #7037cd;
 }
-
-.infoEvento{
-  min-height: 4.5rem ; 
-  /* margin-bottom: 1.5rem; */
+.infoEvento {
+  min-height: 4.5rem;
   border-radius: 10px;
   outline: none;
   border: 2px rgba(128, 128, 128, 0.764) solid;
   margin-bottom: 3px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
-
-.infoEvento:focus{
+.infoEvento:focus {
   transition: 0.5s;
   box-shadow: 0 0 5px #7037cd;
   border-color: #7037cd;
 }
-
-.inputReservas{
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+.inputReservas {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
-
-.inputReservas:focus{
+.inputReservas:focus {
   transition: 0.5s;
   box-shadow: 0 0 5px #7037cd;
   border-color: #7037cd;
 }
-
-.errorMensaje{
+.errorMensaje {
   font-size: small;
   color: red;
 }
-
-.contenedorImgReserva{
+.contenedorImgReserva {
   width: 50%;
   height: 100vh;
   background-image: url("../../Image/RESERVA-IMAGE/fotoFondoDeReserva.jpeg");
   background-repeat: no-repeat;
-  background-size:cover;
-  background-position: -60px ;
-  
-} 
-
-.imageReserva{
+  background-size: cover;
+  background-position: -60px;
+}
+.imageReserva {
   width: 100%;
   height: 100%;
 }
-
-.inputReservas{
+.inputReservas {
   border: 2px rgba(128, 128, 128, 0.764) solid;
 }
-
-
-
-
-
 @media (min-width: 360px) and (max-width: 914px) {
-
-  .contenedorImgReserva{
+  .contenedorImgReserva {
     display: none;
   }
-
-  .contenedorFormularioReserva{
+  .contenedorFormularioReserva {
     width: 100%;
   }
-
-  .tituloFormReserva{
-    /* border: 1px white solid; */
+  .tituloFormReserva {
     margin-bottom: 0;
   }
-
-  .tituloFormReserva h4{
-
+  .tituloFormReserva h4 {
     text-align: center;
   }
-.botonReserva{
-  margin-bottom: 0;
+  .botonReserva {
+    margin-bottom: 0;
+  }
 }
+@media (width: 820px) and (height: 1180px) {
+  .labelReservas {
+    font-size: 2rem;
+  }
+  .inputReservas {
+    height: 3rem;
+  }
+  .tituloFormReserva h2 {
+    font-size: 4rem;
+  }
+  .tituloFormReserva h4 {
+    font-size: 3rem;
+  }
+  .botonReserva {
+    font-size: 2.5rem;
+    margin-top: 0.5rem;
+  }
 }
-
-@media (width: 820px) and (height: 1180px){
-
-/* .formularioReserva{
-  border: 1px red solid;
-} */
-
-
-.labelReservas{
-  font-size: 2rem;
-}
-
-.inputReservas{
-  height: 3rem;
-}
-
-.tituloFormReserva h2{
-  font-size: 4rem;
-}
-
-.tituloFormReserva h4{
-  font-size: 3rem;
-}
-
-.botonReserva{
-  font-size: 2.5rem;
-  margin-top: 0.5rem;
-}
-}
-@media (width: 1024px) and (height: 600px){
-  .tituloFormReserva h2{
+@media (width: 1024px) and (height: 600px) {
+  .tituloFormReserva h2 {
     font-size: 2.3rem;
   }
-  .tituloFormReserva h4{
+  .tituloFormReserva h4 {
     font-size: 1.1rem;
   }
-  .errorMensaje{
+  .errorMensaje {
     margin: 0;
   }
 }

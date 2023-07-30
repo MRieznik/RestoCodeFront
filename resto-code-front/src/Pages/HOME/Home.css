@@ -67,7 +67,6 @@
   display: none;
 }
 .contendorFrases {
-  /* border: 1px solid rgb(211, 214, 16); */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -113,7 +112,6 @@
   background-image: url(../../Image/INDEX-IMAGE/fondoDeMenus2.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
-  /* border: 1px solid seagreen; */
 }
 .menuUno {
   width: 50%;
@@ -122,7 +120,6 @@
   justify-content: center;
   padding: 0.5rem;
   background-color: rgba(0, 0, 0, 0.411);
-  /* border: 1px solid rgb(105, 46, 139); */
 }
 .menuUno img {
   height: 100%;
@@ -137,7 +134,6 @@
   justify-content: center;
   padding: 0.5rem;
   background-color: rgba(0, 0, 0, 0.411);
-  /* border: 1px solid rgb(105, 46, 139); */
 }
 .menuDos img {
   height: 100%;
@@ -146,7 +142,6 @@
   padding: 1.5rem;
 }
 .contendorContacto {
-  /* border: 1px solid rgb(105, 46, 139); */
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -166,14 +161,12 @@
 .cajaMapa {
   height: 100%;
   display: flex;
-  /* border: 1px solid saddlebrown; */
   border-radius: 6px !important;
 }
 .mapaContacto {
   width: 50%;
   height: 100%;
   padding: 2rem;
-  /* border: 1px solid saddlebrown; */
 }
 .contenedorRedesContacto {
   width: 50%;
@@ -182,13 +175,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid seagreen; */
 }
 .cajaQrWp {
   width: 10rem;
   height: 10rem;
   margin-bottom: 10px;
-  /* border: #68b2f8 1px solid; */
 }
 .cajaQrWp img {
   width: 100%;
@@ -198,7 +189,6 @@
   width: 12.5rem;
   height: 12.5rem;
   margin-bottom: 10px;
-  /* border: #68b2f8 1px solid; */
   background-image: url(../../Image/INDEX-IMAGE/restocodeokqr.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -286,7 +276,7 @@
   .cajaConFrase h3 {
     font-size: 2rem;
   }
-  .cajaMapa{
+  .cajaMapa {
     flex-direction: column;
   }
   .mapaContacto {
@@ -300,5 +290,4 @@
     width: 100%;
     padding-left: 1.5rem;
   }
- 
 }

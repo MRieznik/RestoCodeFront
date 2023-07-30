@@ -1,193 +1,192 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap%22 & family= Hammersmith+One & display=swap");
 
 .card-registration .select-input.form-control[readonly]:not([disabled]) {
+  font-size: 1rem;
+  line-height: 2.15;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+}
+.card-registration .select-arrow {
+  top: 13px;
+}
+
+.contenedorGeneralRegistro {
+  background-color: #181818;
+}
+
+.RegistroColorSub {
+  color: #7037cd;
+}
+
+* {
+  font-family: "Bebas Neue", sans-serif;
+}
+.imgFondo-1 {
+  background-image: url(../../Image/REGISTRO-IMAGE/photo-1533777857889-4be7c70b33f7s.jpg);
+  background-size: cover;
+  justify-content: space-between;
+  background-position: top right;
+  min-height: auto;
+}
+.botonSubmitRegistro {
+  width: 100%;
+  background-color: #1d0c20;
+  color: white;
+  padding: 6px 10px 6px 10px;
+  border: 2px solid #7037cd;
+  transition: 0.2s;
+  border-radius: 5px;
+  font-size: 1.5rem;
+}
+.botonSubmitRegistro:hover {
+  background-color: #7037cd;
+  border: 2px solid #7037cd;
+}
+.validadoss:valid {
+  /* border-bottom: 0.1em solid greenyellow; */
+  border: 0.05em solid #1d0c20;
+  outline: #1d0c20;
+}
+.NoValidados {
+  border: 0.05em solid #651f71;
+}
+.tamanioImpustRegistro {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.tamanioImpustRegistro:focus,
+.botonSubmitRegistro:focus {
+  transition: 0.5s;
+  box-shadow: 0 0 5px #7037cd;
+  border-color: #7037cd;
+}
+
+.mensaje-error-Registro,
+.mensaje-error-Registro-Correo {
+  margin-top: 5px;
+  font-size: 1em;
+  padding: 0.3em;
+  padding-left: 1em;
+  color: red;
+}
+
+.slide-right {
+  animation: slide-right 0.4s linear both;
+}
+@keyframes slide-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100px);
+  }
+}
+
+.tracking-in-expand {
+  animation: tracking-in-expand 0.4s linear both;
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.2em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.controladorTmanioTextoReg {
+  font-size: 3.5em;
+}
+
+.contenedorTituloFormuBotonRegistro {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.sweetalertRegistroTitle {
+  font-size: 3.5em;
+}
+
+#swal2-html-container {
+  font-size: 1.6em;
+}
+
+@media all and (min-width: 300px) {
+  .tamanioImpustRegistro {
+    font-size: 0.9rem;
+  }
+  .card-body {
+    margin-top: 2em;
+    padding-top: 1em;
+  }
+
+  .contenedorTituloFormuBotonRegistro {
+    padding-bottom: 1vh;
+  }
+
+  .controladorTamanioMediano {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .tamanioImpustRegistro {
     font-size: 1rem;
-    line-height: 2.15;
-    padding-left: .75em;
-    padding-right: .75em;
-    }
-    .card-registration .select-arrow {
-    top: 13px;
-    }
+  }
 
+  .card-body {
+    margin: 0 !important;
+    padding-bottom: 0.4em !important;
+  }
 
-.contenedorGeneralRegistro{
-    background-color: #181818
+  .contenedorTituloFormuBotonRegistro {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    height: 80vh;
+  }
+
+  .controladorTamanioMediano {
+    padding-top: 2.03vh;
+    padding-bottom: 2.03vh;
+  }
 }
 
-.RegistroColorSub{
-    color:#7037cd ;
+@media all and (min-width: 1200px) {
+  .contenedorTituloFormuBotonRegistro {
+    padding-top: 4vh;
+    padding-bottom: 5vh;
+    height: 85vh;
+  }
+  .controladorTamanioMediano {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }
 
-
-*{
-    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
-    font-family: "Bebas Neue", sans-serif;
-}
-.imgFondo-1{
-    /* background-image: url(https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80); */
-    background-image: url(../../Image/REGISTRO-IMAGE/photo-1533777857889-4be7c70b33f7s.jpg);
-    background-size: cover;
-    justify-content: space-between;
-    background-position: top right;
-    min-height: auto;
+@media all and (min-width: 1400px) {
+  .contenedorTituloFormuBotonRegistro {
+    padding-top: 3vh;
+    padding-bottom: 7vh;
+  }
+  .controladorTamanioMediano {
+    padding-top: 0;
+    padding-bottom: 2vh;
+  }
 }
 
-.botonSubmitRegistro{
-    width: 100%;
-    background-color: #1d0c20;
-    color: white;
-    padding: 6px 10px 6px 10px;
-    border: 2px solid #7037cd;
-    transition: 0.2s;
-    border-radius: 5px;
-    font-size: 1.5rem;
+@media all and (min-width: 1600px) {
+  .contenedorTituloFormuBotonRegistro {
+    padding-top: 7vh;
+    padding-bottom: 7vh;
+    height: 80.5vh;
+  }
+  .controladorTamanioMediano {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+  }
 }
-
-.botonSubmitRegistro:hover{
-    background-color: #7037cd;   
-    border: 2px solid #7037cd;
-}
-
-.validadoss:valid{
-    /* border-bottom: 0.1em solid greenyellow; */
-    border: 0.05em  solid #1D0C20;
-    outline: #1D0C20;
-}
-
-.NoValidados{
-    border: 0.05em solid #651F71;
-}
-
-.tamanioImpustRegistro{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-
-}
-
-.tamanioImpustRegistro:focus, .botonSubmitRegistro:focus{
-    transition: 0.5s;
-    box-shadow: 0 0 5px #7037cd;
-    border-color: #7037cd;
-}
-
-.mensaje-error-Registro, .mensaje-error-Registro-Correo{
-    /* display: none; */
-    margin-top: 5px;
-    font-size: 1em;
-    padding: 0.3em;
-  /*   box-shadow: 0 0 5px #7037cd;     */
-    padding-left: 1em;
-    color: red;
-}
-
-
-.slide-right{animation:slide-right 0.4s linear both}@keyframes slide-right{0%{transform:translateX(0)}100%{transform:translateX(100px)}}
-
-.tracking-in-expand{animation:tracking-in-expand 0.4s linear both} @keyframes tracking-in-expand{0%{letter-spacing:-.2em;opacity:0}40%{opacity:.6}100%{opacity:1}}
-
-
-.controladorTmanioTextoReg{
-    font-size: 3.5em;
-}
-
-.contenedorTituloFormuBotonRegistro{
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-}
-
-
-.sweetalertRegistroTitle{
-    font-size: 3.5em;
-}
-
-
-#swal2-html-container{
-    font-size: 1.6em;
-}
-
-@media all and (min-width:300px){
-    .tamanioImpustRegistro{
-        font-size: 0.9rem;
-    }
-    .card-body{
-        margin-top: 2em;
-        padding-top: 1em;
-    }
-
-    .contenedorTituloFormuBotonRegistro{
-        padding-bottom: 1vh;
-        
-    }
-
-    .controladorTamanioMediano{
-        padding-top: 1vh;
-        padding-bottom: 1vh;
-    }
-}
-
-@media all and (min-width:768px){
-    .tamanioImpustRegistro{
-        font-size: 1rem;
-    }
-
-    .card-body{
-        margin: 0!important;
-        padding-bottom: 0.4em!important;
-    }
-
-    .contenedorTituloFormuBotonRegistro{
-        padding-top: 10vh;
-        padding-bottom: 10vh;
-        height: 80vh;
-    }
-
-    .controladorTamanioMediano{
-        padding-top: 2.03vh;
-        padding-bottom: 2.03vh;
-    }
-}
-
-@media all and (min-width:1200px){
-    
-    .contenedorTituloFormuBotonRegistro{
-        padding-top: 4vh;
-        padding-bottom: 5vh;
-        height: 85vh;
-    }
-    .controladorTamanioMediano{
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-
-}
-
-@media all and (min-width:1400px){
-
-    .contenedorTituloFormuBotonRegistro{
-        padding-top: 3vh;
-        padding-bottom: 7vh;
-    }
-    .controladorTamanioMediano{
-        padding-top: 0;
-        padding-bottom: 2vh;
-    }
-
-}
-
-@media all and (min-width:1600px){
-
-    .contenedorTituloFormuBotonRegistro{
-        padding-top: 7vh;
-        padding-bottom: 7vh;
-        height: 80.5vh;
-    }
-    .controladorTamanioMediano{
-        padding-top: 5vh;
-        padding-bottom: 5vh;
-    }
-
-}
-
-

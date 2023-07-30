@@ -4,10 +4,9 @@
   border-bottom: 2px solid #651f71;
   position: sticky;
   top: 0;
-  z-index: 2; 
+  z-index: 2;
 }
 .contenedorLogo {
-  /* border: 1px solid red; */
   width: 5rem;
   height: 5.5rem;
   border-radius: 90%;
@@ -18,7 +17,6 @@
 }
 
 .NavLink {
-  /* border: 1px solid rgb(64, 89, 201); */
   color: white;
   transition: 0.2s;
   font-size: 1.2rem;
@@ -27,7 +25,7 @@
   font-family: "Bebas Neue", sans-serif;
 }
 .nav-link:focus {
- color: white !important;
+  color: white !important;
 }
 .NavLink:hover {
   color: #68b2f8;
@@ -48,8 +46,7 @@
 }
 .bodyModal {
   color: #fff;
-  /* Color altenartivo:  #212529 */
-  background-color: #212529; 
+  background-color: #212529;
   font-family: "Bebas Neue", sans-serif;
   font-size: 18px;
 }
