@@ -50,7 +50,6 @@ const Registro = () => {
       icon: 'succes',
       title: '¡Listo!',
       text: 'Usuario Registrado!', 
-      /* html: '<div style="font-size: 24px;">Usuario Registrado!</div>', */
       showCancelButton: false,
       confirmButtonText: 'Ok',       
       confirmButtonColor: '#1d0c20', 
