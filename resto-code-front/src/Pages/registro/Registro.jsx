@@ -142,7 +142,7 @@ const Registro = () => {
   const handleTelefonoBlur = () => {
     const telefonoValid = telefonoValido(DataUser.telefono);
     console.log("telefono válido:", telefonoValid);
-    if (telefonoValid || DataUser.telefonoUsuario == "") {
+    if (telefonoValid || DataUser.telefono == "") {
       setClaseTelefono("mensaje-error-Registro-Correo text-danger d-none");
     } else {
       setClaseTelefono("mensaje-error-Registro-Correo text-danger");
