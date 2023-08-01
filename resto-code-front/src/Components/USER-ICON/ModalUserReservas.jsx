@@ -48,7 +48,7 @@ const ModalUserReservas = () => {
   return (
     <>
       {userReserva.length <= 0 ? (
-        <h1>No hay reservas registradas a tu nombre!</h1>
+        <h3>No hay reservas registradas a tu nombre!</h3>
       ) : 
       (
         <Table responsive className="table-dark table-hover text-center tabla">
