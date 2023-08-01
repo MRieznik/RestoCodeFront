@@ -127,15 +127,6 @@
       "id": 28
     },
     {
-      "nombre": "maga",
-      "apellido": "medina",
-      "contrasenia": "maga1234",
-      "email": "maga@gmail.com",
-      "telefono": "3815468043",
-      "rolUsuario": "usuario",
-      "id": 29
-    },
-    {
       "nombre": "Nestor Nazaret",
       "apellido": "Campos",
       "contrasenia": "aaaaaaaaaaaa",
@@ -145,13 +136,22 @@
       "id": 35
     },
     {
-      "nombre": "Cristina Noemi del Valle",
+      "nombre": "Cristina Noemi",
       "apellido": "Villafañe",
       "contrasenia": "cristina50",
       "email": "cv@gmail.com",
-      "telefono": "3814555666",
+      "telefono": "3816445566",
       "rolUsuario": "usuario",
-      "id": 38
+      "id": 36
+    },
+    {
+      "nombre": "Lebron",
+      "apellido": "James",
+      "contrasenia": "lebron33",
+      "email": "lj@gmail.com",
+      "telefono": "3816445577",
+      "rolUsuario": "usuario",
+      "id": 37
     }
   ],
   "reservas": [
@@ -192,13 +192,40 @@
       "id": 12
     },
     {
+      "nombre": "Cristina Noemi del Valle",
+      "apellido": "Villafañe",
+      "fecha": "2023-08-05",
+      "hora": "13:30",
+      "invitados": "5",
+      "comentarios": "Aniversario",
+      "id": 14
+    },
+    {
+      "nombre": "Cristina Noemi del Valle",
+      "apellido": "Villafañe",
+      "fecha": "2023-08-25",
+      "hora": "21:15",
+      "invitados": "4",
+      "comentarios": "Cena",
+      "id": 15
+    },
+    {
+      "nombre": "Lebrom",
+      "apellido": "James",
+      "fecha": "2023-08-10",
+      "hora": "13:15",
+      "invitados": "4",
+      "comentarios": "Deporte",
+      "id": 17
+    },
+    {
       "nombre": "Mariana Noemi",
       "apellido": "Cervantes",
-      "fecha": "2023-08-21",
-      "hora": "21:00",
+      "fecha": "2023-08-31",
+      "hora": "13:31",
       "invitados": "4",
-      "comentarios": "Cumple!",
-      "id": 13
+      "comentarios": "Almuerzo",
+      "id": 18
     }
   ]
 }
