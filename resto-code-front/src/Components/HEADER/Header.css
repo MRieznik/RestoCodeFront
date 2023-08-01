@@ -50,10 +50,44 @@
   font-family: "Bebas Neue", sans-serif;
   font-size: 18px;
 }
+.user-icon {   
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #007bff; 
+  color: #ffffff;
+  font-size: 1.7rem;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.desplegable{
+  color: white;
+  transition: 0.2s;
+  font-size: 1.2rem;
+  letter-spacing: 1.2px;
+  text-align: center;  font-family: "Bebas Neue", sans-serif;
+
+}
+
+.dropMenu{
+  font-size: 1.2rem;
+  text-align: center;
+}
 /*------------------ RESPONSIVE ------------------------- */
 @media (min-width: 360px) and (max-width: 914px) {
   .contenedor-iniciarSesion-registrarse {
     width: 100%;
-    justify-content: space-evenly;
+    justify-content: center;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  .contenedor-iniciarSesion-registrarse {
+    width: 100%;
+    justify-content: center;
   }
 }
