@@ -18,7 +18,7 @@ const UsersContext = ({ children }) => {
     }
   };
 
-  //post ----> crea un producto
+  //post ----> crea un usuario
 
   const addUser = async (user) => {
     try {
