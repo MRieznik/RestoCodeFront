@@ -66,12 +66,13 @@ const Reservas = () => {
       const invitados = e.target.value;
       const invitadosMin = 1;
       const invitadosMax = 30;
-      if (invitados < invitadosMin || invitados > invitadosMax) {
+      if (invitados < invitadosMin) {
         setErrorInvitados("¡Debe asistir al menos una persona!");
+      } else if (invitados > invitadosMax) {
+        setErrorInvitados("¡Máximo de invitados: 30 personas!");
       } else {
-        setErrorInvitados("");
+        setErrorInvitados("");}
       }
-    }
   };
 
   const handleBlurComentarios = (e) => {
