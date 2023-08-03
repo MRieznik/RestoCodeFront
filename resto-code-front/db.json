@@ -164,6 +164,19 @@
     {
       "mc@gmail.com": "",
       "id": 40
+    },
+    {
+      "nombre": "Rosa",
+      "apellido": "Clemente",
+      "contrasenia": "rosita123",
+      "email": "rcl@mail.com",
+      "telefono": "3814555666",
+      "rolUsuario": "usuario",
+      "id": 41
+    },
+    {
+      "rcl@mail.com": "",
+      "id": 42
     }
   ],
   "reservas": [
