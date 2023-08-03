@@ -152,6 +152,18 @@
       "telefono": "3816445577",
       "rolUsuario": "usuario",
       "id": 37
+    },
+    {
+      "mc@gmail.com": "",
+      "id": 38
+    },
+    {
+      "admin@gmail.com": "",
+      "id": 39
+    },
+    {
+      "mc@gmail.com": "",
+      "id": 40
     }
   ],
   "reservas": [
@@ -221,10 +233,10 @@
     {
       "nombre": "Mariana Noemi",
       "apellido": "Cervantes",
-      "fecha": "2023-08-31",
-      "hora": "13:31",
+      "fecha": "2023-08-25",
+      "hora": "13:30",
       "invitados": "4",
-      "comentarios": "Almuerzo",
+      "comentarios": "Cumple",
       "id": 18
     }
   ]
