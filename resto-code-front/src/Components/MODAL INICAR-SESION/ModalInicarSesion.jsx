@@ -2,18 +2,37 @@ import { useState, useContext } from "react";
 import { Col, Container, Row, Button } from "react-bootstrap";
 import { UsuariosContext } from "../../context/UsersContext";
 import "./ModalInicarSesion.css";
+import Swal from "sweetalert2";
 
 
 const ModalInicarSesion = () => {
   const [email, setEmail] = useState();
   const [contrasenia, setContrasenia] = useState();
 
-  const { login } = useContext(UsuariosContext);
+  const { users, login } = useContext(UsuariosContext);
   
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    login(email,contrasenia)
+    // Verificar si el usuario está en la lista de usuarios (users)
+    const usuarioValido = users.some(user => user.email === email);
+
+    if (!usuarioValido) {
+      Swal.fire({
+        icon: "error",
+        title: "Error!",
+        text: "Usuario y/o contraseña incorrectos!",
+        confirmButtonColor: "#C73333",
+        background: "#31302F",
+        color: "white",
+        backdrop: `rgba(0,0,14,0.4)`,
+      });  
+      setEmail("");
+      setContrasenia("");     
+      return; 
+  }else{
+    login(email,contrasenia); 
+    }    
   };
 
   return (

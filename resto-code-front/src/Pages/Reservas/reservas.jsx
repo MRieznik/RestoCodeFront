@@ -1,13 +1,15 @@
 import { Form } from "react-bootstrap/";
 import "./Reservas.css";
-import { useState, useContext } from "react";
-import { ReservasContext } from "../../Context/ReservasContext";
+import { useState} from "react";
+//import { ReservasContext } from "../../Context/ReservasContext";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const Reservas = () => {
-  const { addReserva } = useContext(ReservasContext);
+  //const { reservas } = useContext(ReservasContext);
 
   const user = JSON.parse(localStorage.getItem("user")) || [];
+  console.log(user);
 
   const [formReserva, setFormReserva] = useState({
     nombre: user.nombre,
@@ -89,19 +91,18 @@ const Reservas = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addReserva(formReserva);
+
+    try {
+      const response = axios.post("http://localhost:8081/api/crearReserva", formReserva);
+      console.log(response);     
     setFormReserva({
       fecha: "",
       hora: "",
       invitados: "",
       comentarios: "",
-    });
+    });  
     Swal.fire({
       icon: "success",
-      title: "¡Listo!",
-    });
-    Swal.fire({
-      icon: "succes",
       title: "¡Listo!",
       text: "Su reserva ha sido confirmada, pasa a ver nuestra galeria!", //o menu podemos agregar!
       showCancelButton: false,
@@ -112,6 +113,9 @@ const Reservas = () => {
         window.location.href = "/galeria";
       }
     });
+  }catch (error) {
+    console.log(error.response);
+  }    
   };
 
   return (
@@ -136,7 +140,7 @@ const Reservas = () => {
                 id="inputFechaReserva"
                 name="fecha"
                 type="date"
-                value={formReserva.fecha}
+                value={formReserva.fecha.toString()}
                 onChange={handleChange}
                 onBlur={handleBlurFecha}
                 min={new Date().toISOString().split("T")[0]}
@@ -153,7 +157,7 @@ const Reservas = () => {
                 id="inputHoraReserva"
                 name="hora"
                 type="time"
-                value={formReserva.hora}
+                value={formReserva.hora.toString()}
                 onChange={handleChange}
                 onBlur={handleBlurHora}
                 required

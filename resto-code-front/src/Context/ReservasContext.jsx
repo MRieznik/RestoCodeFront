@@ -19,16 +19,6 @@ const ReservContext = ({ children }) => {
     }
   };
 
-  //post ----> crea una reserva
-
-  const addReserva = (reserva) => {
-    try {
-      const response = axios.post("http://localhost:8081/api/crearReserva", reserva);
-      setReservas([...reservas, response]);
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   //put ----> edita una reserva
 
@@ -62,8 +52,7 @@ const ReservContext = ({ children }) => {
     <ReservasContext.Provider
       value={{
         reservas,
-        setReservas,
-        addReserva,
+        setReservas,      
         updateReserva,
         deleteReserva,
       }}

@@ -9,7 +9,7 @@ export const UsuariosContext = createContext();
 const UsersContext = ({ children }) => {
   const [users, setUsers] = useState();
   const [userLogueado, setUserLogueado] = useState();
-  console.log(userLogueado);
+
 
   //get : trae todos los usuarios
   const getUsers = async () => {
@@ -24,7 +24,8 @@ const UsersContext = ({ children }) => {
 
   //post : loguear un usuario
   const login = async (email, contrasenia) =>{
-    console.log(email, contrasenia, "login Context");
+    console.log(email, contrasenia, "login Context");  
+
     const response = await axios.post("http://localhost:8081/api/login", {
       email,
       contrasenia,
@@ -45,23 +46,24 @@ const UsersContext = ({ children }) => {
     localStorage.setItem("user", JSON.stringify(user));
     setUserLogueado(user);
     console.log(user);
+    console.log(userLogueado);
 
+  
     if (user.rolUsuario === "admin") {
       window.location.href = "/administracion";
     }else if (user.rolUsuario === "usuario"){
       window.location.href = "/reservas";
-    }else if (response.status === 400){
+    }else{
       Swal.fire({
         icon: "error",
         title: "Error!",
-        text: response.response.data,
+        text: "Usuario y/o contraseña incorrectos!",
         confirmButtonColor: "#C73333",
         background: "#31302F",
         color: "white",
         backdrop: `rgba(0,0,14,0.4)`,
-      });
-     
-    } 
+      });       
+    }     
   };
 
   //logout: desloguea el usuario actual
