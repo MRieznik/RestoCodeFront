@@ -63,12 +63,12 @@ const Header = () => {
                 <div className="contenedor-iniciarSesion-registrarse">
                   <Nav.Link
                     // href="#link"
-                    className="NavLink"
+                    className="NavLink mx-2"
                     onClick={iniciarSesion}
                   >
                     Iniciar sesión
                   </Nav.Link>
-                  <Nav.Link href="/registro" className="NavLink">
+                  <Nav.Link href="/registro" className="NavLink mx-2">
                     Registrarse
                   </Nav.Link>
                 </div>

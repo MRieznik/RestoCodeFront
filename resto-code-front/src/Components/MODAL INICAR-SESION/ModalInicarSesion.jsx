@@ -2,42 +2,18 @@ import { useState, useContext } from "react";
 import { Col, Container, Row, Button } from "react-bootstrap";
 import { UsuariosContext } from "../../context/UsersContext";
 import "./ModalInicarSesion.css";
-import Swal from "sweetalert2";
+
 
 const ModalInicarSesion = () => {
   const [email, setEmail] = useState();
   const [contrasenia, setContrasenia] = useState();
 
-  const { users } = useContext(UsuariosContext);
-  console.log(users);
+  const { login } = useContext(UsuariosContext);
+  
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      const userValido = users.find(
-        (user) => user.email === email && user.contrasenia === contrasenia
-      );
-      console.log(userValido);
-      if (!userValido) {
-        setEmail("");
-        setContrasenia("");
-        Swal.fire({
-          icon: "error",
-          title: "Usuario y/o contraseña incorrectos!",
-          confirmButtonColor: "#C73333",
-          background: "#31302F",
-          color: "white",
-          backdrop: `rgba(0,0,14,0.4)`,
-        });
-      } else if (userValido.rolUsuario === "admin") {
-        localStorage.setItem("user", JSON.stringify(userValido));
-        window.location.href = "/administracion";
-      } else {
-        localStorage.setItem("user", JSON.stringify(userValido));
-        window.location.href = "/reservas";
-      }
-    } catch (error) {
-      console.log(error);
-    }
+    login(email,contrasenia)
   };
 
   return (
