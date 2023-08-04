@@ -8,7 +8,7 @@ export const UsuariosContext = createContext();
 const UsersContext = ({ children }) => {
   const [users, setUsers] = useState();
 
-  //get ----> trae todos los ususarios
+  //get : trae todos los ususarios
   const getUsers = async () => {
     try {
       const response = await axios.get("http://localhost:8080/users");
@@ -18,7 +18,7 @@ const UsersContext = ({ children }) => {
     }
   };
 
-  //post ----> crea un usuario
+  //post: crea un usuario
 
   const addUser = async (user) => {
     try {
@@ -29,7 +29,40 @@ const UsersContext = ({ children }) => {
     }
   };
 
-  //logout----> desloguea el usuario actual
+  //post : loguear un usuario
+  const login = async (email, contrasenia) =>{
+    try {
+      const userValido = users.find(
+        (user) => user.email === email && user.contrasenia === contrasenia
+      );
+      console.log(userValido);
+      if (!userValido) {
+        Swal.fire({
+          icon: "error",
+          title: "Usuario y/o contraseña incorrectos!",
+          confirmButtonColor: "#C73333",
+          background: "#31302F",
+          color: "white",
+          backdrop: `rgba(0,0,14,0.4)`,
+        });
+        
+      } else if (userValido.rolUsuario === "admin") {
+        const response = await axios.post("http://localhost:8080/users", email, contrasenia);
+        setUsers([...users, response.data]);
+        localStorage.setItem("user", JSON.stringify(userValido));
+        window.location.href = "/administracion";
+      } else {
+        const response = await axios.post("http://localhost:8080/users", email, contrasenia);
+        setUsers([...users, response.data]);
+        localStorage.setItem("user", JSON.stringify(userValido));
+        window.location.href = "/reservas";
+      }     
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  //logout: desloguea el usuario actual
   const logOut = () => {
     Swal.fire({
       icon: "warning",
@@ -52,7 +85,7 @@ const UsersContext = ({ children }) => {
     });
   };
 
-  //put ----> edita un usuario
+  //put : edita un usuario
 
   const updateUsers = async (user) => {
     try {
@@ -63,7 +96,7 @@ const UsersContext = ({ children }) => {
     }
   };
 
-  //delete ----> elimina un usuario
+  //delete: elimina un usuario
 
   const deleteUser = async (id) => {
     console.log(id);
@@ -85,9 +118,11 @@ const UsersContext = ({ children }) => {
       value={{
         users,
         setUsers,
+        getUsers,
         addUser,
         updateUsers,
         deleteUser,
+        login,
         logOut,
       }}
     >
