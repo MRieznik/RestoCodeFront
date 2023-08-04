@@ -5,6 +5,7 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { UsuariosContext } from "../../context/UsersContext";
 import ModalInicarSesion from "../../Components/MODAL INICAR-SESION/ModalInicarSesion";
 import "./Registro.css";
+import axios from "axios";
 import Swal from "sweetalert2";
 
 // eslint-disable-next-line react/prop-types
@@ -13,22 +14,23 @@ const Registro = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const { users } = useContext(UsuariosContext);
   const [DataUser, setDataUser] = useState({
     nombre: "",
-    apellido: "",
-    contrasenia: "",
+    apellido: "",    
     email: "",
     telefono: "",
+    contrasenia: "",
     rolUsuario: "",
   });
 
-  const { addUser, users } = useContext(UsuariosContext);
-  /* console.log(users); */
+  
   const handleChange = (e) => {
     setDataUser({ ...DataUser, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
+    console.log(DataUser);
     e.preventDefault();
 
     if (verificarCorreoExistente(DataUser.email)) {
@@ -39,37 +41,31 @@ const Registro = () => {
       }, 500);
       return;
       /* console.log("siguio"); */
-    }
-    addUser(DataUser);
-    console.log(DataUser);
-    setDataUser({
-      nombre: "",
-      apellido: "",
-      contrasenia: "",
-      email: "",
-      telefono: "",
-      rolUsuario: "",
-    });
-    Swal.fire({
-      icon: "success",
-      title: "¡Listo!",
-    });
-    Swal.fire({
-      icon: "succes",
-      title: "¡Listo!",
-      text: "Usuario Registrado!",
-      showCancelButton: false,
-      confirmButtonText: "Ok",
-      confirmButtonColor: "#1d0c20",
-      customClass: {
-        title: "sweetalertRegistroTitle",
-        content: "sweetalertRegistropopup",
-      },
-    }).then((result) => {
-      if (result.isConfirmed) {
-        handleShow();
-      }
-    });
+    }else{
+      try {
+        const response = axios.post("http://localhost:8081/api/register", DataUser);
+        console.log(response);
+        setDataUser({ nombre: "", apellido: "", email: "", telefono: "", contrasenia: "", rol: "usuario" });
+        Swal.fire({
+          icon: "success",
+          title: "¡Listo!",
+          text: "Usuario Registrado!",
+          showCancelButton: false,
+          confirmButtonText: "Ok",
+          confirmButtonColor: "#1d0c20",
+          customClass: {
+            title: "sweetalertRegistroTitle",
+            content: "sweetalertRegistropopup",
+          },
+        }).then((result) => {
+          if (result.isConfirmed) {
+            handleShow();
+          }
+        });
+      } catch (error) {
+        console.log(error.response);
+      }    
+    }   
   };
 
   //Defino los actualizadores de estados para manejar las clases que se colocaran en cada caso
@@ -275,8 +271,7 @@ const Registro = () => {
                                   className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados"
                                   placeholder="Ej: Juan Resto"
                                   pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
-                                  title="Este campo solo permite letras y espacios en blanco"
-                                  required
+                                  title="Este campo solo permite letras y espacios en blanco"                                  
                                   name="rolUsuario"
                                   value={(DataUser.rolUsuario = "usuario")}
                                   onChange={handleChange}
