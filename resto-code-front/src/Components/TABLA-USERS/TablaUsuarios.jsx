@@ -72,7 +72,7 @@ const TablaUsuarios = () => {
             </thead>
             <tbody>
               {users.map((user) => (
-                <tr key={user.id}>
+                <tr key={user._id}>
                   <td data-label="Nombre">{user.nombre}</td>
                   <td data-label="Apellido">{user.apellido}</td>
                   <td data-label="Telefono">{user.telefono}</td>
@@ -92,7 +92,7 @@ const TablaUsuarios = () => {
                     </button>
                     <button
                       className="botonDelete m-1"
-                      onClick={() => handleDelete(user.id)}
+                      onClick={() => handleDelete(user._id)}
                     >
                       <FontAwesomeIcon
                         icon="fa-solid fa-trash"
