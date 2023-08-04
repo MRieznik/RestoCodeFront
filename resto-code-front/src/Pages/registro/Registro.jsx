@@ -30,7 +30,7 @@ const Registro = () => {
   };
 
   const handleSubmit = (e) => {
-    console.log(DataUser);
+    
     e.preventDefault();
 
     if (verificarCorreoExistente(DataUser.email)) {
