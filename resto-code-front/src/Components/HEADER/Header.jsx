@@ -7,7 +7,6 @@ import ModalUserReservas from "../USER-ICON/ModalUserReservas";
 import UserIcon from "../USER-ICON/UserIcon";
 import "./Header.css";
 
-
 const Header = () => {
   const [showModal, setShowModal] = useState(false);
   const handleCloseModal = () => setShowModal(false);
@@ -27,9 +26,10 @@ const Header = () => {
   const { logOut } = useContext(UsuariosContext);
   const usuarioLogueado = JSON.parse(localStorage.getItem("user"));
 
- const iniciales = usuarioLogueado ? usuarioLogueado.nombre.split("")[0]+usuarioLogueado.apellido.split("")[0] : console.log("No hay usuario logueado.")
-  
-
+  const iniciales = usuarioLogueado
+    ? usuarioLogueado.nombre.split("")[0] +
+      usuarioLogueado.apellido.split("")[0]
+    : console.log("No hay usuario logueado.");
 
   return (
     <>
@@ -101,35 +101,32 @@ const Header = () => {
                     <></>
                   )}
                 </Nav>
-                <Nav className="contenedor-iniciarSesion-registrarse justify-content-end">                  
-                    <Dropdown  className="desplegable">
-                      <Dropdown.Toggle
-                        id="dropdown-basic"
-                        className="user-icon"
-                      >
-                        <UserIcon iniciales={iniciales} />
-                      </Dropdown.Toggle>
-                      <Dropdown.Menu className="dropMenu" >
-                        <Dropdown.Item href="#/action-1" onClick={tusReservas}>
-                          Mis Reservas
-                        </Dropdown.Item>                      
-                        <Dropdown.Item href="#/action-2" onClick={logOut} >
-                         Cerrar Sesión
-                        </Dropdown.Item>
-                      </Dropdown.Menu>
-                    </Dropdown>
-                    <Modal
-                      show={showReservas}
-                      onHide={handleCloseReservas}
-                      className="ventanaModalInicarSesion"
-                    >
-                      <Modal.Header closeButton className="headerModal">
-                        <Modal.Title>Tus Reservas</Modal.Title>
-                      </Modal.Header>
-                      <Modal.Body className="bodyModal">
-                        <ModalUserReservas handleClose={handleCloseReservas} />
-                      </Modal.Body>
-                    </Modal>                  
+                <Nav className="contenedor-iniciarSesion-registrarse justify-content-end">
+                  <Dropdown className="desplegable">
+                    <Dropdown.Toggle id="dropdown-basic" className="user-icon">
+                      <UserIcon iniciales={iniciales} />
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu className="dropMenu">
+                      <Dropdown.Item href="#/action-1" onClick={tusReservas}>
+                        Mis Reservas
+                      </Dropdown.Item>
+                      <Dropdown.Item href="#/action-2" onClick={logOut}>
+                        Cerrar Sesión
+                      </Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                  <Modal
+                    show={showReservas}
+                    onHide={handleCloseReservas}
+                    className="ventanaModalInicarSesion"
+                  >
+                    <Modal.Header closeButton className="headerModal">
+                      <Modal.Title>Tus Reservas</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body className="bodyModal">
+                      <ModalUserReservas handleClose={handleCloseReservas} />
+                    </Modal.Body>
+                  </Modal>
                 </Nav>
               </Navbar.Collapse>
             </>
