@@ -89,33 +89,42 @@ const Reservas = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-   try {
-      const response = axios.post("http://localhost:8081/api/crearReserva", formReserva);
-      console.log(response);     
-    setFormReserva({
-      fecha: "",
-      hora: "",
-      invitados: "",
-      comentarios: "",
-    });  
-    Swal.fire({
-      icon: "success",
-      title: "¡Listo!",
-      text: "Su reserva ha sido confirmada, pasa a ver nuestra galeria!", //o menu podemos agregar!
-      showCancelButton: false,
-      confirmButtonText: "Ok",
-      confirmButtonColor: "#1d0c20",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        window.location.href = "/galeria";
-      }
-    });
-  }catch (error) {
-    console.log(error.response);
-  }    
+  
+    try {
+      const response = await axios.post("http://localhost:8081/api/crearReserva", formReserva);
+  
+      setFormReserva({
+        fecha: "",
+        hora: "",
+        invitados: "",
+        comentarios: "",
+      });  
+  
+      Swal.fire({
+        icon: "success",
+        title: "¡Listo!",
+        text: "Su reserva ha sido confirmada, pasa a ver nuestra galeria!",
+        showCancelButton: false,
+        confirmButtonText: "Ok",
+        confirmButtonColor: "#1d0c20",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "/galeria";
+        }
+      });
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Error!",
+        text: "Ya existe una reserva con la misma fecha y hora!",
+        confirmButtonColor: "#C73333",
+        background: "#31302F",
+        color: "white",
+        backdrop: `rgba(0,0,14,0.4)`,
+      });  
+    }    
   };
 
   return (
