@@ -39,16 +39,16 @@ const UsersContext = ({ children }) => {
       apellido: jwtDecode.apellido,
       email: jwtDecode.email,
       telefono: jwtDecode.telefono,
-      rol: jwtDecode.rol,
+      rolUsuario: jwtDecode.rolUsuario,
     };
 
     localStorage.setItem("user", JSON.stringify(user));
     setUserLogueado(user);
     console.log(user);
 
-    if (user.rol === "admin") {
+    if (user.rolUsuario === "admin") {
       window.location.href = "/administracion";
-    }else if (user.rol === "usuario"){
+    }else if (user.rolUsuario === "usuario"){
       window.location.href = "/reservas";
     }else if (response.status === 400){
       Swal.fire({
