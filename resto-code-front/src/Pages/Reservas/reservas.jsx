@@ -1,13 +1,10 @@
 import { Form } from "react-bootstrap/";
 import "./Reservas.css";
-import { useState} from "react";
-//import { ReservasContext } from "../../Context/ReservasContext";
+import { useState } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
 
 const Reservas = () => {
-  //const { reservas } = useContext(ReservasContext);
-
   const user = JSON.parse(localStorage.getItem("user")) || [];
   console.log(user);
 
@@ -24,7 +21,6 @@ const Reservas = () => {
   const [errorHora, setErrorHora] = useState("");
   const [errorInvitados, setErrorInvitados] = useState("");
   const [errorComentarios, setErrorComentarios] = useState("");
-  // const [camposVacios, setCamposVacios] = useState("");
 
   const handleChange = (e) => {
     setFormReserva({ ...formReserva, [e.target.name]: e.target.value });
@@ -73,8 +69,9 @@ const Reservas = () => {
       } else if (invitados > invitadosMax) {
         setErrorInvitados("¡Máximo de invitados: 30 personas!");
       } else {
-        setErrorInvitados("");}
+        setErrorInvitados("");
       }
+    }
   };
 
   const handleBlurComentarios = (e) => {
@@ -91,17 +88,20 @@ const Reservas = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     try {
-      const response = await axios.post("http://localhost:8081/api/crearReserva", formReserva);
-  
+      const response = await axios.post(
+        "http://localhost:8081/api/crearReserva",
+        formReserva
+      );
+
       setFormReserva({
         fecha: "",
         hora: "",
         invitados: "",
         comentarios: "",
-      });  
-  
+      });
+
       Swal.fire({
         icon: "success",
         title: "¡Listo!",
@@ -123,8 +123,8 @@ const Reservas = () => {
         background: "#31302F",
         color: "white",
         backdrop: `rgba(0,0,14,0.4)`,
-      });  
-    }    
+      });
+    }
   };
 
   return (

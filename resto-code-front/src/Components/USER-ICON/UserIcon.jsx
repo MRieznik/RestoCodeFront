@@ -3,7 +3,7 @@
 // eslint-disable-next-line react/prop-types
 const UserIcon = ({ iniciales }) => {
   return (
-    <div >
+    <div>
       <span>{iniciales}</span>
     </div>
   );

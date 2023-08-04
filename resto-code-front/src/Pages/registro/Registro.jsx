@@ -17,35 +17,40 @@ const Registro = () => {
   const { users } = useContext(UsuariosContext);
   const [DataUser, setDataUser] = useState({
     nombre: "",
-    apellido: "",    
+    apellido: "",
     email: "",
     telefono: "",
     contrasenia: "",
     rolUsuario: "",
   });
 
-  
   const handleChange = (e) => {
     setDataUser({ ...DataUser, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
-    
     e.preventDefault();
 
     if (verificarCorreoExistente(DataUser.email)) {
-      console.log("entro a handlesubmit ");
       setClaseCorreo2("tracking-in-expand mensaje-error-Registro-Correo");
       setTimeout(() => {
         setClaseCorreo2("mensaje-error-Registro-Correo");
       }, 500);
       return;
-      /* console.log("siguio"); */
-    }else{
+    } else {
       try {
-        const response = axios.post("http://localhost:8081/api/register", DataUser);
-        console.log(response);
-        setDataUser({ nombre: "", apellido: "", email: "", telefono: "", contrasenia: "", rol: "usuario" });
+        const response = axios.post(
+          "http://localhost:8081/api/register",
+          DataUser
+        );
+        setDataUser({
+          nombre: "",
+          apellido: "",
+          email: "",
+          telefono: "",
+          contrasenia: "",
+          rol: "usuario",
+        });
         Swal.fire({
           icon: "success",
           title: "¡Listo!",
@@ -64,8 +69,8 @@ const Registro = () => {
         });
       } catch (error) {
         console.log(error.response);
-      }    
-    }   
+      }
+    }
   };
 
   //Defino los actualizadores de estados para manejar las clases que se colocaran en cada caso
@@ -133,7 +138,7 @@ const Registro = () => {
 
   const handleNombreBlur = () => {
     const nombreValido = NombreApellidoValido(DataUser.nombre);
-    console.log("Nombre válido:", nombreValido);
+
     if (!nombreValido) {
       setClaseNombre("mensaje-error-Registro");
     } else {
@@ -143,7 +148,6 @@ const Registro = () => {
 
   const handleApellidoBlur = () => {
     const apelldoValido = NombreApellidoValido(DataUser.apellido);
-    console.log("apellido válido:", apelldoValido);
     if (!apelldoValido) {
       setClaseApellido("mensaje-error-Registro");
     } else {
@@ -153,7 +157,6 @@ const Registro = () => {
 
   const handleContraseñaBlur = () => {
     const contraseñaValid = contraseniaValida(DataUser.contrasenia);
-    console.log("contra válido:", contraseñaValid);
     if (!contraseñaValid) {
       setClaseContrasenia("mensaje-error-Registro");
     } else {
@@ -163,12 +166,6 @@ const Registro = () => {
 
   const handleCorreoBlur = () => {
     const correoValid = correoValido(DataUser.email);
-    console.log("correo válido:", correoValid);
-    /* console.log(verificarCorreoExistente(correoValid)); 
-     const [ClaseCorreo2, setClaseCorreo2] = useState(
-    ".mensaje-error-Registro-Correo d-none"
-  );
-    */
     if (verificarCorreoExistente(DataUser.email)) {
       setClaseCorreo2("mensaje-error-Registro-Correo");
     } else {
@@ -183,7 +180,6 @@ const Registro = () => {
 
   const handleTelefonoBlur = () => {
     const telefonoValid = telefonoValido(DataUser.telefono);
-    console.log("telefono válido:", telefonoValid);
     if (telefonoValid || DataUser.telefono == "") {
       setClaseTelefono("mensaje-error-Registro d-none");
     } else {
@@ -271,7 +267,7 @@ const Registro = () => {
                                   className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados"
                                   placeholder="Ej: Juan Resto"
                                   pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
-                                  title="Este campo solo permite letras y espacios en blanco"                                  
+                                  title="Este campo solo permite letras y espacios en blanco"
                                   name="rolUsuario"
                                   value={(DataUser.rolUsuario = "usuario")}
                                   onChange={handleChange}

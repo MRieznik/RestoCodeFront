@@ -19,12 +19,14 @@ const ReservContext = ({ children }) => {
     }
   };
 
-
   //put ----> edita una reserva
 
   const updateReserva = async (reserva) => {
     try {
-      await axios.put(`http://localhost:8081/api/actualizarReserva/${reserva._id}`, reserva);
+      await axios.put(
+        `http://localhost:8081/api/actualizarReserva/${reserva._id}`,
+        reserva
+      );
       await getReservas();
     } catch (error) {
       console.log(error);
@@ -52,7 +54,7 @@ const ReservContext = ({ children }) => {
     <ReservasContext.Provider
       value={{
         reservas,
-        setReservas,      
+        setReservas,
         updateReserva,
         deleteReserva,
       }}

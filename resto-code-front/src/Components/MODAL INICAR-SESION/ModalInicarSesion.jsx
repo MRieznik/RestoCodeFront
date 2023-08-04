@@ -4,18 +4,16 @@ import { UsuariosContext } from "../../context/UsersContext";
 import "./ModalInicarSesion.css";
 import Swal from "sweetalert2";
 
-
 const ModalInicarSesion = () => {
   const [email, setEmail] = useState();
   const [contrasenia, setContrasenia] = useState();
 
   const { users, login } = useContext(UsuariosContext);
-  
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Verificar si el usuario está en la lista de usuarios (users)
-    const usuarioValido = users.some(user => user.email === email);
+    const usuarioValido = users.some((user) => user.email === email);
 
     if (!usuarioValido) {
       Swal.fire({
@@ -26,13 +24,13 @@ const ModalInicarSesion = () => {
         background: "#31302F",
         color: "white",
         backdrop: `rgba(0,0,14,0.4)`,
-      });  
+      });
       setEmail("");
-      setContrasenia("");     
-      return; 
-  }else{
-    login(email,contrasenia); 
-    }    
+      setContrasenia("");
+      return;
+    } else {
+      login(email, contrasenia);
+    }
   };
 
   return (
@@ -48,8 +46,6 @@ const ModalInicarSesion = () => {
                 <input
                   type="email"
                   className="form-control inputIniciarSesion"
-                  //   value={email}
-                  //   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Ingresa tu correo"
                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$"
                   title="Use el formato ejemplo@ejemplo.com"
@@ -71,8 +67,6 @@ const ModalInicarSesion = () => {
                 <input
                   type="password"
                   className="form-control inputIniciarSesion"
-                  //   value={contraseña}
-                  //   onChange={(e) => setContraseña(e.target.value)}
                   minLength={8}
                   maxLength={12}
                   pattern="[A-Za-z0-9]+"
