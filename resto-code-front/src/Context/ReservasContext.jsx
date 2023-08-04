@@ -11,7 +11,7 @@ const ReservContext = ({ children }) => {
   //get ----> trae todas las reservas
   const getReservas = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/reservas");
+      const response = await axios.get("http://localhost:8081/api/reservas");
       console.log(response.data);
       setReservas(response.data);
     } catch (error) {
@@ -23,7 +23,7 @@ const ReservContext = ({ children }) => {
 
   const addReserva = (reserva) => {
     try {
-      const response = axios.post("http://localhost:8080/reservas", reserva);
+      const response = axios.post("http://localhost:8081/api/crearReserva", reserva);
       setReservas([...reservas, response]);
     } catch (error) {
       console.log(error);
@@ -34,7 +34,7 @@ const ReservContext = ({ children }) => {
 
   const updateReserva = async (reserva) => {
     try {
-      await axios.put(`http://localhost:8080/reservas/${reserva.id}`, reserva);
+      await axios.put(`http://localhost:8081/api/actualizarReserva/${reserva._id}`, reserva);
       await getReservas();
     } catch (error) {
       console.log(error);
@@ -46,8 +46,8 @@ const ReservContext = ({ children }) => {
   const deleteReserva = async (id) => {
     console.log(id);
     try {
-      await axios.delete(`http://localhost:8080/reservas/${id}`);
-      const deleteReserva = reservas.filter((reserva) => reserva.id !== id);
+      await axios.delete(`http://localhost:8081/api/eliminarReserva/${id}`);
+      const deleteReserva = reservas.filter((reserva) => reserva._id !== id);
       setReservas(deleteReserva);
     } catch (error) {
       console.log(error);

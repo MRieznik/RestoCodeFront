@@ -88,7 +88,7 @@ const TablaReservas = () => {
                   </button>
                   <button
                     className="botonCancel m-1"
-                    onClick={() => handleDelete(reserva.id)}
+                    onClick={() => handleDelete(reserva._id)}
                   >
                     <FontAwesomeIcon
                       icon="fa-solid fa-xmark"
