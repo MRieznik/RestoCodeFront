@@ -1,13 +1,12 @@
 import { Form } from "react-bootstrap/";
 import "./Reservas.css";
-import { useState, useContext } from "react";
-import { ReservasContext } from "../../Context/ReservasContext";
+import { useState } from "react";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const Reservas = () => {
-  const { addReserva } = useContext(ReservasContext);
-
   const user = JSON.parse(localStorage.getItem("user")) || [];
+  console.log(user);
 
   const [formReserva, setFormReserva] = useState({
     nombre: user.nombre,
@@ -22,7 +21,6 @@ const Reservas = () => {
   const [errorHora, setErrorHora] = useState("");
   const [errorInvitados, setErrorInvitados] = useState("");
   const [errorComentarios, setErrorComentarios] = useState("");
-  // const [camposVacios, setCamposVacios] = useState("");
 
   const handleChange = (e) => {
     setFormReserva({ ...formReserva, [e.target.name]: e.target.value });
@@ -71,8 +69,9 @@ const Reservas = () => {
       } else if (invitados > invitadosMax) {
         setErrorInvitados("¡Máximo de invitados: 30 personas!");
       } else {
-        setErrorInvitados("");}
+        setErrorInvitados("");
       }
+    }
   };
 
   const handleBlurComentarios = (e) => {
@@ -87,31 +86,45 @@ const Reservas = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    addReserva(formReserva);
-    setFormReserva({
-      fecha: "",
-      hora: "",
-      invitados: "",
-      comentarios: "",
-    });
-    Swal.fire({
-      icon: "success",
-      title: "¡Listo!",
-    });
-    Swal.fire({
-      icon: "succes",
-      title: "¡Listo!",
-      text: "Su reserva ha sido confirmada, pasa a ver nuestra galeria!", //o menu podemos agregar!
-      showCancelButton: false,
-      confirmButtonText: "Ok",
-      confirmButtonColor: "#1d0c20",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        window.location.href = "/galeria";
-      }
-    });
+
+    try {
+      const response = await axios.post(
+        "http://localhost:8081/api/crearReserva",
+        formReserva
+      );
+
+      setFormReserva({
+        fecha: "",
+        hora: "",
+        invitados: "",
+        comentarios: "",
+      });
+
+      Swal.fire({
+        icon: "success",
+        title: "¡Listo!",
+        text: "Su reserva ha sido confirmada, pasa a ver nuestra galeria!",
+        showCancelButton: false,
+        confirmButtonText: "Ok",
+        confirmButtonColor: "#1d0c20",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "/galeria";
+        }
+      });
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Error!",
+        text: "Ya existe una reserva con la misma fecha y hora!",
+        confirmButtonColor: "#C73333",
+        background: "#31302F",
+        color: "white",
+        backdrop: `rgba(0,0,14,0.4)`,
+      });
+    }
   };
 
   return (
@@ -136,7 +149,7 @@ const Reservas = () => {
                 id="inputFechaReserva"
                 name="fecha"
                 type="date"
-                value={formReserva.fecha}
+                value={formReserva.fecha.toString()}
                 onChange={handleChange}
                 onBlur={handleBlurFecha}
                 min={new Date().toISOString().split("T")[0]}
@@ -153,7 +166,7 @@ const Reservas = () => {
                 id="inputHoraReserva"
                 name="hora"
                 type="time"
-                value={formReserva.hora}
+                value={formReserva.hora.toString()}
                 onChange={handleChange}
                 onBlur={handleBlurHora}
                 required

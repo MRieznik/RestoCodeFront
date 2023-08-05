@@ -4,16 +4,18 @@ import Swal from "sweetalert2";
 import { Table } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-
-const ModalUserReservas = () => {  
-  const { reservas , deleteReserva} = useContext(ReservasContext);
+const ModalUserReservas = () => {
+  const { reservas, deleteReserva } = useContext(ReservasContext);
 
   const usuarioLogueado = JSON.parse(localStorage.getItem("user"));
-  const userReserva = reservas ? reservas.filter(
-    (reserva) => reserva.nombre === usuarioLogueado.nombre && reserva.apellido === usuarioLogueado.apellido ) : []; 
+  const userReserva = reservas
+    ? reservas.filter(
+        (reserva) =>
+          reserva.nombre === usuarioLogueado.nombre &&
+          reserva.apellido === usuarioLogueado.apellido
+      )
+    : [];
   console.log(userReserva);
- 
- 
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -49,11 +51,10 @@ const ModalUserReservas = () => {
     <>
       {userReserva.length <= 0 ? (
         <h3>No hay reservas registradas a tu nombre!</h3>
-      ) : 
-      (
+      ) : (
         <Table responsive className="table-dark table-hover text-center tabla">
           <thead className="headTabla">
-            <tr>              
+            <tr>
               <th>Fecha</th>
               <th>Hora</th>
               <th>Invitados</th>
@@ -62,14 +63,14 @@ const ModalUserReservas = () => {
           </thead>
           <tbody>
             {userReserva.map((reserva) => (
-              <tr key={reserva.id}>              
+              <tr key={reserva.id}>
                 <td data-label="Fecha">{reserva.fecha}</td>
                 <td data-label="Hora">{reserva.hora}</td>
                 <td data-label="Comensales">{reserva.invitados}</td>
-                <td data-label="Acciones">                
+                <td data-label="Acciones">
                   <button
                     className="botonCancel m-1"
-                    onClick={() => handleDelete(reserva.id)}
+                    onClick={() => handleDelete(reserva._id)}
                   >
                     <FontAwesomeIcon
                       icon="fa-solid fa-xmark"
@@ -82,11 +83,9 @@ const ModalUserReservas = () => {
                 </td>
               </tr>
             ))}
-          </tbody>     
+          </tbody>
         </Table>
-      )
-      }
-     
+      )}
     </>
   );
 };

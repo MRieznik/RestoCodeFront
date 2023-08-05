@@ -19,22 +19,14 @@ const ReservContext = ({ children }) => {
     }
   };
 
-  //post ----> crea una reserva
-
-  const addReserva = (reserva) => {
-    try {
-      const response = axios.post("http://localhost:8081/api/crearReserva", reserva);
-      setReservas([...reservas, response]);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   //put ----> edita una reserva
 
   const updateReserva = async (reserva) => {
     try {
-      await axios.put(`http://localhost:8081/api/actualizarReserva/${reserva._id}`, reserva);
+      await axios.put(
+        `http://localhost:8081/api/actualizarReserva/${reserva._id}`,
+        reserva
+      );
       await getReservas();
     } catch (error) {
       console.log(error);
@@ -63,7 +55,6 @@ const ReservContext = ({ children }) => {
       value={{
         reservas,
         setReservas,
-        addReserva,
         updateReserva,
         deleteReserva,
       }}

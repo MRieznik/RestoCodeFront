@@ -9,7 +9,6 @@ export const UsuariosContext = createContext();
 const UsersContext = ({ children }) => {
   const [users, setUsers] = useState();
   const [userLogueado, setUserLogueado] = useState();
-  console.log(userLogueado);
 
   //get : trae todos los usuarios
   const getUsers = async () => {
@@ -21,15 +20,15 @@ const UsersContext = ({ children }) => {
     }
   };
 
-
   //post : loguear un usuario
-  const login = async (email, contrasenia) =>{
+  const login = async (email, contrasenia) => {
     console.log(email, contrasenia, "login Context");
+
     const response = await axios.post("http://localhost:8081/api/login", {
       email,
       contrasenia,
-    });    
-    
+    });
+
     const jwtToken = response.data.data.token;
     const jwtDecode = jwt_decode(jwtToken);
 
@@ -39,29 +38,29 @@ const UsersContext = ({ children }) => {
       apellido: jwtDecode.apellido,
       email: jwtDecode.email,
       telefono: jwtDecode.telefono,
-      rol: jwtDecode.rol,
+      rolUsuario: jwtDecode.rolUsuario,
     };
 
     localStorage.setItem("user", JSON.stringify(user));
     setUserLogueado(user);
     console.log(user);
+    console.log(userLogueado);
 
-    if (user.rol === "admin") {
+    if (user.rolUsuario === "admin") {
       window.location.href = "/administracion";
-    }else if (user.rol === "usuario"){
+    } else if (user.rolUsuario === "usuario") {
       window.location.href = "/reservas";
-    }else if (response.status === 400){
+    } else {
       Swal.fire({
         icon: "error",
         title: "Error!",
-        text: response.response.data,
+        text: "Usuario y/o contraseña incorrectos!",
         confirmButtonColor: "#C73333",
         background: "#31302F",
         color: "white",
         backdrop: `rgba(0,0,14,0.4)`,
       });
-     
-    } 
+    }
   };
 
   //logout: desloguea el usuario actual
@@ -90,7 +89,7 @@ const UsersContext = ({ children }) => {
   //put : edita un usuario
 
   const updateUsers = async (updatedUser) => {
-    console.log(updatedUser, "updateUser")
+    console.log(updatedUser, "updateUser");
     try {
       await axios.put(
         `http://localhost:8081/api/updateUser/${updatedUser._id}`,
@@ -98,8 +97,8 @@ const UsersContext = ({ children }) => {
       );
       const newUsers = users.map((User) =>
         User._id === updatedUser._id ? updatedUser : User
-      ); 
-      setUsers(newUsers);     
+      );
+      setUsers(newUsers);
     } catch (error) {
       console.log(error.response);
     }
@@ -108,7 +107,7 @@ const UsersContext = ({ children }) => {
   //delete: elimina un usuario
 
   const deleteUser = async (id) => {
-    console.log(id);      
+    console.log(id);
     try {
       await axios.delete(`http://localhost:8081/api/deleteUser/${id}`);
       const newUsers = users.filter((user) => user._id !== id);
@@ -127,7 +126,7 @@ const UsersContext = ({ children }) => {
       value={{
         users,
         setUsers,
-        getUsers,    
+        getUsers,
         updateUsers,
         deleteUser,
         login,
@@ -140,13 +139,3 @@ const UsersContext = ({ children }) => {
 };
 
 export default UsersContext;
-
-
-/*   Swal.fire({
-          icon: "error",
-          title: "Usuario y/o contraseña incorrectos!",
-          confirmButtonColor: "#C73333",
-          background: "#31302F",
-          color: "white",
-          backdrop: `rgba(0,0,14,0.4)`,
-        }); */
