@@ -1,6 +1,6 @@
 import { Container, Nav, Navbar, Modal, Dropdown } from "react-bootstrap";
 import { useState, useContext } from "react";
-import { UsuariosContext } from "../../context/UsersContext";
+import { UsuariosContext } from "../../Context/UsersContext";
 import logo from "../../Image/HEADER-IMAGE/restoCodeLogo.png";
 import ModalInicarSesion from "../MODAL INICAR-SESION/ModalInicarSesion";
 import ModalUserReservas from "../USER-ICON/ModalUserReservas";

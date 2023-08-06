@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { UsuariosContext } from "../../context/UsersContext";
+import { UsuariosContext } from "../../Context/UsersContext";
 import Swal from "sweetalert2";
 
 // eslint-disable-next-line react/prop-types
