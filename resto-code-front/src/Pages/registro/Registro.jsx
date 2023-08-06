@@ -51,6 +51,7 @@ const Registro = () => {
           contrasenia: "",
           rol: "usuario",
         });
+        users.push(DataUser);
         Swal.fire({
           icon: "success",
           title: "¡Listo!",
