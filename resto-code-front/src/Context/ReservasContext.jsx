@@ -12,7 +12,6 @@ const ReservContext = ({ children }) => {
   const getReservas = async () => {
     try {
       const response = await axios.get("http://localhost:8081/api/reservas");
-      console.log(response.data);
       setReservas(response.data);
     } catch (error) {
       console.log(error);

@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { Modal } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import { UsuariosContext } from "../../context/UsersContext";
+import { UsuariosContext } from "../../Context/UsersContext";
 import ModalInicarSesion from "../../Components/MODAL INICAR-SESION/ModalInicarSesion";
 import "./Registro.css";
 import axios from "axios";
@@ -28,7 +28,7 @@ const Registro = () => {
     setDataUser({ ...DataUser, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
 
     if (verificarCorreoExistente(DataUser.email)) {
@@ -39,7 +39,7 @@ const Registro = () => {
       return;
     } else {
       try {
-        const response = axios.post(
+        const response =  await axios.post(
           "http://localhost:8081/api/register",
           DataUser
         );
@@ -411,7 +411,7 @@ const Registro = () => {
                                   /* id="contraseniaUsuario" */
                                   className="form-control form-control-lg validadoss NoValidados tamanioImpustRegistro  w-20"
                                   placeholder="Contraseña"
-                                  pattern="[A-Za-z0-9!?-]{8,12}"
+                                  pattern="[A-Za-z0-9!?]{8,12}"
                                   title="Ingrese una contraseña válida (entre 8 y 12 caracteres)"
                                   required
                                   minLength="8"
