@@ -16,7 +16,6 @@ const TablaReservas = () => {
   const handleShow = () => setShow(true);
 
   const handleEdit = (user) => {
-    console.log(user, "Reserva desde tabla reservas.");
     setEditReserva(user);
     handleShow();
   };

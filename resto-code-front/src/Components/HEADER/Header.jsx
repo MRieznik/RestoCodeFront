@@ -29,7 +29,7 @@ const Header = () => {
   const iniciales = usuarioLogueado
     ? usuarioLogueado.nombre.split("")[0] +
       usuarioLogueado.apellido.split("")[0]
-    : console.log("No hay usuario logueado.");
+    : console.log();
 
   return (
     <>
