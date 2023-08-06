@@ -6,6 +6,7 @@ import axios from "axios";
 
 const Reservas = () => {
   const user = JSON.parse(localStorage.getItem("user")) || [];
+  console.log(user);
 
   const [formReserva, setFormReserva] = useState({
     nombre: user.nombre,
@@ -34,7 +35,7 @@ const Reservas = () => {
       fecha.setHours(0, 0, 0, 0);
       fechaActual.setHours(0, 0, 0, 0);
 
-      if (fecha < fechaActual) {
+      if (fecha+1 < fechaActual) {
         setErrorFecha("Elija una fecha válida");
       } else {
         setErrorFecha("");
@@ -114,15 +115,29 @@ const Reservas = () => {
         }
       });
     } catch (error) {
-      Swal.fire({
-        icon: "error",
-        title: "Error!",
-        text: "Ya existe una reserva con la misma fecha y hora!",
-        confirmButtonColor: "#C73333",
-        background: "#31302F",
-        color: "white",
-        backdrop: `rgba(0,0,14,0.4)`,
-      });
+      if (error.response) {
+        if (error.response.status === 400) {          
+          Swal.fire({
+            icon: "error",
+            title: "Error!",
+            text: "No se puede reservar en un horario anterior al actual!",
+            confirmButtonColor: "#C73333",
+            background: "#31302F",
+            color: "white",
+            backdrop: `rgba(0,0,14,0.4)`,
+          });
+        } else if (error.response.status === 409) {
+          Swal.fire({
+            icon: "error",
+            title: "Error!",
+            text: "Ya existe una reserva con la misma fecha y hora!",
+            confirmButtonColor: "#C73333",
+            background: "#31302F",
+            color: "white",
+            backdrop: `rgba(0,0,14,0.4)`,
+          });
+        }
+      }
     }
   };
 

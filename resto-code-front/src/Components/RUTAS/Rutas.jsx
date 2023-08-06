@@ -5,7 +5,7 @@ import Registro from "../../Pages/REGISTRO/Registro";
 import Galeria from "../../Pages/GALERIA/Galeria";
 import Error404 from "../../Pages/ERROR404/error404";
 import Administracion from "../../Pages/ADMINISTRADOR/Administracion";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import ModalInicarSesion from "../MODAL INICAR-SESION/ModalInicarSesion";
 
 const Rutas = () => {
