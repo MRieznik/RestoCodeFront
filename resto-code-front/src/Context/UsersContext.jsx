@@ -9,7 +9,7 @@ export const UsuariosContext = createContext();
 const UsersContext = ({ children }) => {
   const [users, setUsers] = useState();
   const [userLogueado, setUserLogueado] = useState();
-
+  
   //get : trae todos los usuarios
   const getUsers = async () => {
     try {

@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { Col, Container, Row, Button } from "react-bootstrap";
-import { UsuariosContext } from "../../context/UsersContext";
+import { UsuariosContext } from "../../Context/UsersContext";
 import "./ModalInicarSesion.css";
 import Swal from "sweetalert2";
 
