@@ -5,18 +5,19 @@ import Registro from "../../Pages/REGISTRO/Registro";
 import Galeria from "../../Pages/GALERIA/Galeria";
 import Error404 from "../../Pages/ERROR404/error404"; 
 import Administracion from "../../Pages/ADMINISTRADOR/Administracion";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import ModalInicarSesion from "../MODAL INICAR-SESION/ModalInicarSesion";
+import { useContext } from "react";
+import { UsuariosContext } from "../../context/UsersContext";
 
 const Rutas = () => {
+  const { userLogueado } = useContext(UsuariosContext);
   return (
     <>
       <Routes>
         <Route path="/" onClick={<ModalInicarSesion />} element={<Home />} />
         <Route
-          path="/reservas"
-          onClick={<ModalInicarSesion />}
-          element={<Reservas />}
+          path="/reservas" element = {userLogueado ? <Reservas /> : <Navigate to="/"/>}
         />
         <Route
           path="/galeria"
