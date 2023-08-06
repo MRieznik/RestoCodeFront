@@ -411,7 +411,7 @@ const Registro = () => {
                                   /* id="contraseniaUsuario" */
                                   className="form-control form-control-lg validadoss NoValidados tamanioImpustRegistro  w-20"
                                   placeholder="Contraseña"
-                                  pattern="[A-Za-z0-9!?-]{8,12}"
+                                  pattern="[A-Za-z0-9!?]{8,12}"
                                   title="Ingrese una contraseña válida (entre 8 y 12 caracteres)"
                                   required
                                   minLength="8"
