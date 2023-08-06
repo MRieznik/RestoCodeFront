@@ -1,4 +1,4 @@
-import "./Error404.css";
+import "./error404.css";
 import imagenHamburugesaMordida from "../../Image/ERROR404/hamburguesaMordida.png";
 import homero404 from "../../Image/ERROR404/homeroError404.png";
 import { useNavigate } from "react-router-dom";
