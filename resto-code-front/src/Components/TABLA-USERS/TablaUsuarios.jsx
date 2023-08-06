@@ -16,7 +16,6 @@ const TablaUsuarios = () => {
   const handleShow = () => setShow(true);
 
   const handleEdit = (user) => {
-    console.log(user, "Usuario desde tabla usuarios.");
     setEditUser(user);
     handleShow();
   };

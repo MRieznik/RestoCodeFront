@@ -3,20 +3,24 @@ import Reservas from "../../Pages/RESERVAS/reservas";
 import Nosotros from "../../Pages/NOSOTROS/Nosotros";
 import Registro from "../../Pages/REGISTRO/Registro";
 import Galeria from "../../Pages/GALERIA/Galeria";
-import Error404 from "../../Pages/ERROR404/error404"; 
+import Error404 from "../../Pages/ERROR404/error404";
 import Administracion from "../../Pages/ADMINISTRADOR/Administracion";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import ModalInicarSesion from "../MODAL INICAR-SESION/ModalInicarSesion";
 
 const Rutas = () => {
+  const usuarioLogueado = JSON.parse(localStorage.getItem("user"));
+  const esAdmin = usuarioLogueado
+    ? usuarioLogueado.rolUsuario === "admin"
+    : false;
+
   return (
     <>
       <Routes>
         <Route path="/" onClick={<ModalInicarSesion />} element={<Home />} />
         <Route
           path="/reservas"
-          onClick={<ModalInicarSesion />}
-          element={<Reservas />}
+          element={usuarioLogueado ? <Reservas /> : <Navigate to="/" />}
         />
         <Route
           path="/galeria"
@@ -33,7 +37,11 @@ const Rutas = () => {
           onClick={<ModalInicarSesion />}
           element={<Registro />}
         />
-        <Route path="/administracion" element={<Administracion />} />
+        <Route
+          path="/administracion"
+          element={esAdmin ? <Administracion /> : <Navigate to="/" />}
+        />
+
         <Route path="/error404" element={<Error404 />}></Route>
       </Routes>
     </>

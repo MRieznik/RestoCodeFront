@@ -15,7 +15,6 @@ const ModalUserReservas = () => {
           reserva.apellido === usuarioLogueado.apellido
       )
     : [];
-  console.log(userReserva);
 
   const handleDelete = (id) => {
     Swal.fire({

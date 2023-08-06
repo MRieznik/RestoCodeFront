@@ -243,6 +243,9 @@
   .contendorFrases {
     height: 8rem;
   }
+  .mensajeConciencia{
+    text-align: center;
+  }
   .tituloDePresentacionMenu {
     font-size: 2rem;
   }

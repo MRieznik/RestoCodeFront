@@ -6,7 +6,6 @@ import axios from "axios";
 
 const Reservas = () => {
   const user = JSON.parse(localStorage.getItem("user")) || [];
-  console.log(user);
 
   const [formReserva, setFormReserva] = useState({
     nombre: user.nombre,
