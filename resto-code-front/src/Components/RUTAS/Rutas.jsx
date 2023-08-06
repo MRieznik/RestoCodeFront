@@ -20,7 +20,7 @@ const Rutas = () => {
         <Route path="/" onClick={<ModalInicarSesion />} element={<Home />} />
         <Route
           path="/reservas"
-          element={usuarioLogueado ? <Reservas /> : <Navigate to="/" />}
+          element={usuarioLogueado ? <Reservas /> : <Navigate to="/error404" />}
         />
         <Route
           path="/galeria"
@@ -39,9 +39,8 @@ const Rutas = () => {
         />
         <Route
           path="/administracion"
-          element={esAdmin ? <Administracion /> : <Navigate to="/" />}
+          element={esAdmin ? <Administracion /> : <Navigate to="/error404" />}
         />
-
         <Route path="/error404" element={<Error404 />}></Route>
       </Routes>
     </>

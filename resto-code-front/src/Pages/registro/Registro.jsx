@@ -28,7 +28,7 @@ const Registro = () => {
     setDataUser({ ...DataUser, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (verificarCorreoExistente(DataUser.email)) {
@@ -39,7 +39,7 @@ const Registro = () => {
       return;
     } else {
       try {
-        const response =  await axios.post(
+        const response = await axios.post(
           "http://localhost:8081/api/register",
           DataUser
         );
