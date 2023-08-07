@@ -10,13 +10,11 @@
   flex-direction: column;
 }
 .contenedor404 {
-  border:  green solid 1px;
   height: 40rem;
   display: flex;
   justify-content: center;
 }
 .contenedorHomero {
-  border: red solid 1px;
   width: 23%;
   height: 40rem;
 }
@@ -29,7 +27,6 @@
   width: 50%;
 }
 .contenedorLetras404 {
-  border: blue solid 1px  ;
   width: 100%;
   height: 65%;
   display: flex;
@@ -80,101 +77,788 @@
   font-size: 4.8rem;
 }
 /*------------------ RESPONSIVE ------------------------- */
-/* @media (min-width: 360px) and (max-width: 914px) {
-  .contenedor404 {
-    border:  green solid 1px;
-    height: 36.4rem;
-    display: flex;
-    justify-content: center;
-    justify-content: space-between !important;
+@media (width: 375px) and (height: 667px) {
+  .contenedorPrincipalError{
+    height: 30rem;
   }
   .contenedorHomero {
-    width: 0;
-    height: 0;
-    visibility: hidden;
+    display: none;
   }
-  .letras404 {
-    width: 100%;
+  .contenedor404 {
+    height: 15rem;
+    display: flex;
+    justify-content: center;
   }
   .contenedorLetras404 {
     width: 100%;
-    height: 40%;
+    height: 65%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+  .contenedorLetras404 img {
+    width: 10rem;
+    height: 10rem;
+  }
   .cuatro {
     margin: 0;
-    color: white;
-    padding-top: 5rem;
-    font-size: 16rem;
+    color: rgb(255, 255, 255);
+    font-size: 10rem;
     font-family: "Bebas Neue";
-  }
-  .contenedorLetras404 img {
-    margin-top: 5rem;
-    width: 9rem;
-    height: 9rem;
   }
   .contenedorBoton {
-    margin-top: 5rem;
+    padding: 4px;
+    display: flex;
+    justify-content: center;
   }
   .boton-error {
-    width: 90%;
-    font-size: 1.5rem;
-    height: 5rem;
-    font-family: "Bebas Neue";
-    background-color: #1d0c20 !important;
-    color: white !important;
-    padding: 6px 10px 6px 10px;
-    border: 2px solid #651f71 !important;
-    transition: 0.2s;
-    border-radius: 3px;
-  }
-  .contenedorTextoError {
-    height: 5rem;
-  }
-  .contenedorTextoError h2 {
-    font-size: 3rem;
-  }
-} */
-@media (width: 1024px) and (height: 600px) {
-  .cuatro {
-    margin: 0;
-    color: white;
-    padding-top: 5rem;
-    font-size: 16rem;
-    font-family: "Bebas Neue";
-  }
-  .contenedorLetras404{
-    height: 15rem;
-  }
-  .contenedorHomero{
-    height: 20rem;
-  }
-  .contenedor404{
-    height: 21rem;
-  }
-  .contenedorLetras404 img {
-    margin-top: 5rem;
-    width: 9rem;
-    height: 9rem;
-  }
-  .boton-error {
-    /* width: 50%; */
     font-size: 1.5rem;
     height: 3rem;
+  }
+  .contenedorTextoError {
+    width: 100%;
+    height: 23%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
     font-family: "Bebas Neue";
-    background-color: #1d0c20 !important;
-    color: white !important;
-    padding: 6px 10px 6px 10px;
-    border: 2px solid #651f71 !important;
-    transition: 0.2s;
-    border-radius: 3px;
   }
   .contenedorTextoError h2 {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
   }
 }
-@media (min-width: 1920px) and (min-height: 1080px) {
-
-}
+  @media (width: 414px) and (height: 896px) {
+    .contenedorPrincipalError{
+      height: 44.2rem;
+    }
+    .contenedorHomero {
+      display: none;
+    }
+    .contenedor404 {
+      height: 30rem;
+      display: flex;
+      justify-content: center;
+    }
+    .contenedorLetras404 {
+      padding-top: 4rem;
+      width: 100%;
+      height: 65%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .contenedorLetras404 img {
+      width: 12rem;
+      height: 12rem;
+    }
+    .cuatro {
+      margin: 0;
+      color: rgb(255, 255, 255);
+      font-size: 12rem;
+      font-family: "Bebas Neue";
+    }
+    .contenedorBoton {
+      margin-top: 4rem;
+      display: flex;
+      justify-content: center;
+    }
+    .boton-error {
+      font-size: 2rem;
+      height: 4rem;
+    }
+    .contenedorTextoError {
+      width: 100%;
+      height: 23%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-family: "Bebas Neue";
+    }
+    .contenedorTextoError h2 {
+      font-size: 2.5rem;
+    }
+  }
+    @media (width: 414px) and (height: 896px) {
+      .contenedorPrincipalError{
+        height: 44.2rem;
+      }
+      .contenedorHomero {
+        display: none;
+      }
+      .contenedor404 {
+        height: 30rem;
+        display: flex;
+        justify-content: center;
+      }
+      .contenedorLetras404 {
+        padding-top: 4rem;
+        width: 100%;
+        height: 65%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .contenedorLetras404 img {
+        width: 12rem;
+        height: 12rem;
+      }
+      .cuatro {
+        margin: 0;
+        color: rgb(255, 255, 255);
+        font-size: 12rem;
+        font-family: "Bebas Neue";
+      }
+      .contenedorBoton {
+        margin-top: 4rem;
+        display: flex;
+        justify-content: center;
+      }
+      .boton-error {
+        font-size: 2rem;
+        height: 4rem;
+      }
+      .contenedorTextoError {
+        width: 100%;
+        height: 23%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: "Bebas Neue";
+      }
+      .contenedorTextoError h2 {
+        font-size: 2.5rem;
+      }   
+    }
+    @media (width: 390px) and (height: 844px) {
+      .contenedorPrincipalError{
+        height: 41rem;
+      }
+      .contenedorHomero {
+        display: none;
+      }
+      .contenedor404 {
+        height: 30rem;
+        display: flex;
+        justify-content: center;
+      }
+      .contenedorLetras404 {
+        padding-top: 4rem;
+        width: 100%;
+        height: 65%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .contenedorLetras404 img {
+        width: 12rem;
+        height: 12rem;
+      }
+      .cuatro {
+        margin: 0;
+        color: rgb(255, 255, 255);
+        font-size: 12rem;
+        font-family: "Bebas Neue";
+      }
+      .contenedorBoton {
+        margin-top: 4rem;
+        display: flex;
+        justify-content: center;
+      }
+      .boton-error {
+        font-size: 2rem;
+        height: 4rem;
+      }
+      .contenedorTextoError {
+        width: 100%;
+        height: 23%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: "Bebas Neue";
+      }
+      .contenedorTextoError h2 {
+        font-size: 2.5rem;
+      }
+    }
+    @media (width: 393px) and (height: 851px) {
+      .contenedorPrincipalError{
+        height: 41.5rem;
+      }
+      .contenedorHomero {
+        display: none;
+      }
+      .contenedor404 {
+        height: 30rem;
+        display: flex;
+        justify-content: center;
+      }
+      .contenedorLetras404 {
+        padding-top: 4rem;
+        width: 100%;
+        height: 65%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .contenedorLetras404 img {
+        width: 12rem;
+        height: 12rem;
+      }
+      .cuatro {
+        margin: 0;
+        color: rgb(255, 255, 255);
+        font-size: 12rem;
+        font-family: "Bebas Neue";
+      }
+      .contenedorBoton {
+        margin-top: 4rem;
+        display: flex;
+        justify-content: center;
+      }
+      .boton-error {
+        font-size: 2rem;
+        height: 4rem;
+      }
+      .contenedorTextoError {
+        width: 100%;
+        height: 23%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: "Bebas Neue";
+      }
+      .contenedorTextoError h2 {
+        font-size: 2.5rem;
+      }
+    }
+    @media (width: 360px) and (height: 740px) {
+      .contenedorPrincipalError{
+        height: 34.5rem;
+      }
+      .contenedorHomero {
+        display: none;
+      }
+      .contenedor404 {
+        height: 30rem;
+        display: flex;
+        justify-content: center;
+      }
+      .contenedorLetras404 {
+        padding-top: 4rem;
+        width: 100%;
+        height: 65%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .contenedorLetras404 img {
+        width: 12rem;
+        height: 12rem;
+      }
+      .cuatro {
+        margin: 0;
+        color: rgb(255, 255, 255);
+        font-size: 12rem;
+        font-family: "Bebas Neue";
+      }
+      .contenedorBoton {
+        margin-top: 4rem;
+        display: flex;
+        justify-content: center;
+      }
+      .boton-error {
+        font-size: 1.5rem;
+        height: 4rem;
+      }
+      .contenedorTextoError {
+        width: 100%;
+        height: 23%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: "Bebas Neue";
+      }
+      .contenedorTextoError h2 {
+        font-size: 2.5rem;
+      }
+    }
+    @media (width: 412px) and (height: 915px) {
+      .contenedorPrincipalError{
+        height: 45.4rem;
+      }
+      .contenedorHomero {
+        display: none;
+      }
+      .contenedor404 {
+        height: 30rem;
+        display: flex;
+        justify-content: center;
+      }
+      .contenedorLetras404 {
+        padding-top: 4rem;
+        width: 100%;
+        height: 65%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .contenedorLetras404 img {
+        width: 12rem;
+        height: 12rem;
+      }
+      .cuatro {
+        margin: 0;
+        color: rgb(255, 255, 255);
+        font-size: 12rem;
+        font-family: "Bebas Neue";
+      }
+      .contenedorBoton {
+        margin-top: 4rem;
+        display: flex;
+        justify-content: center;
+      }
+      .boton-error {
+        font-size: 2rem;
+        height: 4rem;
+      }
+      .contenedorTextoError {
+        width: 100%;
+        height: 23%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: "Bebas Neue";
+      }
+      .contenedorTextoError h2 {
+        font-size: 2.5rem;
+      }
+    }
+    @media (width: 820px) and (height: 1180px) {
+      .contenedorPrincipalError{
+        padding-top: 7rem;
+        height: 62rem;
+      }
+      .contenedorHomero {
+        display: none;
+      }
+      .contenedor404 {
+        height: 30rem;
+        display: flex;
+        justify-content: center;
+      }
+      .contenedorLetras404 {
+        padding-top: 5rem;
+        width: 100%;
+        height: 65%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .contenedorLetras404 img {
+        width: 15rem;
+        height: 15rem;
+      }
+      .cuatro {
+        margin: 0;
+        color: rgb(255, 255, 255);
+        font-size: 15rem;
+        font-family: "Bebas Neue";
+      }
+      .contenedorBoton {
+        margin-top: 4rem;
+        display: flex;
+        justify-content: center;
+      }
+      .boton-error {
+        font-size: 3rem;
+        height: 5rem;
+      }
+      .contenedorTextoError {
+        width: 100%;
+        height: 23%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: "Bebas Neue";
+      }
+      .contenedorTextoError h2 {
+        font-size: 4rem;
+      }
+    }
+    @media (width: 768px) and (height: 1024px) {
+      .contenedorPrincipalError{
+        padding-top: 7rem;
+        height: 52.2rem;
+      }
+      .contenedorHomero {
+        display: none;
+      }
+      .contenedor404 {
+        height: 30rem;
+        display: flex;
+        justify-content: center;
+      }
+      .contenedorLetras404 {
+        padding-top: 5rem;
+        width: 100%;
+        height: 65%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .contenedorLetras404 img {
+        width: 15rem;
+        height: 15rem;
+      }
+      .cuatro {
+        margin: 0;
+        color: rgb(255, 255, 255);
+        font-size: 15rem;
+        font-family: "Bebas Neue";
+      }
+      .contenedorBoton {
+        margin-top: 4rem;
+        display: flex;
+        justify-content: center;
+      }
+      .boton-error {
+        font-size: 3rem;
+        height: 5rem;
+      }
+      .contenedorTextoError {
+        width: 100%;
+        height: 23%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: "Bebas Neue";
+      }
+      .contenedorTextoError h2 {
+        font-size: 4rem;
+      }
+    }
+    @media (width: 912px) and (height: 1368px) {
+      .contenedorPrincipalError{
+        padding-top: 14rem;
+        height: 73.7rem;
+      }
+      .contenedorHomero {
+        display: none;
+      }
+      .contenedor404 {
+        height: 30rem;
+        display: flex;
+        justify-content: center;
+      }
+      .contenedorLetras404 {
+        padding-top: 5rem;
+        width: 100%;
+        height: 65%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .contenedorLetras404 img {
+        width: 15rem;
+        height: 15rem;
+      }
+      .cuatro {
+        margin: 0;
+        color: rgb(255, 255, 255);
+        font-size: 15rem;
+        font-family: "Bebas Neue";
+      }
+      .contenedorBoton {
+        margin-top: 4rem;
+        display: flex;
+        justify-content: center;
+      }
+      .boton-error {
+        font-size: 3rem;
+        height: 5rem;
+      }
+      .contenedorTextoError {
+        width: 100%;
+        height: 23%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: "Bebas Neue";
+      }
+      .contenedorTextoError h2 {
+        font-size: 4rem;
+      }
+    }
+    @media (width: 540px) and (height: 720px) {
+      .contenedorPrincipalError{
+        height: 33.2rem;
+      }
+      .contenedorHomero {
+        display: none;
+      }
+      .contenedor404 {
+        height: 30rem;
+        display: flex;
+        justify-content: center;
+      }
+      .contenedorLetras404 {
+        padding-top: 5rem;
+        width: 100%;
+        height: 65%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .contenedorLetras404 img {
+        width: 15rem;
+        height: 15rem;
+      }
+      .cuatro {
+        margin: 0;
+        color: rgb(255, 255, 255);
+        font-size: 15rem;
+        font-family: "Bebas Neue";
+      }
+      .contenedorBoton {
+        margin-top: 4rem;
+        display: flex;
+        justify-content: center;
+      }
+      .boton-error {
+        font-size: 3rem;
+        height: 5rem;
+      }
+      .contenedorTextoError {
+        width: 100%;
+        height: 23%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: "Bebas Neue";
+      }
+      .contenedorTextoError h2 {
+        font-size: 2.5rem;
+      }
+    }
+    @media (width: 820px) and (height: 1180px) {
+      .contenedorPrincipalError{
+        padding-top: 7rem;
+        height: 62rem;
+      }
+      .contenedorHomero {
+        display: none;
+      }
+      .contenedor404 {
+        height: 30rem;
+        display: flex;
+        justify-content: center;
+      }
+      .contenedorLetras404 {
+        padding-top: 5rem;
+        width: 100%;
+        height: 65%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .contenedorLetras404 img {
+        width: 15rem;
+        height: 15rem;
+      }
+      .cuatro {
+        margin: 0;
+        color: rgb(255, 255, 255);
+        font-size: 15rem;
+        font-family: "Bebas Neue";
+      }
+      .contenedorBoton {
+        margin-top: 4rem;
+        display: flex;
+        justify-content: center;
+      }
+      .boton-error {
+        font-size: 3rem;
+        height: 5rem;
+      }
+      .contenedorTextoError {
+        width: 100%;
+        height: 23%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: "Bebas Neue";
+      }
+      .contenedorTextoError h2 {
+        font-size: 4rem;
+      }
+    }
+    @media (width: 412px) and (height: 914px) {
+      .contenedorPrincipalError{
+        height: 45.3rem;
+      }
+      .contenedorHomero {
+        display: none;
+      }
+      .contenedor404 {
+        height: 30rem;
+        display: flex;
+        justify-content: center;
+      }
+      .contenedorLetras404 {
+        padding-top: 5rem;
+        width: 100%;
+        height: 65%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .contenedorLetras404 img {
+        width: 15rem;
+        height: 15rem;
+      }
+      .cuatro {
+        margin: 0;
+        color: rgb(255, 255, 255);
+        font-size: 15rem;
+        font-family: "Bebas Neue";
+      }
+      .contenedorBoton {
+        margin-top: 4rem;
+        display: flex;
+        justify-content: center;
+      }
+      .boton-error {
+        font-size: 1.5rem;
+        height: 5rem;
+      }
+      .contenedorTextoError {
+        width: 100%;
+        height: 23%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: "Bebas Neue";
+      }
+      .contenedorTextoError h2 {
+        font-size: 3rem;
+      }
+    }
+    @media (width: 1024px) and (height: 600px) {
+      .contenedorPrincipalError{
+        height: 25.7rem;
+      }
+      .contenedorHomero {
+        display: none;
+      }
+      .contenedor404 {
+        height: 18rem;
+        display: flex;
+        justify-content: center;
+      }
+      .contenedorLetras404 {
+        padding-top: 5rem;
+        width: 100%;
+        height: 65%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .contenedorLetras404 img {
+        width: 10rem;
+        height: 10rem;
+      }
+      .cuatro {
+        margin: 0;
+        color: rgb(255, 255, 255);
+        font-size: 10rem;
+        font-family: "Bebas Neue";
+      }
+      .contenedorBoton {
+        margin-top: 4rem;
+        display: flex;
+        justify-content: center;
+      }
+      .boton-error {
+        font-size: 1.5rem;
+        height: 3rem;
+      }
+      .contenedorTextoError {
+        width: 100%;
+        height: 23%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: "Bebas Neue";
+      }
+      .contenedorTextoError h2 {
+        font-size: 2rem;
+      }
+    }
+    @media (width: 1280px) and (height: 800px) {
+      .contenedorPrincipalError{
+        padding-top: 5rem;
+        height: 38.2rem;
+      }
+      .contenedorHomero {
+       height: 20rem;
+       width: 20rem;
+      }
+      .contenedor404 {
+        height: 20rem;
+        display: flex;
+        justify-content: center;
+      }
+      .contenedorLetras404 {
+        padding-top: 5rem;
+        width: 100%;
+        height: 65%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .contenedorLetras404 img {
+        width: 15rem;
+        height: 15rem;
+      }
+      .cuatro {
+        margin: 0;
+        color: rgb(255, 255, 255);
+        font-size: 15rem;
+        font-family: "Bebas Neue";
+      }
+      .contenedorBoton {
+        margin-top: 4rem;
+        display: flex;
+        justify-content: center;
+      }
+      .boton-error {
+        font-size: 2rem;
+        height: 4rem;
+      }
+      .contenedorTextoError {
+        width: 100%;
+        height: 23%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: "Bebas Neue";
+      }
+      .contenedorTextoError h2 {
+        font-size: 4rem;
+      }
+    }
