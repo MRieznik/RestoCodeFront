@@ -145,15 +145,24 @@
     font-size: 16rem;
     font-family: "Bebas Neue";
   }
+  .contenedorLetras404{
+    height: 15rem;
+  }
+  .contenedorHomero{
+    height: 20rem;
+  }
+  .contenedor404{
+    height: 21rem;
+  }
   .contenedorLetras404 img {
     margin-top: 5rem;
     width: 9rem;
     height: 9rem;
   }
   .boton-error {
-    width: 50%;
-    font-size: 2rem;
-    height: 4rem;
+    /* width: 50%; */
+    font-size: 1.5rem;
+    height: 3rem;
     font-family: "Bebas Neue";
     background-color: #1d0c20 !important;
     color: white !important;
