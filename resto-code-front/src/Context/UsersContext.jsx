@@ -9,7 +9,7 @@ export const UsuariosContext = createContext();
 const UsersContext = ({ children }) => {
   const [users, setUsers] = useState();
   const [userLogueado, setUserLogueado] = useState();
-  
+
   //get : trae todos los usuarios
   const getUsers = async () => {
     try {
@@ -22,6 +22,8 @@ const UsersContext = ({ children }) => {
 
   //post : loguear un usuario
   const login = async (email, contrasenia) => {
+    console.log(email, contrasenia, "login Context");
+
     const response = await axios.post("http://localhost:8081/api/login", {
       email,
       contrasenia,
@@ -41,6 +43,7 @@ const UsersContext = ({ children }) => {
 
     localStorage.setItem("user", JSON.stringify(user));
     setUserLogueado(user);
+   
 
     if (user.rolUsuario === "admin") {
       window.location.href = "/administracion";
@@ -85,6 +88,7 @@ const UsersContext = ({ children }) => {
   //put : edita un usuario
 
   const updateUsers = async (updatedUser) => {
+    console.log(updatedUser, "updateUser");
     try {
       await axios.put(
         `http://localhost:8081/api/updateUser/${updatedUser._id}`,
@@ -102,12 +106,25 @@ const UsersContext = ({ children }) => {
   //delete: elimina un usuario
 
   const deleteUser = async (id) => {
+    console.log(id);
     try {
       await axios.delete(`http://localhost:8081/api/deleteUser/${id}`);
       const newUsers = users.filter((user) => user._id !== id);
       setUsers(newUsers);
     } catch (error) {
-      console.log(error.response);
+     if (error.response) {
+        if (error.response.status === 400) {          
+          Swal.fire({
+            icon: "error",
+            title: "Error!",
+            text: "No se puede eliminar! hay una reserva asociada a este usuario.",
+            confirmButtonColor: "#C73333",
+            background: "#31302F",
+            color: "white",
+            backdrop: `rgba(0,0,14,0.4)`,
+          });
+        }
+      }
     }
   };
 

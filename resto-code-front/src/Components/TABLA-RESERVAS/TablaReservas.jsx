@@ -65,7 +65,7 @@ const TablaReservas = () => {
           </thead>
           <tbody>
             {reservas.map((reserva) => (
-              <tr key={reserva.id}>
+              <tr key={reserva._id}>
                 <td data-label="Nombre">
                   {reserva.nombre} {reserva.apellido}
                 </td>
