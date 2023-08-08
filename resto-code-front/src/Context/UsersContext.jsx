@@ -13,7 +13,7 @@ const UsersContext = ({ children }) => {
   //get : trae todos los usuarios
   const getUsers = async () => {
     try {
-      const response = await axios.get("http://localhost:8081/api/usuarios");
+      const response = await axios.get("https://restocode.onrender.com/api/usuarios");
       setUsers(response.data);
     } catch (error) {
       console.log(error);
@@ -24,7 +24,7 @@ const UsersContext = ({ children }) => {
   const login = async (email, contrasenia) => {
     console.log(email, contrasenia, "login Context");
 
-    const response = await axios.post("http://localhost:8081/api/login", {
+    const response = await axios.post("https://restocode.onrender.com/api/login", {
       email,
       contrasenia,
     });
@@ -91,7 +91,7 @@ const UsersContext = ({ children }) => {
     console.log(updatedUser, "updateUser");
     try {
       await axios.put(
-        `http://localhost:8081/api/updateUser/${updatedUser._id}`,
+        `https://restocode.onrender.com/api/updateUser/${updatedUser._id}`,
         updatedUser
       );
       const newUsers = users.map((User) =>
@@ -108,7 +108,7 @@ const UsersContext = ({ children }) => {
   const deleteUser = async (id) => {
     console.log(id);
     try {
-      await axios.delete(`http://localhost:8081/api/deleteUser/${id}`);
+      await axios.delete(`https://restocode.onrender.com/api/deleteUser/${id}`);
       const newUsers = users.filter((user) => user._id !== id);
       setUsers(newUsers);
     } catch (error) {

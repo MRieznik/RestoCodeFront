@@ -40,7 +40,7 @@ const Registro = () => {
     } else {
       try {
         const response = await axios.post(
-          "http://localhost:8081/api/register",
+          "https://restocode.onrender.com/api/register",
           DataUser
         );
         setDataUser({
