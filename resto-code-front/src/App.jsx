@@ -1,5 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Registro from './Pages/registro/Registro'
+import UsersContext from "../src/Context/UsersContext"
+import ReservasContext from "../src/Context/ReservasContext"
+import Header from "../src/Components/HEADER/Header"
+import Rutas from './Components/RUTAS/Rutas';
+import Footer from "../src/Components/FOOTER/Footer"
 
 function App() {
 
@@ -7,7 +11,13 @@ function App() {
 
   return (
     <>
-      <Registro />
+      <UsersContext>
+        <ReservasContext>
+            <Header />
+            <Rutas />
+            <Footer />
+        </ReservasContext>
+      </UsersContext>
     </>
   );
 }

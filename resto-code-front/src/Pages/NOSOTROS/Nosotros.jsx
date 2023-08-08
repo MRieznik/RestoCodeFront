@@ -180,7 +180,7 @@ const About = () => {
                 <h3>Sergio Dominguez </h3>
               </div>
               <div className="iconos_redes">
-                <a href="https://www.linkedin.com/mwlite/profile/me?trk=p_mwlite_profile_view-secondary_nav">
+                <a href="https://www.linkedin.com/in/sergio-dominguez-48552a20a/">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"

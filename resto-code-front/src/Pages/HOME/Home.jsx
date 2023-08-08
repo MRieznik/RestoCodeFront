@@ -1,11 +1,24 @@
-// import ContenidoIndex from "../../Components/CONTENIDO INDEX/ContenidoIndex"
 import "./Home.css";
-import cervezayhamburguesa from "C:/Users/Usuario/Desktop/RestoCodeFront/resto-code-front/src/Image/INDEX-IMAGE/video4.mp4";
-import cartabebidas from "C:/Users/Usuario/Desktop/RestoCodeFront/resto-code-front/src/Image/INDEX-IMAGE/cartaDeBebidas.png";
-import cartacomida from "C:/Users/Usuario/Desktop/RestoCodeFront/resto-code-front/src/Image/INDEX-IMAGE/cartasDeComidas.png";
-import qrwp from "C:/Users/Usuario/Desktop/RestoCodeFront/resto-code-front/src/Image/INDEX-IMAGE/whatsappQR.png";
+import cervezayhamburguesa from "../../Image/INDEX-IMAGE/video4.mp4";
+import cartabebidas from "../../Image/INDEX-IMAGE/cartaDeBebidas.png";
+import cartacomida from "../../Image/INDEX-IMAGE/cartasDeComidas.png";
+import qrwp from "../../Image/INDEX-IMAGE/whatsappQR.png";
+import ModalInicarSesion from "../../Components/MODAL INICAR-SESION/ModalInicarSesion";
+import { Modal } from "react-bootstrap";
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
+  const usuarioLogueado = JSON.parse(localStorage.getItem("user"));
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const iniciarSesion = () => {
+    handleShow();
+  };
+
   return (
     <>
       <main>
@@ -17,7 +30,22 @@ const Home = () => {
                 <h2>Cerveceria</h2>
               </div>
             </div>
-            <button className="botonReservarIndex">¡Reserva aqui!</button>
+            {usuarioLogueado === null ? (
+              <>
+                <button onClick={iniciarSesion} className="botonReservarIndex">
+                  ¡Reserva aqui!
+                </button>
+              </>
+            ) : (
+              <>
+                <button
+                  onClick={() => navigate("/reservas")}
+                  className="botonReservarIndex"
+                >
+                  ¡Reserva aqui!
+                </button>
+              </>
+            )}
           </div>
           <div className="imagenDeFondoIndex">
             <div className="sombraImagenInicioIndex"></div>
@@ -30,9 +58,25 @@ const Home = () => {
                   <h2>Cerveceria</h2>
                 </div>
               </div>
-              <button className="botonReservarIndexResponsive">
-                ¡Reserva aqui!
-              </button>
+              {usuarioLogueado === null ? (
+                <>
+                  <button
+                    onClick={iniciarSesion}
+                    className="botonReservarIndex"
+                  >
+                    ¡Reserva aqui!
+                  </button>
+                </>
+              ) : (
+                <>
+                  <button
+                    onClick={() => navigate("/reservas")}
+                    className="botonReservarIndex"
+                  >
+                    ¡Reserva aqui!
+                  </button>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -45,10 +89,10 @@ const Home = () => {
           </div>
           <div className="imagenDeAmbosMenus">
             <div className="menuUno">
-              <img src={cartabebidas} alt="" />
+              <img src={cartabebidas} alt="Carta bebidas" />
             </div>
             <div className="menuDos">
-              <img src={cartacomida} alt="" />
+              <img src={cartacomida} alt="Carta comidas" />
             </div>
           </div>
           <div className="contendorFrases">
@@ -70,7 +114,7 @@ const Home = () => {
               <h3>¡Vení a conocernos!</h3>
             </div>
           </div>
-          <div className="contendorContacto">
+          <div className="contendorContacto" id="Contacto">
             <h2>¿Necesitas comunicarte con nosotros?</h2>
             <h3>¡No dudes en ponerte en contacto!</h3>
             <div className="contendorDeMapaRedesSociales">
@@ -82,16 +126,29 @@ const Home = () => {
                 ></iframe>
                 <div className="contenedorRedesContacto">
                   <div className="cajaQrWp">
-                    <img src={qrwp} alt="" />
+                    <img src={qrwp} alt="Qr Whatsapp" />
                   </div>
                   <div className="cajaQrIg">
-                    {/* <img src={qrig} alt="" /> */}
+                    {/* <img src={qrig} alt="Qr Instagram" /> */}
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        {/* MODAL */}
+        <Modal
+          show={show}
+          onHide={handleClose}
+          className="ventanaModalInicarSesion"
+        >
+          <Modal.Header closeButton className="headerModal">
+            <Modal.Title>Ingresa tu usuario</Modal.Title>
+          </Modal.Header>
+          <Modal.Body className="bodyModal">
+            <ModalInicarSesion handleClose={handleClose} />
+          </Modal.Body>
+        </Modal>
       </main>
     </>
   );

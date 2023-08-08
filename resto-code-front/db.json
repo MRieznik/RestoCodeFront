@@ -1,54 +1,263 @@
 {
   "users": [
     {
-      "nombre": "Leonardo",
-      "apellido": "Ponzio",
-      "telefono": "381123777",
-      "email": "l@gmail.com",
-      "password": "123",
-      "id": 2
-    },
-    {
-      "nombre": "Juanfer",
-      "apellido": "Quintero",
-      "telefono": "381234567",
-      "email": "jf@gmail.com",
-      "password": "123",
-      "id": 3
-    },
-    {
-      "nombre": "Mariana",
+      "nombre": "Andrés",
       "apellido": "Cervantes",
-      "telefono": "3815678908",
-      "email": "m@gmail.com",
-      "password": "123",
-      "id": 4
+      "contrasenia": "Andres40",
+      "email": "ac@gmail.com",
+      "telefono": "3811222333",
+      "rolUsuario": "usuario",
+      "id": 8
+    },
+    {
+      "nombre": "Mariana Noemi",
+      "apellido": "Cervantes",
+      "contrasenia": "mita2023",
+      "email": "mc@gmail.com",
+      "telefono": "3812333444",
+      "rolUsuario": "usuario",
+      "id": 9
+    },
+    {
+      "nombre": "Carolina",
+      "apellido": "Guzman",
+      "contrasenia": "carolina33",
+      "email": "cv+g@gmail.com",
+      "telefono": "3513777888",
+      "rolUsuario": "usuario",
+      "id": 12
+    },
+    {
+      "nombre": "Silvina",
+      "apellido": "Cantos",
+      "contrasenia": "silvina55",
+      "email": "sc@gmail.com",
+      "telefono": "321456789",
+      "rolUsuario": "usuario",
+      "id": 13
+    },
+    {
+      "nombre": "Andres",
+      "apellido": "Iniesta",
+      "contrasenia": "iniesta99",
+      "email": "ai@gmail.com",
+      "telefono": "0043125689",
+      "rolUsuario": "usuario",
+      "id": 15
+    },
+    {
+      "nombre": "admin",
+      "apellido": "admin",
+      "contrasenia": "Admin123",
+      "email": "admin@gmail.com",
+      "telefono": "3513777888",
+      "rolUsuario": "admin",
+      "id": 17
+    },
+    {
+      "nombre": "juan ",
+      "apellido": "medina",
+      "contrasenia": "medina123",
+      "email": "medina@gmail.com",
+      "telefono": "3815468046",
+      "rolUsuario": "usuario",
+      "id": 19
+    },
+    {
+      "nombre": "jorge",
+      "apellido": "juarez",
+      "contrasenia": "jorge123",
+      "email": "jorge@gmail.com",
+      "telefono": "3815468047",
+      "rolUsuario": "usuario",
+      "id": 21
+    },
+    {
+      "nombre": "jose",
+      "apellido": "alderete",
+      "contrasenia": "joseal123",
+      "email": "joseal@gmail.com",
+      "telefono": "3815468050",
+      "rolUsuario": "usuario",
+      "id": 22
+    },
+    {
+      "nombre": "Sergio",
+      "apellido": "medina",
+      "contrasenia": "sergio1234",
+      "email": "sergio@gmail.com",
+      "telefono": "3815468055",
+      "rolUsuario": "usuario",
+      "id": 23
+    },
+    {
+      "nombre": "gabi",
+      "apellido": "fernandes",
+      "contrasenia": "gabi1234",
+      "email": "gabi@gmail.com",
+      "telefono": "3815468051",
+      "rolUsuario": "usuario",
+      "id": 25
+    },
+    {
+      "nombre": "Sergio daniel",
+      "apellido": "Dominguez",
+      "contrasenia": "sergio123",
+      "email": "sergiodominguez21sdd@gmail.com",
+      "telefono": "3815468044",
+      "rolUsuario": "usuario",
+      "id": 26
+    },
+    {
+      "nombre": "jorge",
+      "apellido": "acosta",
+      "contrasenia": "acosta123",
+      "email": "acosta@gmail.com",
+      "telefono": "3815468048",
+      "rolUsuario": "usuario",
+      "id": 27
+    },
+    {
+      "nombre": "alberto",
+      "apellido": "alonso",
+      "contrasenia": "alberto123",
+      "email": "alberto@gmail.com",
+      "telefono": "3815468049",
+      "rolUsuario": "usuario",
+      "id": 28
+    },
+    {
+      "nombre": "Nestor Nazaret",
+      "apellido": "Campos",
+      "contrasenia": "aaaaaaaaaaaa",
+      "email": "nazaretcampos27@gmail.com",
+      "telefono": "3816610091",
+      "rolUsuario": "usuario",
+      "id": 35
+    },
+    {
+      "nombre": "Cristina Noemi",
+      "apellido": "Villafañe",
+      "contrasenia": "cristina50",
+      "email": "cv@gmail.com",
+      "telefono": "3816445566",
+      "rolUsuario": "usuario",
+      "id": 36
+    },
+    {
+      "nombre": "Lebron",
+      "apellido": "James",
+      "contrasenia": "lebron33",
+      "email": "lj@gmail.com",
+      "telefono": "3816445577",
+      "rolUsuario": "usuario",
+      "id": 37
+    },
+    {
+      "nombre": "Rosa",
+      "apellido": "Clemente",
+      "contrasenia": "rosita123",
+      "email": "rcl@mail.com",
+      "telefono": "3814555666",
+      "rolUsuario": "usuario",
+      "id": 41
+    },
+    {
+      "nombre": "Karina",
+      "apellido": "Amaya",
+      "contrasenia": "karina123",
+      "email": "ka@gmail.com",
+      "telefono": "3817888999",
+      "rolUsuario": "usuario",
+      "id": 42
+    },
+    {
+      "email": "ka@gmail.com",
+      "contrasenia": "karina123",
+      "id": 43
     }
   ],
   "reservas": [
     {
-      "nombre": "Mariana",
+      "nombre": "alberto",
+      "apellido": "alonso",
+      "fecha": "2023-08-15",
+      "hora": "15:15",
+      "invitados": "8",
+      "comentarios": "cena cumple",
+      "id": 9
+    },
+    {
+      "nombre": "Sergio daniel",
+      "apellido": "Dominguez",
+      "fecha": "2023-08-23",
+      "hora": "22:58",
+      "invitados": "6",
+      "comentarios": "prueba 4",
+      "id": 10
+    },
+    {
+      "nombre": "juan ",
+      "apellido": "medina",
+      "fecha": "2023-08-03",
+      "hora": "22:59",
+      "invitados": "6",
+      "comentarios": "prueba5",
+      "id": 11
+    },
+    {
+      "nombre": "maga",
+      "apellido": "medina",
+      "fecha": "2023-08-09",
+      "hora": "21:59",
+      "invitados": "5",
+      "comentarios": "cumple",
+      "id": 12
+    },
+    {
+      "nombre": "Cristina Noemi del Valle",
+      "apellido": "Villafañe",
+      "fecha": "2023-08-05",
+      "hora": "13:30",
+      "invitados": "5",
+      "comentarios": "Aniversario",
+      "id": 14
+    },
+    {
+      "nombre": "Cristina Noemi del Valle",
+      "apellido": "Villafañe",
+      "fecha": "2023-08-25",
+      "hora": "21:15",
+      "invitados": "4",
+      "comentarios": "Cena",
+      "id": 15
+    },
+    {
+      "nombre": "Lebrom",
+      "apellido": "James",
+      "fecha": "2023-08-10",
+      "hora": "13:15",
+      "invitados": "4",
+      "comentarios": "Deporte",
+      "id": 17
+    },
+    {
+      "nombre": "Mariana Noemi",
       "apellido": "Cervantes",
       "fecha": "2023-08-25",
-      "hora": "13:15",
-      "comensales": "6",
-      "id": 6
-    },
-    {
-      "nombre": "Lionel",
-      "apellido": "Messi",
-      "fecha": "2023-09-21",
       "hora": "13:30",
-      "comensales": "8",
-      "id": 7
+      "invitados": "5",
+      "comentarios": "Cumple",
+      "id": 18
     },
     {
-      "nombre": "Sergio",
-      "apellido": "Busquets",
-      "fecha": "2023-10-12",
-      "hora": "12:15",
-      "comensales": "3",
-      "id": 8
+      "nombre": "Andres",
+      "apellido": "Iniesta",
+      "fecha": "2023-08-04",
+      "hora": "14:14",
+      "invitados": "2",
+      "comentarios": "Almuerzo",
+      "id": 19
     }
   ]
 }

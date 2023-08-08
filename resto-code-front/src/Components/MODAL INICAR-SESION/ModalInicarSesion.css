@@ -1,3 +1,9 @@
+.modalIniciarSesion {
+  font-family: "Bebas Neue", sans-serif;
+}
+.inputIniciarSesion {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
 .botonIniciarSesion {
   background-color: #1d0c20;
   border: 1px solid #651f71;

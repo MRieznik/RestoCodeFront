@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 export const ReservasContext = createContext(); //creamos el contexto
 
@@ -8,10 +9,10 @@ const ReservContext = ({ children }) => {
   //vamos a poner todo el crud de productos
   const [reservas, setReservas] = useState([]);
 
-  //get ----> trae todos los productos
+  //get ----> trae todas las reservas
   const getReservas = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/reservas");
+      const response = await axios.get("http://localhost:8081/api/reservas");
       console.log(response.data);
       setReservas(response.data);
     } catch (error) {
@@ -19,18 +20,39 @@ const ReservContext = ({ children }) => {
     }
   };
 
-
   //put ----> edita una reserva
 
   const updateReserva = async (reserva) => {
     try {
       await axios.put(
-        `http://localhost:8080/reservas/${reserva.id}`,
+        `http://localhost:8081/api/actualizarReserva/${reserva._id}`,
         reserva
       );
       await getReservas();
     } catch (error) {
-      console.log(error);
+      if (error.response) {
+        if (error.response.status === 400) {          
+          Swal.fire({
+            icon: "error",
+            title: "Error!",
+            text: "No se puede reservar en un dia/horario anterior al actual!",
+            confirmButtonColor: "#C73333",
+            background: "#31302F",
+            color: "white",
+            backdrop: `rgba(0,0,14,0.4)`,
+          });
+        } else if (error.response.status === 409) {
+          Swal.fire({
+            icon: "error",
+            title: "Error!",
+            text: "Ya existe una reserva con la misma fecha y hora!",
+            confirmButtonColor: "#C73333",
+            background: "#31302F",
+            color: "white",
+            backdrop: `rgba(0,0,14,0.4)`,
+          });
+        }
+      }
     }
   };
 
@@ -39,8 +61,8 @@ const ReservContext = ({ children }) => {
   const deleteReserva = async (id) => {
     console.log(id);
     try {
-      await axios.delete(`http://localhost:8080/reservas/${id}`);
-      const deleteReserva = reservas.filter((reserva) => reserva.id !== id);
+      await axios.delete(`http://localhost:8081/api/eliminarReserva/${id}`);
+      const deleteReserva = reservas.filter((reserva) => reserva._id !== id);
       setReservas(deleteReserva);
     } catch (error) {
       console.log(error);
@@ -55,9 +77,9 @@ const ReservContext = ({ children }) => {
     <ReservasContext.Provider
       value={{
         reservas,
-        setReservas,   
-        updateReserva,     
-        deleteReserva,        
+        setReservas,
+        updateReserva,
+        deleteReserva,
       }}
     >
       {children}

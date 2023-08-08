@@ -17,29 +17,28 @@ const FormUpdateUsuarios = ({ editUser, handleClose }) => {
     e.preventDefault();
     updateUsers(user);
     Swal.fire({
-      icon: 'warning',
-      title: 'Editar Usuario?',
+      icon: "warning",
+      title: "Editar Usuario?",
       showCancelButton: true,
-      confirmButtonText: 'Aceptar', 
-      cancelButtonText: 'Cancelar',
-      confirmButtonColor: '#651F71',
-      cancelButtonColor: '#C73333',
-      background: '#31302F',
-      color: 'white',
-      backdrop: `rgba(0,0,14,0.4)` 
-    }).then((result) => {        
+      confirmButtonText: "Aceptar",
+      cancelButtonText: "Cancelar",
+      confirmButtonColor: "#651F71",
+      cancelButtonColor: "#C73333",
+      background: "#31302F",
+      color: "white",
+      backdrop: `rgba(0,0,14,0.4)`,
+    }).then((result) => {
       if (result.isConfirmed) {
         handleClose();
       } else if (result.isDenied) {
-        return
+        return;
       }
-    })    
+    });
   };
 
   return (
     <>
       <Container>
-      
         <Row>
           <Col>
             <form onSubmit={handleEdit}>
@@ -98,7 +97,10 @@ const FormUpdateUsuarios = ({ editUser, handleClose }) => {
                 />
               </div>
 
-              <button type="submit" className="btn btn-outline botonEditarModal">
+              <button
+                type="submit"
+                className="btn btn-outline botonEditarModal"
+              >
                 {" "}
                 Editar Usuario{" "}
               </button>

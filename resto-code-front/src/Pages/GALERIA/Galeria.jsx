@@ -1,9 +1,8 @@
-import "../CONTENIDO GALERIA/ContenidoGaleria.css";
+import "./Galeria.css";
 import videoextreme from "../../Image/GALERIA-IMAGE/videoPrueba.mp4";
 import videocerveza from "../../Image/GALERIA-IMAGE/videocerveza.mp4";
 import videopizza from "../../Image/GALERIA-IMAGE/videoPizzaGaleria.mp4";
 import videohamburguesasimple from "../../Image/GALERIA-IMAGE/videoHamburGaleria.mp4";
-// import imagenbarra from "../../Image/GALERIA-IMAGE/martiniGaleria.jpg"
 
 const Galeria = () => {
   return (
@@ -34,7 +33,6 @@ const Galeria = () => {
             muted
           ></video>
         </div>
-
         <div className="presentacionGuarnicion">
           <div className="contenedorImagenArosDeCebolla">
             <div className="sombraPersonaCerveza"></div>
@@ -51,7 +49,6 @@ const Galeria = () => {
             <h4>Para acompañar tus comidas</h4>
           </div>
         </div>
-
         <div className="contenedorBloqueTres">
           <video
             className="videoPizza"

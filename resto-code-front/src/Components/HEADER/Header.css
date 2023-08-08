@@ -4,9 +4,9 @@
   border-bottom: 2px solid #651f71;
   position: sticky;
   top: 0;
+  z-index: 2;
 }
 .contenedorLogo {
-  /* border: 1px solid red; */
   width: 5rem;
   height: 5.5rem;
   border-radius: 90%;
@@ -17,13 +17,15 @@
 }
 
 .NavLink {
-  /* border: 1px solid rgb(64, 89, 201); */
   color: white;
   transition: 0.2s;
   font-size: 1.2rem;
   letter-spacing: 0.9px;
   text-align: center;
   font-family: "Bebas Neue", sans-serif;
+}
+.nav-link:focus {
+  color: white !important;
 }
 .NavLink:hover {
   color: #68b2f8;
@@ -32,26 +34,60 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 12.5rem;
+  width: fit-content;
   font-family: "Bebas Neue", sans-serif;
 }
 .headerModal {
   color: #fff;
-  background-color: #181818;
+  background-color: #212529;
   font-family: "Bebas Neue", sans-serif;
   border-radius: 2px 2px 0 0;
   border-bottom: 2px solid #651f71;
 }
 .bodyModal {
   color: #fff;
-  background-color: #181818;
+  background-color: #212529;
   font-family: "Bebas Neue", sans-serif;
   font-size: 18px;
+}
+.user-icon {   
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #007bff; 
+  color: #ffffff;
+  font-size: 1.7rem;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.desplegable{
+  color: white;
+  transition: 0.2s;
+  font-size: 1.2rem;
+  letter-spacing: 1.2px;
+  text-align: center;  font-family: "Bebas Neue", sans-serif;
+
+}
+
+.dropMenu{
+  font-size: 1.2rem;
+  text-align: center;
 }
 /*------------------ RESPONSIVE ------------------------- */
 @media (min-width: 360px) and (max-width: 914px) {
   .contenedor-iniciarSesion-registrarse {
     width: 100%;
-    justify-content: space-evenly;
+    justify-content: center;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  .contenedor-iniciarSesion-registrarse {
+    width: 100%;
+    justify-content: center;
   }
 }

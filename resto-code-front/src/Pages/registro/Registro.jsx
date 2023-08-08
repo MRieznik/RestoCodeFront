@@ -1,50 +1,101 @@
-import React, { useState } from "react";
-import { Button } from "react-bootstrap";
-import axios from 'axios';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { useState, useContext } from "react";
+import { Modal } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { UsuariosContext } from "../../Context/UsersContext";
+import ModalInicarSesion from "../../Components/MODAL INICAR-SESION/ModalInicarSesion";
 import "./Registro.css";
+import axios from "axios";
+import Swal from "sweetalert2";
 
+// eslint-disable-next-line react/prop-types
 const Registro = () => {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
- const handleChange = (e) => {
-    setDataUser({ ...DataUser, [e.target.name]: e.target.value})
-  }
-
+  const { users } = useContext(UsuariosContext);
   const [DataUser, setDataUser] = useState({
-    nombreUsuario:"",
-    apellidoUsuario:"",
-    contraseniaUsuario:"",
-    correoUsuario:"",
-    telefonoUsuario:"",
-    rolUsuarioRegistro:""
-  }) 
+    nombre: "",
+    apellido: "",
+    email: "",
+    telefono: "",
+    contrasenia: "",
+    rolUsuario: "",
+  });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(DataUser)
-    setDataUser({
-      nombreUsuario:"",
-      apellidoUsuario:"",
-      contraseniaUsuario:"",
-      correoUsuario:"",
-      telefonoUsuario:"",
-      rolUsuarioRegistro:""
-    })
+  const handleChange = (e) => {
+    setDataUser({ ...DataUser, [e.target.name]: e.target.value });
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (verificarCorreoExistente(DataUser.email)) {
+      setClaseCorreo2("tracking-in-expand mensaje-error-Registro-Correo");
+      setTimeout(() => {
+        setClaseCorreo2("mensaje-error-Registro-Correo");
+      }, 500);
+      return;
+    } else {
+      try {
+        const response = await axios.post(
+          "http://localhost:8081/api/register",
+          DataUser
+        );
+        setDataUser({
+          nombre: "",
+          apellido: "",
+          email: "",
+          telefono: "",
+          contrasenia: "",
+          rol: "usuario",
+        });
+        users.push(DataUser);
+        Swal.fire({
+          icon: "success",
+          title: "¡Listo!",
+          text: "Usuario Registrado!",
+          showCancelButton: false,
+          confirmButtonText: "Ok",
+          confirmButtonColor: "#1d0c20",
+          customClass: {
+            title: "sweetalertRegistroTitle",
+            content: "sweetalertRegistropopup",
+          },
+        }).then((result) => {
+          if (result.isConfirmed) {
+            handleShow();
+          }
+        });
+      } catch (error) {
+        console.log(error.response);
+      }
+    }
+  };
 
   //Defino los actualizadores de estados para manejar las clases que se colocaran en cada caso
-  const [ClaseNombre, setClaseNombre] = useState("mensaje-error-Registro-Correo text-danger d-none");
-  const [ClaseApellido, setClaseApellido] = useState("mensaje-error-Registro-Correo text-danger d-none");
-  const [ClaseCorreo, setClaseCorreo] = useState("mensaje-error-Registro-Correo text-danger d-none");
-  const [ClaseTelefono, setClaseTelefono] = useState("mensaje-error-Registro-Correo text-danger d-none");
-  
-  const [ClaseContrasenia, setClaseContrasenia] = useState("mensaje-error-Registro-Correo text-danger d-none");
+  const [ClaseNombre, setClaseNombre] = useState(
+    "mensaje-error-Registro  d-none" /* text-danger */
+  );
+  const [ClaseApellido, setClaseApellido] = useState(
+    "mensaje-error-Registro d-none"
+  );
+  const [ClaseCorreo, setClaseCorreo] = useState(
+    "mensaje-error-Registro d-none"
+  );
+  const [ClaseCorreo2, setClaseCorreo2] = useState(
+    "mensaje-error-Registro-Correo d-none"
+  );
+  const [ClaseTelefono, setClaseTelefono] = useState(
+    "mensaje-error-Registro d-none"
+  );
+
+  const [ClaseContrasenia, setClaseContrasenia] = useState(
+    "mensaje-error-Registro d-none"
+  );
   const [showPassword, setShowPassword] = useState(false);
   const toggleShowPassword = () => setShowPassword((prevState) => !prevState);
-
-
 
   //Funciones para la validacion de los datos:
   /***************************************** */
@@ -53,7 +104,6 @@ const Registro = () => {
   const longitudValida = (cadena, valorMin, valorMax) => {
     return cadena.length >= valorMin && cadena.length <= valorMax;
   };
-
 
   //Funcion que valida un correo electronico
   const correoValido = (correo) => {
@@ -79,314 +129,224 @@ const Registro = () => {
     return expReg.test(telefono) && longitudValida(telefono, 7, 15);
   };
 
-
+  //Verificar la existencia de un correo
+  const verificarCorreoExistente = (correo) => {
+    return users.some((user) => user.email === correo);
+  };
 
   //Desarrollo de las funciones OnBlur
-  /***********************************/ 
-  
+  /***********************************/
+
   const handleNombreBlur = () => {
-    const nombreValido = NombreApellidoValido(DataUser.nombreUsuario);
-    console.log("Nombre válido:", nombreValido);
+    const nombreValido = NombreApellidoValido(DataUser.nombre);
+
     if (!nombreValido) {
-      setClaseNombre("mensaje-error-Registro-Correo text-danger")
-    }  else {
-      setClaseNombre("mensaje-error-Registro-Correo text-danger d-none")
+      setClaseNombre("mensaje-error-Registro");
+    } else {
+      setClaseNombre("mensaje-error-Registro d-none");
     }
   };
 
   const handleApellidoBlur = () => {
-    const apelldoValido = NombreApellidoValido(DataUser.apellidoUsuario);
-    console.log("apellido válido:", apelldoValido);
+    const apelldoValido = NombreApellidoValido(DataUser.apellido);
     if (!apelldoValido) {
-      setClaseApellido("mensaje-error-Registro-Correo text-danger")
-    }  else {
-      setClaseApellido("mensaje-error-Registro-Correo text-danger d-none")
+      setClaseApellido("mensaje-error-Registro");
+    } else {
+      setClaseApellido("mensaje-error-Registro d-none");
     }
   };
 
   const handleContraseñaBlur = () => {
-    const contraseñaValid = contraseniaValida(DataUser.contraseniaUsuario);
-    console.log("contra válido:", contraseñaValid);
+    const contraseñaValid = contraseniaValida(DataUser.contrasenia);
     if (!contraseñaValid) {
-      setClaseContrasenia("mensaje-error-Registro-Correo text-danger")
-    }  else {
-      setClaseContrasenia("mensaje-error-Registro-Correo text-danger d-none")
+      setClaseContrasenia("mensaje-error-Registro");
+    } else {
+      setClaseContrasenia("mensaje-error-Registro d-none");
     }
   };
 
   const handleCorreoBlur = () => {
-    const correoValid = correoValido(DataUser.correoUsuario);
-    console.log("correo válido:", correoValid);
+    const correoValid = correoValido(DataUser.email);
+    if (verificarCorreoExistente(DataUser.email)) {
+      setClaseCorreo2("mensaje-error-Registro-Correo");
+    } else {
+      setClaseCorreo2("mensaje-error-Registro-Correo d-none"); //nesesario porque si no no cambia una vez que el problema se resuelva
+    }
     if (!correoValid) {
-      setClaseCorreo("mensaje-error-Registro-Correo text-danger")
-    }  else {
-      setClaseCorreo("mensaje-error-Registro-Correo text-danger d-none")
+      setClaseCorreo("mensaje-error-Registro");
+    } else {
+      setClaseCorreo("mensaje-error-Registro d-none");
     }
   };
 
   const handleTelefonoBlur = () => {
-    const telefonoValid = telefonoValido(DataUser.telefonoUsuario);
-    console.log("telefono válido:", telefonoValid);
-    if (telefonoValid || DataUser.telefonoUsuario == "") {
-      setClaseTelefono("mensaje-error-Registro-Correo text-danger d-none")
-    }  else {
-      setClaseTelefono("mensaje-error-Registro-Correo text-danger")
+    const telefonoValid = telefonoValido(DataUser.telefono);
+    if (telefonoValid || DataUser.telefono == "") {
+      setClaseTelefono("mensaje-error-Registro d-none");
+    } else {
+      setClaseTelefono("mensaje-error-Registro");
     }
   };
 
-
-
-
   return (
-    <main className="contenedorGeneralRegistro h-100">
-      <div className="container-fluid h-100 contenedorGeneralRegistro">
-        <div className="row d-flex justify-content-center align-items-center h-100">
+    <main className="contenedorGeneralRegistro 0">
+      {" "}
+      {/* h-10 */}
+      <div className="container-fluid  contenedorGeneralRegistro">
+        <div className="row d-flex justify-content-center align-items-center ">
+          {/* h-100 */}
           <div className="col m-0 p-0">
             <div className="card card-registration my-0 border-0 contenedorGeneralRegistro">
               <div className="row g-0">
                 <div className="col">
-                  {/* <div>
-                    <p className="mt-3 mx-3 text-light"> Volver </p>
-                  </div> */}
-
-                  <div className="card-body pt-5 px-md-5 mx-md-5 m-md-3 text-black">
+                  <div className="card-body  px-md-5 mx-md-5 m-md-3 text-black">
                     <form onSubmit={handleSubmit} id="formRegistroUsuarios">
-                      <div className="contenedorTituloFormuBotonRegistro ">
-                        <div className="mb-4 pb-2 text-center w-100 mb-auto">
+                      <div className="contenedorTituloFormuBotonRegistro  ">
+                        <div className=" text-center w-100  ">
                           <h1 className=" m-0 controladorTmanioTextoReg text-light">
                             Únete a RestoCode
                           </h1>
                           <p className=" fs-4 RegistroColorSub">
-                           Forma parte de la comunidad gastronómica de RestoCode
-                            
+                            Forma parte de la comunidad gastronómica de
+                            RestoCode
                           </p>
                         </div>
 
-                        <div className="aling-self-center w-100">
+                        <div className=" w-100 aling-self-center controladorTamanioMaximo controladorTamanioMediano">
                           <div className="row ">
                             <div className="col-md-6 mb-1 mt-2">
                               <div className="form-outline">
                                 <label
                                   className="form-label fs-5 text-light mb-0"
-                                  htmlFor="nombreUsuario"
+                                  htmlFor="nombre"
                                 >
                                   {" "}
                                   Nombre/s
                                 </label>
                                 <span className="text-danger">*</span>
-                                <span id="mensajeErrorPRegistro" className={ClaseNombre} >  Por favor ingrese un Nombre válido.</span>
+                                <span
+                                  id="mensajeErrorPRegistro"
+                                  className={ClaseNombre}
+                                >
+                                  {" "}
+                                  Por favor ingrese un Nombre válido.
+                                </span>
                                 <input
                                   type="text"
-                                  id="nombreUsuario"
-                                  className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados mb-1"
+                                  id="nombre"
+                                  className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados "
                                   placeholder="Ej: Juan Resto"
                                   pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
                                   title="Este campo solo permite letras y espacios en blanco"
                                   required
                                   maxLength="50"
-                                  name="nombreUsuario"
-                                  value={DataUser.nombreUsuario}
-                                  onChange={handleChange} 
+                                  name="nombre"
+                                  value={DataUser.nombre}
+                                  onChange={handleChange}
                                   onBlur={handleNombreBlur}
-                                  /* onChange={(e) =>
-                                    setNombreUsuario(e.target.value)
-                                  }  */
                                 />
                               </div>
-
 
                               <div className="d-none">
                                 <label
                                   className="form-label fs-5 text-light mb-0"
-                                  htmlFor="nombreUsuario"
+                                  htmlFor="rolUsuario"
                                 >
                                   {" "}
                                   Rol
-                                </label>                                
-                                <span id="mensajeErrorPRegistro" className={ClaseNombre} >  Por favor ingrese un Nombre válido.</span>
+                                </label>
+                                <span
+                                  id="mensajeErrorPRegistro"
+                                  className={ClaseNombre}
+                                >
+                                  {" "}
+                                  Por favor ingrese un Nombre válido.
+                                </span>
                                 <input
                                   type="text"
-                                  id="nombreUsuario"
-                                  className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados mb-1"
+                                  id="rolUsuario"
+                                  className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados"
                                   placeholder="Ej: Juan Resto"
                                   pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
                                   title="Este campo solo permite letras y espacios en blanco"
-                                  required
-                                  name="rolUsuarioRegistro"
-                                  value={DataUser.rolUsuarioRegistro = "usuario"}
-                                  onChange={handleChange} 
+                                  name="rolUsuario"
+                                  value={(DataUser.rolUsuario = "usuario")}
+                                  onChange={handleChange}
                                 />
                               </div>
-                                
                             </div>
                             <div className="col-md-6 mb-1 mt-2">
                               <div className="form-outline">
                                 <label
                                   className="form-label fs-5 text-light mb-0"
-                                  htmlFor="apellidoUsuario"
+                                  htmlFor="apellido"
                                 >
                                   {" "}
                                   Apellido
                                 </label>
                                 <span className="text-danger">*</span>
-                                <span id="mensajeErrorPRegistro" className={ClaseApellido} >    Por favor ingrese un Apellido válido.</span>
+                                <span
+                                  id="mensajeErrorPRegistro"
+                                  className={ClaseApellido}
+                                >
+                                  {" "}
+                                  Por favor ingrese un Apellido válido.
+                                </span>
                                 <input
                                   type="text"
-                                  id="apellidoUsuario"
-                                  className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados mb-1"
+                                  id="apellido"
+                                  className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados"
                                   placeholder="Ej: Code"
                                   pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
                                   title="Este campo solo permite letras y espacios en blanco"
                                   required
                                   maxLength="50"
-                                  name="apellidoUsuario"
-                                  value={DataUser.apellidoUsuario}
+                                  name="apellido"
+                                  value={DataUser.apellido}
                                   onChange={handleChange}
                                   onBlur={handleApellidoBlur}
-                                  /* onChange={(e) =>
-                                    setApellidoUsuario(e.target.value)
-                                  } */
                                 />
                               </div>
                             </div>
-                           
                           </div>
-                          <div className="row ">
-                            {/* <div className="col-md-6 mb-2">
-                              <div className="form-outline">
-                                <label
-                                  className="form-label fw-bold"
-                                  htmlFor="nombreUsuario"
-                                >
-                                  {" "}
-                                  Nombre de Usuario
-                                </label>
-                                <span className="text-danger">*</span>
-                                <input
-                                  type="text"
-                                  id="nombreUsuario"
-                                  className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados"
-                                  placeholder="Ej: User RestoCode"
-                                  pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
-                                  title="Este campo solo permite letras y espacios en blanco"
-                                  required
-                                  maxLength="50"
-                                  name="nombreUsuario"
-                                  /* value={DataUser.nombreUsuario}
-                                  onChange={handleChange} */
-                                  /* onChange={(e) =>
-                                    setNombreUsuario(e.target.value)
-                                  } */
-                               /*  />
-                              </div>
-                            </div> */} 
-                            <div className="form-outline col-md-12 mb-1 mt-2">
-                              <label
-                                className="form-label fs-5 text-light mb-0"
-                                htmlFor="contraseniaUsuario"
-                              >
-                                Contraseña
-                              </label>
-                              <span className="text-danger">*</span>
-                              <span className="text-secondary">
-                                (entre 8 y 12 caracteres)
-                              </span>
-                              <span id="mensajeErrorPRegistro" className={ClaseContrasenia} >    Por faovr ingrese una Contraseña válido.</span>
-
-
-
-                              <div className=" d-flex flex-row bg-color-black">
-
-                              
-                              <input
-                                type={showPassword ? 'text' : 'password'}
-                                /* id="contraseniaUsuario" */
-                                className="form-control form-control-lg validadoss NoValidados tamanioImpustRegistro mb-1 w-20"
-                                placeholder="Contraseña"
-                                pattern="[A-Za-z0-9!?-]{8,12}"
-                                title="Ingrese una contraseña válida (entre 8 y 12 caracteres)"
-                                required
-                                minLength="8"
-                                maxLength="12"
-                                name="contraseniaUsuario"
-                                value={DataUser.contraseniaUsuario}
-                                onChange={handleChange} 
-                                onBlur={handleContraseñaBlur}
-                                /* onChange={(e) =>
-                                  setContraseniaUsuario(e.target.value)
-                                } */
-                                
-                              />
-                              <div className="">
-                              <button
-                                  type="button"
-                                  className="btn btn-outline-secondary tamanioImpustRegistro"
-                                  onClick={toggleShowPassword}
-                                >
-                                <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
-                              </button>
-                              </div>
-                              </div>
-                              
-                            </div>
-                          </div>
-
-                         
 
                           <div className="form-outline mb-1 mt-2">
                             <label
                               className="form-label fs-5 text-light mb-0"
-                              htmlFor="correoUsuario"
+                              htmlFor="email"
                             >
                               Correo
                             </label>
                             <span className="text-danger">*</span>
-                            <span id="mensajeErrorPRegistro" className={ClaseCorreo} >Por favor ingrese un correo válido.</span>
+                            <span
+                              id="mensajeErrorPRegistro"
+                              className={ClaseCorreo}
+                            >
+                              Por favor ingrese un correo válido.
+                            </span>
+                            <span
+                              id="mensajeErrorPRegistro"
+                              className={ClaseCorreo2}
+                            >
+                              El correo ya se encuentra asociado a una cuenta
+                            </span>
                             <input
                               type="email"
-                              id="correoUsuario"
-                              className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados mb-1"
+                              id="email"
+                              className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados "
                               placeholder="Ej: RestoCode@gmail.com"
                               title="Ingrese un correo para poder crear la cuenta"
                               autoComplete="on"
-                              name="correoUsuario"
-                              value={DataUser.correoUsuario}
+                              name="email"
+                              value={DataUser.email}
                               onChange={handleChange}
                               onBlur={handleCorreoBlur}
-                              /* onChange={(e) => setCorreoUsuario(e.target.value)} */
                               required
                               maxLength="76"
                             />
-                            {/* {!isValidEmail && <span id="mensajeErrorPRegistro" className="mensaje-error-Registro-Correo alert alert-danger">Ingrese un correo válido.</span>} */}
                           </div>
 
                           <div className="row">
-                            
-
-                           {/*  <div className="col-md-12mb-1 mt-2">
-                              <div className="form-outline">
-                                <label
-                                  className="form-label fw-bold"
-                                  htmlFor="direccion"
-                                >
-                                  Dirección
-                                </label>
-                                <input
-                                  type="text"
-                                  id="direccion"
-                                  className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados"
-                                  placeholder="Ej: San Martín 630"
-                                  pattern="^[A-Za-z0-9]{1,150}$"
-                                  title="Dirección de donde reside"
-                                  maxLength="150"
-                                  name="direccionUsuario"
-                                  value={DataUser.direccionUsuario}
-                                  onChange={handleChange} 
-                                  onChange={(e) => setDireccion(e.target.value)}
-                                />
-                              </div>
-                            </div> */}
-
                             <div className="col-md-12 mb-1 mt-2">
                               <div className="form-outline">
                                 <label
@@ -395,64 +355,98 @@ const Registro = () => {
                                 >
                                   Teléfono
                                 </label>
-                                <span id="mensajeErrorPRegistro" className={ClaseTelefono} >    Por favor ingrese un teléfono válido.</span>
+                                <span
+                                  id="mensajeErrorPRegistro"
+                                  className={ClaseTelefono}
+                                >
+                                  {" "}
+                                  Por favor ingrese un teléfono válido.
+                                </span>
 
                                 <input
                                   type="text"
                                   id="telefono"
-                                  className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados mb-1"
+                                  className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados "
                                   placeholder="Ej: 3816610091"
                                   pattern="[0-9]{7,15}"
                                   title="Ingrese un número de teléfono válido (entre 7 y 15 dígitos)"
                                   maxLength="15"
-                                  name="telefonoUsuario"
-                                  value={DataUser.telefonoUsuario}
+                                  name="telefono"
+                                  value={DataUser.telefono}
                                   onChange={handleChange}
                                   onBlur={handleTelefonoBlur}
-                                  
-                                  /* onChange={(e) => setTelefono(e.target.value)} */
                                 />
                               </div>
                             </div>
 
                             <div>
-                            {/* <div>
-                                  <input
-                                    type="radio"
-                                    id="RadioUsuario"
-                                    name="rolUsuarioRegistro"
-                                    
-                                    onChange={handleChange}
-                                    value={DataUser.rolUsuarioRegistro}
-                                    checked={DataUser.rolUsuario === 'Usuario'}
-                                  />
-                                  <label htmlFor="RadioUsuario">Usuario</label>
-
-                                  <input
-                                    type="radio"
-                                    id="RadioAdmin"
-                                    name="rolUsuarioRegistro"
-                                    value={DataUser.rolUsuarioRegistro}
-                                    onChange={handleChange}
-                                    checked={DataUser.rolUsuario === 'Admin'}
-                                  />
-                                  <label htmlFor="RadioAdmin">Admin</label>
-                                </div> */}
-
                               {/* 
                               value={DataUser.nombreUsuario}
                                   onChange={handleChange}  */}
                             </div>
                           </div>
+
+                          <div className="row ">
+                            <div className="form-outline col-md-12 mb-1 mt-2">
+                              <label
+                                className="form-label fs-5 text-light mb-0"
+                                htmlFor="contrasenia"
+                              >
+                                Contraseña
+                              </label>
+                              <span className="text-danger">*</span>
+                              <span className="text-secondary">
+                                (entre 8 y 12 caracteres)
+                              </span>
+                              <span
+                                id="mensajeErrorPRegistro"
+                                className={ClaseContrasenia}
+                              >
+                                {" "}
+                                Por favor ingrese una Contraseña válido.
+                              </span>
+
+                              <div className=" d-flex flex-row bg-color-black">
+                                <input
+                                  type={showPassword ? "text" : "password"}
+                                  /* id="contraseniaUsuario" */
+                                  className="form-control form-control-lg validadoss NoValidados tamanioImpustRegistro  w-20"
+                                  placeholder="Contraseña"
+                                  pattern="[A-Za-z0-9!?]{8,12}"
+                                  title="Ingrese una contraseña válida (entre 8 y 12 caracteres)"
+                                  required
+                                  minLength="8"
+                                  maxLength="12"
+                                  name="contrasenia"
+                                  value={DataUser.contrasenia}
+                                  onChange={handleChange}
+                                  onBlur={handleContraseñaBlur}
+                                />
+                                <div className="">
+                                  <button
+                                    type="button"
+                                    className="btn btn-outline-secondary tamanioImpustRegistro"
+                                    onClick={toggleShowPassword}
+                                  >
+                                    <FontAwesomeIcon
+                                      icon={showPassword ? faEyeSlash : faEye}
+                                    />
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <div className="w-100 mt-auto" >
-                          <div className="d-flex mt-5 justify-content-end pt-3">
-                            <input
+                        <div className="w-100  controladorTamanioMaximo">
+                          <div className="d-flex justify-content-end pt-3">
+                            <button
                               type="submit"
                               id="submitRegistrar"
                               className="   form-control form-control-lg btn-lg botonSubmitRegistro"
                               value="Registrarse"
-                            />
+                            >
+                              Registrarse
+                            </button>
                           </div>
                           <div className="pt-1">
                             <p className="text-center fs-6 text-secondary">
@@ -463,7 +457,7 @@ const Registro = () => {
                         </div>
                       </div>
                     </form>
-                    <div id="contenMensajeError" className="d-none"></div>
+                    {/* <div id="contenMensajeError" className="d-none"></div> */}
                   </div>
                 </div>
                 <div className="col-lg-5 d-none d-xl-block imgFondo-1 quietoRegistro"></div>
@@ -472,10 +466,20 @@ const Registro = () => {
           </div>
         </div>
       </div>
+      <Modal
+        show={show}
+        onHide={handleClose}
+        className="ventanaModalInicarSesion"
+      >
+        <Modal.Header closeButton className="headerModal">
+          <Modal.Title>Ingresa tu usuario</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="bodyModal">
+          <ModalInicarSesion handleClose={handleClose} />
+        </Modal.Body>
+      </Modal>
     </main>
   );
 };
-
-//senti que me miraba con amor, un amor que seguramente me invente yo...
 
 export default Registro;
