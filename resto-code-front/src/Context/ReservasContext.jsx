@@ -12,7 +12,7 @@ const ReservContext = ({ children }) => {
   //get ----> trae todas las reservas
   const getReservas = async () => {
     try {
-      const response = await axios.get("http://localhost:8081/api/reservas");
+      const response = await axios.get("https://restocode.onrender.com/api/reservas");
       console.log(response.data);
       setReservas(response.data);
     } catch (error) {
@@ -25,7 +25,7 @@ const ReservContext = ({ children }) => {
   const updateReserva = async (reserva) => {
     try {
       await axios.put(
-        `http://localhost:8081/api/actualizarReserva/${reserva._id}`,
+        `https://restocode.onrender.com/api/actualizarReserva/${reserva._id}`,
         reserva
       );
       await getReservas();
@@ -61,7 +61,7 @@ const ReservContext = ({ children }) => {
   const deleteReserva = async (id) => {
     console.log(id);
     try {
-      await axios.delete(`http://localhost:8081/api/eliminarReserva/${id}`);
+      await axios.delete(`https://restocode.onrender.com/api/eliminarReserva/${id}`);
       const deleteReserva = reservas.filter((reserva) => reserva._id !== id);
       setReservas(deleteReserva);
     } catch (error) {
