@@ -34,16 +34,7 @@ const TablaReservas = () => {
       backdrop: `rgba(0,0,14,0.4)`,
     }).then((result) => {
       if (result.isConfirmed) {
-        deleteReserva(id);
-        Swal.fire({
-          icon: "success",
-          title: "Reserva Cancelada",
-          showConfirmButton: false,
-          timer: 1500,
-          background: "#31302F",
-          color: "white",
-          backdrop: `rgba(0,0,14,0.4)`,
-        });
+        deleteReserva(id);       
       } else if (result.isDenied) {
         return;
       }

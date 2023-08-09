@@ -47,19 +47,10 @@ const UsersContext = ({ children }) => {
 
     if (user.rolUsuario === "admin") {
       window.location.href = "/administracion";
-    } else if (user.rolUsuario === "usuario") {
-      window.location.href = "/reservas";
-    } else {
-      Swal.fire({
-        icon: "error",
-        title: "Error!",
-        text: "Usuario y/o contraseña incorrectos!",
-        confirmButtonColor: "#C73333",
-        background: "#31302F",
-        color: "white",
-        backdrop: `rgba(0,0,14,0.4)`,
-      });
     }
+    else if (user.rolUsuario === "usuario") {
+      window.location.href = "/reservas";
+    } 
   };
 
   //logout: desloguea el usuario actual
@@ -108,7 +99,18 @@ const UsersContext = ({ children }) => {
   const deleteUser = async (id) => {
     console.log(id);
     try {
-      await axios.delete(`https://restocode.onrender.com/api/deleteUser/${id}`);
+      const response = await axios.delete(`https://restocode.onrender.com/api/deleteUser/${id}`);
+      if(response.status === 200){
+        Swal.fire({
+          icon: "success",
+          title: "Usuario Eliminado",
+          showConfirmButton: false,
+          timer: 1500,
+          background: "#31302F",
+          color: "white",
+          backdrop: `rgba(0,0,14,0.4)`,
+        });
+      }
       const newUsers = users.filter((user) => user._id !== id);
       setUsers(newUsers);
     } catch (error) {

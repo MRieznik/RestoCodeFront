@@ -34,16 +34,7 @@ const TablaUsuarios = () => {
       backdrop: `rgba(0,0,14,0.4)`,
     }).then((result) => {
       if (result.isConfirmed) {
-        deleteUser(id);
-        Swal.fire({
-          icon: "success",
-          title: "Usuario Eliminado",
-          showConfirmButton: false,
-          timer: 1500,
-          background: "#31302F",
-          color: "white",
-          backdrop: `rgba(0,0,14,0.4)`,
-        });
+        deleteUser(id);       
       } else if (result.isDenied) {
         return;
       }

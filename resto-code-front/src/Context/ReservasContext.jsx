@@ -61,7 +61,18 @@ const ReservContext = ({ children }) => {
   const deleteReserva = async (id) => {
     console.log(id);
     try {
-      await axios.delete(`https://restocode.onrender.com/api/eliminarReserva/${id}`);
+      const response = await axios.delete(`https://restocode.onrender.com/api/eliminarReserva/${id}`);
+      if(response.status === 200){
+        Swal.fire({
+          icon: "success",
+          title: "Reserva Cancelada",
+          showConfirmButton: false,
+          timer: 1500,
+          background: "#31302F",
+          color: "white",
+          backdrop: `rgba(0,0,14,0.4)`,
+        });
+      }
       const deleteReserva = reservas.filter((reserva) => reserva._id !== id);
       setReservas(deleteReserva);
     } catch (error) {
