@@ -42,6 +42,7 @@ const Rutas = () => {
           element={esAdmin ? <Administracion /> : <Navigate to="/error404" />}
         />
         <Route path="/error404" element={<Error404 />}></Route>
+        <Route path="*" element={<Error404 />} />
       </Routes>
     </>
   );
