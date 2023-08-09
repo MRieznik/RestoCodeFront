@@ -13,7 +13,6 @@ const ReservContext = ({ children }) => {
   const getReservas = async () => {
     try {
       const response = await axios.get("https://restocode.onrender.com/api/reservas");
-      console.log(response.data);
       setReservas(response.data);
     } catch (error) {
       console.log(error);
