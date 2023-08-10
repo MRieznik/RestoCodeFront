@@ -448,12 +448,12 @@ const Registro = () => {
                               Registrarse
                             </button>
                           </div>
-                          <div className="pt-1">
+                          {/* <div className="pt-1">
                             <p className="text-center fs-6 text-secondary">
                               Al unirte, aceptas los <u>Términos</u> y{" "}
                               <u>Política de privacidad</u>
                             </p>
-                          </div>
+                          </div> */}
                         </div>
                       </div>
                     </form>
