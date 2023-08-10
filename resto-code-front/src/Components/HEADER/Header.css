@@ -1,4 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+.navbar-toggler-icon{
+  background-image: none !important;
+  background-image: url("../../Image/HEADER-IMAGE/botonHamburguesa.png") !important;
+}
+.navbar-toggler {
+  border: #68b2f8 1px solid !important;
+}
 .headerPrincipal {
   background-color: #1d0c20;
   border-bottom: 2px solid #651f71;
