@@ -98,7 +98,7 @@
   height: 14vh;
   animation: spin 2s linear infinite;
 }
-button {
+.buttonError {
   font-size: 3rem;
   height: 5rem;
   font-family: "Bebas Neue";

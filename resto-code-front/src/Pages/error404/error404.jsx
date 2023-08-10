@@ -27,7 +27,7 @@ const Error404 = () => {
           <div className="desc">
             <h4>PAGINA NO ENCONTRADA</h4>{" "}
               <button
-                className="button-arounder"
+                className="button-arounder buttonError"
                 onClick={() => {
                   navigation("/");
                 }}
