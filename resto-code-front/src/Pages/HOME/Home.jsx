@@ -110,7 +110,7 @@ const Home = () => {
               muted
             ></video>
             <div className="cajaConFrase">
-              <h2>¿Te tentaste, verdad?</h2>
+              <h2>Te tentaste, ¿verdad?</h2>
               <h3>¡Vení a conocernos!</h3>
             </div>
           </div>
