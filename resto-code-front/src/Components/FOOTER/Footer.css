@@ -52,7 +52,7 @@
   color: #7037cd;
 }
 /*------------------ RESPONSIVE ------------------------- */
-@media (width:320px) and (height:640px){
+@media (min-width:320px) and (max-width:640px){
   .contenedorDerechos {
     width: 7rem;
     height: 5rem;
