@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { Col, Container, Row, Button } from "react-bootstrap";
+import { Col, Container, Row, Button, Nav} from "react-bootstrap";
 import { UsuariosContext } from "../../Context/UsersContext";
 import "./ModalInicarSesion.css";
 import Swal from "sweetalert2";
@@ -83,7 +83,9 @@ const ModalInicarSesion = () => {
                 className="botonIniciarSesion"
               >
                 Ingresar
-              </Button>
+              </Button> 
+              
+              <Nav.Link href="/registro" className="mt-2"><h6>¿No tienes una cuenta? Registrate</h6></Nav.Link>
             </form>
           </Col>
         </Row>
