@@ -2,6 +2,10 @@
 * {
   margin: 0;
 }
+.contenedorPrincipalDeGaleria{
+  background-color: #181818;
+}
+
 
 .presentacionHamburguesaXtreme {
   height: 27rem;
