@@ -236,7 +236,7 @@ const Registro = () => {
                                   id="nombre"
                                   className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados "
                                   placeholder="Ej: Juan Resto"
-                                  pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                                  pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"                                  
                                   title="Este campo solo permite letras y espacios en blanco"
                                   required
                                   maxLength="50"
@@ -336,6 +336,8 @@ const Registro = () => {
                               className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados "
                               placeholder="Ej: RestoCode@gmail.com"
                               title="Ingrese un correo para poder crear la cuenta"
+                              /* pattern="[a-z0-9._%+\-\]+@[a-z0-9.\-]+\.[a-z]{2,3}$" */
+                              pattern="^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$"
                               autoComplete="on"
                               name="email"
                               value={DataUser.email}
@@ -355,6 +357,7 @@ const Registro = () => {
                                 >
                                   Teléfono
                                 </label>
+                                <span className="text-danger">*</span>
                                 <span
                                   id="mensajeErrorPRegistro"
                                   className={ClaseTelefono}
@@ -372,6 +375,7 @@ const Registro = () => {
                                   title="Ingrese un número de teléfono válido (entre 7 y 15 dígitos)"
                                   maxLength="15"
                                   name="telefono"
+                                  required
                                   value={DataUser.telefono}
                                   onChange={handleChange}
                                   onBlur={handleTelefonoBlur}
