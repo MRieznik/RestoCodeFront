@@ -30,7 +30,6 @@ const ModalUserReservas = () => {
       backdrop: `rgba(0,0,14,0.4)`,
     }).then((result) => {
       if (result.isConfirmed) {
-        console.log("Reserva eliminada");
         deleteReserva(id);
         Swal.fire({
           icon: "success",
