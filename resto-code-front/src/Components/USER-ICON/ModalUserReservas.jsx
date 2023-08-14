@@ -19,7 +19,7 @@ const ModalUserReservas = () => {
   const handleDelete = (id) => {
     Swal.fire({
       icon: "warning",
-      title: "Cancelar Reserva?",
+      title: "¿Cancelar Reserva?",
       showCancelButton: true,
       confirmButtonText: "Aceptar",
       cancelButtonText: "Cancelar",
@@ -30,6 +30,7 @@ const ModalUserReservas = () => {
       backdrop: `rgba(0,0,14,0.4)`,
     }).then((result) => {
       if (result.isConfirmed) {
+        console.log("Reserva eliminada");
         deleteReserva(id);
         Swal.fire({
           icon: "success",
@@ -49,7 +50,7 @@ const ModalUserReservas = () => {
   return (
     <>
       {userReserva.length <= 0 ? (
-        <h3>No hay reservas registradas a tu nombre!</h3>
+        <h3>¡No hay reservas registradas a tu nombre!</h3>
       ) : (
         <Table responsive className="table-dark table-hover text-center tabla">
           <thead className="headTabla">
