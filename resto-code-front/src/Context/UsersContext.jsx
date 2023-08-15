@@ -25,7 +25,7 @@ const UsersContext = ({ children }) => {
   //post : loguear un usuario
   const login = async (email, contrasenia) => {
     try {
-      console.log(email, contrasenia, "login Context");
+    
 
       const response = await axios.post(
         "https://restocode.onrender.com/api/login",
@@ -98,7 +98,7 @@ const UsersContext = ({ children }) => {
   //put : edita un usuario
 
   const updateUsers = async (updatedUser) => {
-    console.log(updatedUser, "updateUser");
+   
     try {
       await axios.put(
         `https://restocode.onrender.com/api/updateUser/${updatedUser._id}`,
@@ -116,7 +116,7 @@ const UsersContext = ({ children }) => {
   //delete: elimina un usuario
 
   const deleteUser = async (id) => {
-    console.log(id);
+
     try {
       const response = await axios.delete(
         `https://restocode.onrender.com/api/deleteUser/${id}`
