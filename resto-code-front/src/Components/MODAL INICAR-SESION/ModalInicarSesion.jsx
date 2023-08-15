@@ -60,6 +60,7 @@ const ModalInicarSesion = () => {
                   aria-describedby="producto"
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
+                  maxLength="76"
                 />
               </div>
               <div className="mb-3">
