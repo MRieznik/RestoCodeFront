@@ -28,7 +28,8 @@ const UsersContext = ({ children }) => {
       email,
       contrasenia,
     });
-
+    
+    if (response.status === 200){
     const jwtToken = response.data.data.token;
     const jwtDecode = jwt_decode(jwtToken);
 
@@ -51,6 +52,17 @@ const UsersContext = ({ children }) => {
     else if (user.rolUsuario === "usuario") {
       window.location.href = "/reservas";
     } 
+  }else if(response.status === 400) {
+    Swal.fire({
+      icon: "error",
+      title: "Error!",
+      text: "Usuario y/o contraseña incorrectos!",
+      confirmButtonColor: "#C73333",
+      background: "#31302F",
+      color: "white",
+      backdrop: `rgba(0,0,14,0.4)`,
+    });
+  }
   };
 
   //logout: desloguea el usuario actual

@@ -18,24 +18,27 @@ const ModalInicarSesion = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Verificar si el usuario está en la lista de usuarios (users)
-    const usuarioValido = users.some((user) => user.email === email);
+    // const usuarioValido = users.some((user) => user.email === email);
 
-    if (!usuarioValido  || !usuarioValido.contrasenia) {
-      Swal.fire({
-        icon: "error",
-        title: "Error!",
-        text: "Usuario y/o contraseña incorrectos!",
-        confirmButtonColor: "#C73333",
-        background: "#31302F",
-        color: "white",
-        backdrop: `rgba(0,0,14,0.4)`,
-      });
-      setEmail("");
-      setContrasenia("");
-      return;
-    } else {
-      login(email, contrasenia);
-    }
+    // setEmail("");
+    // setContrasenia("");
+    login(email, contrasenia);
+    // if (!usuarioValido  || !usuarioValido.contrasenia) {
+      // Swal.fire({
+      //   icon: "error",
+      //   title: "Error!",
+      //   text: "Usuario y/o contraseña incorrectos!",
+      //   confirmButtonColor: "#C73333",
+      //   background: "#31302F",
+      //   color: "white",
+      //   backdrop: `rgba(0,0,14,0.4)`,
+      // });
+    //   setEmail("");
+    //   setContrasenia("");
+    //   return;
+    // } else {
+    //   login(email, contrasenia);
+    // }
   };
 
   return (
