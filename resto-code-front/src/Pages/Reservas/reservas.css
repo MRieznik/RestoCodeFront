@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap%22");
+
+
+.contenedorPrincipalReserva {
+  display: flex;
+}
+.contenedorFormularioReserva {
+  height: 100vh;
+  width: 50%;
+  background-color: #181818;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Bebas Neue", sans-serif;
+}
+.tituloFormReserva {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.tituloFormReserva h2 {
+  color: white;
+  font-size: 3rem;
+}
+.tituloFormReserva h4 {
+  color: #7037cd;
+  font-size: 2rem;
+}
+.formularioReserva {
+  width: 90%;
+  height: 70%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.botonReserva {
+  width: 100%;
+  background-color: #1d0c20;
+  color: white;
+  padding: 6px 10px 6px 10px;
+  border: 2px solid #7037cd;
+  transition: 0.2s;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+.botonReserva:hover {
+  background-color: #7037cd;
+  border: 2px solid #7037cd;
+}
+.infoEvento {
+  min-height: 4.5rem;
+  border-radius: 10px;
+  outline: none;
+  border: 2px rgba(128, 128, 128, 0.764) solid;
+  margin-bottom: 3px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.infoEvento:focus {
+  transition: 0.5s;
+  box-shadow: 0 0 5px #7037cd;
+  border-color: #7037cd;
+}
+.inputReservas {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.inputReservas:focus {
+  transition: 0.5s;
+  box-shadow: 0 0 5px #7037cd;
+  border-color: #7037cd;
+}
+.errorMensaje {
+  font-size: small;
+  color: red;
+}
+.contenedorImgReserva {
+  width: 50%;
+  height: 100vh;
+  background-image: url("../../Image/RESERVA-IMAGE/fotoFondoDeReserva.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: -60px;
+}
+.imageReserva {
+  width: 100%;
+  height: 100%;
+}
+.inputReservas {
+  border: 2px rgba(128, 128, 128, 0.764) solid;
+}
+/*------------------ RESPONSIVE ------------------------- */
+@media (min-width: 360px) and (max-width: 914px) {
+  .contenedorImgReserva {
+    display: none;
+  }
+  .contenedorFormularioReserva {
+    width: 100%;
+  }
+  .tituloFormReserva {
+    margin-bottom: 0;
+  }
+  .tituloFormReserva h4 {
+    text-align: center;
+  }
+  .botonReserva {
+    margin-bottom: 0;
+  }
+}
+@media (width: 820px) and (height: 1180px) {
+  .labelReservas {
+    font-size: 2rem;
+  }
+  .inputReservas {
+    height: 3rem;
+  }
+  .tituloFormReserva h2 {
+    font-size: 4rem;
+  }
+  .tituloFormReserva h4 {
+    font-size: 3rem;
+  }
+  .botonReserva {
+    font-size: 2.5rem;
+    margin-top: 0.5rem;
+  }
+}
+@media (width: 1024px) and (height: 600px) {
+  .tituloFormReserva h2 {
+    font-size: 2.3rem;
+  }
+  .tituloFormReserva h4 {
+    font-size: 1.1rem;
+  }
+  .errorMensaje {
+    margin: 0;
+  }
+}

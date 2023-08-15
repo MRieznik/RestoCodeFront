@@ -1,0 +1,360 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+* {
+  margin: 0;
+}
+.contenedorPrincipalDeGaleria{
+  background-color: #181818;
+}
+
+
+.presentacionHamburguesaXtreme {
+  height: 27rem;
+  display: flex;
+  background-color: #181818;
+}
+
+.contenedorXtreme {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contenedorXtreme .videoXtreme {
+  margin-top: 0.7rem;
+}
+
+.nombreHamburguesaXtreme {
+  font-family: "Bebas Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 25%;
+  padding-top: 0.5rem;
+}
+
+.nombreHamburguesaXtreme h2 {
+  color: white;
+  font-size: 3rem;
+  margin: 0;
+}
+
+.nombreHamburguesaXtreme h4 {
+  color: #7037cd;
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.imagenPersonaCerveza {
+  width: 45%;
+  height: 100%;
+  background-image: url("../../Image/GALERIA-IMAGE/personasCervesa.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.sombraPersonaCerveza {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: 0.2s;
+}
+
+.sombraPersonaCerveza:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.presentacionGuarnicion {
+  display: flex;
+  align-items: center;
+}
+.contenedorImagenArosDeCebolla {
+  height: 30rem;
+  width: 23rem;
+  transition: 2s;
+  background-image: url(../../Image/GALERIA-IMAGE/arosCebolla.jpg);
+}
+.contenedorImagenBastonesDeMuzarella {
+  height: 30rem;
+  width: 23rem;
+  transition: 2s;
+  background-image: url(../../Image/GALERIA-IMAGE/bastonesMuzarella.jpg);
+}
+.contenedorImagenVariado {
+  height: 30rem;
+  width: 23rem;
+  transition: 2s;
+  background-image: url(../../Image/GALERIA-IMAGE/guarnicion.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contenedorFraseGuarniciones {
+  height: 30rem;
+  width: 50rem;
+  background-color: #181818;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contenedorFraseGuarniciones h2 {
+  font-family: "Bebas Neue", sans-serif;
+  color: white;
+  margin: 0;
+  font-size: 3rem;
+}
+.contenedorFraseGuarniciones h4 {
+  font-family: "Bebas Neue", sans-serif;
+  color: #7037cd;
+  margin: 0;
+  font-size: 2.3rem;
+}
+.contenedorBloqueTres {
+  display: flex;
+}
+.videoPizza {
+  width: 40rem;
+}
+.contenedorImagenBarra {
+  width: 15rem;
+  background-image: url("../../Image/GALERIA-IMAGE/martiniGaleria.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.videoHamburguesaSimple {
+  height: 22.5rem;
+}
+.contenedorTrago {
+  width: 12.5rem;
+  background-image: url("../../Image/GALERIA-IMAGE/tragoGaleria.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/*------------------ RESPONSIVE ------------------------- */
+@media (min-width: 360px) and (max-width: 914px) {
+  .presentacionHamburguesaXtreme {
+    height: 70vh;
+    flex-direction: column;
+  }
+  .contenedorXtreme {
+    height: 20rem;
+    width: 100%;
+  }
+  .nombreHamburguesaXtreme h2 {
+    font-size: 2.5rem;
+  }
+  .nombreHamburguesaXtreme h4 {
+    font-size: 2rem;
+  }
+  .videoXtreme {
+    width: 100%;
+    height: 100%;
+  }
+  .imagenPersonaCerveza {
+    width: 100%;
+  }
+  .videoCerveza {
+    display: none;
+  }
+  .presentacionGuarnicion {
+    flex-direction: column;
+    height: 43rem;
+  }
+  .contenedorFraseGuarniciones {
+    width: 100%;
+    height: 13rem;
+  }
+  .contenedorFraseGuarniciones h2 {
+    font-size: 2.5rem;
+  }
+  .contenedorFraseGuarniciones h4 {
+    font-size: 2rem;
+  }
+  .contenedorImagenArosDeCebolla {
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .contenedorImagenBastonesDeMuzarella {
+    display: none;
+  }
+  .contenedorImagenVariado {
+    display: none;
+  }
+  .contenedorBloqueTres {
+    flex-direction: column;
+  }
+  .videoPizza {
+    width: 100%;
+  }
+  .contenedorImagenBarra {
+    display: none;
+  }
+  .videoHamburguesaSimple {
+    display: none;
+  }
+  .contenedorTrago {
+    display: none;
+  }
+}
+@media (width: 820px) and (height: 1180px) {
+  .presentacionHamburguesaXtreme {
+    height: 50vh;
+  }
+  .contenedorXtreme {
+    display: none;
+  }
+  .videoXtreme {
+    display: none;
+  }
+  .imagenPersonaCerveza {
+    width: 100%;
+  }
+  .presentacionGuarnicion {
+    flex-direction: row;
+    height: 30rem;
+  }
+  .contenedorImagenArosDeCebolla {
+    width: 33.3%;
+  }
+  .contenedorImagenBastonesDeMuzarella {
+    display: block;
+    width: 33.3%;
+  }
+  .contenedorImagenVariado {
+    display: block;
+    width: 33.3%;
+  }
+  .contenedorFraseGuarniciones {
+    display: none;
+  }
+}
+@media (width: 768px) and (height: 1024px) {
+  .presentacionHamburguesaXtreme {
+    height: 50vh;
+  }
+  .contenedorXtreme {
+    display: none;
+  }
+  .videoXtreme {
+    display: none;
+  }
+  .imagenPersonaCerveza {
+    width: 100%;
+  }
+  .presentacionGuarnicion {
+    flex-direction: row;
+    height: 30rem;
+  }
+  .contenedorImagenArosDeCebolla {
+    width: 33.5%;
+  }
+  .contenedorImagenBastonesDeMuzarella {
+    display: block;
+    width: 33.3%;
+  }
+  .contenedorImagenVariado {
+    display: block;
+    width: 33.3%;
+  }
+  .contenedorFraseGuarniciones {
+    display: none;
+  }
+}
+@media (width: 912px) and (height: 1368px) {
+  .presentacionHamburguesaXtreme {
+    height: 50vh;
+  }
+  .contenedorXtreme {
+    display: none;
+  }
+  .videoXtreme {
+    display: none;
+  }
+  .imagenPersonaCerveza {
+    width: 100%;
+  }
+  .presentacionGuarnicion {
+    flex-direction: row;
+    height: 30rem;
+  }
+  .contenedorImagenArosDeCebolla {
+    width: 33.5%;
+  }
+  .contenedorImagenBastonesDeMuzarella {
+    display: block;
+    width: 33.3%;
+  }
+  .contenedorImagenVariado {
+    display: block;
+    width: 33.3%;
+  }
+  .contenedorFraseGuarniciones {
+    display: none;
+  }
+}
+@media (width: 540px) and (height: 720px) {
+  .presentacionHamburguesaXtreme {
+    height: 50vh;
+  }
+  .contenedorXtreme {
+    display: none;
+  }
+  .videoXtreme {
+    display: none;
+  }
+  .imagenPersonaCerveza {
+    width: 100%;
+  }
+  .presentacionGuarnicion {
+    flex-direction: row;
+    height: 30rem;
+  }
+  .contenedorImagenArosDeCebolla {
+    width: 33.5%;
+  }
+  .contenedorImagenBastonesDeMuzarella {
+    display: block;
+    width: 33.3%;
+  }
+  .contenedorImagenVariado {
+    display: block;
+    width: 33.3%;
+  }
+  .contenedorFraseGuarniciones {
+    display: none;
+  }
+}
+@media (width: 1024px) and (height: 600px) {
+  .contenedorImagenBarra {
+    display: none;
+  }
+  .videoHamburguesaSimple {
+    display: none;
+  }
+  .contenedorTrago {
+    display: none;
+  }
+  .videoPizza {
+    width: 100%;
+  }
+}
+
+/* 1920x1080 */
+
+@media (width: 1920px) {
+  .contenedorImagenBarra {
+    display: none;
+  }
+  .videoHamburguesaSimple {
+    display: none;
+  }
+  .contenedorTrago {
+    width: 30%;
+  }
+  .videoPizza {
+    width: 70%;
+  }
+}

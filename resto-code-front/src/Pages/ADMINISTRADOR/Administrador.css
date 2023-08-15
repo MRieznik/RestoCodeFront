@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap%22");
+.containerAdmin {
+  background-color: #181818;
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh ;
+  height: fit-content;
+}
+.containerAdmin h1 {
+  font-family: "Bebas Neue", sans-serif;
+  color: white;
+  text-align: center;
+}
+.tituloTablaReservas {
+  font-family: "Bebas Neue", sans-serif;
+  color: white;
+  text-align: center;
+}

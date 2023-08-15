@@ -1,0 +1,30 @@
+.modalIniciarSesion {
+  font-family: "Bebas Neue", sans-serif;
+}
+.inputIniciarSesion {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.btn-close{
+  background-image: none !important;
+  background-image: url(../../Image/BOTON-MODAL-CERRAR/botonCerrar.png) !important;
+}
+.inputIniciarSesion:focus{
+  transition: 0.5s;
+  box-shadow: 0 0 5px #7037cd;
+  border-color: #7037cd;
+}
+
+.botonIniciarSesion {
+  background-color: #1d0c20;
+  border: 1px solid #651f71;
+  font-size: 18px;
+  color: white;
+}
+.botonIniciarSesion:hover {
+  background-color: #7037cd;
+  border: 1px solid #7037cd;
+}
+
+.IraRegistroLogin:focus, .IraRegistroLogin:hover{
+  text-decoration: underline;
+}
