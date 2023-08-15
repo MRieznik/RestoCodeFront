@@ -6,7 +6,7 @@
 }
 .btn-close{
   background-image: none !important;
-  background-image: url(../../Image/BOTON-MODAL-CERRAR/simboloCerrar.png);
+  background-image: url(../../Image/BOTON-MODAL-CERRAR/botonCerrar.png);
 }
 .inputIniciarSesion:focus{
   transition: 0.5s;
