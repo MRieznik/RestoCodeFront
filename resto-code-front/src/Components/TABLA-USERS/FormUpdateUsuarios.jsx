@@ -50,6 +50,7 @@ const FormUpdateUsuarios = ({ editUser, handleClose }) => {
                   type="text"
                   className="form-control"
                   value={user.nombre}
+                  pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
                   onChange={handleChange}
                   name="nombre"
                   aria-describedby="nombre"
@@ -63,6 +64,7 @@ const FormUpdateUsuarios = ({ editUser, handleClose }) => {
                   type="text"
                   className="form-control"
                   value={user.apellido}
+                  pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
                   onChange={handleChange}
                   name="apellido"
                   aria-describedby="apellido"
@@ -76,6 +78,7 @@ const FormUpdateUsuarios = ({ editUser, handleClose }) => {
                   type="tel"
                   className="form-control"
                   value={user.telefono}
+                  pattern="[0-9]{7,15}"
                   onChange={handleChange}
                   name="telefono"
                   aria-describedby="telefono"
