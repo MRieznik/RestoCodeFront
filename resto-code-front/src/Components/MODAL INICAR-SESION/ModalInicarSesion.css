@@ -4,7 +4,10 @@
 .inputIniciarSesion {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
-
+.btn-close{
+  background-image: none;
+  background-image: url(../../Image/BOTON-MODAL-CERRAR/simboloCerrar.png);
+}
 .inputIniciarSesion:focus{
   transition: 0.5s;
   box-shadow: 0 0 5px #7037cd;
