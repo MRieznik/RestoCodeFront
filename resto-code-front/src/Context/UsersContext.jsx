@@ -52,7 +52,7 @@ const UsersContext = ({ children }) => {
     else if (user.rolUsuario === "usuario") {
       window.location.href = "/reservas";
     } 
-  }else if(response.status === 400) {
+  }else if(error.response.status === 400) {
     Swal.fire({
       icon: "error",
       title: "Error!",
