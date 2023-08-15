@@ -5,7 +5,7 @@
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 .btn-close{
-  background-image: none;
+  background-image: none !important;
   background-image: url(../../Image/BOTON-MODAL-CERRAR/simboloCerrar.png);
 }
 .inputIniciarSesion:focus{
