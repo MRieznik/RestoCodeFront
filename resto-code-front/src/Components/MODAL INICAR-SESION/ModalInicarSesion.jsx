@@ -3,12 +3,17 @@ import { Col, Container, Row, Button, Nav} from "react-bootstrap";
 import { UsuariosContext } from "../../Context/UsersContext";
 import "./ModalInicarSesion.css";
 import Swal from "sweetalert2";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 const ModalInicarSesion = () => {
   const [email, setEmail] = useState();
   const [contrasenia, setContrasenia] = useState();
 
   const { users, login } = useContext(UsuariosContext);
+
+  const [showPassword, setShowPassword] = useState(false);
+  const toggleShowPassword = () => setShowPassword((prevState) => !prevState);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -64,8 +69,11 @@ const ModalInicarSesion = () => {
                 >
                   Contraseña
                 </label>
+                <div className="d-flex flex-row">
+
                 <input
-                  type="password"
+                  /* type="password" */
+                  type={showPassword ? "text" : "password"}
                   className="form-control inputIniciarSesion"
                   minLength={8}
                   maxLength={12}
@@ -75,7 +83,19 @@ const ModalInicarSesion = () => {
                   onChange={(e) => setContrasenia(e.target.value)}
                   value={contrasenia}
                   required
-                />
+                  />
+                <div className="">
+                  <button
+                    type="button"
+                    className="btn btn-outline-secondary tamanioImpustRegistro"
+                    onClick={toggleShowPassword}
+                    >
+                    <FontAwesomeIcon
+                      icon={showPassword ? faEyeSlash : faEye}
+                      />
+                  </button>
+                </div>
+                </div>
               </div>
               <Button
                 type="submit"
