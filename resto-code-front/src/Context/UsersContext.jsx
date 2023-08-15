@@ -13,7 +13,9 @@ const UsersContext = ({ children }) => {
   //get : trae todos los usuarios
   const getUsers = async () => {
     try {
-      const response = await axios.get("https://restocode.onrender.com/api/usuarios");
+      const response = await axios.get(
+        "https://restocode.onrender.com/api/usuarios"
+      );
       setUsers(response.data);
     } catch (error) {
       console.log(error);
@@ -22,47 +24,52 @@ const UsersContext = ({ children }) => {
 
   //post : loguear un usuario
   const login = async (email, contrasenia) => {
-    console.log(email, contrasenia, "login Context");
+    try {
+      console.log(email, contrasenia, "login Context");
 
-    const response = await axios.post("https://restocode.onrender.com/api/login", {
-      email,
-      contrasenia,
-    });
-    
-    if (response.status === 200){
-    const jwtToken = response.data.data.token;
-    const jwtDecode = jwt_decode(jwtToken);
+      const response = await axios.post(
+        "https://restocode.onrender.com/api/login",
+        {
+          email,
+          contrasenia,
+        }
+      );
 
-    const user = {
-      id: jwtDecode.id,
-      nombre: jwtDecode.nombre,
-      apellido: jwtDecode.apellido,
-      email: jwtDecode.email,
-      telefono: jwtDecode.telefono,
-      rolUsuario: jwtDecode.rolUsuario,
-    };
+      if (response.status === 200) {
+        const jwtToken = response.data.data.token;
+        const jwtDecode = jwt_decode(jwtToken);
 
-    localStorage.setItem("user", JSON.stringify(user));
-    setUserLogueado(user);
-   
+        const user = {
+          id: jwtDecode.id,
+          nombre: jwtDecode.nombre,
+          apellido: jwtDecode.apellido,
+          email: jwtDecode.email,
+          telefono: jwtDecode.telefono,
+          rolUsuario: jwtDecode.rolUsuario,
+        };
 
-    if (user.rolUsuario === "admin") {
-      window.location.href = "/administracion";
+        localStorage.setItem("user", JSON.stringify(user));
+        setUserLogueado(user);
+
+        if (user.rolUsuario === "admin") {
+          window.location.href = "/administracion";
+        } else if (user.rolUsuario === "usuario") {
+          window.location.href = "/reservas";
+        }
+      }
+    } catch (error) {
+      if (error.response.status >= 400) {
+        Swal.fire({
+          icon: "error",
+          title: "Error!",
+          text: "Usuario y/o contraseña incorrectos!",
+          confirmButtonColor: "#C73333",
+          background: "#31302F",
+          color: "white",
+          backdrop: `rgba(0,0,14,0.4)`,
+        });
+      }
     }
-    else if (user.rolUsuario === "usuario") {
-      window.location.href = "/reservas";
-    } 
-  }else if(error.response.status === 400) {
-    Swal.fire({
-      icon: "error",
-      title: "Error!",
-      text: "Usuario y/o contraseña incorrectos!",
-      confirmButtonColor: "#C73333",
-      background: "#31302F",
-      color: "white",
-      backdrop: `rgba(0,0,14,0.4)`,
-    });
-  }
   };
 
   //logout: desloguea el usuario actual
@@ -111,8 +118,10 @@ const UsersContext = ({ children }) => {
   const deleteUser = async (id) => {
     console.log(id);
     try {
-      const response = await axios.delete(`https://restocode.onrender.com/api/deleteUser/${id}`);
-      if(response.status === 200){
+      const response = await axios.delete(
+        `https://restocode.onrender.com/api/deleteUser/${id}`
+      );
+      if (response.status === 200) {
         Swal.fire({
           icon: "success",
           title: "Usuario Eliminado",
@@ -126,8 +135,8 @@ const UsersContext = ({ children }) => {
       const newUsers = users.filter((user) => user._id !== id);
       setUsers(newUsers);
     } catch (error) {
-     if (error.response) {
-        if (error.response.status === 400) {          
+      if (error.response) {
+        if (error.response.status === 400) {
           Swal.fire({
             icon: "error",
             title: "Error!",
