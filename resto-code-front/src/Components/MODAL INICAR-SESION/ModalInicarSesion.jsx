@@ -20,7 +20,7 @@ const ModalInicarSesion = () => {
     // Verificar si el usuario está en la lista de usuarios (users)
     const usuarioValido = users.some((user) => user.email === email);
 
-    if (!usuarioValido) {
+    if (!usuarioValido  || !usuarioValido.contrasenia) {
       Swal.fire({
         icon: "error",
         title: "Error!",
