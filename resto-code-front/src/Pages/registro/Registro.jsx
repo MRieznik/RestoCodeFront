@@ -170,7 +170,7 @@ const Registro = () => {
     if (verificarCorreoExistente(DataUser.email)) {
       setClaseCorreo2("mensaje-error-Registro-Correo");
     } else {
-      setClaseCorreo2("mensaje-error-Registro-Correo d-none"); //nesesario porque si no no cambia una vez que el problema se resuelva
+      setClaseCorreo2("mensaje-error-Registro-Correo d-none"); 
     }
     if (!correoValid) {
       setClaseCorreo("mensaje-error-Registro");
@@ -191,10 +191,8 @@ const Registro = () => {
   return (
     <main className="contenedorGeneralRegistro 0">
       {" "}
-      {/* h-10 */}
       <div className="container-fluid  contenedorGeneralRegistro">
         <div className="row d-flex justify-content-center align-items-center ">
-          {/* h-100 */}
           <div className="col m-0 p-0">
             <div className="card card-registration my-0 border-0 contenedorGeneralRegistro">
               <div className="row g-0">
@@ -382,9 +380,6 @@ const Registro = () => {
                             </div>
 
                             <div>
-                              {/* 
-                              value={DataUser.nombreUsuario}
-                                  onChange={handleChange}  */}
                             </div>
                           </div>
 
@@ -411,7 +406,6 @@ const Registro = () => {
                               <div className=" d-flex flex-row bg-color-black">
                                 <input
                                   type={showPassword ? "text" : "password"}
-                                  /* id="contraseniaUsuario" */
                                   className="form-control form-control-lg validadoss NoValidados tamanioImpustRegistro  w-20"
                                   placeholder="Contraseña"
                                   pattern="[A-Za-z0-9!?]{8,12}"
@@ -450,16 +444,9 @@ const Registro = () => {
                               Registrarse
                             </button>
                           </div>
-                          {/* <div className="pt-1">
-                            <p className="text-center fs-6 text-secondary">
-                              Al unirte, aceptas los <u>Términos</u> y{" "}
-                              <u>Política de privacidad</u>
-                            </p>
-                          </div> */}
                         </div>
                       </div>
                     </form>
-                    {/* <div id="contenMensajeError" className="d-none"></div> */}
                   </div>
                 </div>
                 <div className="col-lg-5 d-none d-xl-block imgFondo-1 quietoRegistro"></div>
