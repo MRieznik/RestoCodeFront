@@ -34,7 +34,7 @@ const TablaUsuarios = () => {
       backdrop: `rgba(0,0,14,0.4)`,
     }).then((result) => {
       if (result.isConfirmed) {
-        deleteUser(id);       
+        deleteUser(id);
       } else if (result.isDenied) {
         return;
       }

@@ -12,7 +12,6 @@ const Error404 = () => {
           <div className="four">
             <h2>4</h2>
           </div>
-
           <div className="circle">
             <img
               src={imagenHamburugesaMordida}
@@ -20,21 +19,20 @@ const Error404 = () => {
               srcset=""
             />
           </div>
-
           <div className="four">
             <h2>4</h2>
           </div>
           <div className="desc">
             <h4>PAGINA NO ENCONTRADA</h4>{" "}
-              <button
-                className="button-arounder buttonError"
-                onClick={() => {
-                  navigation("/");
-                }}
-              >
-                {" "}
-                Volver al inicio
-              </button>
+            <button
+              className="button-arounder buttonError"
+              onClick={() => {
+                navigation("/");
+              }}
+            >
+              {" "}
+              Volver al inicio
+            </button>
           </div>
         </div>
         <div className="buttons-container"></div>

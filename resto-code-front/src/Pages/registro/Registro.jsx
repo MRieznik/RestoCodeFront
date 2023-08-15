@@ -13,7 +13,6 @@ const Registro = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
   const { users } = useContext(UsuariosContext);
   const [DataUser, setDataUser] = useState({
     nombre: "",
@@ -73,7 +72,6 @@ const Registro = () => {
       }
     }
   };
-
   //Defino los actualizadores de estados para manejar las clases que se colocaran en cada caso
   const [ClaseNombre, setClaseNombre] = useState(
     "mensaje-error-Registro  d-none" /* text-danger */
@@ -90,7 +88,6 @@ const Registro = () => {
   const [ClaseTelefono, setClaseTelefono] = useState(
     "mensaje-error-Registro d-none"
   );
-
   const [ClaseContrasenia, setClaseContrasenia] = useState(
     "mensaje-error-Registro d-none"
   );
@@ -99,7 +96,6 @@ const Registro = () => {
 
   //Funciones para la validacion de los datos:
   /***************************************** */
-
   // Funcion que valida si la cadena tiene la logitud adecuada
   const longitudValida = (cadena, valorMin, valorMax) => {
     return cadena.length >= valorMin && cadena.length <= valorMax;
@@ -139,7 +135,6 @@ const Registro = () => {
 
   const handleNombreBlur = () => {
     const nombreValido = NombreApellidoValido(DataUser.nombre);
-
     if (!nombreValido) {
       setClaseNombre("mensaje-error-Registro");
     } else {
@@ -170,7 +165,7 @@ const Registro = () => {
     if (verificarCorreoExistente(DataUser.email)) {
       setClaseCorreo2("mensaje-error-Registro-Correo");
     } else {
-      setClaseCorreo2("mensaje-error-Registro-Correo d-none"); 
+      setClaseCorreo2("mensaje-error-Registro-Correo d-none");
     }
     if (!correoValid) {
       setClaseCorreo("mensaje-error-Registro");
@@ -209,7 +204,6 @@ const Registro = () => {
                             RestoCode
                           </p>
                         </div>
-
                         <div className=" w-100 aling-self-center controladorTamanioMaximo controladorTamanioMediano">
                           <div className="row ">
                             <div className="col-md-6 mb-1 mt-2">
@@ -234,7 +228,7 @@ const Registro = () => {
                                   id="nombre"
                                   className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados "
                                   placeholder="Ej: Juan Resto"
-                                  pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"                                  
+                                  pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
                                   title="Este campo solo permite letras y espacios en blanco"
                                   required
                                   maxLength="50"
@@ -244,7 +238,6 @@ const Registro = () => {
                                   onBlur={handleNombreBlur}
                                 />
                               </div>
-
                               <div className="d-none">
                                 <label
                                   className="form-label fs-5 text-light mb-0"
@@ -279,7 +272,7 @@ const Registro = () => {
                                   className="form-label fs-5 text-light mb-0"
                                   htmlFor="apellido"
                                 >
-                                  {" "} 
+                                  {" "}
                                   Apellido
                                 </label>
                                 <span className="text-danger">*</span>
@@ -307,7 +300,6 @@ const Registro = () => {
                               </div>
                             </div>
                           </div>
-
                           <div className="form-outline mb-1 mt-2">
                             <label
                               className="form-label fs-5 text-light mb-0"
@@ -343,7 +335,6 @@ const Registro = () => {
                               maxLength="76"
                             />
                           </div>
-
                           <div className="row">
                             <div className="col-md-12 mb-1 mt-2">
                               <div className="form-outline">
@@ -361,7 +352,6 @@ const Registro = () => {
                                   {" "}
                                   Por favor ingrese un teléfono válido.
                                 </span>
-
                                 <input
                                   type="text"
                                   id="telefono"
@@ -378,11 +368,8 @@ const Registro = () => {
                                 />
                               </div>
                             </div>
-
-                            <div>
-                            </div>
+                            <div></div>
                           </div>
-
                           <div className="row ">
                             <div className="form-outline col-md-12 mb-1 mt-2">
                               <label
@@ -402,7 +389,6 @@ const Registro = () => {
                                 {" "}
                                 Por favor ingrese una Contraseña válido.
                               </span>
-
                               <div className=" d-flex flex-row bg-color-black">
                                 <input
                                   type={showPassword ? "text" : "password"}

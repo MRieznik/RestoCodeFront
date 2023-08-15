@@ -43,7 +43,6 @@ const Galeria = () => {
           <div className="contenedorImagenVariado">
             <div className="sombraPersonaCerveza"></div>
           </div>
-
           <div className="contenedorFraseGuarniciones">
             <h2>Diferentes Guarniciones</h2>
             <h4>Para acompañar tus comidas</h4>

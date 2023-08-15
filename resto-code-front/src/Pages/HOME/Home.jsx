@@ -128,9 +128,7 @@ const Home = () => {
                   <div className="cajaQrWp">
                     <img src={qrwp} alt="Qr Whatsapp" />
                   </div>
-                  <div className="cajaQrIg">
-                    {/* <img src={qrig} alt="Qr Instagram" /> */}
-                  </div>
+                  <div className="cajaQrIg"></div>
                 </div>
               </div>
             </div>

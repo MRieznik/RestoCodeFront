@@ -92,7 +92,6 @@ const About = () => {
               </div>
             </div>
           </article>
-
           <article className="contenedor_item">
             <div className="card_contenido">
               <img

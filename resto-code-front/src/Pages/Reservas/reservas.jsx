@@ -6,7 +6,6 @@ import axios from "axios";
 
 const Reservas = () => {
   const user = JSON.parse(localStorage.getItem("user")) || [];
-  console.log(user);
 
   const [formReserva, setFormReserva] = useState({
     nombre: user.nombre,
@@ -35,7 +34,7 @@ const Reservas = () => {
       fecha.setHours(0, 0, 0, 0);
       fechaActual.setHours(0, 0, 0, 0);
 
-      if (fecha+1 < fechaActual) {
+      if (fecha + 1 < fechaActual) {
         setErrorFecha("Elija una fecha válida");
       } else {
         setErrorFecha("");
@@ -116,7 +115,7 @@ const Reservas = () => {
       });
     } catch (error) {
       if (error.response) {
-        if (error.response.status === 400) {          
+        if (error.response.status === 400) {
           Swal.fire({
             icon: "error",
             title: "Error!",

@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { Col, Container, Row, Button, Nav} from "react-bootstrap";
+import { Col, Container, Row, Button, Nav } from "react-bootstrap";
 import { UsuariosContext } from "../../Context/UsersContext";
 import "./ModalInicarSesion.css";
 import Swal from "sweetalert2";
@@ -17,28 +17,7 @@ const ModalInicarSesion = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Verificar si el usuario está en la lista de usuarios (users)
-    // const usuarioValido = users.some((user) => user.email === email);
-
-    // setEmail("");
-    // setContrasenia("");
     login(email, contrasenia);
-    // if (!usuarioValido  || !usuarioValido.contrasenia) {
-      // Swal.fire({
-      //   icon: "error",
-      //   title: "Error!",
-      //   text: "Usuario y/o contraseña incorrectos!",
-      //   confirmButtonColor: "#C73333",
-      //   background: "#31302F",
-      //   color: "white",
-      //   backdrop: `rgba(0,0,14,0.4)`,
-      // });
-    //   setEmail("");
-    //   setContrasenia("");
-    //   return;
-    // } else {
-    //   login(email, contrasenia);
-    // }
   };
 
   return (
@@ -74,31 +53,30 @@ const ModalInicarSesion = () => {
                   Contraseña
                 </label>
                 <div className="d-flex flex-row">
-
-                <input
-                  /* type="password" */
-                  type={showPassword ? "text" : "password"}
-                  className="form-control inputIniciarSesion"
-                  minLength={8}
-                  maxLength={12}
-                  pattern="[A-Za-z0-9]+"
-                  placeholder="Ingresa tu contraseña"
-                  name="contraseña"
-                  onChange={(e) => setContrasenia(e.target.value)}
-                  value={contrasenia}
-                  required
+                  <input
+                    /* type="password" */
+                    type={showPassword ? "text" : "password"}
+                    className="form-control inputIniciarSesion"
+                    minLength={8}
+                    maxLength={12}
+                    pattern="[A-Za-z0-9]+"
+                    placeholder="Ingresa tu contraseña"
+                    name="contraseña"
+                    onChange={(e) => setContrasenia(e.target.value)}
+                    value={contrasenia}
+                    required
                   />
-                <div className="">
-                  <button
-                    type="button"
-                    className="btn btn-outline-secondary tamanioImpustRegistro"
-                    onClick={toggleShowPassword}
+                  <div className="">
+                    <button
+                      type="button"
+                      className="btn btn-outline-secondary tamanioImpustRegistro"
+                      onClick={toggleShowPassword}
                     >
-                    <FontAwesomeIcon
-                      icon={showPassword ? faEyeSlash : faEye}
+                      <FontAwesomeIcon
+                        icon={showPassword ? faEyeSlash : faEye}
                       />
-                  </button>
-                </div>
+                    </button>
+                  </div>
                 </div>
               </div>
               <Button
@@ -107,9 +85,13 @@ const ModalInicarSesion = () => {
                 className="botonIniciarSesion"
               >
                 Ingresar
-              </Button> 
-              
-              <Nav.Link href="/registro" className="mt-2"><h6 className="IraRegistroLogin">¿No tienes una cuenta? Registrate</h6></Nav.Link>
+              </Button>
+
+              <Nav.Link href="/registro" className="mt-2">
+                <h6 className="IraRegistroLogin">
+                  ¿No tienes una cuenta? Registrate
+                </h6>
+              </Nav.Link>
             </form>
           </Col>
         </Row>

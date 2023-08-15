@@ -1,7 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap";
 import TablaReservas from "../../Components/TABLA-RESERVAS/TablaReservas";
 import TablaUsuarios from "../../Components/TABLA-USERS/TablaUsuarios";
-
 import "./Administrador.css";
 
 const Administracion = () => {

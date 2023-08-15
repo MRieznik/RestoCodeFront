@@ -12,7 +12,9 @@ const ReservContext = ({ children }) => {
   //get ----> trae todas las reservas
   const getReservas = async () => {
     try {
-      const response = await axios.get("https://restocode.onrender.com/api/reservas");
+      const response = await axios.get(
+        "https://restocode.onrender.com/api/reservas"
+      );
       setReservas(response.data);
     } catch (error) {
       console.log(error);
@@ -30,7 +32,7 @@ const ReservContext = ({ children }) => {
       await getReservas();
     } catch (error) {
       if (error.response) {
-        if (error.response.status === 400) {          
+        if (error.response.status === 400) {
           Swal.fire({
             icon: "error",
             title: "Error!",
@@ -58,10 +60,11 @@ const ReservContext = ({ children }) => {
   //delete ----> borra una reserva
 
   const deleteReserva = async (id) => {
-    console.log(id);
     try {
-      const response = await axios.delete(`https://restocode.onrender.com/api/eliminarReserva/${id}`);
-      if(response.status === 200){
+      const response = await axios.delete(
+        `https://restocode.onrender.com/api/eliminarReserva/${id}`
+      );
+      if (response.status === 200) {
         Swal.fire({
           icon: "success",
           title: "Reserva Cancelada",

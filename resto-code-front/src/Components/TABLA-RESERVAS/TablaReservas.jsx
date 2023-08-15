@@ -34,7 +34,7 @@ const TablaReservas = () => {
       backdrop: `rgba(0,0,14,0.4)`,
     }).then((result) => {
       if (result.isConfirmed) {
-        deleteReserva(id);       
+        deleteReserva(id);
       } else if (result.isDenied) {
         return;
       }
