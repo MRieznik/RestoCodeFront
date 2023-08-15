@@ -106,7 +106,7 @@ const ModalInicarSesion = () => {
                 Ingresar
               </Button> 
               
-              <Nav.Link href="/registro" className="mt-2"><h6>¿No tienes una cuenta? Registrate</h6></Nav.Link>
+              <Nav.Link href="/registro" className="mt-2"><h6 className="IraRegistroLogin">¿No tienes una cuenta? Registrate</h6></Nav.Link>
             </form>
           </Col>
         </Row>
