@@ -281,7 +281,7 @@ const Registro = () => {
                                   className="form-label fs-5 text-light mb-0"
                                   htmlFor="apellido"
                                 >
-                                  {" "}
+                                  {" "} 
                                   Apellido
                                 </label>
                                 <span className="text-danger">*</span>
@@ -336,8 +336,6 @@ const Registro = () => {
                               className="tamanioImpustRegistro form-control form-control-lg validadoss NoValidados "
                               placeholder="Ej: RestoCode@gmail.com"
                               title="Ingrese un correo para poder crear la cuenta"
-                              /* pattern="[a-z0-9._%+\-\]+@[a-z0-9.\-]+\.[a-z]{2,3}$" */
-                              pattern="^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$"
                               autoComplete="on"
                               name="email"
                               value={DataUser.email}
