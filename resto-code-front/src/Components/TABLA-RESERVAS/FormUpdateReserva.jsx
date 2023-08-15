@@ -106,6 +106,7 @@ const FormUpdateReserva = ({ editReserva, handleClose }) => {
                 <input
                   type="number"
                   min="1"
+                  max="30"
                   className="form-control"
                   value={reserva.invitados}
                   onChange={handleChange}
