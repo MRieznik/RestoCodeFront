@@ -15,7 +15,6 @@ const FormUpdateUsuarios = ({ editUser, handleClose }) => {
 
   const handleEdit = (e) => {
     e.preventDefault();
-    updateUsers(user);
     Swal.fire({
       icon: "warning",
       title: "Editar Usuario?",
@@ -29,6 +28,7 @@ const FormUpdateUsuarios = ({ editUser, handleClose }) => {
       backdrop: `rgba(0,0,14,0.4)`,
     }).then((result) => {
       if (result.isConfirmed) {
+        updateUsers(user);
         handleClose();
       } else if (result.isDenied) {
         return;
