@@ -51,6 +51,7 @@ const FormUpdateUsuarios = ({ editUser, handleClose }) => {
                   className="form-control"
                   value={user.nombre}
                   pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                  maxLength="50"
                   onChange={handleChange}
                   name="nombre"
                   aria-describedby="nombre"
@@ -65,6 +66,7 @@ const FormUpdateUsuarios = ({ editUser, handleClose }) => {
                   className="form-control"
                   value={user.apellido}
                   pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+                  maxLength="50"
                   onChange={handleChange}
                   name="apellido"
                   aria-describedby="apellido"
@@ -79,6 +81,8 @@ const FormUpdateUsuarios = ({ editUser, handleClose }) => {
                   className="form-control"
                   value={user.telefono}
                   pattern="[0-9]{7,15}"
+                  maxLength={15}
+                  minLength={7}
                   onChange={handleChange}
                   name="telefono"
                   aria-describedby="telefono"
