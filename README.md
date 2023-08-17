@@ -1,5 +1,6 @@
 <h1>Resto Code Web Application</h1>
-<p>Proyecto de aplicacion web basado con el concepto de Bar/Restobar. Visita el sitio web en el siguiente enlance <a href="https://restocode.netlify.app/" target="_blank">Resto Code</a></p>
+<p>Proyecto de aplicacion web basado con el concepto de Bar/Restobar. Visita el sitio web en el siguiente enlance
+  <a href="https://restocode.netlify.app/" target="_blank">Resto Code</a></p>
 
 <h2>Lenguajes y Tecnologias</h2>
 <div>
