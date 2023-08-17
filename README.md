@@ -27,3 +27,17 @@
 <img src="resto-code-front\src\Image\README-IMAGE\administradorUsuario.png"/>
 <img src="resto-code-front\src\Image\README-IMAGE\modalAdministrador.png"/>
 <p>En estas tres tipo de cuentas, puedes acceder a una sección llamada Nosotros, en la cual presentamos los integrantes del grupo con nuestras respectivas redes sociales cada uno.</p>
+<h2>DESARROLLADORES</h2>
+
++ <img src="https://github.com/devicons/devicon/blob/master/icons/github/github-original.svg" title="Git" alt="Git" width="20" height="20"/>[Lautaro Gonzalez](https://github.com/LautaroGruiz)
+  
++ <img src="https://github.com/devicons/devicon/blob/master/icons/github/github-original.svg" title="Git" alt="Git" width="20" height="20"/>[Luisina Martinez](https://github.com/luumartinez) 
+  
++ <img src="https://github.com/devicons/devicon/blob/master/icons/github/github-original.svg" title="Git" alt="Git" width="20" height="20"/>[Marcos Rieznik](https://github.com/MRieznik)
+  
++ <img src="https://github.com/devicons/devicon/blob/master/icons/github/github-original.svg" title="Git" alt="Git" width="20" height="20"/>[Mariana Cervantes](https://github.com/MitaCervantes)
+  
++ <img src="https://github.com/devicons/devicon/blob/master/icons/github/github-original.svg" title="Git" alt="Git" width="20" height="20"/>[Nazaret Campos](https://github.com/NazaretCS)
+  
++ <img src="https://github.com/devicons/devicon/blob/master/icons/github/github-original.svg" title="Git" alt="Git" width="20" height="20"/>[Sergio Dominguez](https://github.com/SERGIO-DOM-23)
+
