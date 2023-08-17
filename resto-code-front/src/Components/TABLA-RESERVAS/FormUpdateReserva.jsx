@@ -16,7 +16,6 @@ const FormUpdateReserva = ({ editReserva, handleClose }) => {
 
   const handleEdit = (e) => {
     e.preventDefault();
-    updateReserva(reserva);
     Swal.fire({
       icon: "warning",
       title: "Editar Reserva?",
@@ -30,6 +29,7 @@ const FormUpdateReserva = ({ editReserva, handleClose }) => {
       backdrop: `rgba(0,0,14,0.4)`,
     }).then((result) => {
       if (result.isConfirmed) {
+        updateReserva(reserva);
         handleClose();
       } else if (result.isDenied) {
         return;
