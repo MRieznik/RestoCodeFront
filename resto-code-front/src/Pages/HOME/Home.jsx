@@ -55,7 +55,7 @@ const Home = () => {
               <div className="tituloRestoCoderResponsive">
                 <h1>Resto Code</h1>
                 <div className="restoBarResponsive">
-                  <h2>Cerveceria</h2>
+                  <h2>Cervecería</h2> 
                 </div>
               </div>
               {usuarioLogueado === null ? (
@@ -85,7 +85,7 @@ const Home = () => {
             <h2 className="tituloDePresentacionMenu">
               El tiempo pasa, la cerveza vuela
             </h2>
-            <h4 className="mensajeConciencia">Beber con moderacion</h4>
+            <h4 className="mensajeConciencia">Beber con moderación</h4>
           </div>
           <div className="imagenDeAmbosMenus">
             <div className="menuUno">
