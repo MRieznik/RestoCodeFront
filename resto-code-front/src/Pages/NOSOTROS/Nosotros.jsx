@@ -45,7 +45,7 @@ const About = () => {
           <div className="cajaInfoMasImagenAbout noneEnResponsive">
             <h3>El Arte de la Cerveza</h3>
             <p>
-              <strong>Delicías en Cada Sorbo</strong>
+              <strong>Delicias en Cada Sorbo</strong>
             </p>
             <p>
               Deleita tu paladar con la excelencia de nuestra cerveza artesanal.
