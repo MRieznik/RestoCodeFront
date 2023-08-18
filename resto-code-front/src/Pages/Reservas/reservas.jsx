@@ -1,15 +1,19 @@
 import { Form } from "react-bootstrap/";
 import "./Reservas.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
+import emailjs from '@emailjs/browser';
 
 const Reservas = () => {
   const user = JSON.parse(localStorage.getItem("user")) || [];
 
+  const form = useRef();
+
   const [formReserva, setFormReserva] = useState({
     nombre: user.nombre,
     apellido: user.apellido,
+    email: user.email,
     fecha: "",
     hora: "",
     invitados: "",
@@ -85,60 +89,62 @@ const Reservas = () => {
     }
   };
 
-  const handleSubmit = async (e) => {
+  const sendEmail = async (e) => {
+
     e.preventDefault();
 
-    try {
-      const response = await axios.post(
-        "https://restocode.onrender.com/api/crearReserva",
-        formReserva
-      );
-
-      setFormReserva({
-        fecha: "",
-        hora: "",
-        invitados: "",
-        comentarios: "",
-      });
-
-      Swal.fire({
-        icon: "success",
-        title: "¡Listo!",
-        text: "Su reserva ha sido confirmada, pasa a ver nuestra galeria!",
-        showCancelButton: false,
-        confirmButtonText: "Ok",
-        confirmButtonColor: "#1d0c20",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          window.location.href = "/galeria";
-        }
-      });
-    } catch (error) {
-      if (error.response) {
-        if (error.response.status === 400) {
-          Swal.fire({
-            icon: "error",
-            title: "Error!",
-            text: "No se puede reservar en un horario anterior al actual!",
-            confirmButtonColor: "#C73333",
-            background: "#31302F",
-            color: "white",
-            backdrop: `rgba(0,0,14,0.4)`,
+        try {
+          const response = await axios.post(
+            "https://restocode.onrender.com/api/crearReserva",
+            formReserva
+          );
+    
+          setFormReserva({
+            fecha: "",
+            hora: "",
+            invitados: "",
+            comentarios: "",
           });
-        } else if (error.response.status === 409) {
+          emailjs.sendForm('service_lageyaf', 'template_wxgv40k', form.current, 'cNIQeHdmAGfezQvwz')
           Swal.fire({
-            icon: "error",
-            title: "Error!",
-            text: "Ya existe una reserva con la misma fecha y hora!",
-            confirmButtonColor: "#C73333",
-            background: "#31302F",
-            color: "white",
-            backdrop: `rgba(0,0,14,0.4)`,
+            icon: "success",
+            title: "¡Listo!",
+            text: "Su reserva ha sido confirmada, pasa a ver nuestra galeria!",
+            showCancelButton: false,
+            confirmButtonText: "Ok",
+            confirmButtonColor: "#1d0c20",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              window.location.href = "/galeria";
+            }
           });
+        } 
+        catch (error) {
+          if (error.response) {
+            if (error.response.status === 400) {
+              Swal.fire({
+                icon: "error",
+                title: "Error!",
+                text: "No se puede reservar en un horario anterior al actual!",
+                confirmButtonColor: "#C73333",
+                background: "#31302F",
+                color: "white",
+                backdrop: `rgba(0,0,14,0.4)`,
+              });
+            } else if (error.response.status === 409) {
+              Swal.fire({
+                icon: "error",
+                title: "Error!",
+                text: "Ya existe una reserva con la misma fecha y hora!",
+                confirmButtonColor: "#C73333",
+                background: "#31302F",
+                color: "white",
+                backdrop: `rgba(0,0,14,0.4)`,
+              });
+            }
+          }
         }
-      }
-    }
-  };
+      };
 
   return (
     <>
@@ -149,7 +155,7 @@ const Reservas = () => {
             <h4>¡Reserva y entrá directo a la diversión!</h4>
           </div>
           <Form
-            onSubmit={handleSubmit}
+          ref={form} onSubmit={sendEmail}
             className="formularioReserva"
             id="formularioReserva"
           >
@@ -209,6 +215,8 @@ const Reservas = () => {
                 <div className="errorMensaje">{errorInvitados}</div>
               )}
             </Form.Group>
+            <input className="inputMailOculto" value={user.email} name="email" />
+            <input className="inputMailOculto" value={user.nombre} name="nombre" />
             <Form.Label className="labelReservas" htmlFor="inputComentarios">
               ¿Qué debemos saber sobre tu evento?
             </Form.Label>
@@ -228,12 +236,12 @@ const Reservas = () => {
             {errorComentarios && (
               <div className="errorMensaje">{errorComentarios}</div>
             )}
-            <button type="submit" className="botonReserva">
+            <button type="submit" value="Send" className="botonReserva">
               Confirmar
             </button>
           </Form>
         </div>
-        <div className="contenedorImgReserva"></div>
+        <div className="contenedorImgReserva" ></div>
       </main>
     </>
   );
