@@ -74,6 +74,9 @@
   box-shadow: 0 0 5px #7037cd;
   border-color: #7037cd;
 }
+.inputMailOculto{
+  display: none;
+}
 .errorMensaje {
   font-size: small;
   color: red;
