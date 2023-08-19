@@ -6,7 +6,7 @@ import "./Administrador.css";
 const Administracion = () => {
   return (
     <div className="containerAdmin">
-      <h1 className="tituloAdministrador pt-3">A d m i n i s t r a c i o n</h1>
+      <h1 className="tituloAdministrador pt-3">A d m i n i s t r a c i ó n</h1>
       <Container>
         <hr></hr>
         <Row>
