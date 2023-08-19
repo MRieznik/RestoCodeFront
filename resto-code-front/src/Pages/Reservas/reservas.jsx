@@ -1,19 +1,17 @@
 import { Form } from "react-bootstrap/";
 import "./Reservas.css";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
 import emailjs from "@emailjs/browser";
 
+
 const Reservas = () => {
   const user = JSON.parse(localStorage.getItem("user")) || [];
-
-  const form = useRef();
 
   const [formReserva, setFormReserva] = useState({
     nombre: user.nombre,
     apellido: user.apellido,
-    email: user.email,
     fecha: "",
     hora: "",
     invitados: "",
@@ -88,6 +86,7 @@ const Reservas = () => {
       }
     }
   };
+
 
   const sendEmail = async (e) => {
     e.preventDefault();
@@ -259,7 +258,7 @@ const Reservas = () => {
             {errorComentarios && (
               <div className="errorMensaje">{errorComentarios}</div>
             )}
-            <button type="submit" value="Send" className="botonReserva">
+            <button type="submit" className="botonReserva">
               Confirmar
             </button>
           </Form>
