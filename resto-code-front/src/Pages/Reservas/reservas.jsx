@@ -87,7 +87,18 @@ const Reservas = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    if (errorFecha || errorHora || errorInvitados || errorComentarios) {
+      Swal.fire({
+        icon: "error",
+        title: "Error!",
+        text: "Por favor, revise los campos del formulario",
+        confirmButtonColor: "#C73333",
+        background: "#31302F",
+        color: "white",
+        backdrop: `rgba(0,0,14,0.4)`,
+      });
+      return;
+    }
     try {
       const response = await axios.post(
         "https://restocode.onrender.com/api/crearReserva",
