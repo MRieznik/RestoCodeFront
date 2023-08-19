@@ -3,6 +3,8 @@ import "./Reservas.css";
 import { useState } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
+import emailjs from "@emailjs/browser";
+
 
 const Reservas = () => {
   const user = JSON.parse(localStorage.getItem("user")) || [];
@@ -85,7 +87,8 @@ const Reservas = () => {
     }
   };
 
-  const handleSubmit = async (e) => {
+
+  const sendEmail = async (e) => {
     e.preventDefault();
     if (errorFecha || errorHora || errorInvitados || errorComentarios) {
       Swal.fire({
@@ -111,7 +114,12 @@ const Reservas = () => {
         invitados: "",
         comentarios: "",
       });
-
+      emailjs.sendForm(
+        "service_lageyaf",
+        "template_wxgv40k",
+        form.current,
+        "cNIQeHdmAGfezQvwz"
+      );
       Swal.fire({
         icon: "success",
         title: "¡Listo!",
@@ -160,7 +168,8 @@ const Reservas = () => {
             <h4>¡Reserva y entrá directo a la diversión!</h4>
           </div>
           <Form
-            onSubmit={handleSubmit}
+            ref={form}
+            onSubmit={sendEmail}
             className="formularioReserva"
             id="formularioReserva"
           >
@@ -220,6 +229,16 @@ const Reservas = () => {
                 <div className="errorMensaje">{errorInvitados}</div>
               )}
             </Form.Group>
+            <input
+              className="inputMailOculto"
+              value={user.email}
+              name="email"
+            />
+            <input
+              className="inputMailOculto"
+              value={user.nombre}
+              name="nombre"
+            />
             <Form.Label className="labelReservas" htmlFor="inputComentarios">
               ¿Qué debemos saber sobre tu evento?
             </Form.Label>
