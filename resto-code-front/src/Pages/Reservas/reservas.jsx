@@ -104,6 +104,54 @@ const Reservas = () => {
             hora: "",
             invitados: "",
             comentarios: "",
+    if (errorFecha || errorHora || errorInvitados || errorComentarios) {
+      Swal.fire({
+        icon: "error",
+        title: "Error!",
+        text: "Por favor, revise los campos del formulario",
+        confirmButtonColor: "#C73333",
+        background: "#31302F",
+        color: "white",
+        backdrop: `rgba(0,0,14,0.4)`,
+      });
+      return;
+    }
+    try {
+      const response = await axios.post(
+        "https://restocode.onrender.com/api/crearReserva",
+        formReserva
+      );
+
+      setFormReserva({
+        fecha: "",
+        hora: "",
+        invitados: "",
+        comentarios: "",
+      });
+
+      Swal.fire({
+        icon: "success",
+        title: "¡Listo!",
+        text: "Su reserva ha sido confirmada, pasa a ver nuestra galeria!",
+        showCancelButton: false,
+        confirmButtonText: "Ok",
+        confirmButtonColor: "#1d0c20",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "/galeria";
+        }
+      });
+    } catch (error) {
+      if (error.response) {
+        if (error.response.status === 400) {
+          Swal.fire({
+            icon: "error",
+            title: "Error!",
+            text: "No se puede reservar en un horario anterior al actual!",
+            confirmButtonColor: "#C73333",
+            background: "#31302F",
+            color: "white",
+            backdrop: `rgba(0,0,14,0.4)`,
           });
           emailjs.sendForm('service_lageyaf', 'template_wxgv40k', form.current, 'cNIQeHdmAGfezQvwz')
           Swal.fire({

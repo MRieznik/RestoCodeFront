@@ -76,7 +76,7 @@ const UsersContext = ({ children }) => {
   const logOut = () => {
     Swal.fire({
       icon: "warning",
-      title: "Cerrar Sesión?",
+      title: "¿Cerrar Sesión?",
       showCancelButton: true,
       confirmButtonText: "Aceptar",
       cancelButtonText: "Cancelar",
