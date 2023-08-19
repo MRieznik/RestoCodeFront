@@ -1,16 +1,20 @@
 import { Form } from "react-bootstrap/";
 import "./Reservas.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Swal from "sweetalert2";
+
+import emailjs from "@emailjs/browser";
 import axios from "axios";
 
 
 const Reservas = () => {
   const user = JSON.parse(localStorage.getItem("user")) || [];
+  const form = useRef();
 
   const [formReserva, setFormReserva] = useState({
     nombre: user.nombre,
     apellido: user.apellido,
+    email: user.email,
     fecha: "",
     hora: "",
     invitados: "",
@@ -86,7 +90,8 @@ const Reservas = () => {
     }
   };
 
-  const handleSubmit = async (e) => {
+
+  const sendEmail = async (e) => {
     e.preventDefault();
     if (errorFecha || errorHora || errorInvitados || errorComentarios) {
       Swal.fire({
@@ -240,7 +245,7 @@ const Reservas = () => {
             {errorComentarios && (
               <div className="errorMensaje">{errorComentarios}</div>
             )}
-            <button type="submit" className="botonReserva">
+            <button type="submit" value="Send" className="botonReserva">
               Confirmar
             </button>
           </Form>
