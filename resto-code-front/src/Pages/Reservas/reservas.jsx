@@ -1,12 +1,13 @@
 import { Form } from "react-bootstrap/";
 import "./Reservas.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Swal from "sweetalert2";
 import emailjs from "@emailjs/browser";
 import axios from "axios";
 
 const Reservas = () => {
   const user = JSON.parse(localStorage.getItem("user")) || [];
+  const form = useRef();
 
   const [formReserva, setFormReserva] = useState({
     nombre: user.nombre,

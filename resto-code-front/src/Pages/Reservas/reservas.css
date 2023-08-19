@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap%22");
 
-
 .contenedorPrincipalReserva {
   display: flex;
 }
@@ -74,7 +73,7 @@
   box-shadow: 0 0 5px #7037cd;
   border-color: #7037cd;
 }
-.inputMailOculto{
+.inputMailOculto {
   display: none;
 }
 .errorMensaje {
