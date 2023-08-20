@@ -9,8 +9,8 @@ import "./TablaUsuarios.css";
 const TablaUsuarios = () => {
   const { users, deleteUser } = useContext(UsuariosContext);
   const [editUser, setEditUser] = useState();
-
   const [show, setShow] = useState(false);
+  const [filter, setFilter] = useState(""); // Agregado el estado para el filtro
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -43,14 +43,19 @@ const TablaUsuarios = () => {
 
   return (
     <>
+      <div className="filtro">
+        <input
+          type="text"
+          placeholder="Filtrar por nombre o apellido"
+          value={filter}
+          onChange={(e) => setFilter(e.target.value)}
+        />
+      </div>
       {users === undefined ? (
         <h1>No hay usuarios registrados</h1>
       ) : (
         <>
-          <Table
-            responsive
-            className="table-dark table-hover text-center tabla"
-          >
+          <Table responsive className="table-dark table-hover text-center tabla">
             <thead className="headTabla">
               <tr>
                 <th>Nombre</th>
@@ -61,40 +66,45 @@ const TablaUsuarios = () => {
               </tr>
             </thead>
             <tbody>
-              {users.map((user) => (
-                <tr key={user._id}>
-                  <td data-label="Nombre">{user.nombre}</td>
-                  <td data-label="Apellido">{user.apellido}</td>
-                  <td data-label="Telefono">{user.telefono}</td>
-                  <td data-label="Email">{user.email}</td>
-                  <td data-label="Acciones">
-                    <button
-                      className="botonEditar m-1"
-                      onClick={() => handleEdit(user)}
-                    >
-                      <FontAwesomeIcon
-                        icon="fa-solid fa-pen-to-square"
-                        fade
-                        size="lg"
-                        style={{ color: "#ffffff" }}
-                        title="Editar Usuario"
-                      />
-                    </button>
-                    <button
-                      className="botonDelete m-1"
-                      onClick={() => handleDelete(user._id)}
-                    >
-                      <FontAwesomeIcon
-                        icon="fa-solid fa-trash"
-                        fade
-                        size="lg"
-                        style={{ color: "#ffffff" }}
-                        title="Eliminar Usuario"
-                      />
-                    </button>
-                  </td>
-                </tr>
-              ))}
+              {users
+                .filter((user) =>
+                  user.nombre.toLowerCase().includes(filter.toLowerCase()) ||
+                  user.apellido.toLowerCase().includes(filter.toLowerCase())
+                )
+                .map((user) => (
+                  <tr key={user._id}>
+                    <td data-label="Nombre">{user.nombre}</td>
+                    <td data-label="Apellido">{user.apellido}</td>
+                    <td data-label="Telefono">{user.telefono}</td>
+                    <td data-label="Email">{user.email}</td>
+                    <td data-label="Acciones">
+                      <button
+                        className="botonEditar m-1"
+                        onClick={() => handleEdit(user)}
+                      >
+                        <FontAwesomeIcon
+                          icon="fa-solid fa-pen-to-square"
+                          fade
+                          size="lg"
+                          style={{ color: "#ffffff" }}
+                          title="Editar Usuario"
+                        />
+                      </button>
+                      <button
+                        className="botonDelete m-1"
+                        onClick={() => handleDelete(user._id)}
+                      >
+                        <FontAwesomeIcon
+                          icon="fa-solid fa-trash"
+                          fade
+                          size="lg"
+                          style={{ color: "#ffffff" }}
+                          title="Eliminar Usuario"
+                        />
+                      </button>
+                    </td>
+                  </tr>
+                ))}
             </tbody>
           </Table>
           <Modal show={show} onHide={handleClose} className="contenedor-editar">

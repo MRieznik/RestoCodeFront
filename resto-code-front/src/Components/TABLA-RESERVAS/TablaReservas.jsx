@@ -9,14 +9,17 @@ import "./TablaReservas.css";
 const TablaReservas = () => {
   const { reservas, deleteReserva } = useContext(ReservasContext);
   const [editReserva, setEditReserva] = useState();
-
+  const [filteredReservas, setFilteredReservas] = useState([]);
   const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+    setShow(false);
+    setFilteredReservas([]); // Limpia los filtros al cerrar el modal
+  };
   const handleShow = () => setShow(true);
 
-  const handleEdit = (user) => {
-    setEditReserva(user);
+  const handleEdit = (reserva) => {
+    setEditReserva(reserva);
     handleShow();
   };
 
@@ -41,9 +44,28 @@ const TablaReservas = () => {
     });
   };
 
+  const handleFilter = (query) => {
+    const filtered = reservas.filter(
+      (reserva) =>
+        reserva.nombre.toLowerCase().includes(query.toLowerCase()) ||
+        reserva.apellido.toLowerCase().includes(query.toLowerCase()) ||
+        reserva.hora.includes(query) ||
+        reserva.fecha.includes(query)
+    );
+    setFilteredReservas(filtered);
+  };
+  const displayedReservas = filteredReservas.length > 0 ? filteredReservas : reservas;
+
   return (
     <>
-      {reservas.length > 0 ? (
+      <div className="filter-bar">
+        <input
+          type="text"
+          placeholder="Filtrar por nombre, apellido, hora o fecha"
+          onChange={(e) => handleFilter(e.target.value)}
+        />
+      </div>
+      {displayedReservas.length > 0 ? (
         <Table responsive className="table-dark table-hover text-center tabla">
           <thead className="headTabla">
             <tr>
@@ -55,7 +77,7 @@ const TablaReservas = () => {
             </tr>
           </thead>
           <tbody>
-            {reservas.map((reserva) => (
+            {displayedReservas.map((reserva) => (
               <tr key={reserva._id}>
                 <td data-label="Nombre">
                   {reserva.nombre} {reserva.apellido}
@@ -89,6 +111,7 @@ const TablaReservas = () => {
                     />
                   </button>
                 </td>
+
               </tr>
             ))}
           </tbody>
