@@ -39,7 +39,7 @@ const Registro = () => {
     } else {
       try {
         const response = await axios.post(
-          "https://restocode.onrender.com/api/register",
+          "https://back2-0.onrender.com/api/register",
           DataUser
         );
         setDataUser({

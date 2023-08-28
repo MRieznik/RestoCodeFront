@@ -10,8 +10,14 @@ const ReservContext = ({ children }) => {
   const [reservas, setReservas] = useState([]);
 
   //get ----> trae todas las reservas
+
   const getReservas = async () => {
     try {
+      const jwtToken = localStorage.getItem("token");
+      if (!jwtToken) {
+        return;
+      }
+      axios.defaults.headers.common["auth-token"] = jwtToken;
       const response = await axios.get(
         "https://restocode.onrender.com/api/reservas"
       );
@@ -25,6 +31,11 @@ const ReservContext = ({ children }) => {
 
   const updateReserva = async (reserva) => {
     try {
+      const jwtToken = localStorage.getItem("token");
+      if (!jwtToken) {
+        return;
+      }
+      axios.defaults.headers.common["auth-token"] = jwtToken;
       await axios.put(
         `https://restocode.onrender.com/api/actualizarReserva/${reserva._id}`,
         reserva
@@ -32,6 +43,11 @@ const ReservContext = ({ children }) => {
       await getReservas();
     } catch (error) {
       if (error.response) {
+        if (error.response.status === 401) {
+          localStorage.removeItem("user");
+          localStorage.removeItem("token");
+          window.location.reload();
+        }
         if (error.response.status === 400) {
           Swal.fire({
             icon: "error",
@@ -61,6 +77,11 @@ const ReservContext = ({ children }) => {
 
   const deleteReserva = async (id) => {
     try {
+      const jwtToken = localStorage.getItem("token");
+      if (!jwtToken) {
+        return;
+      }
+      axios.defaults.headers.common["auth-token"] = jwtToken;
       const response = await axios.delete(
         `https://restocode.onrender.com/api/eliminarReserva/${id}`
       );
@@ -78,6 +99,11 @@ const ReservContext = ({ children }) => {
       const deleteReserva = reservas.filter((reserva) => reserva._id !== id);
       setReservas(deleteReserva);
     } catch (error) {
+      if (error.response.status === 404) {
+        localStorage.removeItem("user");
+        localStorage.removeItem("token");
+        window.location.href = "/error404";
+      }
       console.log(error);
     }
   };

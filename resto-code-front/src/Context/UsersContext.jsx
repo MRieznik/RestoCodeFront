@@ -25,8 +25,6 @@ const UsersContext = ({ children }) => {
   //post : loguear un usuario
   const login = async (email, contrasenia) => {
     try {
-    
-
       const response = await axios.post(
         "https://restocode.onrender.com/api/login",
         {
@@ -48,6 +46,7 @@ const UsersContext = ({ children }) => {
           rolUsuario: jwtDecode.rolUsuario,
         };
 
+        localStorage.setItem("token", jwtToken);
         localStorage.setItem("user", JSON.stringify(user));
         setUserLogueado(user);
 
@@ -88,6 +87,7 @@ const UsersContext = ({ children }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         localStorage.removeItem("user");
+        localStorage.removeItem("token");
         window.location.href = "/";
       } else if (result.isDenied) {
         return;
@@ -98,8 +98,12 @@ const UsersContext = ({ children }) => {
   //put : edita un usuario
 
   const updateUsers = async (updatedUser) => {
-   
     try {
+      const jwtToken = localStorage.getItem("token");
+      if (!jwtToken) {
+        return;
+      }
+      axios.defaults.headers.common["auth-token"] = jwtToken;
       await axios.put(
         `https://restocode.onrender.com/api/updateUser/${updatedUser._id}`,
         updatedUser
@@ -109,6 +113,11 @@ const UsersContext = ({ children }) => {
       );
       setUsers(newUsers);
     } catch (error) {
+      if (error.response.status === 401) {
+        localStorage.removeItem("user");
+        localStorage.removeItem("token");
+        window.location.reload();
+      }
       console.log(error.response);
     }
   };
@@ -116,8 +125,12 @@ const UsersContext = ({ children }) => {
   //delete: elimina un usuario
 
   const deleteUser = async (id) => {
-
     try {
+      const jwtToken = localStorage.getItem("token");
+      if (!jwtToken) {
+        return;
+      }
+      axios.defaults.headers.common["auth-token"] = jwtToken;
       const response = await axios.delete(
         `https://restocode.onrender.com/api/deleteUser/${id}`
       );
@@ -135,7 +148,13 @@ const UsersContext = ({ children }) => {
       const newUsers = users.filter((user) => user._id !== id);
       setUsers(newUsers);
     } catch (error) {
+      console.log(error);
       if (error.response) {
+        if (error.response.status === 401) {
+          localStorage.removeItem("user");
+          localStorage.removeItem("token");
+          window.location.reload();
+        }
         if (error.response.status === 400) {
           Swal.fire({
             icon: "error",
