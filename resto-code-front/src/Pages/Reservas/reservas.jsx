@@ -5,7 +5,6 @@ import Swal from "sweetalert2";
 import emailjs from "@emailjs/browser";
 import axios from "axios";
 
-
 const Reservas = () => {
   const user = JSON.parse(localStorage.getItem("user")) || [];
   const form = useRef();
@@ -89,7 +88,6 @@ const Reservas = () => {
     }
   };
 
-
   const sendEmail = async (e) => {
     e.preventDefault();
     if (errorFecha || errorHora || errorInvitados || errorComentarios) {
@@ -105,6 +103,11 @@ const Reservas = () => {
       return;
     }
     try {
+      const jwtToken = localStorage.getItem("token");
+      if (!jwtToken) {
+        return;
+      }
+      axios.defaults.headers.common["auth-token"] = jwtToken;
       const response = await axios.post(
         "https://restocode.onrender.com/api/crearReserva",
         formReserva
@@ -116,7 +119,12 @@ const Reservas = () => {
         invitados: "",
         comentarios: "",
       });
-      emailjs.sendForm('service_lageyaf', 'template_wxgv40k', form.current, 'cNIQeHdmAGfezQvwz')
+      emailjs.sendForm(
+        "service_lageyaf",
+        "template_wxgv40k",
+        form.current,
+        "cNIQeHdmAGfezQvwz"
+      );
       Swal.fire({
         icon: "success",
         title: "¡Listo!",
@@ -131,6 +139,11 @@ const Reservas = () => {
       });
     } catch (error) {
       if (error.response) {
+        if(error.response.status === 404){
+          localStorage.removeItem("user");
+          localStorage.removeItem("token");
+          window.location.href = "/error404";
+        }
         if (error.response.status === 400) {
           Swal.fire({
             icon: "error",
@@ -226,8 +239,16 @@ const Reservas = () => {
                 <div className="errorMensaje">{errorInvitados}</div>
               )}
             </Form.Group>
-            <input className="inputMailOculto" value={user.email} name="email" />
-            <input className="inputMailOculto" value={user.nombre} name="nombre" />
+            <input
+              className="inputMailOculto"
+              value={user.email}
+              name="email"
+            />
+            <input
+              className="inputMailOculto"
+              value={user.nombre}
+              name="nombre"
+            />
             <Form.Label className="labelReservas" htmlFor="inputComentarios">
               ¿Qué debemos saber sobre tu evento?
             </Form.Label>
